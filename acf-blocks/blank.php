@@ -1,5 +1,5 @@
 <?php
-  // Block options
+  // Block options   
   $bg_color             = get_field('background_color');
   // Developer options
   $padding_top          = get_field( 'padding_top' );
