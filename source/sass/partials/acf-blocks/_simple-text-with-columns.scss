@@ -1,0 +1,30 @@
+.simple-text-with-columns-section {
+	.top-desc {
+		p {
+      max-width: rem-calc(400px);
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+	}
+	.text-col {
+		p {
+			max-width: rem-calc(330px);
+		}
+	}
+	.generic-text-vector {
+		position: absolute;
+		top: rem-calc(125px);
+		left: 0;
+		width: 100%;
+		@include media-breakpoint-up(md) {
+			top: rem-calc(-350px);
+		}
+		svg {
+			@include media-breakpoint-up(md) {
+				height: rem-calc(600px) !important;
+			}
+		}
+	}
+}

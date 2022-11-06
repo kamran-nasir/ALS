@@ -1,13 +1,13 @@
 @mixin stagger-animation( $animation, $child, $interval: 100 ) {
   $delay: $interval;
   visibility: visible;
-  @include animation-duration( 1s );
-  @include animation-fill-mode( both );
-  @include animation-name( $animation );
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: $animation;
   @for $i from 1 through $child {
     $delay: $delay + $interval;
     &:nth-child(#{$i}) {
-      @include animation-delay( unquote($delay + 'ms') );
+      animation-delay: unquote($delay + 'ms');
     }
   }
 }
@@ -25,13 +25,13 @@
     height: rem-calc( 1px );
     position: absolute;
     bottom: 0;
-    @include scale( 0 );
+    transform: scale( 0 );
     transition: .25s transform ease-out;
   }
-  &:hover {
+  &:hover, &:active {
     color: $text-color;
     &:after {
-      @include scale( 1 );
+      transform: scale( 1 );
     }
   }
 }
@@ -49,15 +49,28 @@
     height: rem-calc( 1px );
     position: absolute;
     bottom: 0;
-    @include scaleX( 0 );
-		@include transform-origin( 100%, 100% );
+    transform: scaleX( 0 );
+		transform-origin: 100% 100%;
 		transition: .3s transform;
   }
-  &:hover {
+  &:hover, &:active {
     color: $text-color;
     &:after {
-			@include scaleX( 1 );
-			@include transform-origin( 0, 0 );
+			transform: scaleX( 1 );
+			transform-origin: 0 0;
 		}
+  }
+}
+
+@mixin animate-background-underline-on-hover( $text-color: currentColor, $background-start-color: currentColor, $background-end-color: currentColor ) {
+  background-image: linear-gradient(to right, $background-start-color, $background-end-color);
+  background-size: 0 rem-calc( 2px );
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  padding-bottom: rem-calc( 2px );
+  transition: background .2s ease-out;
+  &:hover, &:active  {
+    color: $text_color;
+    background-size: 100% rem-calc( 2px );
   }
 }

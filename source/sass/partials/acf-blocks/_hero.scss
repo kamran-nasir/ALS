@@ -1,0 +1,10 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  &__content {
+    p {
+      font-size: rem-calc(22px);
+      font-weight: 400;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.site-footer {
+  background: linear-gradient(77.09deg, rgba(0, 0, 51, 0.05) 1.41%, rgba(105, 48, 242, 0.05) 16.36%, rgba(0, 219, 255, 0.05) 65.87%, rgba(0, 255, 189, 0.05) 100%);
+  clear: both;
+  .footer-logo {
+    width: rem-calc(160px);
+    @include media-breakpoint-up( xl ) {
+      width: rem-calc(220px);
+    }
+    @include media-breakpoint-down( md ) {
+      margin-bottom: rem-calc( 50px );
+      width: rem-calc(180px);
+    }
+  }
+ .footer-primary-menu,
+ .footer-secondary-menu {
+    @include list-unstyled;
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      margin-bottom: rem-calc(20px);
+      a {
+        text-decoration: none;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: rem-calc(-4px);
+          left: 0;
+          display: block;
+          width: 100%;
+          height: rem-calc(2px);
+          border-radius: 10px;
+          background-color: $stone-wall;
+          transition: transform .5s cubic-bezier(.19,1,.22,1);
+          transform: scaleX(0);
+          transform-origin: right;
+        }
+        &:hover {
+          color: $stone-wall;
+          &::before {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
+        }
+      }
+      &.current-menu-item {
+        a {
+          color: $stone-wall;
+          &::before {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
+        }
+      }
+    }
+  }
+  .list-social-icons {
+    display: flex;
+    @include list-unstyled;
+    margin-left: 0;
+    @include media-breakpoint-down( md ) {
+      margin-top: rem-calc( 50px );
+      margin-bottom: rem-calc( 30px );
+    }
+    > li {
+      line-height: 1;
+      margin-right: rem-calc( 40px );
+      margin-bottom: 0;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    a {
+      display: inline-block;
+      text-decoration: none;
+      height: rem-calc(32px);
+      width: rem-calc(32px);
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+// Footer menu

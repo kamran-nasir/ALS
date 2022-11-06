@@ -1,11 +1,9 @@
 .img-fluid, .img-responsive {
-	width: auto;
+  width: auto;
   height: auto;
 }
 
-// Custom
-////////////////////////////////////////////////
-.img-cover-parent {
+.img-cover-block {
   position: relative;
   overflow: hidden;
 }
@@ -16,16 +14,54 @@
   object-fit: cover;
   object-position: center;
   position: absolute;
-  left: 0;
   top: 0;
+  @include media-breakpoint-up(md) {
+    object-position: right;
+  }
+}
+
+.has-parallax-effect {
+  height: 130%;
+}
+
+
+.banner-box {
+  height: 100%;
+  left: 0;
+  position: absolute !important;
+  top: 0;
+  width: 100%;
 }
 
 // align classes are set by wp on images inside editor.
-.alignnone,
-.alignleft,
-.alignright,
-.aligncenter,
-.wp-post-image {
+.alignnone, .alignleft, .alignright, .aligncenter, .wp-post-image {
   width: auto;
   height: auto;
+}
+
+.alignleft {
+  margin-bottom: rem-calc( 20px );
+  @include media-breakpoint-up( md ) {
+    float: left;
+    margin: 0 rem-calc( 20px )  rem-calc( 20px )  0;
+  }
+}
+
+.alignright {
+  margin-bottom: rem-calc( 20px );
+  @include media-breakpoint-up( md ) {
+    float: right;
+    margin: 0 0 rem-calc( 20px ) rem-calc( 20px );
+  }
+}
+
+
+.alignleft {
+  float: left;
+  margin: 0 rem-calc( 20px ) rem-calc( 20px ) 0;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 rem-calc( 20px ) rem-calc( 20px );
 }

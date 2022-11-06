@@ -1,0 +1,30 @@
+.three-cards-slider {
+	&.swiper-container {
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+		list-style: none;
+		padding: 0;
+		z-index: 1;
+		.swiper-slide {
+			overflow: hidden;
+			position: relative;
+			z-index: 1;
+			margin-right: rem-calc(25px) !important;
+			cursor: pointer;
+			display: block;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&.swiper-slide-active {
+				z-index: 3;
+			}
+			&.swiper-slide-prev {
+				z-index: 1;
+			}
+			&.swiper-slide-next {
+				z-index: 1;
+			}
+		}
+	}
+}

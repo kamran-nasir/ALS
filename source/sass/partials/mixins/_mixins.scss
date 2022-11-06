@@ -1,50 +1,85 @@
 @import "rem"; // always first for input to work
-@import "background";
-@import "input";
-@import "buttons";
-@import "icons";
-@import "gradients";
-@import "images";
 @import "animations";
-@import "scrollbars";
-@import "media-queries";
+@import "background";
+@import "buttons";
 @import "fluid-typography";
-
-// Bootstrap
-@import "breakpoints";
-@import "grid";
-@import "grid-framework";
-@import "screenreaders";
-@import "text-truncate";
-@import "text-hide";
+@import "icons";
+@import "input";
+@import "keyframes";
+@import "media-queries";
+@import "scrollbars";
 
 @mixin pagination-links {
-  background: #fff;
-  color: #666;
-  font-size: rem-calc(12px);
-  line-height: 1;
-  text-decoration: none;
-  text-align: center;
-  display: block;
-  min-width: rem-calc(35px);
-  padding: rem-calc(10px);
-  box-shadow: 0 0 rem-calc(1px) rgba(0,0,0,.3);
+	background: #fff;
+	color: #666;
+	font-size: rem-calc(12px);
+	line-height: 1;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	min-width: rem-calc(35px);
+	padding: rem-calc(10px);
+	box-shadow: 0 0 rem-calc(1px) rgba(0, 0, 0, 0.3);
 }
 
-@mixin clearfix {
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
+// Required
+////////////////////////////////////////////////
+@mixin swiper-cards-overflow-down($breakpoint) {
+	@include media-breakpoint-down($breakpoint) {
+		// section
+		overflow: hidden;
+		.swiper {
+			overflow: visible;
+			// show atleast (padding-right-value) of last card on the right
+			// it will add (padding-right-value) extra scrolling space on the right
+			padding-right: calc((100vw - var(--container-max-width)) / 2);
+		}
+		.swiper-slide {
+			// card cannot be bigger than the value
+			// width is also set by the slider depending on the slidesPerView property
+			max-width: rem-calc(420px);
+		}
+	}
+	@include media-breakpoint-down(md) {
+		.swiper {
+			// show atleast (padding-right-value) of last card on the right
+			// it will add (padding-right-value) extra scrolling space on the right
+			padding-right: rem-calc(30px); // important to add 0 or any other value
+			// max-width: 80vw;
+		}
+	}
 }
 
-@mixin list-unstyled {
-  margin-left: 0;
-  > li {
-    list-style: none;
-  }
+//placeholder
+@mixin placeholder {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
+
+// background-opacity
+@mixin background-opacity($color, $opacity: 0.3) {
+	background: rgba($color, $opacity);
+}
+//-@include background-opacity(color, 0.5);
+// color-opacity
+@mixin color-opacity($color, $opacity: 0.3) {
+	color: rgba($color, $opacity);
+}
+//-@include color-opacity(color, 0.5);
+
+//  Media queries mixins
+@mixin custom-width($min, $max) {
+	@media screen and (min-width: #{$min}) and (max-width: #{$max}) {
+		@content;
+	}
 }
