@@ -31,13 +31,13 @@
           width: 100%;
           height: rem-calc(2px);
           border-radius: 10px;
-          background-color: $stone-wall;
+          background-color: $milano-red;
           transition: transform .5s cubic-bezier(.19,1,.22,1);
           transform: scaleX(0);
           transform-origin: right;
         }
         &:hover {
-          color: $stone-wall;
+          color: $milano-red;
           &::before {
             transform: scaleX(1);
             transform-origin: left;
@@ -46,7 +46,7 @@
       }
       &.current-menu-item {
         a {
-          color: $stone-wall;
+          color: $milano-red;
           &::before {
             transform: scaleX(1);
             transform-origin: left;

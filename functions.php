@@ -1,6 +1,5 @@
 <?php
 
-// require_once( get_template_directory() . '/functions/shortcodes.php' );
 require_once( get_template_directory() . '/functions/miscellaneous.php' );
 require_once( get_template_directory() . '/functions/helpers.php' );
 require_once( get_template_directory() . '/functions/disable-auto-embed-script.php' );
@@ -40,7 +39,7 @@ add_post_type_support( 'news', 'excerpt' );
 /*=============================================
 =            Add editor stylesheet            =
 =============================================*/
-// add_editor_style();
+ add_editor_style();
 
 
 /*============================================================

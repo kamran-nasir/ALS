@@ -194,7 +194,7 @@
 		}
 
 		.tab-content {
-			border: rem-calc(1px) solid $stone-wall;
+			border: rem-calc(1px) solid $milano-red;
 			background-color: rgba(#fff, 0.4);
 			backdrop-filter: blur(20px); // This be the blur
 			padding-top: rem-calc(30px);
@@ -230,7 +230,7 @@
 						background-color: $me-yellow;
 					}
 					&__purple {
-						background-color: $stone-wall;
+						background-color: $milano-red;
 						color: #fff;
 					}
 					&__sunset-coral {
@@ -238,7 +238,7 @@
 						color: #fff;
 					}
 					&__energy-blue {
-						background-color: $stone-wall
+						background-color: $milano-red
 						color: #fff;
 					}
 				}
@@ -278,14 +278,14 @@
 	&__ddl {
 		.dropbtn {
 			background-color: transparent;
-			color: $stone-wall;
+			color: $milano-red;
 			padding-top: rem-calc(16px);
 			padding-right: rem-calc(20px);
 			padding-bottom: rem-calc(16px);
 			padding-left: rem-calc(20px);
 			width: 100%;
 			font-size: rem-calc(16px);
-			border: 1px solid $stone-wall;
+			border: 1px solid $milano-red;
 			cursor: pointer;
 			display: flex;
 			justify-content: space-between;
@@ -314,7 +314,7 @@
 			display: none;
 			position: absolute;
 			background-color: #fff;
-			border: rem-calc(1px) solid $stone-wall;
+			border: rem-calc(1px) solid $milano-red;
 			border-top: 0 none;
 			min-width: rem-calc(160px);
 			width: 100%;
@@ -326,7 +326,7 @@
 			}
 		}
 		.dropdown-content a {
-			color: $stone-wall;
+			color: $milano-red;
 			padding-top: rem-calc(12px);
 			padding-right: rem-calc(16px);
 			padding-bottom: rem-calc(12px);
@@ -335,7 +335,7 @@
 			display: block;
 		}
 		.dropdown a:hover {
-			background-color: $stone-wall;
+			background-color: $milano-red;
 			color: #fff;
 		}
 

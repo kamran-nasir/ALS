@@ -13,13 +13,7 @@ add_filter('wp_sitemaps_enabled', '__return_false');
 // Disable image compression in WordPress
 // WordPress sets it to 82% by default
 ////////////////////////////////////////////////
-add_filter('jpeg_quality', function($arg){return 100;});
-
-
-/* ======================================================
-=            Disable file editor in backend            =
-====================================================== */
-// define('DISALLOW_FILE_EDIT', TRUE);
+// add_filter('jpeg_quality', function($arg){return 100;});
 
 
 /*----------  Enable login captcha  ----------*/
@@ -30,6 +24,104 @@ add_filter('jpeg_quality', function($arg){return 100;});
 // 	require_once( get_template_directory() . '/functions/captcha.php' );
 // }
 
+
+// Blog Pagination
+// http://wp.tutsplus.com/tutorials/wordpress-pagination-a-primer
+/* ========================================== */
+// function skel_posts_pagination( $pages ) {
+//   $total_pages = $pages;
+
+//   if ( $total_pages > 1 ) {
+
+//     $current_page = max( 1, get_query_var( 'paged' ) );
+
+//     echo '<div class="posts-pagination">';
+
+//     echo '<span class="index"> Page ' . $current_page . ' of ' . $total_pages . "</span>";
+
+//     echo paginate_links(array(
+//         'base'      => get_pagenum_link( 1 ) . '%_%',
+//         'format'    => 'page/%#%/',
+//         'current'   => $current_page,
+//         'total'     => $total_pages,
+//         'type'      => 'list', // plain, array, list
+//         'prev_text' => '&lsaquo; Previous',
+//         'next_text' => 'Next &rsaquo;',
+//     ));
+//     echo '</div>';
+//   }
+// }
+
+
+
+/*==============================================
+=            Single/Page pagination            =
+==============================================*/
+/* http://bavotasan.com/2012/a-better-wp_link_pages-for-wordpress/
+ * The formatted output of a list of pages.
+ *
+ * Displays page links for paginated posts (i.e. includes the "nextpage".
+ * Quicktag one or more times). This tag must be within The Loop.
+ *
+ * @param string|array $args Optional. Overwrite the defaults.
+ * @return string Formatted output in HTML.
+ */
+
+// function skel_wp_link_pages($args = '') {
+//   $defaults = array(
+//       'before' => '<div class="single-pagination">' . '<span class="index">Pages:</span>',
+//       'after' => '</div>',
+//       'text_before' => '',
+//       'text_after' => '',
+//       'next_or_number' => 'number',
+//       'nextpagelink' => 'Next page',
+//       'previouspagelink' => 'Previous page',
+//       'pagelink' => '%',
+//       'echo' => 1
+//   );
+//   $r = wp_parse_args($args, $defaults);
+//   $r = apply_filters('wp_link_pages_args', $r);
+//   extract($r, EXTR_SKIP);
+//   global $page, $numpages, $multipage, $more, $pagenow;
+//   $output = '';
+//   if ($multipage) {
+//     if ('number' == $next_or_number) {
+//       $output .= $before;
+//       for ($i = 1; $i < ( $numpages + 1 ); $i = $i + 1) {
+//         $j = str_replace('%', $i, $pagelink);
+//         $output .= ' ';
+//         if ($i != $page || ( (!$more ) && ( $page == 1 ) ))
+//           $output .= _wp_link_page($i);
+//         else
+//           $output .= '<span class="current">';
+//         $output .= $text_before . $j . $text_after;
+//         if ($i != $page || ( (!$more ) && ( $page == 1 ) ))
+//           $output .= '</a>';
+//         else
+//           $output .= '</span>';
+//       }
+//       $output .= $after;
+//     } else {
+//       if ($more) {
+//         $output .= $before;
+//         $i = $page - 1;
+//         if ($i && $more) {
+//           $output .= _wp_link_page($i);
+//           $output .= $text_before . $previouspagelink . $text_after . '</a>';
+//         }
+//         $i = $page + 1;
+//         if ($i <= $numpages && $more) {
+//           $output .= _wp_link_page($i);
+//           $output .= $text_before . $nextpagelink . $text_after . '</a>';
+//         }
+//         $output .= $after;
+//       }
+//     }
+//   }
+//   if ($echo)
+//     echo $output;
+//   return $output;
+// }
 
 
 // Add attributes to enqueue styles
@@ -43,9 +135,67 @@ add_filter('jpeg_quality', function($arg){return 100;});
 // add_filter('style_loader_tag', 'add_style_attribute', 10, 2);
 
 
+// Featured image size
+////////////////////////////////////////////////
+// function add_featured_image_display_settings( $content, $post_id ) {
+// 	$screen = get_current_screen();
+
+// 	if ($screen->post_type == 'post'):
+// 		$field_text  = esc_html__( 'Recommended Image Size: 1900 x 1080 (WxH) in px.', 'Uss Kidd' );
+
+// 		$field_label = sprintf(
+// 		    '<p><label>%1$s</label></p>',
+// 		    $field_text
+// 		);
+
+// 		return $content .= $field_label;
+// 	endif;
+
+// 	return $content;
+// }
+// add_filter( 'admin_post_thumbnail_html', 'add_featured_image_display_settings', 10, 2 );
+
+
+// Customize img srcset sizes
+////////////////////////////////////////////////
+// https://viastudio.com/optimizing-your-theme-for-wordpress-4-4s-responsive-images/
+
+// Content Images
+// function skel_content_image_sizes_attr($sizes, $size) {
+//   $width = $size[0];
+//   if (get_page_template_slug() === 'template-full_width.php') {
+//       if ($width > 910) {
+//           return '(max-width: 768px) 92vw, (max-width: 992px) 690px, (max-width: 1200px) 910px, 1110px';
+//       }
+//       if ($width < 910 && $width > 690) {
+//           return '(max-width: 768px) 92vw, (max-width: 992px) 690px, 910px';
+//       }
+//       return '(max-width: ' . $width . 'px) 92vw, ' . $width . 'px';
+//   }
+//   return '(max-width: ' . $width . 'px) 92vw, ' . $width . 'px';
+// }
+// add_filter('wp_calculate_image_sizes', 'skel_content_image_sizes_attr', 10 , 2);
+
+
+// Featured Images
+// function skel_post_thumbnail_sizes_attr($attr, $attachment, $size) {
+// Calculate Image Sizes by type and breakpoint
+// Header Images
+//   if ($size === 'header-thumb') {
+//       $attr['sizes'] = '(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 730px';
+//   //Blog Thumbnails
+//   } else if ($size === 'blog-thumb') {
+//       $attr['sizes'] = '(max-width: 992px) 200px, (max-width: 1200px) 127px, 160px';
+//   }
+//   return $attr;
+// }
+// add_filter('wp_get_attachment_image_attributes', 'skel_post_thumbnail_sizes_attr', 10 , 3);
+
+
 // Remove jquery migrate
 ////////////////////////////////////////////////
-// Not useful if autoptimize is enabled
+// Not useful if autoptimize for JS with concatenation is enabled
+// If any jquery dependent script is loaded at top then the jquery is forced by WP to load at top for e.g Gravity forms
 function dequeue_jquery_migrate( &$scripts){
 	if(!is_admin()){
 		$scripts->remove( 'jquery');
@@ -112,7 +262,7 @@ add_filter( 'wp_default_scripts', 'dequeue_jquery_migrate' );
 function skel_defer_scripts( $tag, $handle, $src ) {
   $defer = array(
     'plugins',
-    'custom',
+    'match-height'
   );
   if ( in_array( $handle, $defer ) ) {
      return '<script src="' . $src . '" defer="defer" type="text/javascript"></script>' . "\n";

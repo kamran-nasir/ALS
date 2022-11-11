@@ -3,16 +3,37 @@
   "version": "1.0.0",
   "description": "",
   "main": "Gruntfile.js",
+  "scripts": {
+    "start": "grunt",
+    "build": "grunt build"
+  },
   "devDependencies": {
-    "compass-importer": "^0.4.1",
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@lodder/grunt-postcss": "*",
+    "autoprefixer": "*",
+    "babel-plugin-transform-remove-strict-mode": "0.0.2",
+    "babel-preset-env": "^1.7.0",
+    "breakpoint-sass": "*",
+    "cssnano": "^5.0.7",
     "grunt": "^1.5.3",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-uglify": "^4.0.1",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-sass": "^3.1.0",
-    "node-sass": "^4.14.1"
+    "grunt-babel": "^8.0.0",
+    "grunt-browser-sync": "*",
+    "grunt-cli": "^1.4.3",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "^5.0.1",
+    "grunt-contrib-watch": "*",
+    "grunt-dev-update": "*",
+    "grunt-rtlcss": "^2.0.2",
+    "grunt-sass": "*",
+    "node-sass": "^5.0.0",
+    "postcss": "*"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "compass-mixins": "^0.12.12",
+    "install": "^0.13.0"
+  }
 }

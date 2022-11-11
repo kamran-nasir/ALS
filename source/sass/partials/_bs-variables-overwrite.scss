@@ -21,21 +21,15 @@ $enable-important-utilities: true;
 $colors: null;
 
 // Project theme colors
-$stone-wall: #958578;
-$dune: #3F3A36;
-$darkest: #212121;
-$dark-grey: #313131;
-$grey-100: #606060;
-$grey-80: #787878;
-$grey-60: #A7A7A7;
-$grey-40: #CFCFCF;
-$grey-20: #F6F4F2;
-
-
+$milano-red: #C8151D;
+$midnight: #04142D;
+$midnight-500: #021C43;
+$midnight-200: #E2ECF4;
+$dark-grey: #374254;
 
 // General theme colors - update/delete as per project
-$body: $grey-80;
-$primary: $stone-wall;
+$body: $dark-grey;
+$primary: $milano-red;
 $secondary: $white;
 $success: $green;
 $info: $cyan;
@@ -44,15 +38,11 @@ $danger: $red;
 // This will generate .btn-*, .btn-outline-*, text-*, .link-*, .bg-*, border-* classes
 $theme-colors: (
 	// base colors
-	"stone-wall": $stone-wall,
-	"dune": $dune,
-	"darkest": $dark,
+	"milano-red": $milano-red,
+	"midnight": $midnight,
+	"midnight-500": $midnight-500,
+	"midnight-200": $midnight-200,
 	"dark-grey": $dark-grey,
-	"grey-100": $grey-100,
-	"grey-80": $grey-80,
-	"grey-60": $grey-60,
-	"grey-40": $grey-40,
-	"grey-20": $grey-20,
 	"body": $body,
 	"primary": $primary,
 	"secondary": $secondary,
@@ -66,10 +56,10 @@ $theme-colors: (
 // Links
 //
 // Style anchor elements.
-$link-color: $stone-wall;
+$link-color: $milano-red;
 $link-decoration: underline;
 $link-shade-percentage: 20%;
-$link-hover-color: $stone-wall;
+$link-hover-color: $milano-red;
 $link-hover-decoration: null;
 
 // Settings for the `<body>` element.
@@ -200,7 +190,7 @@ $gutters: $negative-and-gutter-spacers;
 
 // $font-size-root effects the value of `rem`, which is used for as well font sizes, paddings and margins
 // $font-size-base effects the font size of the body text
-$font-family-base: "Wigrum", $font-family-sans-serif;
+$font-family-base: "Poppins", $font-family-sans-serif;
 $font-size-root: 10px;
 $font-size-base: 1.6rem; // Assumes the browser, typically `16px`
 // $font-size-sm:                $font-size-base * .875;
@@ -452,7 +442,7 @@ $input-focus-color: $input-color;
 $input-focus-width: 0;
 $input-focus-box-shadow: 0;
 
-$input-placeholder-color: $darkest;
+$input-placeholder-color: $midnight-500;
 $input-plaintext-color: $body-color;
 
 $input-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;

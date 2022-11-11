@@ -41,10 +41,10 @@
 	display: inline-block;
 	border: none;
 	cursor: pointer;
-	background: $stone-wall;
-	color: $darkest !important;
+	background: $milano-red;
+	color: $midnight-500 !important;
 	&:hover {
-		background-color: $stone-wall;
+		background-color: $milano-red;
 	}
 }
 
@@ -58,7 +58,7 @@
 	position: relative;
 	display: inline-flex;
 	align-items: center;
-	color: $stone-wall;
+	color: $milano-red;
 	margin-right: rem-calc(34px);
 	&::after {
 		@include icon-font-properties;
@@ -85,13 +85,13 @@
 		width: 100%;
 		height: rem-calc(2px);
 		border-radius: 10px;
-		background-color: $stone-wall;
+		background-color: $milano-red;
 		transition: transform .5s cubic-bezier(.19,1,.22,1);
 		transform: scaleX(0);
 		transform-origin: right;
 	}
 	&:hover {
-		color: $stone-wall;
+		color: $milano-red;
 		&::before {
 			transform: scaleX(1);
 			transform-origin: left;
@@ -132,13 +132,13 @@
 		width: 100%;
 		height: rem-calc(2px);
 		border-radius: rem-calc(10px);
-		background-color: $stone-wall;
+		background-color: $milano-red;
 		transition: transform .5s cubic-bezier(.19,1,.22,1);
 		transform: scaleX(0);
 		transform-origin: right;
 	}
 	&:hover {
-		color: $stone-wall;
+		color: $milano-red;
 		&::before {
 			transform: scaleX(1);
 			transform-origin: left;

@@ -31,7 +31,20 @@
   position: absolute !important;
   top: 0;
   width: 100%;
+  &.banner-with-overlay {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-color: rgba($midnight,0.3);
+    }
+  }
 }
+
 
 // align classes are set by wp on images inside editor.
 .alignnone, .alignleft, .alignright, .aligncenter, .wp-post-image {

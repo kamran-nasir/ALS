@@ -26,10 +26,9 @@
         <div class="header-logo">
           <a href="<?php echo esc_url( home_url() ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ) ); ?>" aria-label="Go to Home" <?php echo (is_front_page()) ? 'aria-current="page"' : ''; ?>>
             <span><?php bloginfo('description'); ?></span>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="">
           </a>
         </div>
-
         <div class="nav-wrapper ms-auto">
           <nav class="header-secondary">
             <?php wp_nav_menu( array(

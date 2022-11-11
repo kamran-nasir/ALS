@@ -239,7 +239,7 @@ section  {
 	.swiper-button-prev,
 	.swiper-button-next {
 		position: relative;
-		background: $darkest;
+		background: $midnight-500;
 		left: auto;
 		right: auto;
 		top: auto;
@@ -317,14 +317,14 @@ section  {
 					padding-left: rem-calc(32px);
 				}
 				&:hover {
-					color: $stone-wall;
+					color: $milano-red;
 					border-color: $white;
 				}
 			}
 			&.active {
 				a {
-					background: $stone-wall;
-					border-color: $stone-wall;
+					background: $milano-red;
+					border-color: $milano-red;
 					color: $white;
 				}
 			}
@@ -410,8 +410,8 @@ section  {
 	margin: rem-calc(16px);
 	opacity: 1;
 	@include media-breakpoint-up(md) {
-		color: $stone-wall !important;
-	  border-color: $stone-wall;
+		color: $milano-red !important;
+	  border-color: $milano-red;
 	}
 }
 .big-separater {
@@ -447,7 +447,7 @@ section  {
 	-ms-touch-action: manipulation;
 	touch-action: manipulation;
 	outline: 0;
-	background: $stone-wall !important;
+	background: $milano-red !important;
 	border-radius: rem-calc(32px) 0px 0px rem-calc(32px) !important;
 	padding: rem-calc(16px) !important;
 	.list-social-icons {

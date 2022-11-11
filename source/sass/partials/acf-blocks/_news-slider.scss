@@ -59,7 +59,7 @@
 	.news-tags {
 		ul {
 			li {
-				@include color-opacity($darkest, 0.38);
+				@include color-opacity($midnight-500, 0.38);
 				margin: 0;
 			}
 		}
