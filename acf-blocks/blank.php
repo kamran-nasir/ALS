@@ -9,4 +9,5 @@
 ?>
 
 <section class="<?php echo $bg_color; ?> <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>">
+
 </section>
