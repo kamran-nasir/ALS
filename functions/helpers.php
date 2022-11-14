@@ -1,10 +1,31 @@
 <?php
 
+// Swiper class depending on the direction
+////////////////////////////////////////////////
+function skel_swiper_direction_class() {
+  if ( ICL_LANGUAGE_CODE==en ) {
+    return 'swiper-container';
+  } else if ( ICL_LANGUAGE_CODE==ar ) {
+    return 'swiper-container-rtl';
+  }
+}
+
+// Language direction class
+////////////////////////////////////////////////
+function skel_direction_class() {
+  if ( ICL_LANGUAGE_CODE==en ) {
+    return 'dir-ltr';
+  } else if ( ICL_LANGUAGE_CODE==ar ) {
+    return 'dir-rtl';
+  }
+}
+
+
 // Generate working youtube  link for magnific popup
 // Replace youtu.be to youtube.com
 ////////////////////////////////////////////////
 // generate youtube link for magnific popup
-function yt_link( $url ) {
+function skel_get_yt_link( $url ) {
   // grab the position of forward slash
   $pos = strrpos($url, '/');
   // use position to get substring
@@ -18,7 +39,7 @@ function yt_link( $url ) {
 /*================================================================
 =            Validate Youtube link for Magnific Popup            =
 ================================================================*/
-function skel_validate_youtube_link( $link ) {
+function skel_get_validate_youtube_link( $link ) {
 	preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+(?=\?)|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $link, $matches);
 	$link = 'https://www.youtube.com/watch?v=' . $matches[0];
 	return $link;
@@ -44,7 +65,7 @@ function skel_get_the_excerpt( $post_id, $limit ) {
 /*================================
 =            Tiny URL            =
 ================================*/
-function skel_tiny_url($url) {
+function skel_get_tiny_url($url) {
 	return file_get_contents('http://tinyurl.com/api-create.php?url=' . $url);
 }
 
@@ -52,7 +73,7 @@ function skel_tiny_url($url) {
 /*====================================
 =            Text Shorter            =
 ====================================*/
-function skel_text_shorter($input, $length) {
+function skel_get_text_shorter($input, $length) {
 	// no need to trim, already shorter than trim length
 	if (strlen($input) <= $length) {
 		return $input;
@@ -74,7 +95,7 @@ function skel_text_shorter($input, $length) {
 =================================================*/
 // return string
 // eg. term 1, term 2
-function skel_the_terms($post_id, $taxonomy) {
+function skel_get_the_terms($post_id, $taxonomy, $seperator) {
 	$terms = get_the_terms($post_id, $taxonomy); // Returns objects array
 	$ar_term = array(); // Initialize an array
 	if ( $terms ) {
@@ -82,24 +103,14 @@ function skel_the_terms($post_id, $taxonomy) {
 			$ar_term[] = $term->name; // Store term name
 		}
 	}
-	$result = join(", ", $ar_term); // Join all terms name
+  $seperator = ($seperator) ? $seperator : ' ';
+	$result = join($seperator, $ar_term); // Join all terms name
 	return $result;
-}
-
-// return string for only the first term
-// eg. term 1
-function skel_the_terms_first_slug($post_id, $taxonomy) {
-	$terms = get_the_terms($post_id, $taxonomy); // Returns objects array
-	if ( $terms ) {
-		return $terms[0]->slug;
-	} else {
-		return '';
-	}
 }
 
 // return array
 // eg. [name = 'term', 'id' = 3]
-function skel_the_terms_data($post_id, $taxonomy) {
+function skel_get_the_terms_data($post_id, $taxonomy) {
 	$terms = get_the_terms($post_id, $taxonomy); // Returns objects array
 	$ar_term = array(); // Initialize an array
 	$i = 0;
@@ -111,4 +122,15 @@ function skel_the_terms_data($post_id, $taxonomy) {
 		}
 	}
 	return $ar_term;
+}
+
+
+/**
+ * Phone URL
+ * @param string $phone_number, ex: (555) 123-4568
+ * @return string $phone_url, ex: tel:5551234568
+ */
+function skel_get_phone_url( $phone_number = false ) {
+	$phone_number = str_replace( array( '(', ')', '-', '.', '|', ' ' ), '', $phone_number );
+	return esc_url( 'tel:' . $phone_number );
 }

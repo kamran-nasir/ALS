@@ -17,7 +17,7 @@ add_image_size( 'w3840', 3840, 9999 );
 
 // Enable featured images for all post types including custom
 ////////////////////////////////////////////////
-add_theme_support('post-thumbnails');
+// add_theme_support('post-thumbnails');
 
 // Add instructions to featured images
 ////////////////////////////////////////////////

@@ -7,8 +7,8 @@ function skel_block_category( $categories, $post ) {
     $categories,
     array(
       array(
-        'slug' => 'amana',
-        'title' => __( 'amana', 'skel' ),
+        'slug' => 'mubadala',
+        'title' => 'Mubadala',
       ),
     )
   );
@@ -17,795 +17,302 @@ add_filter( 'block_categories_all', 'skel_block_category', 10, 2);
 
 function skel_register_acf_blocks() {
 
-  // Hero Banner
+  // Text editor
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'hero-banner',
-    'title'             => __( 'Hero Banner', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'text-editor',
+    'title'             => 'Text editor',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/hero-banner.php',
+    'render_template'  	=> 'acf-blocks/text-editor.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero-banner.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/text-editor.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Flexible columns with icons and details
-  ////////////////////////////////////////////////
-  // acf_register_block_type(array(
-  //   'name'              => 'flexible-columns-with-icons-and-details',
-  //   'title'             => __( 'Flexible columns with icons and details', 'skel' ),
-  //   'category'          => 'amana',
-  //   'icon' => array(
-  //     'background' => '#ff2500',
-  //     'foreground' => '#fff',
-  //     'src' => 'layout',
-  //   ),
-  //   'render_template'  	=> 'acf-blocks/flexible-columns-with-icons-and-details.php',
-  //   'example'           => [
-  //     'attributes' => [
-  //       'mode' => 'preview',
-  //       'data' => array(
-  //         'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/flexible-columns-with-icons-and-details.jpg',
-  //       ),
-  //     ]
-  //   ],
-  //   'mode'              => 'edit',
-  //   'post_types'        => array( 'page', 'news', 'project' ),
-  //   'supports'          => array(
-  //     'align' => false,
-  //     'customClassName' => false,
-  //     'mode' => false,
-  //   )
-  // ));
-
-  // Expanding Content
+	// Hero
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'expanding-content',
-    'title'             => __( 'Expanding Content', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'hero',
+    'title'             => 'Hero',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/expanding-content.php',
+    'render_template'  	=> 'acf-blocks/hero.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/expanding-content.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Three columns with icon and details
-  ////////////////////////////////////////////////
-  // acf_register_block_type(array(
-  //   'name'              => 'three-columns-with-icon-and-details',
-  //   'title'             => __( 'Three columns with icon and details', 'skel' ),
-  //   'category'          => 'amana',
-  //   'icon' => array(
-  //     'background' => '#ff2500',
-  //     'foreground' => '#fff',
-  //     'src' => 'layout',
-  //   ),
-  //   'render_template'  	=> 'acf-blocks/three-columns-with-icon-and-details.php',
-  //   'example'           => [
-  //     'attributes' => [
-  //       'mode' => 'preview',
-  //       'data' => array(
-  //         'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/three-columns-with-icon-and-details.jpg',
-  //       ),
-  //     ]
-  //   ],
-  //   'mode'              => 'edit',
-  //   'post_types'        => array( 'page', 'news', 'project' ),
-  //   'supports'          => array(
-  //     'align' => false,
-  //     'customClassName' => false,
-  //     'mode' => false,
-  //   )
-  // ));
-
-  // Three cards with icon and details
+	// Banner with scrolling text
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'three-cards-with-icon-and-details',
-    'title'             => __( 'Three cards with icon and details', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'banner-with-scrolling-text',
+    'title'             => 'Banner with scrolling text',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/three-cards-with-icon-and-details.php',
+    'render_template'  	=> 'acf-blocks/banner-with-scrolling-text.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/three-cards-with-icon-and-details.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/banner-with-scrolling-text.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Four cards slider with icon and details
-  ////////////////////////////////////////////////
-  // acf_register_block_type(array(
-  //   'name'              => 'four-cards-slider-with-icon-and-details',
-  //   'title'             => __( 'Four cards slider with icon and details', 'skel' ),
-  //   'category'          => 'amana',
-  //   'icon' => array(
-  //     'background' => '#ff2500',
-  //     'foreground' => '#fff',
-  //     'src' => 'layout',
-  //   ),
-  //   'render_template'  	=> 'acf-blocks/four-cards-slider-with-icon-and-details.php',
-  //   'example'           => [
-  //     'attributes' => [
-  //       'mode' => 'preview',
-  //       'data' => array(
-  //         'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/four-cards-slider-with-icon-and-details.jpg',
-  //       ),
-  //     ]
-  //   ],
-  //   'mode'              => 'edit',
-  //   'post_types'        => array( 'page', 'news', 'project' ),
-  //   'supports'          => array(
-  //     'align' => false,
-  //     'customClassName' => false,
-  //     'mode' => false,
-  //   )
-  // ));
-
-  // Featured Case Study
+	// Banner with text and line art
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'case-study',
-    'title'             => __( 'Featured Case Study', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'banner-with-text-and-line-art',
+    'title'             => 'Banner with text and line art',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/featured-case-study.php',
+    'render_template'  	=> 'acf-blocks/banner-with-text-and-line-art.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/featured-case-study.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/banner-with-text-and-line-art.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Split columns with fluid image and fixed content
+	// Banner with text and line art two
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'split-columns-with-fluid-image-and-fixed-content',
-    'title'             => __( 'Split columns with fluid image and fixed content', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'banner-with-text-and-line-art-two',
+    'title'             => 'Banner with text and line art two',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/split-columns-with-fluid-image-and-fixed-content.php',
+    'render_template'  	=> 'acf-blocks/banner-with-text-and-line-art-two.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/split-columns-with-fluid-image-and-fixed-content.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/banner-with-text-and-line-art-two.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Logo Marquee
-  ////////////////////////////////////////////////
-  // acf_register_block_type(array(
-  //   'name'              => 'logo-marquee',
-  //   'title'             => __( 'Logo Marquee', 'skel' ),
-  //   'category'          => 'amana',
-  //   'icon' => array(
-  //     'background' => '#ff2500',
-  //     'foreground' => '#fff',
-  //     'src' => 'layout',
-  //   ),
-  //   'render_template'  	=> 'acf-blocks/logo-marquee.php',
-  //   'example'           => [
-  //     'attributes' => [
-  //       'mode' => 'preview',
-  //       'data' => array(
-  //         'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/logo-marquee.jpg',
-  //       ),
-  //     ]
-  //   ],
-  //   'mode'              => 'edit',
-  //   'post_types'        => array( 'page', 'news', 'project' ),
-  //   'supports'          => array(
-  //     'align' => false,
-  //     'customClassName' => false,
-  //     'mode' => false,
-  //   )
-  // ));
-
-  // Featured Content Cards Slider
+	// News cards slider
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'featured-content-cards',
-    'title'             => __( 'Featured Content Cards Slider', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'news-cards-slider',
+    'title'             => 'News cards slider',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/featured-content-cards-slider.php',
+    'render_template'  	=> 'acf-blocks/news-cards-slider.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/featured-content-cards-slider.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/news-cards-slider.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Featured Content Cards V2
-  ////////////////////////////////////////////////
-  // acf_register_block_type(array(
-  //   'name'              => 'featured-content-cards-v2',
-  //   'title'             => __( 'Featured Content Cards V2', 'skel' ),
-  //   'category'          => 'amana',
-  //   'icon' => array(
-  //     'background' => '#ff2500',
-  //     'foreground' => '#fff',
-  //     'src' => 'layout',
-  //   ),
-  //   'render_template'  	=> 'acf-blocks/featured-content-cards-v2.php',
-  //   'example'           => [
-  //     'attributes' => [
-  //       'mode' => 'preview',
-  //       'data' => array(
-  //         'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/featured-content-cards-v2.jpg',
-  //       ),
-  //     ]
-  //   ],
-  //   'mode'              => 'edit',
-  //   'post_types'        => array( 'page', 'news', 'project' ),
-  //   'supports'          => array(
-  //     'align' => false,
-  //     'customClassName' => false,
-  //     'mode' => false,
-  //   )
-  // ));
-
-  // Popup Video
+	// Two columns diagonal text
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'popup-video',
-    'title'             => __( 'Popup Video', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'two-columns-diagonal-text',
+    'title'             => 'Two columns diagonal text',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/popup-video.php',
+    'render_template'  	=> 'acf-blocks/two-columns-diagonal-text.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/popup-video.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/two-columns-diagonal-text.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Single Project Profile
+	// Two columns diagonal text two
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'single-project-profile',
-    'title'             => __( 'Single Project Profile', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'two-columns-diagonal-text-two',
+    'title'             => 'Two columns diagonal text two',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/single-project-profile.php',
+    'render_template'  	=> 'acf-blocks/two-columns-diagonal-text-two.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/single-project-profile.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/two-columns-diagonal-text-two.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Cards with Overlay Details
-  ////////////////////////////////////////////////
-  // acf_register_block_type(array(
-  //   'name'              => 'cards-with-overlay-details',
-  //   'title'             => __( 'Cards with Overlay Details', 'skel' ),
-  //   'category'          => 'amana',
-  //   'icon' => array(
-  //     'background' => '#ff2500',
-  //     'foreground' => '#fff',
-  //     'src' => 'layout',
-  //   ),
-  //   'render_template'  	=> 'acf-blocks/cards-with-overlay-details.php',
-  //   'example'           => [
-  //     'attributes' => [
-  //       'mode' => 'preview',
-  //       'data' => array(
-  //         'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/cards-with-overlay-details.jpg',
-  //       ),
-  //     ]
-  //   ],
-  //   'mode'              => 'edit',
-  //   'post_types'        => array( 'page', 'news', 'project' ),
-  //   'supports'          => array(
-  //     'align' => false,
-  //     'customClassName' => false,
-  //     'mode' => false,
-  //   )
-  // ));
-
-  // Contact Cards
+	// Image and text columns
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'contact-cards',
-    'title'             => __( 'Contact Cards', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'image-and-text-columns',
+    'title'             => 'Image and text columns',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/contact-cards.php',
+    'render_template'  	=> 'acf-blocks/image-and-text-columns.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/contact-cards.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/image-and-text-columns.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Single Project Profile Centered
+	// Timeline
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'single-project-profile-centered',
-    'title'             => __( 'Single Project Profile Centered', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'timeline',
+    'title'             => 'Timeline',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/single-project-profile-centered.php',
+    'render_template'  	=> 'acf-blocks/timeline.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/single-project-profile-centered.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/timeline.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Hash Navigation
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'hash-navigation',
-    'title'             => __( 'Hash Navigation', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/hash-navigation.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hash-navigation.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Content and Image Column
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'content-and-image-column',
-    'title'             => __( 'Content and Image Column', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/content-and-image-column.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/content-and-image-column.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Content and Fluid Image Column
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'content-and-fluid-image-column',
-    'title'             => __( 'Content and Fluid Image Column', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/content-and-fluid-image-column.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/content-and-fluid-image-column.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Four Color Buttons
-  ////////////////////////////////////////////////
-  // acf_register_block_type(array(
-  //   'name'              => 'four-color-buttons',
-  //   'title'             => __( 'Four Color Buttons', 'skel' ),
-  //   'category'          => 'amana',
-  //   'icon' => array(
-  //     'background' => '#ff2500',
-  //     'foreground' => '#fff',
-  //     'src' => 'layout',
-  //   ),
-  //   'render_template'  	=> 'acf-blocks/four-color-buttons.php',
-  //   'example'           => [
-  //     'attributes' => [
-  //       'mode' => 'preview',
-  //       'data' => array(
-  //         'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/four-color-buttons.jpg',
-  //       ),
-  //     ]
-  //   ],
-  //   'mode'              => 'edit',
-  //   'post_types'        => array( 'page', 'news', 'project' ),
-  //   'supports'          => array(
-  //     'align' => false,
-  //     'customClassName' => false,
-  //     'mode' => false,
-  //   )
-  // ));
-
-  // Hero Steps
-  ////////////////////////////////////////////////
-  // acf_register_block_type(array(
-  //   'name'              => 'hero-steps',
-  //   'title'             => __( 'Hero Steps', 'skel' ),
-  //   'category'          => 'amana',
-  //   'icon' => array(
-  //     'background' => '#ff2500',
-  //     'foreground' => '#fff',
-  //     'src' => 'layout',
-  //   ),
-  //   'render_template'  	=> 'acf-blocks/hero-steps.php',
-  //   'example'           => [
-  //     'attributes' => [
-  //       'mode' => 'preview',
-  //       'data' => array(
-  //         'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero-steps.jpg',
-  //       ),
-  //     ]
-  //   ],
-  //   'mode'              => 'edit',
-  //   'post_types'        => array( 'page', 'news', 'project' ),
-  //   'supports'          => array(
-  //     'align' => false,
-  //     'customClassName' => false,
-  //     'mode' => false,
-  //   )
-  // ));
-
-  // Color Cards Slider
-  ////////////////////////////////////////////////
-  // acf_register_block_type(array(
-  //   'name'              => 'color-cards-slider',
-  //   'title'             => __( 'Color Cards Slider', 'skel' ),
-  //   'category'          => 'amana',
-  //   'icon' => array(
-  //     'background' => '#ff2500',
-  //     'foreground' => '#fff',
-  //     'src' => 'layout',
-  //   ),
-  //   'render_template'  	=> 'acf-blocks/color-cards-slider.php',
-  //   'example'           => [
-  //     'attributes' => [
-  //       'mode' => 'preview',
-  //       'data' => array(
-  //         'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/color-cards-slider.jpg',
-  //       ),
-  //     ]
-  //   ],
-  //   'mode'              => 'edit',
-  //   'post_types'        => array( 'page', 'news', 'project' ),
-  //   'supports'          => array(
-  //     'align' => false,
-  //     'customClassName' => false,
-  //     'mode' => false,
-  //   )
-  // ));
-
-  // Color Cards with Overlay Details Slider
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'color-cards-with-overlay-details-slider',
-    'title'             => __( 'Color Cards with Overlay Details Slider', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/color-cards-with-overlay-details-slider.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/color-cards-with-overlay-details-slider.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Simple Content
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'simple-content',
-    'title'             => __( 'Simple Content', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/simple-content.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/simple-content.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Global Map
-  ////////////////////////////////////////////////
-  // acf_register_block_type(array(
-  //   'name'              => 'global-map',
-  //   'title'             => __( 'Global Map', 'skel' ),
-  //   'category'          => 'amana',
-  //   'icon' => array(
-  //     'background' => '#ff2500',
-  //     'foreground' => '#fff',
-  //     'src' => 'layout',
-  //   ),
-  //   'render_template'  	=> 'acf-blocks/global-map.php',
-  //   'example'           => [
-  //     'attributes' => [
-  //       'mode' => 'preview',
-  //       'data' => array(
-  //         'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/global-map.jpg',
-  //       ),
-  //     ]
-  //   ],
-  //   'mode'              => 'edit',
-  //   'post_types'        => array( 'page', 'news', 'project' ),
-  //   'supports'          => array(
-  //     'align' => false,
-  //     'customClassName' => false,
-  //     'mode' => false,
-  //   )
-  // ));
-
-  // Two Equal Cards with Image on Hover
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'two-equal-cards-with-image-on-hover',
-    'title'             => __( 'Two Equal Cards with Image on Hover', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/two-equal-cards-with-image-on-hover.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/two-equal-cards-with-image-on-hover.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Two Equal Cards with Popup
-  ////////////////////////////////////////////////
-  // acf_register_block_type(array(
-  //   'name'              => 'two-equal-cards-with-popup',
-  //   'title'             => __( 'Two Equal Cards with Popup', 'skel' ),
-  //   'category'          => 'amana',
-  //   'icon' => array(
-  //     'background' => '#ff2500',
-  //     'foreground' => '#fff',
-  //     'src' => 'layout',
-  //   ),
-  //   'render_template'  	=> 'acf-blocks/two-equal-cards-with-popup.php',
-  //   'example'           => [
-  //     'attributes' => [
-  //       'mode' => 'preview',
-  //       'data' => array(
-  //         'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/two-equal-cards-with-popup.jpg',
-  //       ),
-  //     ]
-  //   ],
-  //   'mode'              => 'edit',
-  //   'post_types'        => array( 'page', 'news', 'project' ),
-  //   'supports'          => array(
-  //     'align' => false,
-  //     'customClassName' => false,
-  //     'mode' => false,
-  //   )
-  // ));
-
-  // Quote
+	// Quote
   ////////////////////////////////////////////////
   acf_register_block_type(array(
     'name'              => 'quote',
-    'title'             => __( 'Quote', 'skel' ),
-    'category'          => 'amana',
+    'title'             => 'Quote',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
@@ -821,253 +328,397 @@ function skel_register_acf_blocks() {
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Cards Grid
+	// Team cards
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'cards-grid',
-    'title'             => __( 'Cards Grid', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'team-cards',
+    'title'             => 'Team cards',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/cards-grid.php',
+    'render_template'  	=> 'acf-blocks/team-cards.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/cards-grid.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/team-cards.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Overlay
-  ////////////////////////////////////////////////
-  // acf_register_block_type(array(
-  //   'name'              => 'overlay',
-  //   'title'             => __( 'Overlay', 'skel' ),
-  //   'category'          => 'amana',
-  //   'icon' => array(
-  //     'background' => '#ff2500',
-  //     'foreground' => '#fff',
-  //     'src' => 'layout',
-  //   ),
-  //   'render_template'  	=> 'acf-blocks/overlay.php',
-  //   'example'           => [
-  //     'attributes' => [
-  //       'mode' => 'preview',
-  //       'data' => array(
-  //         'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/overlay.jpg',
-  //       ),
-  //     ]
-  //   ],
-  //   'mode'              => 'edit',
-  //   'post_types'        => array( 'page', 'news', 'project' ),
-  //   'supports'          => array(
-  //     'align' => false,
-  //     'customClassName' => false,
-  //     'mode' => false,
-  //   )
-  // ));
-
-  // Two Equal Cards
+	// List latest news
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'twp-equal-cards',
-    'title'             => __( 'Two Equal Cards', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'list-latest-news',
+    'title'             => 'List latest news',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/two-equal-cards.php',
+    'render_template'  	=> 'acf-blocks/list-latest-news.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/two-equal-cards.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/list-latest-news.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Vertical with Products
+	// List latest press releases
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'vertical-with-products',
-    'title'             => __( 'Vertical with Products', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'list-latest-press-releases',
+    'title'             => 'List latest press releases',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/vertical-with-products.php',
+    'render_template'  	=> 'acf-blocks/list-latest-press-releases.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/vertical-with-products.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/list-latest-press-releases.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Banner with Content
-  ////////////////////////////////////////////////
-  // acf_register_block_type(array(
-  //   'name'              => 'banner-with-content',
-  //   'title'             => __( 'Banner with Content', 'skel' ),
-  //   'category'          => 'amana',
-  //   'icon' => array(
-  //     'background' => '#ff2500',
-  //     'foreground' => '#fff',
-  //     'src' => 'layout',
-  //   ),
-  //   'render_template'  	=> 'acf-blocks/banner-with-content.php',
-  //   'example'           => [
-  //     'attributes' => [
-  //       'mode' => 'preview',
-  //       'data' => array(
-  //         'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/banner-with-content.jpg',
-  //       ),
-  //     ]
-  //   ],
-  //   'mode'              => 'edit',
-  //   'post_types'        => array( 'page', 'news', 'project' ),
-  //   'supports'          => array(
-  //     'align' => false,
-  //     'customClassName' => false,
-  //     'mode' => false,
-  //   )
-  // ));
-
-  // Expanding Projects Slider
+	// Publications cards slider
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'expanding-projects-slider',
-    'title'             => __( 'Expanding Projects Slider', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'publication-cards-slider',
+    'title'             => 'Publication cards slider',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/expanding-projects-slider.php',
+    'render_template'  	=> 'acf-blocks/publication-cards-slider.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/expanding-projects-slider.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/publication-cards-slider.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Masonry Slider
-  ////////////////////////////////////////////////
-  // acf_register_block_type(array(
-  //   'name'              => 'masonry-slider',
-  //   'title'             => __( 'Masonry Slider', 'skel' ),
-  //   'category'          => 'amana',
-  //   'icon' => array(
-  //     'background' => '#ff2500',
-  //     'foreground' => '#fff',
-  //     'src' => 'layout',
-  //   ),
-  //   'render_template'  	=> 'acf-blocks/masonry-slider.php',
-  //   'example'           => [
-  //     'attributes' => [
-  //       'mode' => 'preview',
-  //       'data' => array(
-  //         'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/masonry-slider.jpg',
-  //       ),
-  //     ]
-  //   ],
-  //   'mode'              => 'edit',
-  //   'post_types'        => array( 'page', 'news', 'project' ),
-  //   'supports'          => array(
-  //     'align' => false,
-  //     'customClassName' => false,
-  //     'mode' => false,
-  //   )
-  // ));
-
-
-  // Download Media Filter
+	// Banner with three columns text
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'download-media-filter',
-    'title'             => __( 'Download Media Filter', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'banner-with-three-columns-text',
+    'title'             => 'Banner with three columns text',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/download-media-filter.php',
+    'render_template'  	=> 'acf-blocks/banner-with-three-columns-text.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/download-media-filter.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/banner-with-three-columns-text.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Latest News
+	// Complex text with columns
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'all-news',
-    'title'             => __( 'All News', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'complex-text-with-columns',
+    'title'             => 'Complex text with columns',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/complex-text-with-columns.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/complex-text-with-columns.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+	// Banner with numbers and line art
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'banner-with-numbers-and-line-art',
+    'title'             => 'Banner with numbers and line art',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/banner-with-numbers-and-line-art.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/banner-with-numbers-and-line-art.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+	// Simple text
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'simple-text',
+    'title'             => 'Simple text',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/simple-text.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/simple-text.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+	// Banner with accordion
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'banner-with-accordion',
+    'title'             => 'Banner with accordion',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/banner-with-accordion.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/banner-with-accordion.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+	// Two columns diagonal text three
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'two-columns-diagonal-text-three',
+    'title'             => 'Two columns diagonal text three',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/two-columns-diagonal-text-three.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/two-columns-diagonal-text-three.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+	// Portfolio map
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'portfolio-map',
+    'title'             => 'Portfolio map',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/portfolio-map.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/portfolio-map.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+	// Contact map
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'contact-map',
+    'title'             => 'Contact map',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/contact-map.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/contact-map.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+	// All Press Releases
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'all-press-releases',
+    'title'             => 'All Press Releases',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/all-press-releases.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/all-press-releases.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+	// All News
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'show-all-news',
+    'title'             => 'All News',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
@@ -1078,890 +729,132 @@ function skel_register_acf_blocks() {
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/download-media-filter.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/all-news.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Our Featured Work
+	// Project details
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'our-featured-work',
-    'title'             => __( 'Our Featured Work', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'project-details',
+    'title'             => 'Project details',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/our-featured-work.php',
+    'render_template'  	=> 'acf-blocks/project-details.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/our-featured-work.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/project-details.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'portfolio' ),
     'supports'          => array(
       'align' => false,
-      'customClassName' => false
+      'customClassName' => false,
+			'mode' => false
     )
   ));
 
-  // NEW BLOCKS
-  ////////////////////////////////////////////////
-
-  // Hero Scrolling headings
+	// Page hero
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'hero-scrolling-headings',
-    'title'             => __( 'Hero Scrolling Headings', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'page-hero',
+    'title'             => 'Page hero',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/hero-scrolling-headings.php',
+    'render_template'  	=> 'acf-blocks/page-hero.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero-scrolling-headings.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/page-hero.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page', 'portfolio' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Tab Content Slider
+	// Banner with text and line art three
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'tab-content-slider',
-    'title'             => __( 'Tab Content Slider', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'banner-with-text-and-line-art-three',
+    'title'             => 'Banner with text and line art three',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/tab-content-slider.php',
+    'render_template'  	=> 'acf-blocks/banner-with-text-and-line-art-three.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/tab-content-slider.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/banner-with-text-and-line-art-three.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 
-  // Three Cards with Heading Slider
+	// Ribbon Text
   ////////////////////////////////////////////////
   acf_register_block_type(array(
-    'name'              => 'three-cards-with-heading-slider',
-    'title'             => __( 'Three Cards with Heading Slider', 'skel' ),
-    'category'          => 'amana',
+    'name'              => 'ribbon-text',
+    'title'             => 'Ribbon Text',
+    'category'          => 'mubadala',
     'icon' => array(
       'background' => '#ff2500',
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/three-cards-with-heading-slider.php',
+    'render_template'  	=> 'acf-blocks/ribbon-text.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
         'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/three-cards-with-heading-slider.jpg',
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/ribbon-text.jpg',
         ),
       ]
     ],
     'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
+    'post_types'        => array( 'page' ),
     'supports'          => array(
       'align' => false,
       'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Global Offices
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'global-offices',
-    'title'             => __( 'Global Offices', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/global-offices.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/global-offices.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Masked video with Content
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'masked-video-with-content',
-    'title'             => __( 'Masked video with Content', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/masked-video-with-content.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/global-offices.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Two Equal Flip Cards
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'two-equal-flip-cards',
-    'title'             => __( 'Two Equal Flip Cards', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/two-equal-flip-cards.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/two-equal-flip-cards.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Featured Projects with Thumbnails Slider
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'featured-projects-with-thumbnails-slider',
-    'title'             => __( 'Featured Projects with Thumbnails Slider', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/featured-projects-with-thumbnails-slider.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/featured-projects-with-thumbnails-slider.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Single Image with Content Slider
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'single-image-with-content-slider',
-    'title'             => __( 'Single Image with Content Slider', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/single-image-with-content-slider.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/single-image-with-content-slider.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Award Cards
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'award-cards',
-    'title'             => __( 'Award Cards', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/award-cards.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/award-cards.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Latest News Grid
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'latest-news-grid',
-    'title'             => __( 'Latest News Grid', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/latest-news-grid.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/latest-news-grid.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Featured News Grid
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'featured-news-grid',
-    'title'             => __( 'Featured News Grid', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/featured-news-grid.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/featured-news-grid.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // List Logos
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'list-logos',
-    'title'             => __( 'List Logos', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/list-logos.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/list-logos.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Team Cards Slider
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'team-cards-slider',
-    'title'             => __( 'Team Cards Slider', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/team-cards-slider.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/team-cards-slider.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Scrolling Statistics
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'scrolling-statistics',
-    'title'             => __( 'Scrolling Statistics', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/scrolling-statistics.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/scrolling-statistics.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Vertical Slider with icon and details
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'vertical-slider-with-icon-and-details',
-    'title'             => __( 'Vertical Slider with icon and details', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/vertical-slider-with-icon-and-details.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/vertical-slider-with-icon-and-details.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Simple Banner
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'simple-banner',
-    'title'             => __( 'Simple Banner', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/simple-banner.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/simple-banner.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Simple Banner with Popup Video
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'simple-banner-with-popup-video',
-    'title'             => __( 'Simple Banner with Popup Video', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/simple-banner-with-popup-video.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/simple-banner-with-popup-video.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Empty Black Block
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'empty-black-block',
-    'title'             => __( 'Empty Black Block', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/empty-black-block.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/empty-black-block.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Three Columns with Number and Text
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'three-columns-with-number-and-text',
-    'title'             => __( 'Three Columns with Number and Text', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/three-columns-with-number-and-text.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/three-columns-with-number-and-text.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Three Text Cards
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'three-text-cards',
-    'title'             => __( 'Three Text Cards', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/three-text-cards.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/three-text-cards.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Two Column Contact Cards
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'two-column-contact-cards',
-    'title'             => __( 'Two Column Contact Cards', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/two-column-contact-cards.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/two-column-contact-cards.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // History Timeline
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'history-timeline',
-    'title'             => __( 'History Timeline', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/history-timeline.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/history-timeline.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // All Awards
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'all-awards',
-    'title'             => __( 'All Awards', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/all-awards.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/all-awards.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-
-  // Project Meta
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'project-meta',
-    'title'             => __( 'Project Meta', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/project-meta.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/project-meta.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-
-  // Contact Form
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'contact-form',
-    'title'             => __( 'Contact Form', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/contact-form.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/contact-form.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Banner with Content Box
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'banner-with-content-box',
-    'title'             => __( 'Banner with Content Box', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/banner-with-content-box.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/banner-with-content-box.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-  // Two Columns with Quote
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'two-columns-with-quote',
-    'title'             => __( 'Two Columns with Quote', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/two-columns-with-quote.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/two-columns-with-quote.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-	// Three Cards with Image Popup
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'three-cards-with-image-pop-up',
-    'title'             => __( 'Three Cards with Image Popup', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/three-cards-with-image-pop-up.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/three-cards-with-image-pop-up.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
-    )
-  ));
-
-	// Advanced History Timeline
-  ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'advanced-history-timeline',
-    'title'             => __( 'Advanced History Timeline', 'skel' ),
-    'category'          => 'amana',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/advanced-history-timeline.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/advanced-history-timeline.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page', 'news', 'project' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-      'mode' => false,
+			'mode' => false
     )
   ));
 

@@ -25,6 +25,14 @@ function skel_enqueue_scripts() {
 		filemtime( get_template_directory() . '/style.css' )
 	);
 
+	wp_enqueue_style(
+		'mapbox-style',
+		'https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css',
+		array(),
+		'2.0',
+		true
+	);
+
 	// load style-rtl for rtl languages
 	// wp_style_add_data( 'skeleton-style', 'rtl', 'replace' );
 
