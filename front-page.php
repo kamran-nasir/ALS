@@ -15,9 +15,8 @@
 					<div class="overflow-hidden">
 					  <p class="hero-text-animation">Our innovative aluminum based, low maintenance & rust-free architectural solutions turn your outdoor spaces into little pieces of heaven.</p>
 					</div> <!-- .overflow-hidden -->
-
 					<div class="overflow-hidden hero-text-animation">
-						<a class="btn btn-primary btn-rarr" href="#0">Become a dealer</a>
+						<a class="btn btn-secondary btn-rarr" href="#0">Become a dealer</a>
 					</div>
 				</div> <!-- .hero-content -->
 			</div> <!-- .col-md-6 -->
