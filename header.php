@@ -31,13 +31,18 @@
         </div>
         <div class="nav-wrapper ms-auto">
           <nav class="header-secondary">
-            <?php wp_nav_menu( array(
-              'theme_location' => 'header-secondary-menu',
-              'container' => 'false',
-              'menu_class' => 'header-secondary-parent-menu',
-              'items_wrap'	=> '<ul class="%2$s">%3$s</ul>',
-              )
-            ); ?>
+            <?php 
+            if ( has_nav_menu( 'header-secondary-menu' ) ) {
+
+                  wp_nav_menu( array(
+                  'theme_location' => 'header-secondary-menu',
+                  'container' => 'false',
+                  'menu_class' => 'header-secondary-parent-menu',
+                  'items_wrap'	=> '<ul class="%2$s">%3$s</ul>',
+                  )
+                ); 
+            }  
+            ?>
           </nav> <!-- .header-secondary -->
           <nav class="header-nav" role="navigation" aria-label="<?php _e( 'primary navigation', 'skel' ); ?>">
             <button class="header-nav-close" aria-label="<?php _e( 'close primary navigation' ); ?>" aria-haspopup="true" aria-expanded="true" aria-controls="siteMenu"><i class="i-font-before i-x"></i></button>

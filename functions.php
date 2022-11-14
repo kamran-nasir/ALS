@@ -14,15 +14,16 @@ require_once( get_template_directory() . '/functions/wp-plugins.php' );
 require_once( get_template_directory() . '/functions/security.php' );
 require_once( get_template_directory() . '/functions/remove-comments.php' );
 require_once( get_template_directory() . '/functions/custom-post-types.php' );
-require_once( get_template_directory() . '/functions/limit-dashboard-to-admin.php' );
+//require_once( get_template_directory() . '/functions/limit-dashboard-to-admin.php' );
 require_once( get_template_directory() . '/functions/admin-ajax.php' );
+
 
 
 // Register menus
 ////////////////////////////////////////////////
 register_nav_menus(
   array(
-    'header-primary menu' => 'Header Primary Menu',
+    'header-primary-menu' => 'Header Primary Menu',
     'header-secondary-menu' => 'Header Secondary Menu',
     'footer-primary-menu' => 'Footer Primary Menu',
     'footer-secondary-menu' => 'Footer Secondary Menu',
