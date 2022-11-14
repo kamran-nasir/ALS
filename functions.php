@@ -23,7 +23,7 @@ require_once( get_template_directory() . '/functions/remove-post-type.php' );
 ////////////////////////////////////////////////
 register_nav_menus(
   array(
-    // 'header-primary menu' => 'Header Primary Menu',
+    'header-primary menu' => 'Header Primary Menu',
     'header-secondary-menu' => 'Header Secondary Menu',
     'footer-primary-menu' => 'Footer Primary Menu',
     'footer-secondary-menu' => 'Footer Secondary Menu',
