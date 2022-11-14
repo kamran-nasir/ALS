@@ -1,64 +1,5 @@
 <?php
 
-// -- Enable Align wide
-// add_theme_support( 'align-wide' );
-
-// -- Custom Color Pallette
-// add_theme_support( 'editor-color-palette', array(
-//   array(
-//     'name' => __( 'Dark Blue', 'skel' ),
-//     'slug' => 'dark-blue',
-//     'color' => '#221a3e',
-//   ),
-//   array(
-//     'name' => __( 'Blue', 'skel' ),
-//     'slug' => 'Blue',
-//     'color' => '#45367d',
-//   ),
-//   array(
-//     'name' => __( 'Dark gray', 'skel' ),
-//     'slug' => 'dark-gray',
-//     'color' => '#626262',
-//   ),
-//   array(
-//     'name' => __( 'Golden', 'skel' ),
-//     'slug' => 'golden',
-//     'color' => '#d2b66f',
-//   ),
-//   array(
-//     'name' => __( 'Gray', 'skel' ),
-//     'slug' => 'gray',
-//     'color' => '#c2c2c7',
-//   ),
-//   array(
-//     'name' => __( 'Light Gray', 'skel' ),
-//     'slug' => 'gray',
-//     'color' => '#e3e2e8',
-//   ),
-// ) );
-
-// -- Custom Font Sizes
-// add_theme_support( 'editor-font-sizes', array(
-//   array(
-//     'name'      => __( 'Small', 'skel' ),
-//     'shortName' => __( 'S', 'skel' ),
-//     'size'      => 12,
-//     'slug'      => 'small'
-//   ),
-//   array(
-//     'name'      => __( 'Normal', 'skel' ),
-//     'shortName' => __( 'M', 'skel' ),
-//     'size'      => 16,
-//     'slug'      => 'normal'
-//   ),
-//   array(
-//     'name'      => __( 'Large', 'skel' ),
-//     'shortName' => __( 'L', 'skel' ),
-//     'size'      => 20,
-//     'slug'      => 'large'
-//   ),
-// ) );
-
 // When set, users will be restricted to the default sizes provided in the block editor or the sizes provided via the editor-font-sizes theme support setting.
 add_theme_support( 'disable-custom-font-sizes' );
 
@@ -70,6 +11,9 @@ add_theme_support( 'editor-styles' );
 
 // -- Enable responsive embedded content
 add_theme_support( 'responsive-embeds' );
+
+// Add Google Fonts
+// add_editor_style( 'https://fonts.googleapis.com/css?family=Roboto+Slab' );
 
 
 // -- Enqueue editor script
@@ -84,13 +28,13 @@ function skel_gutenberg_scripts() {
   );
   // editor js
   // https://developer.wordpress.org/block-editor/developers/filters/block-filters/#using-a-blacklist
-  wp_enqueue_script (
-    'skel-editor',
-    get_stylesheet_directory_uri() . '/js/editor.js',
-    array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
-    filemtime( get_stylesheet_directory() . '/js/editor.js' ),
-    true
-  );
+  // wp_enqueue_script (
+  //   'skel-editor',
+  //   get_stylesheet_directory_uri() . '/js/editor.js',
+  //   array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
+  //   filemtime( get_stylesheet_directory() . '/js/editor.js' ),
+  //   true
+  // );
   // typekit fonts
   // wp_enqueue_style( 'typekit-fonts', '//use.typekit.net/soi0ors.css', 'all' );
 }
@@ -98,16 +42,22 @@ add_action( 'enqueue_block_editor_assets', 'skel_gutenberg_scripts' );
 
 
 // -- Load custom css in editor
-function skel_editor_css() {
-  ?>
+function skel_editor_css() { ?>
     <style type="text/css">
     /* change the root font size as all selector values are rem unit */
     html {
       font-size: 10px;
     }
+		body#tinymce {
+			margin: 10px; /* required */
+		}
     /* change editor post title height */
     textarea#post-title-0 {
         height: 75px;
+    }
+    /* Post title */
+    .wp-block-post-title {
+      font-size: 3.6rem !important;
     }
     /* change the font styles as per project */
     #editorcontainer #content, #wp_mce_fullscreen, textarea.wp-editor-area, .block-editor-writing-flow {
@@ -146,7 +96,7 @@ function skel_editor_css() {
         max-width: none;
     }
     /* Overwrites */
-    .acf-tab-button li {
+    .acf-tab-group li {
       margin-bottom: 0 !important;
     }
     /* Overwrite sreveal visibility hidden to visible */

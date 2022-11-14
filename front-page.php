@@ -72,7 +72,7 @@
 </section> <!-- .statics-numbers -->
 <section class="solution-section fade-animation pt-10 pb-10">
 	<div class="container">
-		<div class="row justify-content-center text-center mb-5">
+		<div class="row justify-content-center text-center mb-7">
 			<div class="col-md-6">
 			  <div class="title-row">
 					<h3 class="heading-animation m-0">Our Solutions</h3>
@@ -96,7 +96,7 @@
 								</div> <!-- .solution-img -->
 							</div> <!-- .solution-header -->
 							<a href="#0" class="solution-footer">
-								<h4 class="solution-text mb-2 fw-medium">Light Fence®</h4>
+								<h4 class="solution-text mb-1 fw-medium">Light Fence®</h4>
 								<p>Our proudly iconic fencing brand, formed by deep inventive engineering, offers a diverse range of fence styles and designs to help you protect your property.</p>
 								<div class="button">
 								   <button type="button" class="btn btn-inline p-0" href="#0">Explore</button>
@@ -110,7 +110,7 @@
 								</div> <!-- .solution-img -->
 							</div> <!-- .solution-header -->
 							<a href="#0" class="solution-footer">
-								<h4 class="solution-text mb-2 fw-medium">Light Fence®</h4>
+								<h4 class="solution-text mb-1 fw-medium">Gates</h4>
 								<p>Our proudly iconic fencing brand, formed by deep inventive engineering, offers a diverse range of fence styles and designs to help you protect your property.</p>
 								<div class="button">
 								   <button type="button" class="btn btn-inline p-0" href="#0">Explore</button>
@@ -124,7 +124,7 @@
 								</div> <!-- .solution-img -->
 							</div> <!-- .solution-header -->
 							<a href="#0" class="solution-footer">
-								<h4 class="solution-text mb-2 fw-medium">Light Fence®</h4>
+								<h4 class="solution-text mb-1 fw-medium">Sunroof Pergola</h4>
 								<p>Our proudly iconic fencing brand, formed by deep inventive engineering, offers a diverse range of fence styles and designs to help you protect your property.</p>
 								<div class="button">
 								   <button type="button" class="btn btn-inline p-0" href="#0">Explore</button>
@@ -138,7 +138,7 @@
 								</div> <!-- .solution-img -->
 							</div> <!-- .solution-header -->
 							<a href="#0" class="solution-footer">
-								<h4 class="solution-text mb-2 fw-medium">Light Fence®</h4>
+								<h4 class="solution-text mb-1 fw-medium">Privacy Screen</h4>
 								<p>Our proudly iconic fencing brand, formed by deep inventive engineering, offers a diverse range of fence styles and designs to help you protect your property.</p>
 								<div class="button">
 								   <button type="button" class="btn btn-inline p-0" href="#0">Explore</button>
