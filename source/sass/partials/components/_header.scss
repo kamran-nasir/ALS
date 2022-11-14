@@ -6,6 +6,7 @@
   top: 0;
   z-index: 99;
   width: 100vw;
+  background: $white;
   @include media-breakpoint-up(xl) {
     padding-bottom: 0;
   }

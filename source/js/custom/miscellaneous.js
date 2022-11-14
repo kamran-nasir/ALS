@@ -222,33 +222,6 @@ function init(){
     });
   }
 
-  gsap.utils.toArray(".stagger-animation").forEach((element, i) => {
-
-    gsap.from(element, {
-      y: 200,
-
-      scrollTrigger: {
-        trigger: element,
-        start: "20px 80%",
-        toggleActions: "play none none none"
-      }
-    });
-  });
-
-  ScrollTrigger.batch(".stagger-animation", {
-  onEnter: batch => gsap.to(batch, {
-    y: 0,
-    autoAlpha: 1,
-    stagger: {each: 0.5, grid: [1, 9]},
-    overwrite: true,
-    delay: 0.4,
-    duration: 1,
-    stagger: 0.1,
-    ease: Power4.easeOut,
-  }),
-  // onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 100, overwrite: true})
-  });
-   ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".stagger-animation", {y: 0}));
 
   let sections = gsap.utils.toArray(".fade-animation");
   sections.forEach((el) => {
@@ -262,103 +235,6 @@ function init(){
         toggleActions: "play none none none"
       }
     });
-  });
-
-  // gsap.utils.toArray(".has-scroll-to-section-links a").forEach(function (button, i) {
-  //   button.addEventListener("click", (e) => {
-  //     var id = e.target.getAttribute("href");
-  //     console.log(id);
-  //     smoother.scrollTo(id, true, "top top");
-  //     e.preventDefault();
-  //   });
-  // });
-
-  // document.querySelectorAll("a[href^='#']").forEach((a) => {
-  //   a.addEventListener("click", (e) => {
-  //     e.preventDefault();
-  //     ScrollSmoother.get().scrollTo(a.hash, true);
-  //     window.history.pushState({}, "", a.hash);
-  //   });
-  // });
-
-  /* eslint-disable */
-
-
-
-
-
-
-gsap.config({
-  nullTargetWarn: false
-});
-
-// put your code here
-
-//scroll to
-// Detect if a link's href goes to the current page
-function getSamePageAnchor(link) {
-  if (
-    link.protocol !== window.location.protocol ||
-    link.host !== window.location.host ||
-    link.pathname !== window.location.pathname ||
-    link.search !== window.location.search
-  ) {
-    return false;
-  }
-
-  return link.hash;
-}
-
-// Scroll to a given hash, preventing the event given if there is one
-function scrollToHash(hash, e) {
-  const elem = hash ? document.querySelector(hash) : false;
-  if (elem) {
-    if (e) e.preventDefault();
-    ScrollSmoother.get().scrollTo(elem, true);
-  }
-}
-
-// If a link's href is within the current page, scroll to it instead
-document.querySelectorAll(".sub-menu li a[href], .has-scroll-to-section-links a[href]").forEach((a) => {
-  a.addEventListener("click", (e) => {
-    scrollToHash(getSamePageAnchor(a), e), console.log("click and scrolled");
-    $( this ).toggleClass( 'js-active' );
-    $( '.nav-wrapper' ).toggleClass( 'js-active' );
-    $( 'body' ).toggleClass( 'js-popup-active' );
-  });
-
-});
-
-document.querySelectorAll(".sub-menu li a[href^='#'], .has-scroll-to-section-links a[href^='#']").forEach((a) => {
-  a.addEventListener("click", (e) => {
-    e.preventDefault();
-    scrollToHash(a.hash);
-    window.history.pushState({}, "", a.hash);
-    $( this ).toggleClass( 'js-active' );
-    $( '.nav-wrapper' ).toggleClass( 'js-active' );
-    $( 'body' ).toggleClass( 'js-popup-active' );
-  });
-
-});
-
-window.addEventListener("load", refreshScroll);
-
-function refreshScroll() {
-  document.querySelector("#wrapper").scrollTop = 0;
-  window.scrollTo(0, 0);
-  ScrollTrigger.refresh();
-  console.log("refresh", window.location.hash);
-  // Scroll to the element in the URL's hash on load
-  scrollToHash(window.location.hash);
-}
-
-scrollToHash(window.location.hash);
-
-
-  window.addEventListener("load", (e) => {
-    if (window.location.hash) {
-      ScrollSmoother.get().scrollTo(window.location.hash, true);
-    }
   });
 
   let fadeRight = gsap.utils.toArray(".fade-right");
@@ -441,7 +317,9 @@ scrollToHash(window.location.hash);
     end: 'bottom bottom',
   });
 }
+const heroheroQuotes = document.querySelectorAll(".hero-heading-animation");
 const quotes = document.querySelectorAll(".heading-animation");
+const textAnimations = document.querySelectorAll(".text-animation");
 function setupSplits() {
   quotes.forEach(quote => {
     // Reset if needed
@@ -474,306 +352,159 @@ function setupSplits() {
       stagger: 0.02,
       toggleActions: "play none none none"
     });
+
   });
 
-  if ($(".header-logo").length) {
-    TweenMax.from( ".header-logo", 1, {
-      delay: 0.1,
-      opacity: 0,
-      duration: 0.4,
-      y: -20,
-      ease: Expo.easeInOut,
+  heroheroQuotes.forEach(heroQuote => {
+    // Reset if needed
+    gsap.from(heroQuote, {
+      autoAlpha: 0,
+      duration: 0.8,
+      y: 100,
+      ease: Power4.easeOut
     });
-  }
+    if(heroQuote.anim) {
+      heroQuote.anim.progress(1).kill();
+      heroQuote.split.revert();
+    }
 
-  if ($(".header-nav-toggle").length) {
-    TweenMax.to( ".header-nav-toggle", 1, {
-      delay: 0.2,
-      opacity: 1,
-      duration: 0.4,
-      y: 0,
-      ease: Expo.easeInOut,
+    heroQuote.split = new SplitText(heroQuote, {
+      type: "lines,words,chars",
+      linesClass: "split-line"
     });
-  }
 
-  if ($(window).width() > 1200) {
-
-    if ($(".header-secondary").length) {
-      TweenMax.staggerFrom(
-        ".header-secondary .has-animation",
-        1, {
-          delay: 0.2,
-          opacity: 0,
-          duration: 0.4,
-          y: -20,
-          ease: Expo.easeInOut,
-        },
-        0.1
-      );
-    }
-    if ($(".header-nav").length) {
-      TweenMax.staggerFrom(
-        ".header-nav .has-animation",
-        1, {
-          delay: 0.3,
-          opacity: 0,
-          duration: 0.4,
-          y: -20,
-          ease: Expo.easeInOut,
-        },
-        0.1
-      );
-    }
-  }
-
-  function hide(elem) {
-    gsap.set(elem, {autoAlpha: 0});
-  }
-
-  function loadLottie() {
-    var animation1Data = document.getElementsByClassName("border-animation-1");
-    function animationOne(animation1Data) {
-      var animation = bodymovin.loadAnimation({
-        container: animation1Data,
-        renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        rendererSettings: {
-          preserveAspectRatio: 'none', // Supports the same options as the svg element's
-        },
-        path: '/wp-content/themes/mubadala-energy/json/border-animation-1.json'
-      });
-      ScrollTrigger.create({
-        trigger: animation1Data,
-        markers:false,
+    // Set up the anim
+    heroQuote.anim = gsap.from(heroQuote.split.chars, {
+      scrollTrigger: {
+        trigger: heroQuote,
         start: "20px 80%",
-        immediateRender: false,
-        toggleActions:"play null reset reset",
-        onEnter: playanimation1,
-        onComplete: () => ScrollTrigger.refresh(),
-      })
-      function playanimation1 (animData) {
-        animation.play();
-      }
-    }
-    for (var i = 0; i < animation1Data.length; i++) {
-      animationOne(animation1Data[i]);
-    }
+      },
+      autoAlpha: 0,
+      delay: 2.4,
+      duration: 0.6,
+      ease: "circ.out",
+      y: 100,
+      stagger: 0.02,
+      toggleActions: "play none none none"
+    });
 
-    var animation2Data = document.getElementsByClassName("border-animation-2");
-    function animationTwo(animation2Data) {
-      var animation = bodymovin.loadAnimation({
-        container: animation2Data,
-        renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        rendererSettings: {
-          preserveAspectRatio: 'none', // Supports the same options as the svg element's
-        },
-        path: '/wp-content/themes/mubadala-energy/json/border-animation-2.json'
-      });
-      ScrollTrigger.create({
-        trigger: animation2Data,
-        markers:false,
+  });
+
+  textAnimations.forEach(textAnimation => {
+    textAnimation.childSplit = new SplitText(textAnimation, {
+      type: "lines",
+      linesClass: "split-child"
+    });
+    textAnimation.parentSplit = new SplitText(textAnimation, {
+      // type: "lines",
+      linesClass: "split-parent"
+    });
+    // Set up the anim
+    textAnimation.anim = gsap.from(textAnimation.childSplit.lines, {
+      scrollTrigger: {
+        trigger: textAnimation,
         start: "20px 80%",
-        immediateRender: false,
-        toggleActions:"play null reset reset",
-        onEnter: playanimation2,
-        onComplete: () => ScrollTrigger.refresh(),
-      })
-      function playanimation2 (animData) {
-        animation.play();
-      }
-    }
-    for (var i = 0; i < animation2Data.length; i++) {
-      animationTwo(animation2Data[i]);
-    }
+      },
+      duration: 1.5,
+      delay: 1,
+      yPercent: 100,
+      ease: "power4",
+      stagger: 0.1
+    });
+  });
 
-    var animation3Data = document.getElementsByClassName("border-animation-3");
-    function animationThree(animation3Data) {
-      var animation = bodymovin.loadAnimation({
-        container: animation3Data,
-        renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        rendererSettings: {
-          preserveAspectRatio: 'none', // Supports the same options as the svg element's
-        },
-        path: '/wp-content/themes/mubadala-energy/json/border-animation-3.json'
-      });
-      ScrollTrigger.create({
-        trigger: animation3Data,
-        markers:false,
+  const childSplit = new SplitText(".hero-text-animation", {
+    type: "lines",
+    linesClass: "split-child"
+  });
+  const parentSplit = new SplitText(".hero-text-animation", {
+    // type: "lines",
+    linesClass: "split-parent"
+  });
+
+  gsap.from(childSplit.lines, {
+    duration: 1.5,
+    delay: 3,
+    yPercent: 100,
+    ease: "power4",
+    stagger: 0.1
+  });
+
+
+
+  gsap.utils.toArray(".stagger-animation").forEach((element, i) => {
+    gsap.from(element, {
+      y: 200,
+      scrollTrigger: {
+        trigger: element,
         start: "20px 80%",
-        immediateRender: false,
-        toggleActions:"play null reset reset",
-        onEnter: playanimation3,
-        onComplete: () => ScrollTrigger.refresh(),
-      })
-      function playanimation3 (animData) {
-        animation.play();
+        toggleActions: "play none none none"
       }
-    }
-    for (var i = 0; i < animation3Data.length; i++) {
-      animationThree(animation3Data[i]);
-    }
+    });
+  });
 
-    var animation4Data = document.getElementsByClassName("border-animation-4");
-    function animationFour(animation4Data) {
-      var animation = bodymovin.loadAnimation({
-        container: animation4Data,
-        renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        rendererSettings: {
-          preserveAspectRatio: 'none', // Supports the same options as the svg element's
-        },
-        path: '/wp-content/themes/mubadala-energy/json/border-animation-4.json'
+  ScrollTrigger.batch(".stagger-animation", {
+  onEnter: batch => gsap.to(batch, {
+    y: 0,
+    autoAlpha: 1,
+    stagger: {each: 0.5, grid: [1, 9]},
+    overwrite: true,
+    duration: 1,
+    delay: 1.5,
+    stagger: 0.1,
+    ease: Power4.easeOut,
+  }),
+  // onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 100, overwrite: true})
+  });
+   ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".stagger-animation", {y: 0}));
+
+  TweenMax.to(".overlay", 2, {
+    delay: 1,
+    top: "-100%",
+    ease: Expo.easeInOut
+  });
+  TweenMax.to(".overlay>img", 2, {
+    opacity: 0,
+    y: -60,
+    ease: Expo.easeInOut
+  });
+  TweenMax.from(".header-logo", 1, {
+    delay: 2.4,
+    opacity: 0,
+    y: -20,
+    ease: Expo.easeInOut
+  });
+  TweenMax.from(".banner-box", 1, {
+    delay: 1.5,
+    duration: 1,
+    scale: 1.5,
+    ease: Linear.easeInOut,
+
+  });
+  TweenMax.staggerFrom(".header-secondary-parent-menu li", 1, {
+    delay: 2.4, opacity: 0, y: 20, ease: Expo.easeInOut
+  }, 0.2)
+
+  $(".counts").each(function(index, element) {
+    var count = $(this),
+        zero = {val:0},
+        num = count.data("number"),
+        split = (num + "").split("."),
+        decimals = split.length > 1 ? split[1].length : 0;
+
+      gsap.to(zero, {
+        val: num,
+        duration: 3,
+        scrollTrigger: element,
+        onUpdate: function() {
+          count.text(zero.val.toFixed(decimals));
+        }
       });
-      ScrollTrigger.create({
-        trigger: animation4Data,
-        markers:false,
-        start: "20px 80%",
-        immediateRender: false,
-        toggleActions:"play null reset reset",
-        onEnter: playanimation4,
-        onComplete: () => ScrollTrigger.refresh(),
-      })
-      function playanimation4 (animData) {
-        animation.play();
-      }
-    }
-    for (var i = 0; i < animation4Data.length; i++) {
-      animationFour(animation4Data[i]);
-    }
+});
 
-    var animation5Data = document.getElementsByClassName("border-animation-5");
-    function animationFive(animation5Data) {
-      var animation = bodymovin.loadAnimation({
-        container: animation5Data,
-        renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        rendererSettings: {
-          preserveAspectRatio: 'none', // Supports the same options as the svg element's
-        },
-        path: '/wp-content/themes/mubadala-energy/json/border-animation-5.json'
-      });
-      ScrollTrigger.create({
-        trigger: animation5Data,
-        markers:false,
-        start: "20px 80%",
-        immediateRender: false,
-        toggleActions:"play null reset reset",
-        onEnter: playanimation5,
-        onComplete: () => ScrollTrigger.refresh(),
-      })
-      function playanimation5 (animData) {
-        animation.play();
-      }
-    }
-    for (var i = 0; i < animation5Data.length; i++) {
-      animationFive(animation5Data[i]);
-    }
 
-    var animation6Data = document.getElementsByClassName("border-animation-6");
-    function animationSix(animation6Data) {
-      var animation = bodymovin.loadAnimation({
-        container: animation6Data,
-        renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        rendererSettings: {
-          preserveAspectRatio: 'none', // Supports the same options as the svg element's
-        },
-        path: '/wp-content/themes/mubadala-energy/json/border-animation-6.json'
-      });
-      ScrollTrigger.create({
-        trigger: animation6Data,
-        markers:false,
-        start: "20px 80%",
-        immediateRender: false,
-        toggleActions:"play null reset reset",
-        onEnter: playanimation6,
-        onComplete: () => ScrollTrigger.refresh(),
-      })
-      function playanimation6 (animData) {
-        animation.play();
-      }
-    }
-    for (var i = 0; i < animation6Data.length; i++) {
-      animationSix(animation6Data[i]);
-    }
-
-    var animation7Data = document.getElementsByClassName("border-animation-7");
-    function animationSeven(animation7Data) {
-      var animation = bodymovin.loadAnimation({
-        container: animation7Data,
-        renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        rendererSettings: {
-          preserveAspectRatio: 'none', // Supports the same options as the svg element's
-        },
-        path: '/wp-content/themes/mubadala-energy/json/border-animation-7.json'
-      });
-      ScrollTrigger.create({
-        trigger: animation7Data,
-        markers:false,
-        start: "20px 80%",
-        immediateRender: false,
-        toggleActions:"play null reset reset",
-        onEnter: playanimation7,
-        onComplete: () => ScrollTrigger.refresh(),
-      })
-      function playanimation7 (animData) {
-        animation.play();
-      }
-    }
-    for (var i = 0; i < animation7Data.length; i++) {
-      animationSeven(animation7Data[i]);
-    }
-
-    var animation8Data = document.getElementsByClassName("border-animation-8");
-    function animationEight(animation8Data) {
-      var animation = bodymovin.loadAnimation({
-        container: animation8Data,
-        renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        rendererSettings: {
-          preserveAspectRatio: 'none', // Supports the same options as the svg element's
-        },
-        path: '/wp-content/themes/mubadala-energy/json/border-animation-8.json'
-      });
-      ScrollTrigger.create({
-        trigger: animation8Data,
-        markers:false,
-        start: "20px 80%",
-        immediateRender: false,
-        toggleActions:"play null reset reset",
-        onEnter: playanimation8,
-        onComplete: () => ScrollTrigger.refresh(),
-      })
-      function playanimation8 (animData) {
-        animation.play();
-      }
-    }
-    for (var i = 0; i < animation8Data.length; i++) {
-      animationEight(animation8Data[i]);
-    }
-
-  }
-  loadLottie();
-
-document.querySelector('.searchbox [type="reset"]').addEventListener('click', function() {  this.parentNode.querySelector('input').focus();});
 }
-$(document).ready(function(){
-// wait until window is loaded - all images, styles-sheets, fonts, links, and other media assets
-    // OPTIONAL - waits til next tick render to run code (prevents running in the middle of render tick)
-    window.requestAnimationFrame(function() {
-      init();
-      setupSplits();
-      alert("Hello! I am an alert box!!");
-    });
+window.requestAnimationFrame(function() {
+  init();
+  setupSplits();
 });

@@ -25,18 +25,20 @@ function threeCardsSlider() {
 				nextEl: "." + nextClass,
 			},
 			breakpoints: {
-				1024: {
-					slidesPerView: 2.8,
-					spaceBetween: 25,
+				640: {
+					slidesPerView: 1,
+					spaceBetween: 16,
 				},
 				768: {
 					slidesPerView: 2.2,
 					spaceBetween: 25,
 				},
-				640: {
-					slidesPerView: 1,
-					spaceBetween: 16,
+
+				1024: {
+					slidesPerView: 2.8,
+					spaceBetween: 25,
 				},
+
 
 			},
 
@@ -89,6 +91,38 @@ function fourCardsSlider() {
 	});
 }
 fourCardsSlider();
+
+
+
+
+// Swiper Configuration
+var swiper = new Swiper ('.centered-swiper', {
+  slidesPerView: 1.8,
+  spaceBetween: 10,
+  centeredSlides: true,
+  grabCursor: true,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+  },
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  breakpoints: {
+    500: {
+      slidesPerView: 1
+    },
+    700: {
+      slidesPerView: 1.1
+    }
+  }
+});
 
 
 

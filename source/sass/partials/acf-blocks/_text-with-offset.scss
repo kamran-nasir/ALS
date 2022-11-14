@@ -1,0 +1,17 @@
+.text-with-offset-images {
+	p {
+		line-height: 2;
+		max-width: 90%;
+	}
+	.img-large {
+		width: rem-calc(530px);
+		height: rem-calc(620px)
+	}
+	.img-small {
+		width: rem-calc(450px);
+		height: rem-calc(450px);
+		margin-top:  rem-calc(-450px);
+    margin-left: calc(100% - 440px);
+		bottom: rem-calc(-60px);
+	}
+}

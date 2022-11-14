@@ -33,7 +33,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "compass-mixins": "^0.12.12",
     "install": "^0.13.0"
   }
 }

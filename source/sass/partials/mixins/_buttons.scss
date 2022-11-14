@@ -1,15 +1,18 @@
 @mixin btn {
-	font-size: rem-calc(14px);
-	font-weight: 600;
+	font-size: rem-calc(16px);
+	font-weight: 300;
 	line-height: $btn-line-height;
+	letter-spacing: rem-calc(1px);
+	text-transform: uppercase;
 	display: flex;
 	width: fit-content;
 	align-items: center;
-	padding-top: rem-calc(10px);
+	padding-top: rem-calc(18px);
 	padding-right: rem-calc(32px);
-	padding-bottom: rem-calc(10px);
+	padding-bottom: rem-calc(18px);
 	padding-left: rem-calc(32px);
 	transition: 0.35s;
+
 }
 
 @mixin btn-input-clone($bg-color) {
@@ -58,43 +61,20 @@
 	position: relative;
 	display: inline-flex;
 	align-items: center;
-	color: $milano-red;
-	margin-right: rem-calc(34px);
 	&::after {
-		@include icon-font-properties;
-		content: $i-chevron-right;
-		font-size: rem-calc(24px);
-		font-weight: bold;
-		margin-left: rem-calc(10px);
+		content: "";
+		background-image: url("data:image/svg+xml,%3Csvg width='13' height='9' viewBox='0 0 13 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.49997H11.5M9.5 0.642822L12.5 4.49997L9.5 8.35711' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+		height: rem-calc(15px);
+		width: rem-calc(20px);
+		background-size: contain;
+		background-repeat: no-repeat;
+		margin-left: rem-calc(15px);
 		transition: 0.2s ease;
-		position: absolute;
-		right: rem-calc(-34px);
 	}
 	&:hover,
 	&:focus {
 		&::after {
 			transform: translateX(rem-calc(5px));
-		}
-	}
-	&::before {
-		content: "";
-		position: absolute;
-		bottom: rem-calc(-4px);
-		left: 0;
-		display: block;
-		width: 100%;
-		height: rem-calc(2px);
-		border-radius: 10px;
-		background-color: $milano-red;
-		transition: transform .5s cubic-bezier(.19,1,.22,1);
-		transform: scaleX(0);
-		transform-origin: right;
-	}
-	&:hover {
-		color: $milano-red;
-		&::before {
-			transform: scaleX(1);
-			transform-origin: left;
 		}
 	}
 }
@@ -122,26 +102,25 @@
 
 @mixin btn-inline {
 	text-decoration: none;
+	color: $milano-red;
 	position: relative;
-	&::before {
+	display: inline-flex;
+	align-items: center;
+	&::after {
 		content: "";
-		position: absolute;
-		bottom: rem-calc(-4px);
-		left: 0;
-		display: block;
-		width: 100%;
-		height: rem-calc(2px);
-		border-radius: rem-calc(10px);
-		background-color: $milano-red;
-		transition: transform .5s cubic-bezier(.19,1,.22,1);
-		transform: scaleX(0);
-		transform-origin: right;
+		height: rem-calc(15px);
+		width: rem-calc(20px);
+		background-size: contain;
+		background-repeat: no-repeat;
+		margin-left: rem-calc(15px);
+		transition: 0.2s ease;
+		background-image: url("data:image/svg+xml,%3Csvg width='13' height='9' viewBox='0 0 13 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.49997H11.5M9.5 0.642822L12.5 4.49997L9.5 8.35711' stroke='%23C8151D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 	}
-	&:hover {
+	&:hover,
+	&:focus {
 		color: $milano-red;
-		&::before {
-			transform: scaleX(1);
-			transform-origin: left;
+		&::after {
+			transform: translateX(rem-calc(5px));
 		}
 	}
 }

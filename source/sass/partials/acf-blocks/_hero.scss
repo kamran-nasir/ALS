@@ -16,3 +16,29 @@
     }
   }
 }
+
+.hero-text-animation {
+  > div {
+    position: relative;
+    margin: 0;
+  }
+  .split-parent {
+    overflow: hidden;
+  }
+  .split-child {
+    display: inline-block;
+  }
+}
+
+.text-animation {
+  > div {
+    position: relative;
+    margin: 0;
+  }
+  .split-parent {
+    overflow: hidden;
+  }
+  .split-child {
+    display: inline-block;
+  }
+}

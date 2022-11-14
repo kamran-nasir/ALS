@@ -1,0 +1,37 @@
+.statics-numbers {
+	.numbers-row {
+		.numbers-wrap {
+			display: flex;
+			align-items: center;
+			position: relative;
+			.numbers {
+				position: relative;
+				.line-number {
+					font-size: rem-calc(100px);
+					-webkit-text-stroke: 1px rgba($white, 0.2);
+					-webkit-text-fill-color: $midnight;
+				}
+				.counts {
+					z-index: 1;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+          transform: translate(-50%, -50%);
+				}
+			}
+			.content {
+				position: absolute;
+				left: rem-calc(130px);
+				text-transform: uppercase;
+				max-width: rem-calc(280px);
+			}
+		}
+		&:last-of-type {
+			.numbers-wrap {
+					.content {
+						left: rem-calc(180px);
+					}
+			}
+		}
+	}
+}
