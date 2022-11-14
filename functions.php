@@ -12,11 +12,10 @@ require_once( get_template_directory() . '/functions/enqueue-scripts.php' );
 require_once( get_template_directory() . '/functions/remove-junk-from-head.php' );
 require_once( get_template_directory() . '/functions/wp-plugins.php' );
 require_once( get_template_directory() . '/functions/security.php' );
-require_once( get_template_directory() . '/functions/acf.php' );
-require_once( get_template_directory() . '/functions/custom-post-types.php' );
-require_once( get_template_directory() . '/functions/api.php' );
 require_once( get_template_directory() . '/functions/remove-comments.php' );
-require_once( get_template_directory() . '/functions/remove-post-type.php' );
+require_once( get_template_directory() . '/functions/custom-post-types.php' );
+require_once( get_template_directory() . '/functions/limit-dashboard-to-admin.php' );
+require_once( get_template_directory() . '/functions/admin-ajax.php' );
 
 
 // Register menus
