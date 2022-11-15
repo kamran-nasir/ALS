@@ -15,20 +15,20 @@
 
 	<div class="banner-box banner-with-overlay img-cover-block hero-bg">
 	<?php
-				$image_data = wp_get_attachment_image_src( $background_image, 'w1920' );
-				$image_alt = get_post_meta( $background_image, '_wp_attachment_image_alt', true );
-				$image_alt = esc_attr( trim( strip_tags( $image_alt ) ) );
-			?>
-			<img
-				src="<?php echo wp_get_attachment_image_url( $background_image, 'w1920' ) ?>"
-				srcset="<?php echo wp_get_attachment_image_srcset( $background_image ) ?>"
-				sizes="100vw"
-				alt="<?php echo $image_alt; ?>"
-				width="<?php echo $image_data[1]; ?>"
-				height="<?php echo $image_data[2]; ?>"
-				class="img-cover has-parallax-effect"
-				data-speed="1.1"
-			/>
+			$image_data = wp_get_attachment_image_src( $background_image, 'w1920' );
+			$image_alt = get_post_meta( $background_image, '_wp_attachment_image_alt', true );
+			$image_alt = esc_attr( trim( strip_tags( $image_alt ) ) );
+	?>
+	<img
+		src="<?php echo wp_get_attachment_image_url( $background_image, 'w1920' ) ?>"
+		srcset="<?php echo wp_get_attachment_image_srcset( $background_image ) ?>"
+		sizes="100vw"
+		alt="<?php echo $image_alt; ?>"
+		width="<?php echo $image_data[1]; ?>"
+		height="<?php echo $image_data[2]; ?>"
+		class="img-cover has-parallax-effect"
+		data-speed="1.1"
+	/>
 	</div> <!-- .hero-bg -->
 	<div class="container h-100">
 		<div class="row h-100 align-items-center">

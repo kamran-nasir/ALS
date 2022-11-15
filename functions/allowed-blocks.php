@@ -17,12 +17,13 @@
 function misha_allowed_block_types( $allowed_blocks, $editor_context ) {
 
   $allowed_blocks = array(
-	//	'acf/text-editor',
+		'acf/text-editor',
 		'acf/hero',
+		'acf-blocks/about-us',
 		// 'acf/banner-with-scrolling-text',
-		// 'acf/banner-with-text-and-line-art',
-		// 'acf/banner-with-text-and-line-art-two',
-		// 'acf/banner-with-text-and-line-art-three',
+		 'acf/banner-with-text-and-line-art',
+		 'acf/banner-with-text-and-line-art-two',
+		 'acf/banner-with-text-and-line-art-three',
 		// 'acf/news-cards-slider',
 		// 'acf/simple-text',
 		// 'acf/two-columns-diagonal-text',
