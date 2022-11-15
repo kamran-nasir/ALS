@@ -1075,7 +1075,7 @@ function threeCardsSlider() {
 				},
 
 				1024: {
-					slidesPerView: 2.8,
+					slidesPerView: 2.2,
 					spaceBetween: 25,
 				},
 
