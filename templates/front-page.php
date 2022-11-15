@@ -149,17 +149,24 @@
 	</div> <!-- .container -->
 </section> <!-- .solution-section -->
 
-<section class="cards-with-hover pt-10 pb-10">
+<section class="cards-with-hover position-relative pt-10 pb-10">
+  <ul class="js-ticker list-unstyled marquee-text">
+    <li>Durable</li>
+    <li>Affordable</li>
+		<li>Green</li>
+  </ul>
 	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="highlighted-heading">
-				  Durable, Affordable & Green
-				</h2> <!-- .h2 -->
-				<p>Renewable sources of energy can help countries mitigate climate change, build resilience to volatile prices, and lower energy costs.</p>
-				<div class="bg-animations">
-					<h3>Durable - Affordable - Green</h3>
-				</div> <!-- .bg-animations -->
+		<div class="row justify-content-center text-center mb-7">
+			<div class="col-md-7">
+				<div class="title-row">
+					<div class="title-wrap">
+						<h2 class="heading-animation m-0">Durable, Affordable & Green</h2>
+						<div class="fade-animation">
+							<span class="bottom-line line-centered"></span>
+						</div> <!-- .fade-animation -->
+					</div> <!-- .title-wrap -->
+					<p class="text-animation">Renewable sources of energy can help countries mitigate climate change, build resilience to volatile prices, and lower energy costs.</p>
+				</div> <!-- .title-row -->
 			</div> <!-- .col-12 -->
 		</div> <!-- .row -->
 		<div class="row">
@@ -196,68 +203,88 @@
 
 <section class="centered-gallery pt-10 pb-10">
   <div class="container">
+		<div class="row justify-content-center text-center mb-7">
+			<div class="col-md-7">
+				<div class="title-row">
+					<div class="title-wrap">
+						<h2 class="heading-animation m-0">Get Inspired</h2>
+						<div class="fade-animation">
+							<span class="bottom-line line-centered"></span>
+						</div> <!-- .fade-animation -->
+					</div> <!-- .title-wrap -->
+					<p class="text-animation">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada amet nibh sed diam. Tristique consequat pharetra </p>
+				</div> <!-- .title-row -->
+			</div> <!-- .col-12 -->
+		</div> <!-- .row -->
 		<div class="row">
 			<div class="col-12">
-			<div class="centered-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="card-image">
-            <img src="https://source.unsplash.com/1280x720/?nature" alt="Image Slider">
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card-image">
-            <img src="https://source.unsplash.com/1280x720/?nature,water,animal" alt="Image Slider">
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card-image">
-            <img src="https://source.unsplash.com/1280x720/?water" alt="Image Slider">
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card-image">
-            <img src="https://source.unsplash.com/1280x720/?animal" alt="Image Slider">
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card-image">
-            <img src="https://source.unsplash.com/1280x720/?travel" alt="Image Slider">
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card-image">
-            <img src="https://source.unsplash.com/1280x720/?flower" alt="Image Slider">
-          </div>
-        </div>
-      </div>
-      <!-- Add Pagination -->
-      <div class="swiper-pagination"></div>
-      <!-- Add Scrollbar -->
-      <div class="swiper-button-next">
-        <i class="fas fa-chevron-circle-right arrow-icon"></i>
-      </div>
-      <div class="swiper-button-prev">
-        <i class="fas fa-chevron-circle-left arrow-icon"></i>
-      </div>
-    </div>
-
+				<div class="centered-swiper">
+					<div class="swiper-wrapper lr_scroll">
+						<div class="swiper-slide">
+							<div class="card-image">
+								<img src="https://source.unsplash.com/1280x720/?nature" alt="Image Slider">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="card-image">
+								<img src="https://source.unsplash.com/1280x720/?nature,water,animal" alt="Image Slider">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="card-image">
+								<img src="https://source.unsplash.com/1280x720/?water" alt="Image Slider">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="card-image">
+								<img src="https://source.unsplash.com/1280x720/?animal" alt="Image Slider">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="card-image">
+								<img src="https://source.unsplash.com/1280x720/?travel" alt="Image Slider">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="card-image">
+								<img src="https://source.unsplash.com/1280x720/?flower" alt="Image Slider">
+							</div>
+						</div>
+					</div>
+				</div>
 			</div> <!-- .col-12 -->
 		</div> <!-- .row -->
   </div>
 </section>
 
-<section class="download-catalog">
-	<div class="container">
+<section class="download-catalog pb-10">
+	<div class="container position-relative overflow-hidden">
 		<div class="row">
-			<div class="col-md-4">
-				<h3>Download our catalog & Look book</h3>
-				<p>Download our carefully compiled catalog with fresh innovative designs and chose the ones you like. Just fill in the information and you are good to go.</p>
-			</div> <!-- .col-md-4 -->
-			<div class="col-md-8">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/catalog-sample.png" alt="">
-			</div> <!-- .col-md-8 -->
+			<div class="col-12">
+				<div class="bg-midnight-200">
+					<div class="d-flex flex-wrap align-items-center position-relative z-index-1">
+						<div class="col-md-5 ps-6">
+							<div class="title-row">
+								<h2 class="heading-animation m-0">Download our catalog & Look book</h2>
+								<div class="fade-animation">
+									<span class="bottom-line"></span>
+								</div> <!-- .fade-animation -->
+							</div> <!-- .title-row -->
+							<p class="text-animation">Download our carefully compiled catalog with fresh innovative designs and chose the ones you like. Just fill in the information and you are good to go.</p>
+							<div class="text-animation">
+									<a class="btn btn-secondary btn-rarr" href="#0">download</a>
+							</div>
+						</div> <!-- .col-md-4 -->
+						<div class="col-md-7">
+							<div class="img-wrapper fade-animation">
+							  <img src="<?php echo get_template_directory_uri(); ?>/images/catalog-sample.png" alt="">
+							</div> <!-- .img-wrapper -->
+						</div> <!-- .col-md-8 -->
+					</div> <!-- .d-flex flex-wrap -->
+				</div> <!-- .bg-midnight-200 position-relative -->
+			</div> <!-- .col-12 -->
 		</div> <!-- .row -->
+		<img src="<?php echo get_template_directory_uri(); ?>/images/wooden-lines.png" alt="" class="img-cover">
 	</div> <!-- .container -->
 </section> <!-- .download-catalog -->
 

@@ -18,7 +18,10 @@
 <body <?php body_class( 'site-wrapper' ); ?>>
 
 <?php wp_body_open(); ?>
-
+<span class="cursor">
+  <span class="cursor__follower"></span>
+	<span class="cursor__label">drag</span>
+</span>
 <header class="site-header clearfix" role="banner">
   <div class="container">
     <div class="row">
@@ -31,7 +34,7 @@
         </div>
         <div class="nav-wrapper ms-auto">
           <nav class="header-secondary">
-            <?php 
+            <?php
             if ( has_nav_menu( 'header-secondary-menu' ) ) {
 
                   wp_nav_menu( array(
@@ -40,8 +43,8 @@
                   'menu_class' => 'header-secondary-parent-menu',
                   'items_wrap'	=> '<ul class="%2$s">%3$s</ul>',
                   )
-                ); 
-            }  
+                );
+            }
             ?>
           </nav> <!-- .header-secondary -->
           <nav class="header-nav" role="navigation" aria-label="<?php _e( 'primary navigation', 'skel' ); ?>">

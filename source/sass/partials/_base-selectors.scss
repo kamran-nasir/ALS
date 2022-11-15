@@ -68,7 +68,7 @@ h2, .h2 {
   line-height: 120%;
   @include media-breakpoint-up( md ) {
     font-size: rem-calc( 48px );
-    line-height: 160%;
+    line-height: 130%;
   }
 }
 

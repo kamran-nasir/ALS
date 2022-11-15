@@ -1,6 +1,6 @@
 
 <?php
-//  Block options   
+//  Block options
   $background_image    = get_field('background_image');
   $heading             = get_field('heading');
   $description         = get_field('description');
