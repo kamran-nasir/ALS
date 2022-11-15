@@ -75,6 +75,97 @@ function skel_register_acf_blocks() {
     )
   ));
 
+  //About Us 
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'about-us-with-text-banner',
+    'title'             => 'About us With Text Banner',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/about-us-with-text-banner.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+
+  //About Us 
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'count-text-number',
+    'title'             => 'Count Text Number',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/count-text-number.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+
+	// solution-section
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'solution-section',
+    'title'             => 'Solution section',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/solution-section.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/banner-with-scrolling-text.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+    
+
+
 	// Banner with scrolling text
   ////////////////////////////////////////////////
   acf_register_block_type(array(
