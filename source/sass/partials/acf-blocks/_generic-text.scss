@@ -1,19 +1,25 @@
-.bottom-line {
-	display: block;
-	width: rem-calc(80px);
-	height: rem-calc(70px);
-	position: relative;
-	&::after {
-		content: "";
-		height: rem-calc(1px);
-		width: 100%;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
-		background: $milano-red;
+.title-row {
+	.bottom-line {
+		display: block;
+		width: rem-calc(80px);
+		height: rem-calc(60px);
+		position: relative;
+		&::after {
+			content: "";
+			height: rem-calc(1px);
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			background: $milano-red;
+		}
+		&.line-centered {
+			margin: 0 auto;
+		}
 	}
-	&.line-centered {
-		margin: 0 auto;
+	p {
+		font-size: rem-calc(21px);
+		line-height: 1.9;
 	}
 }

@@ -3,7 +3,7 @@
 :root {
   --scrollbar-width: rem-calc( 10px );
   @include fluid( font-size, $scaling, $four-k, $font-size-root, $font-size-root * 2.4, true, false );
-  // @include fluid( font-size, $mobile, $scaling, $font-size-root, $font-size-root, false, false ); // scale down
+  @include fluid( font-size, $mobile, $scaling, $font-size-root, $font-size-root, true, true ); // scale down
 }
 
 ::selection { background: $text-selection-bg-color;
@@ -51,7 +51,7 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-weight: 300;
+  font-weight: 400;
   color: $midnight-500;
 }
 
@@ -117,7 +117,7 @@ p, table, ul, ol, dl, dd, pre, blockquote, address, h1, h2, h3, h4, h5, h6 {
 }
 
 p, pre, blockquote, address, dd {
-  line-height: $line-height-lg;
+  line-height: 1.9;
 }
 
 p, table, ul, ol, dl, dd, pre, blockquote, address {

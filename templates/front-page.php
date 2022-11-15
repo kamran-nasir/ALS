@@ -1,12 +1,11 @@
 <?php /* Template Name: Test*/ ?>
-
 <?php get_header(); ?>
 <section class="text-with-offset-images pt-10 position-relative z-index-1">
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-md-6 pe-8">
 				<div class="title-row">
-					<h3 class="heading-animation m-0">Where elegant design, innovation, and durability meet</h3>
+					<h2 class="heading-animation m-0">Where elegant design, innovation, and durability meet</h2>
 					<div class="fade-animation">
 					  <span class="bottom-line"></span>
 					</div> <!-- .fade-animation -->
@@ -28,7 +27,7 @@
 	</div> <!-- .container -->
 </section> <!-- .text-with-offset-images -->
 <section class="statics-numbers bg-primary text-white pt-5 pb-5 position-relative">
-	<div class="container position-relative z-index-1">
+	<div class="container position-relative z-index-1 overflow-hidden">
 		<div class="row">
 			<div class="col-md-4 numbers-row stagger-animation">
 				 <div class="numbers-wrap">
@@ -69,31 +68,31 @@
 </section> <!-- .statics-numbers -->
 <section class="solution-section fade-animation pt-10 pb-10">
 	<div class="container">
-		<div class="row justify-content-center text-center mb-5">
-			<div class="col-md-6">
+		<div class="row justify-content-center text-center mb-7">
+			<div class="col-md-7">
 			  <div class="title-row">
-					<h3 class="heading-animation m-0">Our Solutions</h3>
-					<div class="fade-animation">
-					  <span class="bottom-line line-centered"></span>
-					</div> <!-- .fade-animation -->
+					<div class="title-wrap">
+						<h2 class="heading-animation m-0">Our Solutions</h2>
+						<div class="fade-animation">
+							<span class="bottom-line line-centered"></span>
+						</div> <!-- .fade-animation -->
+					</div> <!-- .title-wrap -->
+					<p class="text-animation">The foremost market Innovators in manufacturing environment friendly Sunroof Pergola, Sun Shutters, Privacy Screens, & Light Fences.</p>
 				</div> <!-- .title-row -->
-				<p class="text-animation">The foremost market Innovators in manufacturing environment friendly Sunroof Pergola, Sun Shutters, Privacy Screens, & Light Fences.</p>
 			</div> <!-- .col-12 -->
 		</div> <!-- .row -->
-	</div> <!-- .container -->
-	<div class="container-fluid solution-slider-wrapper">
-	  <div class="row">
+		<div class="row solution-slider-wrapper">
 			<div class="col-12">
 				<div class="solution-slider swiper-container three-cards-slider">
 					<div class="solution-slider-wrapper swiper-wrapper">
 						<div class="solution-slider-item swiper-slide stagger-animation">
 							<div class="solution-header">
-								<div class="solution-img img-cover-block">
-									<img src="<?php echo get_template_directory_uri(); ?>/images/solution-1.jpg" alt="" class="img-cover has-parallax-effect" data-speed="auto">
+								<div class="solution-img">
+									<img src="<?php echo get_template_directory_uri(); ?>/images/solution-1.jpg" alt="" class=" has-parallax-effect" data-speed="auto">
 								</div> <!-- .solution-img -->
 							</div> <!-- .solution-header -->
 							<a href="#0" class="solution-footer">
-								<h4 class="solution-text mb-2 fw-medium">Light Fence®</h4>
+								<h4 class="solution-text mb-1 fw-medium">Light Fence®</h4>
 								<p>Our proudly iconic fencing brand, formed by deep inventive engineering, offers a diverse range of fence styles and designs to help you protect your property.</p>
 								<div class="button">
 								   <button type="button" class="btn btn-inline p-0" href="#0">Explore</button>
@@ -102,12 +101,12 @@
 						</div> <!-- .solution-slider-item -->
 						<div class="solution-slider-item swiper-slide stagger-animation">
 							<div class="solution-header">
-								<div class="solution-img img-cover-block">
-									<img src="<?php echo get_template_directory_uri(); ?>/images/solution-1.jpg" alt="" class="img-cover has-parallax-effect" data-speed="auto">
+								<div class="solution-img">
+									<img src="<?php echo get_template_directory_uri(); ?>/images/solution-1.jpg" alt="" class="has-parallax-effect" data-speed="auto">
 								</div> <!-- .solution-img -->
 							</div> <!-- .solution-header -->
 							<a href="#0" class="solution-footer">
-								<h4 class="solution-text mb-2 fw-medium">Light Fence®</h4>
+								<h4 class="solution-text mb-1 fw-medium">Light Fence®</h4>
 								<p>Our proudly iconic fencing brand, formed by deep inventive engineering, offers a diverse range of fence styles and designs to help you protect your property.</p>
 								<div class="button">
 								   <button type="button" class="btn btn-inline p-0" href="#0">Explore</button>
@@ -116,12 +115,12 @@
 						</div> <!-- .solution-slider-item -->
 						<div class="solution-slider-item swiper-slide stagger-animation">
 							<div class="solution-header">
-								<div class="solution-img img-cover-block">
-									<img src="<?php echo get_template_directory_uri(); ?>/images/solution-1.jpg" alt="" class="img-cover has-parallax-effect" data-speed="auto">
+								<div class="solution-img">
+									<img src="<?php echo get_template_directory_uri(); ?>/images/solution-1.jpg" alt="" class="has-parallax-effect" data-speed="auto">
 								</div> <!-- .solution-img -->
 							</div> <!-- .solution-header -->
 							<a href="#0" class="solution-footer">
-								<h4 class="solution-text mb-2 fw-medium">Light Fence®</h4>
+								<h4 class="solution-text mb-1 fw-medium">Light Fence®</h4>
 								<p>Our proudly iconic fencing brand, formed by deep inventive engineering, offers a diverse range of fence styles and designs to help you protect your property.</p>
 								<div class="button">
 								   <button type="button" class="btn btn-inline p-0" href="#0">Explore</button>
@@ -130,12 +129,12 @@
 						</div> <!-- .solution-slider-item -->
 						<div class="solution-slider-item swiper-slide stagger-animation">
 							<div class="solution-header">
-								<div class="solution-img img-cover-block">
-									<img src="<?php echo get_template_directory_uri(); ?>/images/solution-1.jpg" alt="" class="img-cover has-parallax-effect" data-speed="auto">
+								<div class="solution-img">
+									<img src="<?php echo get_template_directory_uri(); ?>/images/solution-1.jpg" alt="" class="has-parallax-effect" data-speed="auto">
 								</div> <!-- .solution-img -->
 							</div> <!-- .solution-header -->
 							<a href="#0" class="solution-footer">
-								<h4 class="solution-text mb-2 fw-medium">Light Fence®</h4>
+								<h4 class="solution-text mb-1 fw-medium">Light Fence®</h4>
 								<p>Our proudly iconic fencing brand, formed by deep inventive engineering, offers a diverse range of fence styles and designs to help you protect your property.</p>
 								<div class="button">
 								   <button type="button" class="btn btn-inline p-0" href="#0">Explore</button>
@@ -147,7 +146,7 @@
 				</div> <!-- .solution-slider -->
 			</div> <!-- .col-12 -->
 		</div> <!-- .row -->
-	</div> <!-- .container-fluid -->
+	</div> <!-- .container -->
 </section> <!-- .solution-section -->
 
 <section class="cards-with-hover pt-10 pb-10">
