@@ -43,5 +43,14 @@
 .centered-gallery {
   .swiper-slide {
     cursor: none;
+    .card-image {
+      padding-bottom: 50%;
+      overflow: hidden;
+      position: relative;
+      img {
+        object-fit: cover;
+        object-position: top;
+      }
+    }
   }
 }

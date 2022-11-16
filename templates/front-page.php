@@ -222,32 +222,32 @@
 					<div class="swiper-wrapper lr_scroll">
 						<div class="swiper-slide">
 							<div class="card-image">
-								<img src="https://source.unsplash.com/1280x720/?nature" alt="Image Slider">
+								<img src="https://source.unsplash.com/1280x720/?nature" alt="Image Slider" class="img-cover has-parallax-effect" data-speed="auto">
 							</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="card-image">
-								<img src="https://source.unsplash.com/1280x720/?nature,water,animal" alt="Image Slider">
+								<img src="https://source.unsplash.com/1280x720/?nature,water,animal" alt="Image Slider" class="img-cover has-parallax-effect" data-speed="auto">
 							</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="card-image">
-								<img src="https://source.unsplash.com/1280x720/?water" alt="Image Slider">
+								<img src="https://source.unsplash.com/1280x720/?water" alt="Image Slider" class="img-cover has-parallax-effect" data-speed="auto">
 							</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="card-image">
-								<img src="https://source.unsplash.com/1280x720/?animal" alt="Image Slider">
+								<img src="https://source.unsplash.com/1280x720/?animal" alt="Image Slider" class="img-cover has-parallax-effect" data-speed="auto">
 							</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="card-image">
-								<img src="https://source.unsplash.com/1280x720/?travel" alt="Image Slider">
+								<img src="https://source.unsplash.com/1280x720/?travel" alt="Image Slider" class="img-cover has-parallax-effect" data-speed="auto">
 							</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="card-image">
-								<img src="https://source.unsplash.com/1280x720/?flower" alt="Image Slider">
+								<img src="https://source.unsplash.com/1280x720/?flower" alt="Image Slider" class="img-cover has-parallax-effect" data-speed="auto">
 							</div>
 						</div>
 					</div>
@@ -284,7 +284,7 @@
 				</div> <!-- .bg-midnight-200 position-relative -->
 			</div> <!-- .col-12 -->
 		</div> <!-- .row -->
-		<img src="<?php echo get_template_directory_uri(); ?>/images/wooden-lines.png" alt="" class="img-cover">
+		<img src="<?php echo get_template_directory_uri(); ?>/images/wooden-lines.png" alt="" class="img-cover has-parallax-effect" data-speed="auto">
 	</div> <!-- .container -->
 </section> <!-- .download-catalog -->
 
