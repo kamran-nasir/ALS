@@ -145,11 +145,41 @@ function skel_create_post_type() {
 		'show_in_rest' => true,
 	);
 
+	// $cpt_solution_labels = array(
+	// 	'name'               => __( 'Solution' ),
+	// 	'all_items'          => __( 'All Solution' ),
+	// 	'singular_name'      => __( 'Solution'  ),
+	// 	'add_new'            => __('Add New' ),
+	// 	'add_new_item'       => __('Add New Solution' ),
+	// 	'edit_item'          => __('Edit Solution' ),
+	// 	'new_item'           => __('New Solution' ),
+	// 	'view_item'          => __('View Solution' ),
+	// 	'search_items'       => __('Search Solution' ),
+	// 	'not_found'          =>  __('No Solution found' ),
+	// 	'not_found_in_trash' => __('No Solution found in Trash' ),
+	// 	'parent_item_colon'  => ''
+	// );
+
+	// $cpt_solution_args = array(
+	// 	'labels'              => $cpt_solution_labels,
+	// 	'public'              => true, // archive and single
+	// 	'show_ui'             => true, // manage single post from backend
+	// 	'hierarchical'        => true, // simple page ordering
+	// 	'has_archive'         => true, // pagination & archive page
+	// 	'menu_position'       => 20, // below pages
+	// 	'menu_icon'           => 'dashicons-admin-site', //defaults to post icon
+	// 	'supports'            => array('title','editor','thumbnail','page-attributes', 'custom-fields'),
+	// 	// enable gutenberg
+	// 	'show_in_rest' => true,
+	// );
+
 	register_post_type( 'team', $cpt_team_args );
 	register_post_type( 'news', $cpt_news_args );
 	register_post_type( 'press-release', $cpt_press_release_args );
 	register_post_type( 'publication', $cpt_publication_args );
 	register_post_type( 'portfolio', $cpt_portfolio_args );
+//	register_post_type( 'solution', $cpt_solution_args );
+	
 	// flush_rewrite_rules();
 }
 
