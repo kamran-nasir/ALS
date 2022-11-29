@@ -1,9 +1,17 @@
 .homepage-hero {
   position: relative;
   height: 100vh;
-  min-height: 640px;
-  max-height: 700px;
+  max-height: rem-calc(460px);
+  @include media-breakpoint-up(md) {
+    max-height: rem-calc(600px);
+  }
   overflow: hidden;
+  .hero-bg {
+    img {
+      top: rem-calc(-20px);
+      height: 110%;
+    }
+  }
   &__content {
     h1 {
       margin-bottom: rem-calc(20px);
@@ -43,7 +51,19 @@
   }
   a {
     > div {
-     margin-right: rem-calc(5px);
+      margin-right: rem-calc(5px);
     }
+  }
+}
+
+.inner-hero {
+  h2 {
+    margin-bottom: 0;
+  }
+  p {
+    margin: 0;
+    padding-top: rem-calc(20px);
+    font-size: rem-calc(18px);
+    line-height: 1.9;
   }
 }

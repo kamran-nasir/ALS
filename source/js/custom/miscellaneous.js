@@ -15,6 +15,8 @@ let pageScroll = function () {
 // need to run once, as sometimes the page is already scrolled down on load
 pageScroll();
 // run on scroll
+
+
 window.addEventListener( 'scroll', pageScroll );
 
 // Register GSAP
@@ -28,7 +30,7 @@ function init(){
     smooth: 2,
     smoothTouch: 0,
     effects: true,
-    normalizeScroll: true,
+    // normalizeScroll: true,
     ignoreMobileResize: true,
     scroller: null
    });
@@ -456,8 +458,12 @@ function setupSplits() {
   }),
   // onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 100, overwrite: true})
   });
-   ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".stagger-animation", {y: 0}));
 
+
+
+
+   ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".stagger-animation", {y: 0}));
+   if ($(".home").length) {
   TweenMax.to(".overlay", 2, {
     delay: 1,
     top: "-100%",
@@ -479,11 +485,25 @@ function setupSplits() {
     duration: 1,
     scale: 1.5,
     ease: Linear.easeInOut,
-
   });
-  TweenMax.staggerFrom(".header-secondary-parent-menu li", 1, {
-    delay: 2.4, opacity: 0, y: 20, ease: Expo.easeInOut
-  }, 0.2)
+  TweenMax.staggerFrom(".header-primary-parent-menu li", 1, {
+    delay: 2.4, opacity: 0, y: -20, ease: Expo.easeInOut
+  }, 0.2);
+
+  TweenMax.staggerFrom("header .social-links li", 1, {
+    delay: 2.8, opacity: 0, y: -20, ease: Expo.easeInOut
+  }, 0.2);
+}
+
+  if ($(".home").length) {
+    TweenMax.to( ".header-nav-toggle", 1, {
+      delay: 2.4,
+      opacity: 1,
+      duration: 0.4,
+      x: -10,
+      ease: Expo.easeInOut,
+    });
+  }
 
   $(".counts").each(function(index, element) {
     var count = $(this),
@@ -576,4 +596,14 @@ document.querySelectorAll('.js-ticker').forEach(ticker => {
 window.requestAnimationFrame(function() {
   init();
   setupSplits();
+});
+$(document).ready(() => {
+  $("#lightgallery").lightGallery({
+    pager: true,
+    download: false,
+    share: false,
+    zoom: false,
+    fullScreen: false,
+    autoPlay: false
+  });
 });

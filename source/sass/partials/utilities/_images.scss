@@ -1,4 +1,5 @@
-.img-fluid, .img-responsive {
+.img-fluid,
+.img-responsive {
   width: auto;
   height: auto;
 }
@@ -24,7 +25,6 @@
   height: 130%;
 }
 
-
 .banner-box {
   height: 100%;
   left: 0;
@@ -33,48 +33,62 @@
   width: 100%;
   &.banner-with-overlay {
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       z-index: 1;
-      background-color: rgba($midnight,0.3);
+      background-color: rgba($midnight, 0.3);
     }
   }
 }
 
-
 // align classes are set by wp on images inside editor.
-.alignnone, .alignleft, .alignright, .aligncenter, .wp-post-image {
+.alignnone,
+.alignleft,
+.alignright,
+.aligncenter,
+.wp-post-image {
   width: auto;
   height: auto;
 }
 
 .alignleft {
-  margin-bottom: rem-calc( 20px );
-  @include media-breakpoint-up( md ) {
+  margin-bottom: rem-calc(20px);
+  @include media-breakpoint-up(md) {
     float: left;
-    margin: 0 rem-calc( 20px )  rem-calc( 20px )  0;
+    margin: 0 rem-calc(20px) rem-calc(20px) 0;
   }
 }
 
 .alignright {
-  margin-bottom: rem-calc( 20px );
-  @include media-breakpoint-up( md ) {
+  margin-bottom: rem-calc(20px);
+  @include media-breakpoint-up(md) {
     float: right;
-    margin: 0 0 rem-calc( 20px ) rem-calc( 20px );
+    margin: 0 0 rem-calc(20px) rem-calc(20px);
   }
 }
 
-
 .alignleft {
   float: left;
-  margin: 0 rem-calc( 20px ) rem-calc( 20px ) 0;
+  margin: 0 rem-calc(20px) rem-calc(20px) 0;
 }
 
 .alignright {
   float: right;
-  margin: 0 0 rem-calc( 20px ) rem-calc( 20px );
+  margin: 0 0 rem-calc(20px) rem-calc(20px);
+}
+.offset-img-with-text {
+  .img-cover-block {
+    padding-bottom: 100%;
+    @include media-breakpoint-up(md) {
+      margin-top: rem-calc(-150px);
+    }
+    @include media-breakpoint-up(lg) {
+      padding-bottom: 80%;
+      margin-top: 0;
+    }
+  }
 }

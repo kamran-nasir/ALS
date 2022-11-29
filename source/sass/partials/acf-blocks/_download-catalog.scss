@@ -1,0 +1,16 @@
+.download-catalog {
+  .img-wrapper {
+    margin-top: rem-calc(-50px);
+    @include media-breakpoint-up(md) {
+      margin-right: rem-calc(-480px);
+      margin-top: rem-calc(-95px);
+    }
+    img {
+      width: rem-calc(1200px);
+      height: auto;
+      @include media-breakpoint-up(lg) {
+        width: 100%;
+      }
+    }
+  }
+}

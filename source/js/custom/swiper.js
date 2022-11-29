@@ -12,8 +12,8 @@ function threeCardsSlider() {
 		$(this).parent().find(".swiper-button-next").addClass(nextClass);
 
 		new Swiper("." + swiperClass, {
-			slidesPerView: 1,
-			spaceBetween: 24,
+			slidesPerView: 1.1,
+			spaceBetween: 15,
 			grabCursor: true,
 			navigation: {
 				prevEl: "." + prevClass,
@@ -25,13 +25,8 @@ function threeCardsSlider() {
 				nextEl: "." + nextClass,
 			},
 			breakpoints: {
-				640: {
-					slidesPerView: 1,
-					spaceBetween: 16,
-				},
 				768: {
-					slidesPerView: 2.2,
-					spaceBetween: 25,
+					slidesPerView: 1.5,
 				},
 
 				1024: {

@@ -1,12 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
 
 :root {
-  --scrollbar-width: rem-calc( 10px );
-  @include fluid( font-size, $scaling, $four-k, $font-size-root, $font-size-root * 2.4, true, false );
-  @include fluid( font-size, $mobile, $scaling, $font-size-root, $font-size-root, true, true ); // scale down
+  --scrollbar-width: rem-calc(10px);
+  @include fluid(
+    font-size,
+    $scaling,
+    $four-k,
+    $font-size-root,
+    $font-size-root * 2.4,
+    true,
+    false
+  );
+  @include fluid(
+    font-size,
+    $mobile,
+    $scaling,
+    $font-size-root,
+    $font-size-root,
+    true,
+    true
+  ); // scale down
 }
 
-::selection { background: $text-selection-bg-color;
+::selection {
+  background: $text-selection-bg-color;
   color: $text-selection-color;
   text-shadow: none;
 }
@@ -21,8 +38,8 @@
 .no-touchevents body::-webkit-scrollbar-track {
   background: #eee;
   border-radius: 100vw;
-  margin-top: rem-calc( 5px );
-  margin-bottom: rem-calc( 5px );
+  margin-top: rem-calc(5px);
+  margin-bottom: rem-calc(5px);
 }
 
 .no-touchevents body::-webkit-scrollbar-thumb {
@@ -50,83 +67,123 @@ body {
   line-height: 1.8;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 400;
   color: $midnight-500;
 }
 
-h1, .h1 {
-  font-size: rem-calc( 40px );
+h1,
+.h1 {
+  font-size: rem-calc(40px);
   line-height: 120%;
-  @include media-breakpoint-up( md ) {
-    font-size: rem-calc( 60px );
+  @include media-breakpoint-up(md) {
+    font-size: rem-calc(60px);
   }
 }
 
-h2, .h2 {
-  font-size: rem-calc( 32px );
+h2,
+.h2 {
+  font-size: rem-calc(32px);
   line-height: 120%;
-  @include media-breakpoint-up( md ) {
-    font-size: rem-calc( 48px );
+  @include media-breakpoint-up(md) {
+    font-size: rem-calc(48px);
     line-height: 130%;
   }
 }
 
-h3, .h3 {
-  font-size: rem-calc( 24px );
+h3,
+.h3 {
+  font-size: rem-calc(30px);
   font-weight: 400;
-  line-height: 120%;
-  @include media-breakpoint-up( md ) {
-    font-size: rem-calc( 36px );
+  line-height: 140%;
+  @include media-breakpoint-up(md) {
+    font-size: rem-calc(36px);
     line-height: 160%;
   }
 }
 
-h4, .h4 {
-  font-size: rem-calc( 20px );
-  line-height: 120%;
-  @include media-breakpoint-up( md ) {
-    font-size: rem-calc( 24px );
+h4,
+.h4 {
+  font-size: rem-calc(20px);
+  line-height: 160%;
+  @include media-breakpoint-up(md) {
+    font-size: rem-calc(24px);
+  }
+}
+
+h5,
+.h5 {
+  font-size: rem-calc(18px);
+  line-height: 150%;
+  @include media-breakpoint-up(md) {
+    font-size: rem-calc(20px);
     line-height: 160%;
   }
 }
 
-h5, .h5 {
-  font-size: rem-calc( 18px );
-  line-height: 120%;
-  @include media-breakpoint-up( md ) {
-    font-size: rem-calc( 20px );
-    line-height: 160%;
-  }
-}
-
-h6, .h6 {
-  font-size: rem-calc( 16px );
+h6,
+.h6 {
+  font-size: rem-calc(16px);
   line-height: 120%;
 }
 
 /*----------  Content  ----------*/
-a, button, input[type='submit'], input[type='button'], input[type='reset'] {
+a,
+button,
+input[type='submit'],
+input[type='button'],
+input[type='reset'] {
   transition: $btn-transition;
 }
 
-p, table, ul, ol, dl, dd, pre, blockquote, address, h1, h2, h3, h4, h5, h6 {
+p,
+table,
+ul,
+ol,
+dl,
+dd,
+pre,
+blockquote,
+address,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   &:last-child {
     margin-bottom: 0;
   }
 }
 
-p, pre, blockquote, address, dd {
+p,
+pre,
+blockquote,
+address,
+dd {
   line-height: 1.9;
 }
 
-p, table, ul, ol, dl, dd, pre, blockquote, address {
+p,
+table,
+ul,
+ol,
+dl,
+dd,
+pre,
+blockquote,
+address {
   font-size: $font-size-base; // required for backend
   margin: 0 0 $paragraph-margin-bottom;
 }
 
 output {
-  padding-top: rem-calc( 30px );
+  padding-top: rem-calc(30px);
   line-height: 1.42857143;
   color: #555;
 }
@@ -135,21 +192,25 @@ code {
   background-color: $gray-100;
   font-weight: 400;
   display: inline-block;
-  padding: rem-calc( 5px );
+  padding: rem-calc(5px);
 }
 
 /*----------  Lists  ----------*/
-ul, ol, dl {
+ul,
+ol,
+dl {
   padding: 0;
 }
 
-ul, ol {
+ul,
+ol {
   list-style-position: outside;
-  margin-left: rem-calc( 20px );;
-  ul, ol {
+  margin-left: rem-calc(20px);
+  ul,
+  ol {
     margin: 0;
-    margin-top: rem-calc( 5px );
-    margin-left: rem-calc( 40px );
+    margin-top: rem-calc(5px);
+    margin-left: rem-calc(40px);
   }
   ol {
     list-style-type: lower-alpha;
@@ -181,7 +242,7 @@ dt {
   font-family: $headings-font-family;
   font-weight: 700;
   line-height: $line-height-base;
-  margin: 0 0 ( $paragraph-margin-bottom / 2 );
+  margin: 0 0 ($paragraph-margin-bottom / 2);
 }
 
 /*----------  Form  ----------*/
@@ -212,7 +273,18 @@ form {
     border: 0;
   }
 
-  input[type='text'], input[type='tel'], input[type='url'], input[type='number'], input[type='password'], input[type='email'], input[type='range'], input[type='file'], input[type='date'], input[type='search'], textarea, select {
+  input[type='text'],
+  input[type='tel'],
+  input[type='url'],
+  input[type='number'],
+  input[type='password'],
+  input[type='email'],
+  input[type='range'],
+  input[type='file'],
+  input[type='date'],
+  input[type='search'],
+  textarea,
+  select {
     @include input-text;
     max-width: 100%;
   }
@@ -226,23 +298,25 @@ form {
   }
 
   input[type='date'] {
-    line-height: rem-calc( 32px );
+    line-height: rem-calc(32px);
   }
 
   textarea {
     line-height: $line-height-base;
-    height: rem-calc( 150px );
+    height: rem-calc(150px);
     resize: vertical;
   }
 
-  input[type='checkbox'], input[type='radio'] {
+  input[type='checkbox'],
+  input[type='radio'] {
     margin: 0;
-    margin-top: rem-calc( 4px );
-    margin-right: rem-calc( 5px );
+    margin-top: rem-calc(4px);
+    margin-right: rem-calc(5px);
     line-height: normal;
   }
 
-  select[multiple], select[size] {
+  select[multiple],
+  select[size] {
     height: auto;
   }
 
@@ -255,7 +329,9 @@ form {
     width: 100%;
   }
 
-  input[type='file']:focus, input[type='radio']:focus, input[type='checkbox']:focus {
+  input[type='file']:focus,
+  input[type='radio']:focus,
+  input[type='checkbox']:focus {
     outline: thin dotted;
     outline: rem-calc(5px) auto -webkit-focus-ring-color;
     outline-offset: rem-calc(-2px);
@@ -263,10 +339,17 @@ form {
 }
 
 /*----------  Miscellaneous  ----------*/
-img, iframe, svg {
+img,
+iframe,
+svg {
   max-width: 100%;
 }
 
-audio, canvas, iframe, img, svg, video {
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
   vertical-align: middle;
 }

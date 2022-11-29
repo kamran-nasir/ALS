@@ -1,6 +1,6 @@
 .site-header {
-  padding-top: rem-calc( 17px );
-  padding-bottom: rem-calc( 17px );
+  padding-top: rem-calc(17px);
+  padding-bottom: rem-calc(17px);
   transition: top 0.6s ease-in-out;
   position: fixed;
   top: 0;
@@ -13,12 +13,9 @@
   @include media-breakpoint-up(xxl) {
     padding: 0 4%;
   }
-  &.js-fixed {
-    padding-top: rem-calc( 12px );
-  }
-  @include media-breakpoint-up(xl) {
-    padding-top: rem-calc(18px);
-    padding-bottom: rem-calc( 18px );
+  @include media-breakpoint-up(lg) {
+    padding-top: 0;
+    padding-bottom: 0;
   }
   .header-pattern {
     position: absolute;
@@ -34,11 +31,53 @@
       height: rem-calc(30px) !important;
     }
   }
+  .social-links {
+    li {
+      a {
+        span {
+          color: $midnight-500;
+        }
+        font-size: rem-calc(24px);
+      }
+    }
+  }
+  ul {
+    li {
+      a {
+        text-decoration: none;
+        position: relative;
+        color: $midnight-500;
+        font-weight: 400;
+        @include media-breakpoint-up(xl) {
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: rem-calc(-4px);
+            left: 0;
+            display: block;
+            width: 100%;
+            height: rem-calc(2px);
+            border-radius: 10px;
+            background-color: $midnight-500;
+            transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            transform: scaleX(0);
+            transform-origin: right;
+          }
+          &:hover {
+            color: $midnight-500;
+            &::before {
+              transform: scaleX(1);
+              transform-origin: left;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-
 .header-logo {
-  width: rem-calc(130px);
+  width: rem-calc(144px);
   position: relative;
   float: left;
   margin-bottom: 0;
@@ -67,17 +106,21 @@
   display: block;
   position: relative;
   padding: 0 !important;
-  opacity: 0;
   .i-menu {
     font-size: rem-calc(24px);
-    line-height: rem-calc( 24px );
+    line-height: rem-calc(24px);
     position: absolute;
     left: rem-calc(15px); // same as padding right
     top: 50%;
     transform: translateY(-50%);
   }
-  @include media-breakpoint-up( xl ) {
+  @include media-breakpoint-up(lg) {
     display: none !important;
+  }
+}
+.home {
+  .header-nav-toggle {
+    opacity: 0;
   }
 }
 
@@ -90,15 +133,15 @@
   top: rem-calc(15px);
   right: rem-calc(24px);
   .i-x {
-    font-size: rem-calc( 36px );
-    line-height: rem-calc( 36px );
+    font-size: rem-calc(36px);
+    line-height: rem-calc(36px);
     color: $midnight-500 !important;
   }
   &:hover,
   &:focus {
     background-color: #fff;
   }
-  @include media-breakpoint-up( xl ) {
+  @include media-breakpoint-up(lg) {
     display: none;
   }
 }
@@ -106,26 +149,35 @@
 .nav-wrapper {
   position: relative;
   z-index: 99;
-  @include media-breakpoint-down( xl ) {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  @include media-breakpoint-down(lg) {
+    flex-direction: column-reverse;
+    justify-content: space-around;
   }
   .header-nav {
-    @include media-breakpoint-down( xl ) {
+    @include media-breakpoint-down(lg) {
       order: 1;
     }
   }
   .header-secondary {
-    @include media-breakpoint-down( xl ) {
+    @include media-breakpoint-down(lg) {
       order: 2;
     }
+  }
+  .header-logo {
+    position: absolute;
+    top: rem-calc(24px);
+    left: rem-calc(24px);
   }
   .header-secondary,
   .header-nav {
     display: flex;
     align-items: center;
     flex-direction: column;
-    @include media-breakpoint-up( xl ) {
+    @include media-breakpoint-up(lg) {
       flex-direction: row;
     }
     .header-primary-parent-menu,
@@ -135,60 +187,38 @@
       width: 100%;
       flex-direction: column;
       padding: 0 calc(32px);
-      @include media-breakpoint-up( xl ) {
+      @include media-breakpoint-up(lg) {
         padding: 0;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        align-items: flex-start;
+        align-items: center;
       }
       li {
-        margin-left: rem-calc(45px);
+        margin-left: rem-calc(60px);
         font-weight: 600;
         margin-bottom: 0;
         position: relative;
-        @include custom-width(0, 1266px) {
-          margin-left: rem-calc(24px);
+        @include media-breakpoint-up(lg) {
+          padding: rem-calc(38px) 0;
         }
-        @include media-breakpoint-down( xl ) {
+        &:first-of-type {
+          margin: 0;
+        }
+        @include media-breakpoint-down(lg) {
+          margin-bottom: rem-calc(34px) !important;
+          text-align: center;
           margin-left: 0;
-          font-size: rem-calc(22px);
+          font-size: rem-calc(30px);
           line-height: rem-calc(28px);
-          margin-bottom: rem-calc(16px);
-          padding-bottom:  rem-calc(16px);
-          text-align: left;
         }
         a {
-          text-decoration: none;
-          position: relative;
-          @include media-breakpoint-up( xl ) {
-          &::before {
-            content: "";
-            position: absolute;
-            bottom: rem-calc(-4px);
-            left: 0;
-            display: block;
-            width: 100%;
-            height: rem-calc(2px);
-            border-radius: 10px;
-            background-color: $milano-red;
-            transition: transform .5s cubic-bezier(.19,1,.22,1);
-            transform: scaleX(0);
-            transform-origin: right;
-          }
-          &:hover {
-            color: $milano-red;
-            &::before {
-              transform: scaleX(1);
-              transform-origin: left;
-            }
-          }
-        }
-
+          color: $midnight-500;
+          font-weight: 400;
         }
         &.current-menu-item {
           > a {
-            color: $milano-red;
+            color: $midnight-500;
             &::before {
               transform: scaleX(1);
               transform-origin: left;
@@ -197,16 +227,15 @@
         }
         &.menu-item-has-children {
           a {
-            display: flex !important;
-            @include media-breakpoint-down(xl) {
+            @include media-breakpoint-down(lg) {
               padding-right: 30px;
             }
             .has-icon {
               display: none;
-              @include media-breakpoint-down(xl) {
+              @include media-breakpoint-down(lg) {
                 position: absolute;
                 top: 0;
-                right: 0;
+                right: rem-calc(30px);
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
@@ -214,10 +243,14 @@
                 display: flex;
                 height: rem-calc(34px);
                 width: rem-calc(34px);
+                &::before {
+                  height: rem-calc(24px);
+                  width: rem-calc(24px);
+                }
               }
             }
           }
-          @include media-breakpoint-up(xl) {
+          @include media-breakpoint-up(lg) {
             &:hover {
               .sub-menu {
                 display: block;
@@ -227,11 +260,11 @@
           }
           &:last-of-type {
             .sub-menu {
-              @include media-breakpoint-up(xl) {
+              @include media-breakpoint-up(lg) {
                 left: auto;
                 right: 0;
               }
-              @include media-breakpoint-up(xl) {
+              @include media-breakpoint-up(lg) {
                 &::before {
                   border-left: rem-calc(23px) solid transparent;
                   border-right: none;
@@ -242,26 +275,30 @@
             }
           }
         }
+        &.btn-rarr {
+          font-size: rem-calc(14px);
+          a {
+            color: $white;
+            &::before {
+              content: none;
+            }
+          }
+        }
       }
     }
   }
   .header-secondary {
     .header-secondary-parent-menu {
       list-style: none;
-      @include media-breakpoint-up( xl ) {
+      @include media-breakpoint-up(lg) {
         margin-bottom: rem-calc(16px);
       }
       li {
         font-weight: 400;
-        @include media-breakpoint-up( xl ) {
+        @include media-breakpoint-up(lg) {
           font-size: rem-calc(14px);
         }
       }
-    }
-  }
-  .header-primary-parent-menu {
-    li {
-      padding-bottom: rem-calc(22px);
     }
   }
 }

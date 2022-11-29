@@ -1,27 +1,40 @@
 .cards-with-hover {
-	.marquee-text {
-    position: absolute;
-		top: rem-calc(30px);
-		li {
-			-webkit-text-stroke: 1px rgba($midnight, 0.2);
-			-webkit-text-fill-color: $white;
-	  }
-	}
-	.card {
-		padding: rem-calc(32px);
-		transition: box-shadow 500ms;
-		.icon {
-			display: block;
-		}
-		h4 {
-			margin-top: rem-calc(24px);
-			margin-bottom: rem-calc(10px);
-		}
-		p {
-			margin: 0;
-		}
-		&:hover {
-			box-shadow: 0px 4px 100px rgba(4, 20, 45, 0.11);
-		}
-	}
+  .card {
+    padding: rem-calc(32px);
+    transition: box-shadow 500ms;
+    height: 100%;
+    @include media-breakpoint-down(lg) {
+      box-shadow: 0px 4px 40px rgba(4, 20, 45, 0.11);
+    }
+    .icon {
+      display: block;
+      height: rem-calc(44px);
+      width: rem-calc(44px);
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    h4 {
+      margin-top: rem-calc(24px);
+      margin-bottom: rem-calc(10px);
+    }
+    p {
+      margin: 0;
+    }
+    &:hover {
+      @include media-breakpoint-up(lg) {
+        box-shadow: 0px 4px 100px rgba(4, 20, 45, 0.11);
+      }
+    }
+  }
+}
+.home {
+  .cards-with-hover {
+    .card {
+      @include media-breakpoint-up(lg) {
+        min-height: rem-calc(420px);
+      }
+    }
+  }
 }

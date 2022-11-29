@@ -25,14 +25,21 @@
 <header class="site-header clearfix" role="banner">
   <div class="container">
     <div class="row">
-      <div class="col-12 d-flex align-items-center">
+      <div class="col-12 d-flex align-items-center justify-content-between">
         <div class="header-logo">
           <a href="<?php echo esc_url( home_url() ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ) ); ?>" aria-label="Go to Home" <?php echo (is_front_page()) ? 'aria-current="page"' : ''; ?>>
             <span><?php bloginfo('description'); ?></span>
             <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="">
           </a>
         </div>
-        <div class="nav-wrapper ms-auto">
+        <button class="header-nav-toggle btn ms-auto" aria-label="<?php _e( 'show primary navigation', 'skel' ); ?>" aria-haspopup="true" aria-expanded="false" aria-controls="siteMenu">
+          <svg width="33" height="17" viewBox="0 0 33 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 1H32.0588" stroke="#000033" stroke-width="2"/>
+            <path d="M0 8.35352H32.0588" stroke="#000033" stroke-width="2"/>
+            <path d="M0 16H17.6471" stroke="#000033" stroke-width="2"/>
+          </svg>
+        </button>
+        <div class="nav-wrapper">
           <nav class="header-secondary">
             <?php
             if ( has_nav_menu( 'header-secondary-menu' ) ) {
@@ -48,7 +55,17 @@
             ?>
           </nav> <!-- .header-secondary -->
           <nav class="header-nav" role="navigation" aria-label="<?php _e( 'primary navigation', 'skel' ); ?>">
-            <button class="header-nav-close" aria-label="<?php _e( 'close primary navigation' ); ?>" aria-haspopup="true" aria-expanded="true" aria-controls="siteMenu"><i class="i-font-before i-x"></i></button>
+          <div class="header-logo d-lg-none">
+            <a href="<?php echo esc_url( home_url() ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ) ); ?>" aria-label="Go to Home" <?php echo (is_front_page()) ? 'aria-current="page"' : ''; ?>>
+              <span><?php bloginfo('description'); ?></span>
+              <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="">
+            </a>
+          </div>
+            <button class="header-nav-close" aria-label="<?php _e( 'close primary navigation' ); ?>" aria-haspopup="true" aria-expanded="true" aria-controls="siteMenu"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line y1="-1" x2="19.2559" y2="-1" transform="matrix(0.686591 0.727044 0.686591 -0.727044 1.77881 0.861084)" stroke="#04142D" stroke-width="2"/>
+              <line y1="-1" x2="19.2559" y2="-1" transform="matrix(0.686591 -0.727044 -0.686591 -0.727044 0.999878 14.8608)" stroke="#04142D" stroke-width="2"/>
+              </svg>
+            </button>
             <?php wp_nav_menu( array(
               'theme_location' => 'header-primary-menu',
               'container' => 'false',
@@ -56,8 +73,24 @@
               'items_wrap'	=> '<ul id="siteMenu" class="%2$s">%3$s</ul>',
               )
             ); ?>
-
           </nav> <!-- .header-nav -->
+          <ul class="social-links list-unstyled nav">
+          <li>
+            <a href="#0">
+              <span class="i-facebook i-font-before"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#0">
+              <span class="i-instagram i-font-before"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#0">
+              <span class="i-linkedin i-font-before"></span>
+            </a>
+          </li>
+        </ul> <!-- .list-unstyled social-links -->
         </div> <!-- .nav-wrapper -->
       </div> <!-- .col-12 -->
     </div> <!-- .row -->

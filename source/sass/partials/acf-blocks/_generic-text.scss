@@ -1,53 +1,58 @@
 .title-row {
-	.bottom-line {
-		display: block;
-		width: rem-calc(80px);
-		height: rem-calc(60px);
-		position: relative;
-		&::after {
-			content: "";
-			height: rem-calc(1px);
-			width: 100%;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%,-50%);
-			background: $milano-red;
-		}
-		&.line-centered {
-			margin: 0 auto;
-		}
-	}
-	p {
-		font-size: rem-calc(21px);
-		line-height: 1.9;
-	}
+  .bottom-line {
+    display: block;
+    width: rem-calc(80px);
+    height: rem-calc(60px);
+    position: relative;
+    &::after {
+      content: '';
+      height: rem-calc(1px);
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: $milano-red;
+    }
+    &.line-centered {
+      margin: 0 auto;
+    }
+  }
+  p {
+    font-size: rem-calc(18px);
+    line-height: 1.9;
+    &.desc-md {
+      font-size: rem-calc(16px);
+    }
+    &.desc-lg {
+      font-size: rem-calc(24px);
+    }
+  }
 }
-
 
 .js-ticker {
   white-space: nowrap;
   display: flex;
-  align-items:center;
+  align-items: center;
   padding: 0;
   margin: 0 auto;
   width: 100vw;
   overflow: hidden;
-	li{
-		display: inline-block;
-		vertical-align: center;
-		font-size: 8vw;
-		&::after {
-			content: "-";
-			display: inline-block;
-			font-size: 7vw;
-			-webkit-text-stroke: 1px rgba($midnight, 0.1);
-			-webkit-text-fill-color: $white;
-			margin-left: rem-calc(20px);
-			margin-right: rem-calc(20px);
-		}
-	}
-	span{
-		display: inline-block;
-	}
+  li {
+    display: inline-block;
+    vertical-align: center;
+    font-size: 8vw;
+    &::after {
+      content: '-';
+      display: inline-block;
+      font-size: 7vw;
+      -webkit-text-stroke: 1px rgba($midnight, 0.1);
+      -webkit-text-fill-color: $white;
+      margin-left: rem-calc(20px);
+      margin-right: rem-calc(20px);
+    }
+  }
+  span {
+    display: inline-block;
+  }
 }

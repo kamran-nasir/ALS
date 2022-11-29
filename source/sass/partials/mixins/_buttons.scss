@@ -1,126 +1,125 @@
 @mixin btn {
-	font-size: rem-calc(16px);
-	font-weight: 300;
-	line-height: $btn-line-height;
-	letter-spacing: rem-calc(1px);
-	text-transform: uppercase;
-	display: flex;
-	width: fit-content;
-	align-items: center;
-	padding-top: rem-calc(18px);
-	padding-right: rem-calc(32px);
-	padding-bottom: rem-calc(18px);
-	padding-left: rem-calc(32px);
-	transition: 0.35s;
-
+  font-size: rem-calc(16px);
+  font-weight: 300;
+  line-height: $btn-line-height;
+  letter-spacing: rem-calc(1px);
+  text-transform: uppercase;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  padding-top: rem-calc(12px);
+  padding-right: rem-calc(24px);
+  padding-bottom: rem-calc(12px);
+  padding-left: rem-calc(24px);
+  transition: 0.35s;
 }
 
 @mixin btn-input-clone($bg-color) {
-	background-color: $bg-color;
-	font-size: 1rem;
-	line-height: $input-line-height;
-	text-transform: uppercase;
-	padding-top: $input-padding-y;
-	padding-bottom: $input-padding-y;
-	border: rem-calc(1px) solid $bg-color;
-	@include media-breakpoint-up(md) {
-		padding-top: $input-padding-y-lg;
-		padding-bottom: $input-padding-y-lg;
-	}
+  background-color: $bg-color;
+  font-size: 1rem;
+  line-height: $input-line-height;
+  text-transform: uppercase;
+  padding-top: $input-padding-y;
+  padding-bottom: $input-padding-y;
+  border: rem-calc(1px) solid $bg-color;
+  @include media-breakpoint-up(md) {
+    padding-top: $input-padding-y-lg;
+    padding-bottom: $input-padding-y-lg;
+  }
 }
 
 @mixin btn-reset {
-	background: transparent;
-	color: $link-color;
-	display: inline-block;
-	padding: 0;
-	border: 0;
-	margin: 0;
-	cursor: pointer;
+  background: transparent;
+  color: $link-color;
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  cursor: pointer;
 }
 
 @mixin btn-fill-primary {
-	position: relative;
-	display: inline-block;
-	border: none;
-	cursor: pointer;
-	background: $milano-red;
-	color: $midnight-500 !important;
-	&:hover {
-		background-color: $milano-red;
-	}
+  position: relative;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  background: $milano-red;
+  color: $midnight-500 !important;
+  &:hover {
+    background-color: $milano-red;
+  }
 }
 
 @mixin btn-corner-radius {
-	border-top-right-radius: rem-calc(8px);
+  border-top-right-radius: rem-calc(8px);
 }
 @mixin btn-corner-top-right-radius {
-	border-top-right-radius: rem-calc(8px);
+  border-top-right-radius: rem-calc(8px);
 }
 @mixin btn-rarr {
-	position: relative;
-	display: inline-flex;
-	align-items: center;
-	&::after {
-		content: "";
-		background-image: url("data:image/svg+xml,%3Csvg width='13' height='9' viewBox='0 0 13 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.49997H11.5M9.5 0.642822L12.5 4.49997L9.5 8.35711' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-		height: rem-calc(15px);
-		width: rem-calc(20px);
-		background-size: contain;
-		background-repeat: no-repeat;
-		margin-left: rem-calc(15px);
-		transition: 0.2s ease;
-	}
-	&:hover,
-	&:focus {
-		&::after {
-			transform: translateX(rem-calc(5px));
-		}
-	}
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  &::after {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='9' viewBox='0 0 13 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.49997H11.5M9.5 0.642822L12.5 4.49997L9.5 8.35711' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    height: rem-calc(15px);
+    width: rem-calc(20px);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: rem-calc(15px);
+    transition: 0.2s ease;
+  }
+  &:hover,
+  &:focus {
+    &::after {
+      transform: translateX(rem-calc(5px));
+    }
+  }
 }
 @mixin ic-before {
-	margin-left: rem-calc(34px);
-	margin-right: 0;
+  margin-left: rem-calc(34px);
+  margin-right: 0;
   &::after {
-		@include icon-font-properties;
-		content: $i-chevron-right;
-		font-size: rem-calc(24px);
-		font-weight: bold;
-		margin: 0;
-		transition: 0.2s ease;
-		transform: rotate(180deg);
-		left: rem-calc(-34px);
-		right: auto;
-	}
-	&:hover,
-	&:focus {
-		&::after {
-			transform: rotate(180deg) translateX(rem-calc(5px));
-		}
-	}
+    @include icon-font-properties;
+    content: $i-chevron-right;
+    font-size: rem-calc(24px);
+    font-weight: bold;
+    margin: 0;
+    transition: 0.2s ease;
+    transform: rotate(180deg);
+    left: rem-calc(-34px);
+    right: auto;
+  }
+  &:hover,
+  &:focus {
+    &::after {
+      transform: rotate(180deg) translateX(rem-calc(5px));
+    }
+  }
 }
 
 @mixin btn-inline {
-	text-decoration: none;
-	color: $milano-red;
-	position: relative;
-	display: inline-flex;
-	align-items: center;
-	&::after {
-		content: "";
-		height: rem-calc(15px);
-		width: rem-calc(20px);
-		background-size: contain;
-		background-repeat: no-repeat;
-		margin-left: rem-calc(15px);
-		transition: 0.2s ease;
-		background-image: url("data:image/svg+xml,%3Csvg width='13' height='9' viewBox='0 0 13 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.49997H11.5M9.5 0.642822L12.5 4.49997L9.5 8.35711' stroke='%23C8151D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-	}
-	&:hover,
-	&:focus {
-		color: $milano-red;
-		&::after {
-			transform: translateX(rem-calc(5px));
-		}
-	}
+  text-decoration: none;
+  color: $milano-red;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  &::after {
+    content: '';
+    height: rem-calc(15px);
+    width: rem-calc(20px);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: rem-calc(15px);
+    transition: 0.2s ease;
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='9' viewBox='0 0 13 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.49997H11.5M9.5 0.642822L12.5 4.49997L9.5 8.35711' stroke='%23C8151D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  }
+  &:hover,
+  &:focus {
+    color: $milano-red;
+    &::after {
+      transform: translateX(rem-calc(5px));
+    }
+  }
 }

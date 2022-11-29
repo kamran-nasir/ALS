@@ -1,17 +1,38 @@
 .text-with-offset-images {
-	p {
-		line-height: 2;
-		max-width: 90%;
-	}
-	.img-large {
-		width: rem-calc(530px);
-		height: rem-calc(620px)
-	}
-	.img-small {
-		width: rem-calc(450px);
-		height: rem-calc(450px);
-		margin-top:  rem-calc(-450px);
-    margin-left: rem-calc(200px);
-		bottom: rem-calc(-60px);
-	}
+  p {
+    line-height: 2;
+    @include media-breakpoint-up(lg) {
+      max-width: 90%;
+    }
+  }
+  .images-wrapper {
+    @include media-breakpoint-down(lg) {
+      margin-top: rem-calc(50px);
+    }
+    .img-large {
+      width: 70vw;
+      height: 30vh;
+      @include media-breakpoint-up(md) {
+        width: rem-calc(530px);
+        height: rem-calc(620px);
+      }
+    }
+    .img-small {
+      width: 55vw;
+      height: 20vh;
+      margin-top: rem-calc(-230px);
+      margin-left: rem-calc(120px);
+      bottom: rem-calc(-80px);
+      @include media-breakpoint-up(md) {
+        width: rem-calc(450px);
+        height: rem-calc(450px);
+        margin-top: rem-calc(-450px);
+        margin-left: rem-calc(250px);
+        bottom: rem-calc(-60px);
+      }
+      @include media-breakpoint-up(lg) {
+        margin-left: rem-calc(200px);
+      }
+    }
+  }
 }

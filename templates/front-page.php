@@ -288,7 +288,49 @@
 	</div> <!-- .container -->
 </section> <!-- .download-catalog -->
 
-<div class="overlay">
-    <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="">
-</div>
+<section class="equal-cols pt-10">
+	<div class="container">
+		<div class="row g-0 align-items-center">
+			<div class="col-md-6">
+				<div class="img-cover-block">
+				  <img src="<?php echo get_template_directory_uri(); ?>/images/col-1.jpg" alt="" class="img-cover has-parallax-effect" data-speed="auto">
+				</div> <!-- .img-cover-block -->
+			 </div> <!-- .col-md-6 -->
+			 <div class="col-md-6">
+				<div class="title-row p-10">
+					<div class="title-wrap">
+						<h3 class="heading-animation m-0">Who we are</h3>
+						<div class="fade-animation">
+							<span class="bottom-line"></span>
+						</div> <!-- .fade-animation -->
+					</div> <!-- .title-wrap -->
+					<p class="text-animation desc-md">Aluminum Light Solutions is one of the most pioneering companies in the design and production of lightweight architectural systems using innovative aluminum slats designed in Canada.</p>
+				</div> <!-- .title-row -->
+			 </div> <!-- .col-md-6 -->
+		</div> <!-- .row -->
+	</div> <!-- .container -->
+</section> <!-- .equal-cols -->
+
+<section class="equal-cols">
+	<div class="container">
+		<div class="row flex-lg-row flex-lg-row-reverse">
+			<div class="col-md-6 g-0">
+				<div class="img-cover-block">
+				  <img src="<?php echo get_template_directory_uri(); ?>/images/col-2.jpg" alt="" class="img-cover has-parallax-effect" data-speed="auto">
+				</div> <!-- .img-cover-block -->
+			 </div> <!-- .col-md-6 -->
+			 <div class="col-md-6">
+				<div class="title-row p-10">
+					<div class="title-wrap">
+						<h3 class="heading-animation m-0">What differentiates us</h3>
+						<div class="fade-animation">
+							<span class="bottom-line"></span>
+						</div> <!-- .fade-animation -->
+					</div> <!-- .title-wrap -->
+					<p class="text-animation desc-md">If you're looking for an architectural systems company that will provide long-term benefits, look no further than Light Solutions. We value perfection, and our designs are always stunning. Our solutions will enhance your property's beauty for years to come. Give your home the upgrade it deserves! Our solutions are not only affordable, but they provide unmatched quality that stands decades as well.</p>
+				</div> <!-- .title-row -->
+			 </div> <!-- .col-md-6 -->
+		</div> <!-- .row -->
+	</div> <!-- .container -->
+</section> <!-- .equal-cols -->
 <?php get_footer(); ?>

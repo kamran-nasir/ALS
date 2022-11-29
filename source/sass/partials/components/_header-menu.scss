@@ -17,33 +17,34 @@
 ==============================*/
 $mobile-sidebar-bg-color: $teal;
 /*----------  Parent Menu  ----------*/
-$mobile-parent-menu-item-border-bottom: rem-calc(1px) solid rgba(0,0,0,.1);
+$mobile-parent-menu-item-border-bottom: rem-calc(1px) solid rgba(0, 0, 0, 0.1);
 $mobile-parent-menu-link-bg-color: transparent;
 $mobile-parent-menu-link-color: $green;
-$mobile-parent-menu-link-hover-bg-color: rgba(0,0,0,.1);
+$mobile-parent-menu-link-hover-bg-color: rgba(0, 0, 0, 0.1);
 $mobile-parent-menu-link-hover-color: $green;
-$mobile-parent-menu-item-font-size: rem-calc( 24px );
-$mobile-parent-menu-item-padding-y: rem-calc( 13px );
-$mobile-parent-menu-item-padding-x: rem-calc( 20px );
+$mobile-parent-menu-item-font-size: rem-calc(24px);
+$mobile-parent-menu-item-padding-y: rem-calc(13px);
+$mobile-parent-menu-item-padding-x: rem-calc(20px);
 $mobile-parent-menu-current-item-link-bg-color: $green;
 $mobile-parent-menu-current-item-link-color: #fff;
-$mobile-parent-menu-dropdown-bg-color: darken($teal,5%);
+$mobile-parent-menu-dropdown-bg-color: darken($teal, 5%);
 $mobile-parent-menu-dropdown-icon-color: $green;
 $mobile-parent-menu-dropdown-hover-bg-color: #fff;
 $mobile-parent-menu-dropdown-hover-icon-color: $green;
 /* Sub Menu */
-$mobile-sub-menu-font-size: rem-calc( 18px );
-$mobile-sub-menu-bg-color: darken($teal,5%);
+$mobile-sub-menu-font-size: rem-calc(18px);
+$mobile-sub-menu-bg-color: darken($teal, 5%);
 $mobile-sub-menu-link-bg-color: transparent;
-$mobile-sub-menu-link-hover-bg-color: rgba(0,0,0,.05);
+$mobile-sub-menu-link-hover-bg-color: rgba(0, 0, 0, 0.05);
 $mobile-sub-menu-link-color: $green;
 $mobile-sub-menu-link-hover-color: #000;
 $mobile-sub-menu-link-padding-y: rem-calc(13px);
-$mobile-sub-menu-link-padding-x: rem-calc( 20px ); //usually this is same as parent menu
-
+$mobile-sub-menu-link-padding-x: rem-calc(
+  20px
+); //usually this is same as parent menu
 
 .nav-wrapper {
-  @include media-breakpoint-down( xl ) {
+  @include media-breakpoint-down(lg) {
     background-color: $white;
     width: 100%;
     padding: rem-calc(90px) 0 rem-calc(40px);
@@ -58,13 +59,13 @@ $mobile-sub-menu-link-padding-x: rem-calc( 20px ); //usually this is same as par
     transition: 350ms transform cubic-bezier(0.465, 0.183, 0.153, 0.946);
     &.js-active {
       transform: translateX(0);
-      box-shadow: 0 0 rem-calc(10px) rgba(120,120,120,.3);
+      box-shadow: 0 0 rem-calc(10px) rgba(120, 120, 120, 0.3);
     }
   }
 }
 
 .header-nav-parent-menu {
-  @include media-breakpoint-down( lg ) {
+  @include media-breakpoint-down(lg) {
     > li {
       > a {
         background-color: $white;
@@ -72,10 +73,12 @@ $mobile-sub-menu-link-padding-x: rem-calc( 20px ); //usually this is same as par
         text-align: center;
         font-size: $mobile-parent-menu-item-font-size;
         display: block;
-        padding: $mobile-parent-menu-item-padding-y $mobile-parent-menu-item-padding-x;
+        padding: $mobile-parent-menu-item-padding-y
+          $mobile-parent-menu-item-padding-x;
         text-decoration: none;
         position: relative;
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           background: $mobile-parent-menu-link-hover-bg-color;
           color: $mobile-parent-menu-link-hover-color;
         }
@@ -90,9 +93,9 @@ $mobile-sub-menu-link-padding-x: rem-calc( 20px ); //usually this is same as par
     // Submenu
     > li.menu-item-has-children {
       position: relative;
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         > a {
-
         }
       }
     }
@@ -124,7 +127,8 @@ $mobile-sub-menu-link-padding-x: rem-calc( 20px ); //usually this is same as par
             margin-top: rem-calc(-4px);
             margin-left: rem-calc(-6px);
           }
-          &:hover, &:focus {
+          &:hover,
+          &:focus {
             // background: $mobile-parent-menu-dropdown-hover-bg-color;
             &:after {
               border-top-color: $mobile-parent-menu-dropdown-hover-icon-color;
@@ -136,90 +140,57 @@ $mobile-sub-menu-link-padding-x: rem-calc( 20px ); //usually this is same as par
   }
 }
 
-
 .header-nav .sub-menu {
   width: 100%;
-  padding: rem-calc(6px) 0  rem-calc(2px) 0;
-  @include media-breakpoint-up(xl) {
+  padding: rem-calc(34px) 0 rem-calc(2px) 0;
+
+  @include media-breakpoint-up(lg) {
+    border-top: 3px solid $milano-red;
     z-index: -1;
     transform-origin: center center;
     display: none;
     animation: downOut 300ms ease-in-out forwards;
     position: absolute;
-    top: calc(100% + 8px);
+    top: 100%;
     left: 0;
-    width: rem-calc(295px);
-    background: #F4F4F4;
-    border-radius: 0px 0px rem-calc(16px) rem-calc(16px);
+    width: rem-calc(200px);
+    background: $white;
     perspective: 1000px;
-    padding: rem-calc(10px) rem-calc(20px);
+    padding: rem-calc(24px) rem-calc(20px) rem-calc(24px) rem-calc(20px);
   }
-  @include media-breakpoint-down(xl) {
+  @include media-breakpoint-down(lg) {
     height: 0;
     visibility: hidden;
-  }
-  @include media-breakpoint-up(xl) {
-    &::before {
-      content: "";
-      width: 0;
-      height: 0;
-      border-bottom: rem-calc(16px) solid #F4F4F4;
-      border-right: rem-calc(23px) solid transparent;
-      position: absolute;
-      top: rem-calc(-16px);
-      left: 0;
-      z-index: 1;
-    }
-    &::after {
-      content: "";
-      height: 20px;
-      position: absolute;
-      top: -20px;
-      left: 0;
-      background: #fff;
-      width: 100%;
-    }
+    padding-top: rem-calc(34px) !important;
   }
   li {
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-    font-size: rem-calc(16px) !important;
-    @include media-breakpoint-up(xl) {
-      border-bottom: rem-calc(1px) solid $midnight-500 !important;
+    @include media-breakpoint-down(lg) {
+      font-size: rem-calc(20px) !important;
+      margin-bottom: rem-calc(16px) !important;
     }
+    @include media-breakpoint-up(lg) {
+      padding: 0 !important;
+      margin-left: 0 !important;
+      margin-bottom: rem-calc(24px) !important;
+    }
+
     &:last-of-type {
       border-bottom: none !important;
     }
     a {
-      padding: rem-calc(6px) 0;
       color: $midnight-500 !important;
-      @include media-breakpoint-up(xl) {
-        padding: rem-calc(10px) 0;
-      }
-      &::before {
-        content: none !important;
-      }
-      &:hover {
-        color: $milano-red !important;
-      }
-
+      display: inline-block !important;
     }
-    &.active {
-       a {
-        color: $milano-red !important;
-       }
-
+    &:last-of-type {
+      margin-bottom: 0 !important;
     }
   }
   &.js-active {
-     display: block;
-     height: auto;
-     visibility: visible;
+    display: block;
+    height: auto;
+    visibility: visible;
   }
-
 }
-
 
 /*===============================
 =            Desktop            =
@@ -229,34 +200,41 @@ $desktop-parent-menu-link-bg-color: #ccc;
 $desktop-parent-menu-link-color: #000;
 $desktop-parent-menu-link-hover-bg-color: green;
 $desktop-parent-menu-link-hover-color: #fff;
-$desktop-parent-menu-item-padding-y: rem-calc( 15px );
-$desktop-parent-menu-item-padding-x: rem-calc( 20px );
+$desktop-parent-menu-item-padding-y: rem-calc(15px);
+$desktop-parent-menu-item-padding-x: rem-calc(20px);
 $desktop-parent-menu-current-item-link-bg-color: red;
 $desktop-parent-menu-current-item-link-color: #fff;
 $desktop-parent-menu-dropdown-icon-color: #999;
 $desktop-parent-menu-dropdown-icon-hover-color: #fff;
-$desktop-parent-menu-dropdown-icon-border: rem-calc( 5px );
-$desktop-parent-menu-space-between-text-and-arrow: rem-calc( 10px );
+$desktop-parent-menu-dropdown-icon-border: rem-calc(5px);
+$desktop-parent-menu-space-between-text-and-arrow: rem-calc(10px);
 /*----------  Sub Menu  ----------*/
-$desktop-sub-menu-width: rem-calc( 250px );
+$desktop-sub-menu-width: rem-calc(250px);
 $desktop-sub-menu-link-bg-color: green;
 $desktop-sub-menu-link-color: #fff;
-$desktop-sub-menu-link-hover-bg-color: darken($desktop-sub-menu-link-bg-color,10%);
+$desktop-sub-menu-link-hover-bg-color: darken(
+  $desktop-sub-menu-link-bg-color,
+  10%
+);
 $desktop-sub-menu-link-hover-color: $desktop-sub-menu-link-color;
-$desktop-sub-menu-current-item-link-bg-color: darken($desktop-sub-menu-link-bg-color,20%);
+$desktop-sub-menu-current-item-link-bg-color: darken(
+  $desktop-sub-menu-link-bg-color,
+  20%
+);
 $desktop-sub-menu-current-item-link-color: transparent;
-$desktop-sub-menu-font-size: rem-calc( 16px );
-$desktop-sub-menu-link-padding-y: rem-calc( 12px );
+$desktop-sub-menu-font-size: rem-calc(16px);
+$desktop-sub-menu-link-padding-y: rem-calc(12px);
 $desktop-sub-menu-link-padding-x: $desktop-parent-menu-item-padding-x; // usually this is same as parent menu
 
 // Desktop Parent Menu
 ////////////////////////////////////////////////
 .header-nav-parent-menu {
-  @include media-breakpoint-up( lg ) {
+  @include media-breakpoint-up(lg) {
     > li {
       float: left;
-      margin-right: rem-calc( 5px );
-      &:hover, &:focus {
+      margin-right: rem-calc(5px);
+      &:hover,
+      &:focus {
         > a {
           background-color: $desktop-parent-menu-link-hover-bg-color;
           color: $desktop-parent-menu-link-hover-color;
@@ -266,7 +244,8 @@ $desktop-sub-menu-link-padding-x: $desktop-parent-menu-item-padding-x; // usuall
         background-color: $desktop-parent-menu-link-bg-color;
         color: $desktop-parent-menu-link-color;
         display: block;
-        padding: $desktop-parent-menu-item-padding-y $desktop-parent-menu-item-padding-x;
+        padding: $desktop-parent-menu-item-padding-y
+          $desktop-parent-menu-item-padding-x;
       }
     }
     > li.current-page-ancestor > a,
@@ -278,7 +257,10 @@ $desktop-sub-menu-link-padding-x: $desktop-parent-menu-item-padding-x; // usuall
     > li.menu-item-has-children {
       position: relative;
       > a {
-        padding-right: $desktop-parent-menu-item-padding-y + $desktop-parent-menu-dropdown-icon-border + $desktop-parent-menu-dropdown-icon-border + $desktop-parent-menu-space-between-text-and-arrow; //dropdown icon
+        padding-right: $desktop-parent-menu-item-padding-y +
+          $desktop-parent-menu-dropdown-icon-border +
+          $desktop-parent-menu-dropdown-icon-border +
+          $desktop-parent-menu-space-between-text-and-arrow; //dropdown icon
         &:after {
           content: '';
           border: $desktop-parent-menu-dropdown-icon-border solid transparent;
@@ -286,11 +268,12 @@ $desktop-sub-menu-link-padding-x: $desktop-parent-menu-item-padding-x; // usuall
           position: absolute;
           top: 50%;
           right: $desktop-parent-menu-item-padding-y;
-          margin-top: rem-calc( -2px );
+          margin-top: rem-calc(-2px);
           transition: $btn-transition;
         }
       }
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         > a {
           color: $desktop-parent-menu-link-hover-color;
           &:after {
@@ -300,7 +283,8 @@ $desktop-sub-menu-link-padding-x: $desktop-parent-menu-item-padding-x; // usuall
       }
     }
     li.menu-item-has-children {
-      &:hover, &focus {
+      &:hover,
+      &focus {
         > .sub-menu {
           visibility: visible;
           opacity: 1;
@@ -314,8 +298,8 @@ $desktop-sub-menu-link-padding-x: $desktop-parent-menu-item-padding-x; // usuall
 
 // Desktop Sub Menu
 ////////////////////////////////////////////////
-.header-nav-parent-menu  {
-  @include media-breakpoint-up( lg ) {
+.header-nav-parent-menu {
+  @include media-breakpoint-up(lg) {
     .sub-menu {
       visibility: hidden;
       opacity: 0;
@@ -323,10 +307,11 @@ $desktop-sub-menu-link-padding-x: $desktop-parent-menu-item-padding-x; // usuall
       z-index: -1;
       width: $desktop-sub-menu-width;
       position: absolute;
-      transition: $btn-transition, opacity .15s;
+      transition: $btn-transition, opacity 0.15s;
       > li {
         line-height: 1.3;
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           > a {
             background-color: $desktop-sub-menu-link-hover-bg-color;
             color: $desktop-sub-menu-link-hover-color;
@@ -337,8 +322,9 @@ $desktop-sub-menu-link-padding-x: $desktop-parent-menu-item-padding-x; // usuall
           font-size: $desktop-sub-menu-font-size;
           color: $desktop-sub-menu-link-color;
           display: block;
-          padding: $desktop-sub-menu-link-padding-y $desktop-sub-menu-link-padding-x;
-          border-bottom: rem-calc( 1px ) solid desaturate(green,20%);
+          padding: $desktop-sub-menu-link-padding-y
+            $desktop-sub-menu-link-padding-x;
+          border-bottom: rem-calc(1px) solid desaturate(green, 20%);
         }
       }
       > li.current-menu-item > a {
@@ -351,7 +337,10 @@ $desktop-sub-menu-link-padding-x: $desktop-parent-menu-item-padding-x; // usuall
       top: 100%;
       left: 0;
       > li.menu-item-has-children > a {
-        padding-right: $desktop-parent-menu-item-padding-y + $desktop-parent-menu-dropdown-icon-border + $desktop-parent-menu-dropdown-icon-border + $desktop-parent-menu-space-between-text-and-arrow; //chevron icon
+        padding-right: $desktop-parent-menu-item-padding-y +
+          $desktop-parent-menu-dropdown-icon-border +
+          $desktop-parent-menu-dropdown-icon-border +
+          $desktop-parent-menu-space-between-text-and-arrow; //chevron icon
         position: relative;
         &:after {
           content: '';
@@ -361,7 +350,7 @@ $desktop-sub-menu-link-padding-x: $desktop-parent-menu-item-padding-x; // usuall
           top: $desktop-parent-menu-item-padding-x;
           right: $desktop-parent-menu-item-padding-y;
           transition: $btn-transition;
-          margin-top: rem-calc( -4px );
+          margin-top: rem-calc(-4px);
         }
       }
     }
@@ -376,15 +365,14 @@ $desktop-sub-menu-link-padding-x: $desktop-parent-menu-item-padding-x; // usuall
   }
 }
 
-
 @keyframes downOut {
   0% {
-     transform: translateZ(200px) transLateY(40px)
- }
- 80% {
-     transform: translateZ(-10px) transLateY(0px)
- }
- 100% {
-     transform: translateZ(0px) transLateY(0px)
- }
+    transform: translateZ(200px) transLateY(40px);
+  }
+  80% {
+    transform: translateZ(-10px) transLateY(0px);
+  }
+  100% {
+    transform: translateZ(0px) transLateY(0px);
+  }
 }
