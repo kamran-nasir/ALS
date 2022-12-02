@@ -333,4 +333,103 @@
 		</div> <!-- .row -->
 	</div> <!-- .container -->
 </section> <!-- .equal-cols -->
+
+<section class="download-cards">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<ul class="list-unstyled m-0 p-0 nav">
+					<li>
+						<a href="#0">
+							<span class="icon">
+							  <img src="<?php echo get_template_directory_uri(); ?>/images/ic-fence.svg" alt="">
+							</span> <!-- .icon -->
+							<span class="text h4">
+							  Light Fence
+							</span> <!-- .text -->
+						</a>
+					</li>
+					<li>
+						<a href="#0">
+							<span class="icon">
+							  <img src="<?php echo get_template_directory_uri(); ?>/images/ic-pergola.png" alt="">
+							</span> <!-- .icon -->
+							<span class="text h4">
+							  Light Fence
+							</span> <!-- .text -->
+						</a>
+					</li>
+					<li>
+						<a href="#0">
+							<span class="icon">
+							  <img src="<?php echo get_template_directory_uri(); ?>/images/ic-gate2.svg" alt="">
+							</span> <!-- .icon -->
+							<span class="text h4">
+							  Light Fence
+							</span> <!-- .text -->
+						</a>
+					</li>
+					<li>
+						<a href="#0">
+							<span class="icon">
+							  <img src="<?php echo get_template_directory_uri(); ?>/images/ic-privacy-screen2.svg" alt="">
+							</span> <!-- .icon -->
+							<span class="text h4">
+							  Light Fence
+							</span> <!-- .text -->
+						</a>
+					</li>
+				</ul> <!-- .list-unstyled m-0 p-0nav -->
+			</div> <!-- .col-12 -->
+		</div> <!-- .row -->
+	</div> <!-- .container -->
+</section> <!-- .download-cards -->
+<section class="download-list">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-8">
+				<ul class="list-unstyled m-0 p-0">
+					<li>
+						<span class="number">
+              01.
+						</span> <!-- .number -->
+						<span class="title">
+              Horizontal Privacy Vinyl Gate Kit Installation Instructions
+						</span> <!-- .title -->
+						<a href="#document-1" class="btn btn-secondary download-form">Download</a>
+					</li>
+					<li>
+						<span class="number">
+              02.
+						</span> <!-- .number -->
+						<span class="title">
+              Horizontal Privacy Vinyl Gate Kit Installation Instructions
+						</span> <!-- .title -->
+						<a href="#0" class="btn btn-secondary">Download</a>
+					</li>
+					<li>
+						<span class="number">
+              03.
+						</span> <!-- .number -->
+						<span class="title">
+              Horizontal Privacy Vinyl Gate Kit Installation Instructions
+						</span> <!-- .title -->
+						<a href="#0" class="btn btn-secondary">Download</a>
+					</li>
+				</ul> <!-- .list-unstyled m-0 p-0 -->
+			</div> <!-- .col-12 -->
+		</div> <!-- .row -->
+	</div> <!-- .container -->
+</section> <!-- .download-list -->
+<div id="document-1" class="download-popup position-relative mfp-hide">
+	<div class="row gx-0 h-100">
+		<div class="col-md-12">
+		  <div class="title-row">
+				<h4>Horizontal Privacy Vinyl Gate Kit Installation Instructions</h4>
+					<span class="bottom-line line-centered"></span>
+			</div> <!-- .title-row -->
+			<p>Fill out the information below to get a free download of our document.</p>
+		</div> <!-- .col-md-8 -->
+	</div> <!-- .row -->
+</div>
 <?php get_footer(); ?>

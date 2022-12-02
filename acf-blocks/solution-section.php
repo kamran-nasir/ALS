@@ -13,7 +13,7 @@
 <section class="solution-section fade-animation pt-5 pt-lg-10 pb-5 pb-lg-5 <?php echo $spacing_top; ?> <?php echo $spacing_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
 	<div class="container">
 		<div class="row justify-content-center text-center mb-5">
-			<div class="col-md-9 col-xl-6">
+			<div class="col-md-9 col-xl-4">
 			  <div class="title-row">
 					<h3 class="heading-animation m-0"><?php echo $heading;?></h3>
 					<div class="fade-animation">
@@ -59,7 +59,7 @@
                                         <h4 class="solution-text mb-2 fw-medium"><?php the_title();?></h4>
                                         <p><?php the_content();?></p>
                                         <div class="button">
-                                            <button type="button" class="btn btn-inline p-0" href="<?php the_permalink();?>">Expolar</button>
+                                            <button type="button" class="btn btn-inline p-0" href="<?php the_permalink();?>">Explore</button>
                                         </div> <!-- .button -->
                                     </a> <!-- .solution-footer -->
                                 </div> <!-- .solution-slider-item -->

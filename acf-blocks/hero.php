@@ -35,10 +35,10 @@
 	</div> <!-- .hero-bg -->
 	<div class="container h-100">
 		<div class="row h-100 align-items-center">
-			<div class="col-lg-6">
+			<div class="col-lg-7">
 				<div class="homepage-hero__content z-index-1 position-relative">
 					<div class="title-row">
-						<h1 class="hero-heading-animation text-white"><?php echo $heading;?></h1>
+						<h1 class="h2 hero-heading-animation text-white"><?php echo $heading;?></h1>
 					</div> <!-- .title-row -->
 					<div class="overflow-hidden">
 					  <p class="hero-text-animation"><?php echo $description;?></p>

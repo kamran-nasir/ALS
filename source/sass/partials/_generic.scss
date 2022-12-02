@@ -525,8 +525,6 @@ ul.icon-with-text {
 
 .mfp-close-btn-in .mfp-close {
   color: $white !important;
-  border: 1px solid $white;
-  border-radius: 50%;
   height: rem-calc(32px);
   width: rem-calc(32px);
   line-height: rem-calc(32px);
@@ -534,8 +532,8 @@ ul.icon-with-text {
   margin: rem-calc(16px);
   opacity: 1;
   @include media-breakpoint-up(md) {
-    color: $milano-red !important;
-    border-color: $milano-red;
+    color: $midnight-500 !important;
+    border-color: $midnight-500;
   }
 }
 .big-separater {

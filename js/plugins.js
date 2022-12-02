@@ -584,7 +584,7 @@ function init(){
 	};
 
 
-  $('.team-member-btn').magnificPopup({
+  $('.download-form').magnificPopup({
     type: 'inline',
     midClick: true,
     fixedContentPos: true,

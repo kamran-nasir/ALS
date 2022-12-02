@@ -38,3 +38,95 @@
     }
   }
 }
+.download-cards {
+  ul {
+    margin: 0 rem-calc(-15px);
+    justify-content: center;
+    align-items: center;
+    li {
+      padding: rem-calc(15px);
+      flex: 0 0 25%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
+        color: $midnight-500;
+        background: $midnight-200;
+        width: 100%;
+        height: rem-calc(293px);
+        display: flex;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &:hover {
+          background: $midnight-500;
+          color: $white !important;
+          .text {
+            color: $white !important;
+          }
+        }
+        span {
+          display: block;
+        }
+        .icon {
+          text-align: center;
+          height: rem-calc(100px);
+          width: rem-calc(100px);
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          margin-bottom: rem-calc(12px);
+          img {
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
+
+.download-list {
+  ul {
+    li {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      font-size: rem-calc(21px);
+      font-weight: 400;
+      color: $midnight-500;
+      border-bottom: 1px solid $midnight-200;
+      padding: rem-calc(16px) 0;
+      .number {
+        color: $milano-red;
+        display: block;
+        flex-basis: 50px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        padding-right: 10px;
+      }
+      .title {
+        display: block;
+        flex-grow: 1;
+        min-width: 0;
+      }
+      .btn {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+.download-popup {
+  max-width: rem-calc(700px);
+  min-height: rem-calc(700px);
+  background: $white;
+  margin: 0 auto;
+  padding: rem-calc(50px);
+  text-align: center;
+  h4 {
+    margin: 0 auto;
+  }
+  p {
+    margin: 0 auto;
+  }
+}
