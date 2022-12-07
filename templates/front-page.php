@@ -425,7 +425,7 @@
 
 <section class="equal-cols pt-10">
 	<div class="container">
-	`<div class="two-equal-cards-row d-flex flex-column flex-lg-row <?php echo ($swap == 'yes') ? 'flex-lg-row-reverse' : ''; ?>">
+	`<div class="two-equal-cards-row d-flex flex-column flex-lg-row">
 			<div class="col-md-6">
 				<div class="img-cover-block">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/col-1.jpg" alt="" class="img-cover has-parallax-effect" data-speed="auto">
@@ -448,7 +448,7 @@
 
 <section class="equal-cols">
 	<div class="container">
-		<div class="row flex-lg-row flex-lg-row-reverse">
+	`<div class="two-equal-cards-row d-flex flex-column flex-lg-row <?php echo ($swap == 'yes') ? 'flex-lg-row-reverse' : ''; ?>">
 			<div class="col-md-6 g-0">
 				<div class="img-cover-block">
 				  <img src="<?php echo get_template_directory_uri(); ?>/images/col-2.jpg" alt="" class="img-cover has-parallax-effect" data-speed="auto">
