@@ -33,7 +33,7 @@
 	<div class="container">
 		<div class="row g-0 justify-content-center align-items-center text-center">
 			<div class="col-lg-12 order-2 order-lg-1">
-				<div id="lightgallery">
+				<div class="lightgallery">
 					<a href="<?php echo get_template_directory_uri(); ?>/images/gate-4.jpg" class="img-big stagger-animation has-overlay">
 						<img src="<?php echo get_template_directory_uri(); ?>/images/gate-4.jpg" alt="" class="img-fluid">
 						<div class="image-overlay">

@@ -13,6 +13,20 @@
       object-fit: contain;
     }
   }
+  .img-small {
+    width: rem-calc(133px);
+    height: rem-calc(133px);
+    border: rem-calc(1px) solid $midnight-200;
+    margin-right: rem-calc(10px);
+    display: inline-block;
+    padding: rem-calc(7px);
+    > img {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.15s ease 0s;
+      transform: scale3d(1, 1, 1);
+    }
+  }
   .product-gallery {
     margin: 0;
     padding: 0;
@@ -66,6 +80,13 @@
             }
           }
         }
+      }
+    }
+  }
+  &.fence-solution {
+    .img-big {
+      img {
+        height: 100%;
       }
     }
   }

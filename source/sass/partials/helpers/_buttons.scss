@@ -1,5 +1,5 @@
 .btn {
-	@include btn;
+  @include btn;
 }
 
 // .btn-sm {
@@ -14,34 +14,28 @@
 //   @include btn-lg;
 // }
 
-.btn-corner-radius {
-	@include btn-corner-radius;
-}
-.btn-corner-top-right-radius {
-	@include btn-corner-top-right-radius;
-}
 .btn-fill-primary {
-	@include btn-fill-primary;
+  @include btn-fill-primary;
 }
 
 .btn-input-clone {
-	@include btn-input-clone(transparent);
+  @include btn-input-clone(transparent);
 }
 
 .btn-reset {
-	@include btn-reset;
+  @include btn-reset;
 }
 
 .btn-rarr {
-	@include btn-rarr;
+  @include btn-rarr;
 }
 
 .btn-inline {
-	@include btn-inline;
+  @include btn-inline;
 }
 
 .ic-before {
-	@include ic-before;
+  @include ic-before;
 }
 
 // &.disabled {

@@ -1135,14 +1135,14 @@ window.requestAnimationFrame(function() {
   init();
   setupSplits();
 });
-$(document).ready(() => {
-  $("#lightgallery").lightGallery({
+
+  $(".lightgallery").lightGallery({
     download: false,
     share: false,
     fullScreen: false,
     autoPlay: false
   });
-});
+
 $(document).ready(function() {
   $('#material-tabs').each(function() {
 
