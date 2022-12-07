@@ -288,52 +288,6 @@
 	</div> <!-- .container -->
 </section> <!-- .download-catalog -->
 
-<section class="equal-cols pt-10">
-	<div class="container">
-		<div class="row g-0 align-items-center">
-			<div class="col-md-6">
-				<div class="img-cover-block">
-				  <img src="<?php echo get_template_directory_uri(); ?>/images/col-1.jpg" alt="" class="img-cover has-parallax-effect" data-speed="auto">
-				</div> <!-- .img-cover-block -->
-			 </div> <!-- .col-md-6 -->
-			 <div class="col-md-6">
-				<div class="title-row p-10">
-					<div class="title-wrap">
-						<h3 class="heading-animation m-0">Who we are</h3>
-						<div class="fade-animation">
-							<span class="bottom-line"></span>
-						</div> <!-- .fade-animation -->
-					</div> <!-- .title-wrap -->
-					<p class="text-animation desc-md">Aluminum Light Solutions is one of the most pioneering companies in the design and production of lightweight architectural systems using innovative aluminum slats designed in Canada.</p>
-				</div> <!-- .title-row -->
-			 </div> <!-- .col-md-6 -->
-		</div> <!-- .row -->
-	</div> <!-- .container -->
-</section> <!-- .equal-cols -->
-
-<section class="equal-cols">
-	<div class="container">
-		<div class="row flex-lg-row flex-lg-row-reverse">
-			<div class="col-md-6 g-0">
-				<div class="img-cover-block">
-				  <img src="<?php echo get_template_directory_uri(); ?>/images/col-2.jpg" alt="" class="img-cover has-parallax-effect" data-speed="auto">
-				</div> <!-- .img-cover-block -->
-			 </div> <!-- .col-md-6 -->
-			 <div class="col-md-6">
-				<div class="title-row p-10">
-					<div class="title-wrap">
-						<h3 class="heading-animation m-0">What differentiates us</h3>
-						<div class="fade-animation">
-							<span class="bottom-line"></span>
-						</div> <!-- .fade-animation -->
-					</div> <!-- .title-wrap -->
-					<p class="text-animation desc-md">If you're looking for an architectural systems company that will provide long-term benefits, look no further than Light Solutions. We value perfection, and our designs are always stunning. Our solutions will enhance your property's beauty for years to come. Give your home the upgrade it deserves! Our solutions are not only affordable, but they provide unmatched quality that stands decades as well.</p>
-				</div> <!-- .title-row -->
-			 </div> <!-- .col-md-6 -->
-		</div> <!-- .row -->
-	</div> <!-- .container -->
-</section> <!-- .equal-cols -->
-
 <section class="download-cards">
 	<div class="container">
 		<div class="row">
@@ -432,4 +386,129 @@
 		</div> <!-- .col-md-8 -->
 	</div> <!-- .row -->
 </div>
+
+<section class="single-product pb-5 pb-lg-10">
+	<div class="container">
+		<div class="row g-0 justify-content-center align-items-center">
+			<div class="col-lg-6 order-2 order-lg-1">
+				<div class="img-big stagger-animation">
+				  <img src="<?php echo get_template_directory_uri(); ?>/images/gate-1-1.jpg" alt="" class="img-fluid">
+				</div> <!-- .img-big -->
+				<ul class="nav product-gallery stagger-animation" id="lightgallery">
+					<li data-responsive="<?php echo get_template_directory_uri(); ?>/images/gate-3.jpg" data-src="<?php echo get_template_directory_uri(); ?>/images/gate-3.jpg">
+						<a href="">
+							<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/gate-3.jpg">
+							<div class="demo-gallery-poster">
+								<img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png">
+							</div>
+						</a>
+					</li>
+					<li data-responsive="<?php echo get_template_directory_uri(); ?>/images/gate-4.jpg" data-src="<?php echo get_template_directory_uri(); ?>/images/gate-4.jpg">
+						<a href="">
+							<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/gate-4.jpg">
+							<div class="demo-gallery-poster">
+								<img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png">
+							</div>
+						</a>
+					</li>
+					<li data-responsive="<?php echo get_template_directory_uri(); ?>/images/gate-2.jpg" data-src="<?php echo get_template_directory_uri(); ?>/images/gate-2.jpg">
+						<a href="">
+							<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/gate-2.jpg">
+							<div class="demo-gallery-poster">
+								<img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png">
+							</div>
+						</a>
+					</li>
+        </ul>
+	    </div> <!-- .col-md-6 -->
+			 <div class="col-md-8 col-lg-6 order-1 order-lg-2">
+				<div class="title-row mb-6 mb-lg-0 ps-lg-5">
+					<div class="title-wrap">
+						<h3 class="heading-animation m-0">Gate - W 804 x 1520 MM</h3>
+					</div> <!-- .title-wrap -->
+				</div> <!-- .title-row -->
+			 </div> <!-- .col-md-6 -->
+		</div> <!-- .row -->
+	</div> <!-- .container -->
+</section> <!-- .equal-cols -->
+
+
+<section class="equal-cols pt-10">
+	<div class="container">
+	`<div class="two-equal-cards-row d-flex flex-column flex-lg-row <?php echo ($swap == 'yes') ? 'flex-lg-row-reverse' : ''; ?>">
+			<div class="col-md-6">
+				<div class="img-cover-block">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/col-1.jpg" alt="" class="img-cover has-parallax-effect" data-speed="auto">
+				</div> <!-- .img-cover-block -->
+			</div> <!-- .col-md-6 -->
+			<div class="col-md-6">
+				<div class="title-row p-10">
+					<div class="title-wrap">
+						<h3 class="heading-animation m-0">Who we are</h3>
+						<div class="fade-animation">
+							<span class="bottom-line"></span>
+						</div> <!-- .fade-animation -->
+					</div> <!-- .title-wrap -->
+					<p class="text-animation desc-md">Aluminum Light Solutions is one of the most pioneering companies in the design and production of lightweight architectural systems using innovative aluminum slats designed in Canada.</p>
+				</div> <!-- .title-row -->
+			</div> <!-- .col-md-6 -->
+		</div> <!-- .row -->`
+	</div> <!-- .container -->
+</section> <!-- .equal-cols -->
+
+<section class="equal-cols">
+	<div class="container">
+		<div class="row flex-lg-row flex-lg-row-reverse">
+			<div class="col-md-6 g-0">
+				<div class="img-cover-block">
+				  <img src="<?php echo get_template_directory_uri(); ?>/images/col-2.jpg" alt="" class="img-cover has-parallax-effect" data-speed="auto">
+				</div> <!-- .img-cover-block -->
+			 </div> <!-- .col-md-6 -->
+			 <div class="col-md-6">
+				<div class="title-row p-10">
+					<div class="title-wrap">
+						<h3 class="heading-animation m-0">What differentiates us</h3>
+						<div class="fade-animation">
+							<span class="bottom-line"></span>
+						</div> <!-- .fade-animation -->
+					</div> <!-- .title-wrap -->
+					<p class="text-animation desc-md">If you're looking for an architectural systems company that will provide long-term benefits, look no further than Light Solutions. We value perfection, and our designs are always stunning. Our solutions will enhance your property's beauty for years to come. Give your home the upgrade it deserves! Our solutions are not only affordable, but they provide unmatched quality that stands decades as well.</p>
+				</div> <!-- .title-row -->
+			 </div> <!-- .col-md-6 -->
+		</div> <!-- .row -->
+	</div> <!-- .container -->
+</section> <!-- .equal-cols -->
+
+<div class="container">
+		<header>
+				<div id="material-tabs">
+						<a id="tab1-tab" href="#tab1" class="active">DEFISCALISATION</a>
+						<a id="tab2-tab" href="#tab2">AUDIT</a>
+						<a id="tab3-tab" href="#tab3">DECLARATION</a>
+						<a id="tab4-tab" href="#tab4">GESTION D'ACTIFS</a>
+						<span class="yellow-bar"></span>
+				</div>
+		</header>
+
+		<div class="tab-content">
+				<div id="tab1">
+						<p>There are three basic ideas invoved in creating these tabs:</p>
+						<ol>
+								<li>Use anchor tags as tabs.</li>
+								<li>Use a span class for the tab highlight.</li>
+							<li>In your CSS, adjust the <strong>position</strong> of the highlight, as well as it's <strong>width</strong>, by detecting the anchor tag with an 'active' class. Then adjust its left property and width property. Add a transition in your CSS, <em>et voil&agrave;</em>.</li>
+						</ol>
+				</div>
+				<div id="tab2">
+						<p>Second tab content.</p>
+				</div>
+				<div id="tab3">
+						<p>Third tab content.</p>
+				</div>
+							<div id="tab4">
+						<p>Third tab content.</p>
+				</div>
+		</div>
+</div>
+<!-- end container -->
 <?php get_footer(); ?>
