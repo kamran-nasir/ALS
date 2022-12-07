@@ -421,15 +421,5 @@
 		</div> <!-- .row -->
 	</div> <!-- .container -->
 </section> <!-- .download-list -->
-<div id="document-1" class="download-popup position-relative mfp-hide">
-	<div class="row gx-0 h-100">
-		<div class="col-md-12">
-		  <div class="title-row">
-				<h4>Horizontal Privacy Vinyl Gate Kit Installation Instructions</h4>
-					<span class="bottom-line line-centered"></span>
-			</div> <!-- .title-row -->
-			<p>Fill out the information below to get a free download of our document.</p>
-		</div> <!-- .col-md-8 -->
-	</div> <!-- .row -->
-</div>
+
 <?php get_footer(); ?>

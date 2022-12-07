@@ -104,6 +104,189 @@ function skel_register_acf_blocks() {
     )
   ));
 
+  
+  
+  
+
+//  intersted-about.php
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'intersted-about',
+    'title'             => 'intersted-about',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/intersted-about.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+  //cards-with-hover-about
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'cards-with-hover-about',
+    'title'             => 'cards-with-hover-about',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/cards-with-hover-about.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+
+
+  //block-two-heading-with-repeator
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'block-two-heading-with-repeator',
+    'title'             => 'block-two-heading-with-repeator',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/block-two-heading-with-repeator.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+
+
+  //bg-with-block-text
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'bg-with-block-text',
+    'title'             => 'bg-with-block-text',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/bg-with-block-text.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+
+  //simple-title-text
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'simple-title-text',
+    'title'             => 'simple-title-text',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/simple-title-text.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+
+  //banner-hero-inner
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'banner-hero-inner',
+    'title'             => 'banner-hero-inner',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/banner-hero-inner.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
 
   //About Us 
   ////////////////////////////////////////////////
@@ -179,6 +362,70 @@ function skel_register_acf_blocks() {
       'src' => 'layout',
     ),
     'render_template'  	=> 'acf-blocks/catalog.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+
+
+// Banner-with-equal-text-right-section
+  ////////////////////////////////////////////////
+
+  acf_register_block_type(array(
+    'name'              => 'banner-with-equal-text-right',
+    'title'             => 'Banner with equal text right',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/banner-with-equal-text-right.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+
+
+// Banner-with-equal-text-left-section
+  ////////////////////////////////////////////////
+
+  acf_register_block_type(array(
+    'name'              => 'banner-with-equal-text-left',
+    'title'             => 'Banner With Equal Text Left',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/banner-with-equal-text-left.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
