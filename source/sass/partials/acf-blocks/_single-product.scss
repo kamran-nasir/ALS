@@ -71,17 +71,7 @@
   }
 }
 .lg-img-wrap {
-  padding: rem-calc(50px) !important;
-  background: $white !important;
-  width: 100% !important;
-  height: 100% !important;
-  top: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  left: 50% !important;
-  @include media-breakpoint-up(md) {
-    width: rem-calc(700px) !important;
-    height: rem-calc(700px) !important;
-  }
+  padding: rem-calc(100px) !important;
 }
 .lg-backdrop.in {
   @include media-breakpoint-up(md) {
@@ -91,5 +81,200 @@
 .lg-toolbar {
   @include media-breakpoint-down(md) {
     background: $midnight-500 !important;
+  }
+}
+
+@-webkit-keyframes zoom-in {
+  0% {
+    -webkit-transform: rotate(-175deg) scale(0.2);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: rotate(-175deg) scale(0.2);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.image-overlay {
+  position: absolute;
+  background: $white;
+  z-index: 300;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  display: block;
+  filter: alpha(opacity=0);
+  transition: opacity 0.4s ease-in-out;
+  .image-overlay-inside {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon {
+      height: calc(50px);
+      width: calc(50px);
+      position: relative;
+      svg {
+        max-width: 100%;
+      }
+      .fs-icon {
+        transition: 0.5s ease-out;
+        .outline {
+          fill: $milano-red;
+        }
+        .arrow {
+          fill: $milano-red;
+          transition: fill 1s ease;
+        }
+        .tl {
+          transform: 50%;
+          transition: 0.5s ease-out;
+          animation: tl 1s ease-in-out;
+        }
+        .tr {
+          transform: 50%;
+          transition: 0.5s ease-out;
+          animation: tr 1s ease-in-out;
+        }
+        .bl {
+          transform: 50%;
+          transition: 0.5s ease-out;
+          animation: bl 1s ease-in-out;
+        }
+        .br {
+          transform: rotate(0deg);
+          transform: 50%;
+          transition: 0.5s ease-out;
+          animation: br 1s ease-in-out;
+        }
+      }
+      &:hover {
+        .fs-icon {
+          transform: scale(1.1);
+          transition: 0.5s ease-out;
+        }
+        .arrow {
+          transition: fill 1s ease;
+          transition: transform 0.5s ease-out;
+        }
+        .tl {
+          transform: translate(-4px, -4px);
+        }
+        .tr {
+          transform: translate(4px, -4px);
+        }
+        .bl {
+          transform: translate(-4px, 4px);
+        }
+        .br {
+          transform: translate(4px, 4px);
+        }
+      }
+      &:active {
+        .fs-icon {
+          transform: scale(1.1);
+          transition: 0.5s ease-out;
+        }
+        .arrow {
+          fill: $milano-red;
+          transition: fill 1s ease;
+          opacity: 0;
+        }
+        .tl {
+          transform: translate(-60px, -60px);
+          transition: 0.5s ease-out;
+        }
+        .tr {
+          transform: translate(60px, -60px);
+          transition: 0.5s ease-out;
+        }
+        .br {
+          transform: translate(60px, 60px);
+          transition: 0.5s ease-out;
+        }
+        .bl {
+          transform: translate(-60px, 60px);
+          transition: 0.5s ease-out;
+        }
+      }
+    }
+  }
+}
+.has-overlay {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  &:hover {
+    .image-overlay {
+      opacity: 0.7 !important;
+      .image-overlay-inside {
+        animation: zoom-in 0.5s 1 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+    }
+  }
+}
+
+@keyframes tl {
+  0% {
+    transform: translate(8px, 8px);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+@keyframes tr {
+  0% {
+    transform: translate(-8px, 8px);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+@keyframes bl {
+  0% {
+    transform: translate(8px, -8px);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+@keyframes br {
+  0% {
+    transform: translate(-8px, -8px);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
   }
 }
