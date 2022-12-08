@@ -376,8 +376,6 @@
 	</div> <!-- .container -->
 </section> <!-- .download-list -->
 
-<<<<<<< HEAD
-=======
 
 <section class="equal-cols pt-10">
 	<div class="container">
@@ -772,5 +770,4 @@
 
 
 <!-- end container -->
->>>>>>> 043376e97015cc7dd6b5409bac7dca7d715dadad
 <?php get_footer(); ?>
