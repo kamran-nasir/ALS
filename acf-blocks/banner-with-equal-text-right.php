@@ -10,11 +10,12 @@
     $padding_bottom          = get_field( 'padding_bottom' );
     $custom_classes          = get_field( 'custom_classes' );
     $custom_css              = get_field( 'custom_css' );
+ 
 ?>
 
 <section class="equal-cols pt-10">
 	<div class="container">
-		<div class="row g-0 align-items-center">
+		<div class="row g-0 align-items-center  <?php echo $swap;?>">
 			<div class="col-md-6">
 				<div class="img-cover-block">
                 <?php

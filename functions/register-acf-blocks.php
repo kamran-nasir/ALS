@@ -137,6 +137,71 @@ function skel_register_acf_blocks() {
     )
   ));
 
+
+
+
+  //image-with-heading-solution
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'image-with-heading-solution',
+    'title'             => 'image-with-heading-solution',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/image-with-heading-solution.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+
+
+  //simple-title-solution.php
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'simple-title-solution',
+    'title'             => 'simple-title-solution',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/simple-title-solution.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+
+
   //cards-with-hover-about
   ////////////////////////////////////////////////
   acf_register_block_type(array(

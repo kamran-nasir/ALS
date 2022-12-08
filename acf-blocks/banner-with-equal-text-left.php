@@ -5,6 +5,7 @@
     $image                  = get_field('image');
     $heading                 = get_field('heading');
     $description             = get_field('description');
+    $swap             = get_field('swap');
 //  Developer options
     $padding_top            = get_field( 'padding_top' );
     $padding_bottom          = get_field( 'padding_bottom' );
@@ -14,7 +15,7 @@
 
 <section class="equal-cols">
 	<div class="container">
-		<div class="row flex-lg-row flex-lg-row-reverse">
+		<div class="row flex-lg-row flex-lg-row-reverse <?php echo $swap;?>">
 			<div class="col-md-6 g-0">
 				<div class="img-cover-block">
                 <?php

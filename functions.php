@@ -159,9 +159,63 @@ function custom_post_type() {
   /* Hook into the 'init' action so that the function                                                                                   
   * Containing our post type registration is not 
   * unnecessarily executed. 
+   '.do_shortcode('[wpforms id="599"]').'
   */
    
   add_action( 'init', 'custom_post_type', 0 );
 
   add_theme_support( 'post-thumbnails' );
+
+
+  add_action('wp_ajax_nopriv_sayhello2', 'sayhello2_function');
+  add_action('wp_ajax_sayhello2', 'say_hello2_function');
+  function say_hello2_function(){
+
+    $content = "Please Download PDF file<br>'".get_field($_POST['post_id'],'download_file_link').'"'; 
+   
+    $toEmail = "anwaralam6858@gmail.com";
+    $mailHeaders = "From: " . $_POST["userName"] . "<". $_POST["userEmail"] .">\r\n";
+    if(mail($toEmail, 'Download File', $content, $mailHeaders)) {
+        echo  'Mail Sent';
+    } else {
+        echo  "<p class='Error'>Problem in Sending Mail.</p>";
+    }
+
+  }  
+
+add_action('wp_ajax_nopriv_sayhello', 'say_hello_function');
+add_action('wp_ajax_sayhello', 'say_hello_function');
+function say_hello_function(){
   
+echo '	<div class="row gx-0 h-100">
+          <div class="col-md-12">
+            <div class="title-row">
+              <h4>'.get_the_title($_POST['post_id']).'-'.$_POST['post_id'].'</h4>
+                <span class="bottom-line line-centered"></span>
+            </div>
+            <p>Fill out the information below to get a free download of our document.</p>
+              <div class="form-align">
+                  <div id="frmContact">
+                      <div id="mail-status"></div>
+                      <input type="hidden" name="post_id" id="post_id" value="'.$_POST['post_id'].'" class="demoInputBox">
+                      <div>
+                          <label style="padding-top:20px;">Name</label><br/>
+                          <input type="text" name="userName" id="userName" class="demoInputBox">
+                      </div>
+                      <div>
+                          <label>Last Name</label><span id="last-info" class="info"></span><br/>
+                          <input type="text" name="lastName" id="lastName" class="demoInputBox">
+                      </div>  
+                      <div>
+                          <label>Email</label><span id="userEmail-info" class="info"></span><br/>
+                          <input type="text" name="userEmail" id="userEmail" class="demoInputBox">
+                      </div>                                        
+                      <div>
+                          <button name="submit" class="btnAction" onClick="sendContact();">Send</button>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div> ';
+  exit();
+}

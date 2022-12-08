@@ -56,11 +56,14 @@ function init(){
       beforeClose: function () {
         modalScroll.disable();
         smoother.paused(false);
+
         $('body, html, #wrapper').removeClass('overflow-hidden');
+       
       },
     },
   });
 
+  
   $(".image-link").magnificPopup({
     type: "image",
     closeBtnInside: true,
