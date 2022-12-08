@@ -48,7 +48,22 @@ add_post_type_support( 'news', 'excerpt' );
 // http://wordpress.org/support/topic/insert-image-default-to-no-link
 update_option('image_default_link_type', 'none');
 
+/*
+* PURPOSE : If there are zero results (or other parameters) in the archive query, get_post_type() isn't reliable for knowing what the archive's post type is. This function gets the post type from the global $wp_query object instead.
+*  PARAMS : n/a
+* RETURNS : boolean / string - the slug for the post type fromm $wp_query, or false if that is not found.
+*   NOTES :
+*/
+function jp_get_archive_post_type(){
+  $post_type = false;
 
+  global $wp_query;
+  if( isset($wp_query->query['post_type']) ){
+      $post_type = $wp_query->query['post_type'];
+  }
+
+  return $post_type;
+}
 /*
 * Creating a function to create our CPT
 */
@@ -111,51 +126,103 @@ function custom_post_type() {
 
 
   add_action('init', function() {
-    register_post_type('downloads', [
-      'label' => __('Downloads', 'txtdomain'),
+    register_post_type('marketing', [
+      'label' => __('Marketing', 'txtdomain'),
       'public' => true,
       'menu_position' => 5,
       'menu_icon' => 'dashicons-book',
       'supports' => ['title', 'editor', 'thumbnail', 'author', 'revisions', 'comments'],
       'show_in_rest' => true,
-      'rewrite' => ['slug' => 'book'],
-      'taxonomies' => ['download_type'],
+      'rewrite' => ['slug' => 'marketing'],
+      'taxonomies' => ['marketing'],
       'labels' => [
-        'singular_name' => __('Download', 'txtdomain'),
-        'add_new_item' => __('Add new Download', 'txtdomain'),
-        'new_item' => __('New Download', 'txtdomain'),
-        'view_item' => __('View Download', 'txtdomain'),
-        'not_found' => __('No Download found', 'txtdomain'),
-        'not_found_in_trash' => __('No Download found in trash', 'txtdomain'),
-        'all_items' => __('All Download', 'txtdomain'),
+        'singular_name' => __('marketing', 'txtdomain'),
+        'add_new_item' => __('Add new marketing', 'txtdomain'),
+        'new_item' => __('New marketing', 'txtdomain'),
+        'view_item' => __('View marketing', 'txtdomain'),
+        'not_found' => __('No marketing found', 'txtdomain'),
+        'not_found_in_trash' => __('No marketing found in trash', 'txtdomain'),
+        'all_items' => __('All marketing', 'txtdomain'),
         'insert_into_item' => __('Insert into book', 'txtdomain')
       ],		
     ]);
 
-    register_taxonomy('download_type', ['downloads'], [
+    register_taxonomy('cat_marketing', ['marketing'], [
       'label' => __('Categories', 'txtdomain'),
       'hierarchical' => true,
-      'rewrite' => ['slug' => 'download-type'],
+      'rewrite' => ['slug' => 'cat_marketing'],
       'show_admin_column' => true,
       'show_in_rest' => true,
       'labels' => [
-        'singular_name' => __('download', 'txtdomain'),
-        'all_items' => __('All download', 'txtdomain'),
-        'edit_item' => __('Edit download', 'txtdomain'),
-        'view_item' => __('View download', 'txtdomain'),
-        'update_item' => __('Update download', 'txtdomain'),
-        'add_new_item' => __('Add New download', 'txtdomain'),
-        'new_item_name' => __('New download Name', 'txtdomain'),
-        'search_items' => __('Search download', 'txtdomain'),
-        'parent_item' => __('Parent download', 'txtdomain'),
+        'singular_name' => __('marketing', 'txtdomain'),
+        'all_items' => __('All marketing', 'txtdomain'),
+        'edit_item' => __('Edit marketing', 'txtdomain'),
+        'view_item' => __('View marketing', 'txtdomain'),
+        'update_item' => __('Update marketing', 'txtdomain'),
+        'add_new_item' => __('Add New marketing', 'txtdomain'),
+        'new_item_name' => __('New marketing Name', 'txtdomain'),
+        'search_items' => __('Search marketing', 'txtdomain'),
+        'parent_item' => __('Parent marketing', 'txtdomain'),
         'parent_item_colon' => __('Parent Genre:', 'txtdomain'),
-        'not_found' => __('No download found', 'txtdomain'),
+        'not_found' => __('No marketing found', 'txtdomain'),
       ]
     ]);
-    register_taxonomy_for_object_type('download_type', 'book');
+    register_taxonomy_for_object_type('cat_marketing', 'marketing');
 
  
   });
+
+
+  
+
+  add_action('init', function() {
+    register_post_type('technical', [
+      'label' => __('Technical Resource', 'txtdomain'),
+      'public' => true,
+      'has_archive' => true,
+      'menu_position' => 5,
+      'menu_icon' => 'dashicons-book',
+      'supports' => ['title', 'editor', 'thumbnail', 'author', 'revisions', 'comments'],
+      'show_in_rest' => true,
+      'rewrite' => ['slug' => 'technical'],
+      'taxonomies' => ['technical'],
+      'labels' => [
+        'singular_name' => __('Technical', 'txtdomain'),
+        'add_new_item' => __('Add new Technical', 'txtdomain'),
+        'new_item' => __('New Technical', 'txtdomain'),
+        'view_item' => __('View Technical', 'txtdomain'),
+        'not_found' => __('No Technical found', 'txtdomain'),
+        'not_found_in_trash' => __('No Technical found in trash', 'txtdomain'),
+        'all_items' => __('All Technical', 'txtdomain'),
+        'insert_into_item' => __('Insert into book', 'txtdomain')
+      ],		
+    ]);
+
+    register_taxonomy('cat_technical', ['technical'], [
+      'label' => __('Categories', 'txtdomain'),
+      'hierarchical' => true,
+      'rewrite' => ['slug' => 'cat_technical'],
+      'show_admin_column' => true,
+      'show_in_rest' => true,
+      'labels' => [
+        'singular_name' => __('technical', 'txtdomain'),
+        'all_items' => __('All Technical', 'txtdomain'),
+        'edit_item' => __('Edit Technical', 'txtdomain'),
+        'view_item' => __('View Technical', 'txtdomain'),
+        'update_item' => __('Update Technical', 'txtdomain'),
+        'add_new_item' => __('Add New Technical', 'txtdomain'),
+        'new_item_name' => __('New Technical Name', 'txtdomain'),
+        'search_items' => __('Search Technical', 'txtdomain'),
+        'parent_item' => __('Parent Technical', 'txtdomain'),
+        'parent_item_colon' => __('Parent Genre:', 'txtdomain'),
+        'not_found' => __('No Technical found', 'txtdomain'),
+      ]
+    ]);
+    register_taxonomy_for_object_type('cat_technical', 'technical');
+
+ 
+  });
+
   /* Hook into the 'init' action so that the function                                                                                   
   * Containing our post type registration is not 
   * unnecessarily executed. 
