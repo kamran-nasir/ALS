@@ -9,8 +9,8 @@
 			<div class="col-md-9 col-xl-6">
 				<div class="hero-content position-relative z-index-1 text-center">
 				  <img src="<?php echo get_template_directory_uri(); ?>/images/light-fence.png" alt="" class="hero-logo">
-					<p class="text-animation">Aluminum Light Solutions is one of the most pioneering
-            companies in the design and production of lightweight architectural aluminum systems using innovative slats.</p>
+					<p class="text-animation"><?php $term = get_queried_object();  ?>	
+					<?php echo $term->description; // will show taxonomy slug ?></p>
 				</div> <!-- .hero-content -->
 			</div> <!-- .col-md-6 -->
 		</div> <!-- .row -->
@@ -239,7 +239,11 @@
 		</div> <!-- .row -->
 	</div> <!-- .container -->
 </section> <!-- .tabs-section -->
-
+<?php 
+	$term_id = $term->term_id;
+	$taxonomy_name = 'cat_technical';
+	$termchildren = get_term_children( $term_id, $taxonomy_name );
+?>
 <section class="generic-tabs-section">
 	<div class="generic-tabs">
 		<div class="bg-midnight-200 py-1-5 mb-1 mb-md-4-5">
@@ -247,8 +251,10 @@
 				<div class="row">
 					<div class="col-12">
 						<ul class="nav nav-tabs flex-lg-wrap justify-content-center flex-nowrap horizentol-scroll-mobile">
-							<li class="active"><a class="btn-corner-radius" data-toggle="tab" href="#tab-1">6x6</a></li>
-							<li><a class="btn-corner-radius" data-toggle="tab" href="#tab-2">6x6</a></li>
+							<?php $i=0; foreach ( $termchildren as $child ) { $term = get_term_by( 'id', $child, $taxonomy_name );?>
+								<li class="<?php if($i==0) echo 'active';?>"><a class="btn-corner-radius" data-toggle="tab" href="#tab-<?php echo $i;?>"><?php echo $term->name;?></a></li>
+							<?php $i++;}?>									
+
 						</ul>
 					</div> <!-- .col-12 -->
 				</div> <!-- .row -->
@@ -258,7 +264,9 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="tab-content">
-						<div id="tab-1" class="tab-pane active">
+					<?php $i=0; foreach ( $termchildren as $child ) { $term = get_term_by( 'id', $child, $taxonomy_name );?>
+						<div id="tab-<?php echo $i;?>" class="tab-pane <?php if($i==0) echo 'active';?>">
+						<?php the_content();?>
 							<section class="single-product fence-solution pb-5 pb-lg-10">
 								<div class="d-flex justify-content-center align-items-center">
 									<div class="col-lg-6 order-2 order-lg-1">
@@ -325,9 +333,8 @@
 								</div> <!-- .d-flex -->
 							</section> <!-- .equal-cols -->
 						</div> <!-- .tab-pane -->
-						<div id="tab-2" class="tab-pane">
-							hello2
-						</div> <!-- .tab-pane -->
+						<?php $i++;}?>
+
 					</div> <!-- .tab-content -->
 				</div> <!-- .col-12 -->
 			</div> <!-- .row -->

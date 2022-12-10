@@ -138,8 +138,39 @@ function skel_register_acf_blocks() {
   ));
 
 
-  
-//inner-hero-sub-cat
+//single-product-fence-solution
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'single-product-fence-solution',
+    'title'             => 'single-product-fence-solution',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/single-product-fence-solution.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+
+
+
+  //inner-hero-sub-cat
   ////////////////////////////////////////////////
   acf_register_block_type(array(
     'name'              => 'inner-hero-sub-cat.php',
