@@ -20,7 +20,7 @@ function misha_allowed_block_types( $allowed_blocks, $editor_context ) {
 		'acf/text-editor',
 		'acf/hero',
 		'acf-blocks/about-us',
-		// 'acf/banner-with-scrolling-text',
+		 'acf/banner-with-scrolling-text',
 		 'acf/banner-with-text-and-line-art',
 		 'acf/banner-with-text-and-line-art-two',
 		 'acf/banner-with-text-and-line-art-three',
@@ -50,12 +50,12 @@ function misha_allowed_block_types( $allowed_blocks, $editor_context ) {
 
   // Allow more blocks depending on the post type
   // Same can also be used for specific post ID or users roles
-	// if ( 'CUSTOM_POST_TYPE' === $editor_context->post->post_type ) {
-  //   $post_allowed_blocks = array(
-  //     'core/image',
-  //   );
-	// 	$allowed_blocks = array_merge( $post_allowed_blocks );
-	// }
+	if ( 'CUSTOM_POST_TYPE' === $editor_context->post->post_type ) {
+    $post_allowed_blocks = array(
+      'core/image',
+    );
+		$allowed_blocks = array_merge( $post_allowed_blocks );
+	}
 
 	return $allowed_blocks;
 

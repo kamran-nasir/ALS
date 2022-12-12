@@ -1307,32 +1307,32 @@ function skel_register_acf_blocks() {
 
 	// All News
   ////////////////////////////////////////////////
-  acf_register_block_type(array(
-    'name'              => 'show-all-news',
-    'title'             => 'All News',
-    'category'          => 'mubadala',
-    'icon' => array(
-      'background' => '#ff2500',
-      'foreground' => '#fff',
-      'src' => 'layout',
-    ),
-    'render_template'  	=> 'acf-blocks/all-news.php',
-    'example'           => [
-      'attributes' => [
-        'mode' => 'preview',
-        'data' => array(
-          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/all-news.jpg',
-        ),
-      ]
-    ],
-    'mode'              => 'edit',
-    'post_types'        => array( 'page' ),
-    'supports'          => array(
-      'align' => false,
-      'customClassName' => false,
-			'mode' => false
-    )
-  ));
+  // acf_register_block_type(array(
+  //   'name'              => 'show-all-news',
+  //   'title'             => 'All News',
+  //   'category'          => 'mubadala',
+  //   'icon' => array(
+  //     'background' => '#ff2500',
+  //     'foreground' => '#fff',
+  //     'src' => 'layout',
+  //   ),
+  //   'render_template'  	=> 'acf-blocks/all-news.php',
+  //   'example'           => [
+  //     'attributes' => [
+  //       'mode' => 'preview',
+  //       'data' => array(
+  //         'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/all-news.jpg',
+  //       ),
+  //     ]
+  //   ],
+  //   'mode'              => 'edit',
+  //   'post_types'        => array( 'page' ),
+  //   'supports'          => array(
+  //     'align' => false,
+  //     'customClassName' => false,
+	// 		'mode' => false
+  //   )
+  // ));
 
 	// Project details
   ////////////////////////////////////////////////
@@ -1421,7 +1421,42 @@ function skel_register_acf_blocks() {
     )
   ));
 
-	// Ribbon Text
+
+  
+
+	// inner-hero-light-fence
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'inner-hero-light-fence',
+    'title'             => 'inner-hero-light-fence',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/inner-hero-light-fence.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/ribbon-text.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+
+
+
+  // Ribbon Text
   ////////////////////////////////////////////////
   acf_register_block_type(array(
     'name'              => 'ribbon-text',
