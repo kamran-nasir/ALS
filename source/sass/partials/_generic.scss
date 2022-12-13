@@ -153,6 +153,7 @@ ul.icon-with-text {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: rem-calc(350px);
     @include media-breakpoint-down(lg) {
       width: rem-calc(250px);
     }
@@ -364,40 +365,42 @@ ul.icon-with-text {
 }
 
 .swiper-button-wrapper {
-  margin-top: rem-calc(22px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 1;
   .swiper-button-prev,
   .swiper-button-next {
-    position: relative;
-    background: $midnight-500;
-    left: auto;
-    right: auto;
-    top: auto;
-    height: rem-calc(42px);
-    width: rem-calc(42px);
+    height: rem-calc(64px);
+    width: rem-calc(64px);
     margin: 0;
     border-top-right-radius: rem-calc(6px);
     border-bottom-left-radius: rem-calc(6px);
+
     &::after {
       content: '';
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
       left: 50%;
-      height: rem-calc(21px);
-      width: rem-calc(10px);
+      height: rem-calc(44px);
+      width: rem-calc(44px);
       background-repeat: no-repeat;
       background-position: center center;
       background-size: contain;
     }
   }
   .swiper-button-prev {
-    margin-right: rem-calc(10px);
+    left: -10px;
     &::after {
       background-image: url("data:image/svg+xml,%3Csvg width='13' height='23' viewBox='0 0 13 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 21.7783L2 11.2783L12 0.77832' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");
       background-repeat: no-repeat;
     }
   }
   .swiper-button-next {
+    right: -10px;
     &::after {
       background-image: url("data:image/svg+xml,%3Csvg width='13' height='23' viewBox='0 0 13 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0.77832L11 11.2783L1 21.7783' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");
       background-repeat: no-repeat;
@@ -667,5 +670,21 @@ ul.icon-with-text {
   #tab2-tab.active ~ span.yellow-bar {
     left: 50%;
     width: 50%;
+  }
+}
+
+.form-align {
+  input[type='text'],
+  input[type='tel'],
+  input[type='email'],
+  select,
+  textarea {
+    color: #384254;
+    font-size: 1.6rem;
+    padding: 0 2rem;
+    height: rem-calc(55px);
+    line-height: 4.4rem;
+    border: 0.1rem solid #b9bdc4;
+    border-radius: 0;
   }
 }

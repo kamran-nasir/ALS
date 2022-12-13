@@ -27,7 +27,7 @@
 			</div> <!-- .col-12 -->
 		</div> <!-- .row -->
 		<div class="row fade-animation">
-			<div class="col-12">
+			<div class="col-12 position-relative">
 				<div class="centered-swiper">
 					<div class="swiper-wrapper lr_scroll">
             <?php if( $gallery_list ) {
@@ -55,6 +55,10 @@
             }?>
 					</div>
 				</div>
+        <div class="swiper-button-wrapper d-flex">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div> <!-- .d-flex -->
 			</div> <!-- .col-12 -->
 		</div> <!-- .row -->
   </div>

@@ -67,9 +67,9 @@ function jp_get_archive_post_type(){
 /*
 * Creating a function to create our CPT
 */
- 
+
 function custom_post_type() {
- 
+
   // Set UI labels for Custom Post Type
       $labels = array(
           'name'                => _x( 'Solution', 'Post Type General Name', 'twentytwenty' ),
@@ -86,21 +86,21 @@ function custom_post_type() {
           'not_found'           => __( 'Not Found', 'twentytwenty' ),
           'not_found_in_trash'  => __( 'Not found in Trash', 'twentytwenty' ),
       );
-       
+
   // Set other options for Custom Post Type
-       
+
       $args = array(
           'label'               => __( 'Solution', 'twentytwenty' ),
           'description'         => __( 'Solution news and reviews', 'twentytwenty' ),
           'labels'              => $labels,
           // Features this CPT supports in Post Editor
           'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-          // You can associate this CPT with a taxonomy or custom taxonomy. 
+          // You can associate this CPT with a taxonomy or custom taxonomy.
           //'taxonomies'          => array( 'genres' ),
           /* A hierarchical CPT is like Pages and can have
           * Parent and child items. A non-hierarchical CPT
           * is like Posts.
-          */ 
+          */
           'hierarchical'        => true,
           'public'              => true,
           'show_ui'             => true,
@@ -114,14 +114,14 @@ function custom_post_type() {
           'publicly_queryable'  => true,
           'capability_type'     => 'post',
           'show_in_rest' => true,
-   
+
       );
-       
+
       // Registering your Custom Post Type
       register_post_type( 'solution', $args );
-   
+
   }
-   
+
 
 
 
@@ -144,7 +144,7 @@ function custom_post_type() {
         'not_found_in_trash' => __('No marketing found in trash', 'txtdomain'),
         'all_items' => __('All marketing', 'txtdomain'),
         'insert_into_item' => __('Insert into book', 'txtdomain')
-      ],		
+      ],
     ]);
 
     register_taxonomy('cat_marketing', ['marketing'], [
@@ -169,11 +169,11 @@ function custom_post_type() {
     ]);
     register_taxonomy_for_object_type('cat_marketing', 'marketing');
 
- 
+
   });
 
 
-  
+  //CUstom post type Technical resource
 
   add_action('init', function() {
     register_post_type('technical', [
@@ -195,7 +195,7 @@ function custom_post_type() {
         'not_found_in_trash' => __('No Technical found in trash', 'txtdomain'),
         'all_items' => __('All Technical', 'txtdomain'),
         'insert_into_item' => __('Insert into book', 'txtdomain')
-      ],		
+      ],
     ]);
 
     register_taxonomy('cat_technical', ['technical'], [
@@ -220,15 +220,65 @@ function custom_post_type() {
     ]);
     register_taxonomy_for_object_type('cat_technical', 'technical');
 
- 
+
   });
 
-  /* Hook into the 'init' action so that the function                                                                                   
-  * Containing our post type registration is not 
-  * unnecessarily executed. 
+  // Custom post type for Light Fence
+
+  add_action('init', function() {
+    register_post_type('lightfence', [
+      'label' => __('Light Fence Resource', 'txtdomain'),
+      'public' => true,
+      'has_archive' => true,
+      'menu_position' => 5,
+      'menu_icon' => 'dashicons-book',
+      'supports' => ['title', 'editor', 'thumbnail', 'author', 'revisions', 'comments'],
+      'show_in_rest' => true,
+      'rewrite' => ['slug' => 'light-fence'],
+      'taxonomies' => ['cat_lightfence'],
+      'labels' => [
+        'singular_name' => __('Light Fence', 'txtdomain'),
+        'add_new_item' => __('Add new Light Fence', 'txtdomain'),
+        'new_item' => __('New Light Fence', 'txtdomain'),
+        'view_item' => __('View Light Fence', 'txtdomain'),
+        'not_found' => __('No Light Fence found', 'txtdomain'),
+        'not_found_in_trash' => __('No Light Fence found in trash', 'txtdomain'),
+        'all_items' => __('All Light Fence', 'txtdomain'),
+        'insert_into_item' => __('Insert into book', 'txtdomain')
+      ],
+    ]);
+
+    register_taxonomy('cat_lightfence', ['lightfence'], [
+      'label' => __('Categories', 'txtdomain'),
+      'hierarchical' => true,
+      'rewrite' => ['slug' => 'cat_lightfence'],
+      'show_admin_column' => true,
+      'show_in_rest' => true,
+      'labels' => [
+        'singular_name' => __('Light Fence', 'txtdomain'),
+        'all_items' => __('All Light Fence', 'txtdomain'),
+        'edit_item' => __('Edit Light Fence', 'txtdomain'),
+        'view_item' => __('View Light Fence', 'txtdomain'),
+        'update_item' => __('Update Light Fence', 'txtdomain'),
+        'add_new_item' => __('Add New Light Fence', 'txtdomain'),
+        'new_item_name' => __('New Light Fence Name', 'txtdomain'),
+        'search_items' => __('Search Light Fence', 'txtdomain'),
+        'parent_item' => __('Parent Light Fence', 'txtdomain'),
+        'parent_item_colon' => __('Parent Genre:', 'txtdomain'),
+        'not_found' => __('No Light Fence found', 'txtdomain'),
+      ]
+    ]);
+    register_taxonomy_for_object_type('cat_lightfence', 'lightfence');
+
+
+  });
+
+  /* Hook into the 'init' action so that the function
+  * Containing our post type registration is not
+  * unnecessarily executed.
    '.do_shortcode('[wpforms id="599"]').'
   */
-   
+
   add_action( 'init', 'custom_post_type', 0 );
 
   add_theme_support( 'post-thumbnails' );
@@ -238,8 +288,8 @@ function custom_post_type() {
   add_action('wp_ajax_sayhello2', 'say_hello2_function');
   function say_hello2_function(){
 
-    $content = "Please Download PDF file<br>'".get_field($_POST['post_id'],'download_file_link').'"'; 
-   
+    $content = "Please Download PDF file<br>'".get_field($_POST['post_id'],'download_file_link').'"';
+
     $toEmail = "anwaralam6858@gmail.com";
     $mailHeaders = "From: " . $_POST["userName"] . "<". $_POST["userEmail"] .">\r\n";
     if(mail($toEmail, 'Download File', $content, $mailHeaders)) {
@@ -248,12 +298,12 @@ function custom_post_type() {
         echo  "<p class='Error'>Problem in Sending Mail.</p>";
     }
 
-  }  
+  }
 
 add_action('wp_ajax_nopriv_sayhello', 'say_hello_function');
 add_action('wp_ajax_sayhello', 'say_hello_function');
 function say_hello_function(){
-  
+
 echo '	<div class="row gx-0 h-100">
           <div class="col-md-12">
             <div class="title-row">
@@ -264,7 +314,7 @@ echo '	<div class="row gx-0 h-100">
               <div class="form-align">
                   <div id="frmContact">
                       <div id="mail-status"></div>
-                      <input type="hidden" name="post_id" id="post_id" value="'.$_POST['post_id'].'" class="demoInputBox">
+                      <input type="hidden" name="post_id" id="post_id" value="'.$_POST['post_id'].'" class="demoInputBox form-input">
                       <div>
                           <label style="padding-top:20px;">Name</label><br/>
                           <input type="text" name="userName" id="userName" class="demoInputBox">
@@ -272,11 +322,11 @@ echo '	<div class="row gx-0 h-100">
                       <div>
                           <label>Last Name</label><span id="last-info" class="info"></span><br/>
                           <input type="text" name="lastName" id="lastName" class="demoInputBox">
-                      </div>  
+                      </div>
                       <div>
                           <label>Email</label><span id="userEmail-info" class="info"></span><br/>
                           <input type="text" name="userEmail" id="userEmail" class="demoInputBox">
-                      </div>                                        
+                      </div>
                       <div>
                           <button name="submit" class="btnAction" onClick="sendContact();">Send</button>
                       </div>

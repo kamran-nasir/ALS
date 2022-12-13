@@ -9,6 +9,7 @@
 				<?php 
 					$args = array(
 						'taxonomy' => 'cat_technical',
+							'parent' => '0', 
 						'orderby' => 'name',
 						'order'   => 'ASC'
 					);
@@ -33,5 +34,7 @@
 		</div> <!-- .row -->
 	</div> <!-- .container -->
 </section> <!-- .download-cards -->
+
+
 
 <?php get_footer(); ?>

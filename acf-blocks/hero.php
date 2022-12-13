@@ -12,7 +12,7 @@
   $custom_css           = get_field( 'custom_css' );
 ?>
 <div class="overlay">
-    <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="">
+    <img src="<?php echo get_template_directory_uri(); ?>/images/logo-high.png" alt="">
 </div>
 <section class="homepage-hero bg-darkest text-white <?php echo $spacing_top; ?> <?php echo $spacing_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
 
@@ -43,7 +43,7 @@
 					<div class="overflow-hidden">
 					  <p class="hero-text-animation"><?php echo $description;?></p>
 					</div> <!-- .overflow-hidden -->
-					<div class="overflow-hidden hero-text-animation">
+					<div class="overflow-hidden">
 						<?php if ( is_array($button) && $button['url'] != '' ) { ?>
 							<a href="<?php echo $button['url']; ?>" target="<?php echo $button['target'] ?>" class="btn btn-secondary btn-rarr"><?php echo ($button['title'] != '') ? $button['title'] : 'Learn more'; ?></a>
 						<?php } ?>
