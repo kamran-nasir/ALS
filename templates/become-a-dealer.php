@@ -31,7 +31,7 @@
 		<div class="row">
 			<div class="col-md-8">
 
-           Place for form
+			<?php echo do_shortcode('[gravityform id="13" title="true" description="true" ajax="true"]');?>
 			</div> <!-- .col-md-8 -->
 			<div class="col-md-4 col-right-fluid bg-midnight-200">
 				<div class="contact-details p-5 pe-1">
