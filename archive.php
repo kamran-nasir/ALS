@@ -15,39 +15,39 @@
 
 <?php  if(get_queried_object()->taxonomy=='cat_lightfence'){?>
 
-	
+
 <section class="generic-tabs-section">
 	<div class="generic-tabs">
 		<div class="bg-midnight-200 py-1-5 mb-1 mb-md-4-5">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<ul class="nav nav-tabs flex-lg-wrap justify-content-center flex-nowrap horizentol-scroll-mobile">							
+						<ul class="nav nav-tabs flex-lg-wrap justify-content-center flex-nowrap horizentol-scroll-mobile">
                         <?php
 						  $args = array(
 							'taxonomy' => 'cat_lightfence',
 							'orderby' => 'name',
 							'order'   => 'ASC'
 						);
-			 
+
 							$categories = get_categories($args);
-							
-                        // foreach ( $categories as $key => $category ) { 
+
+                        // foreach ( $categories as $key => $category ) {
                             $term_id = $category->parent;
                             $taxonomy_name = 'cat_lightfence';
                             $termchildren = get_term_children( get_queried_object()->term_id, $taxonomy_name );
-                            $i=0; 
-                           
+                            $i=0;
+
                             foreach ( $termchildren as $child ) {
                                 $term = get_term_by( 'id', $child, $taxonomy_name );
                                 ?>
                                     <li class="<?php if($i==0) echo 'active';?>">
                                         <a class="btn-corner-radius" data-toggle="tab" href="#tab-<?php echo $i;?>"><?php  echo $term->name;?></a>
                                     </li>
-                                <?php                                
+                                <?php
                            $i++; }
-                      //  }                             
-                        ?>                           
+                      //  }
+                        ?>
 						</ul>
 					</div> <!-- .col-12 -->
 				</div> <!-- .row -->
@@ -56,22 +56,22 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<div class="tab-content">                        
+					<div class="tab-content">
                             <?php $i=0;
-                                foreach ( $categories as $key => $category ) { 
+                                foreach ( $categories as $key => $category ) {
                                     $term_id = $category->parent;
                                     $taxonomy_name = 'cat_lightfence';
                                     $termchildren = get_term_children( $term_id, $taxonomy_name );
                                     foreach ( $termchildren as $child ) {
-                                        $term = get_term_by( 'id', $child, $taxonomy_name );                                            
-                                            ?>                          
+                                        $term = get_term_by( 'id', $child, $taxonomy_name );
+                                            ?>
                                                 <div id="tab-<?php echo $i;?>" class="tab-pane <?php if($i==0) echo 'active';?>">
-                                                
+
                                                     <div class="col-md-8 col-lg-6 order-1 order-lg-2">
                                                             <div class="title-row mb-6 mb-lg-0 ps-lg-5">
                                                                 <div class="title-wrap">
-                                                                    <?php 
-                                                                        query_posts(array( 
+                                                                    <?php
+                                                                        query_posts(array(
                                                                             'post_type' => 'lightfence',
                                                                             'showposts' => -1,
                                                                             'tax_query' => array(
@@ -84,10 +84,10 @@
                                                                             'orderby' => 'title',
                                                                             'order' => 'ASC' )
                                                                         );
-                                                                            
+
                                                                         while (have_posts()) : the_post();        $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
                                                                         $post_thumbnail_id = get_post_meta( $post->ID, '_thumbnail_id', true );
-                                                                        $image                  = get_field('secondary_feature_image_');?>                                                                          
+                                                                        $image                  = get_field('secondary_feature_image_');?>
                                                                           <section class="single-product fence-solution pb-5 pb-lg-10">
                                                                                 <div class="d-flex justify-content-center align-items-center">
                                                                                     <div class="col-lg-6 order-2 order-lg-1">
@@ -105,7 +105,7 @@
                                                                                                     alt="<?php echo $image_alt; ?>"
                                                                                                     width="<?php echo $image_data[1]; ?>"
                                                                                                     height="<?php echo $image_data[2]; ?>"
-                                                                                                    class="img-big stagger-animation has-overlay" 
+                                                                                                    class="img-big stagger-animation has-overlay"
                                                                                                 />
                                                                                                 <div class="image-overlay">
                                                                                                     <div class="image-overlay-inside">
@@ -143,8 +143,8 @@
                                                                                                 alt="<?php echo $image_alt; ?>"
                                                                                                 width="<?php echo $image_data[1]; ?>"
                                                                                                 height="<?php echo $image_data[2]; ?>"
-                                                                                                class="img-responsive" 
-                                                                                            />    
+                                                                                                class="img-responsive"
+                                                                                            />
                                                                                                 <div class="image-overlay">
                                                                                                     <div class="image-overlay-inside">
                                                                                                         <div class="icon">
@@ -179,16 +179,16 @@
                                                                                     </div> <!-- .col-md-6 -->
                                                                                 </div> <!-- .d-flex -->
                                                                             </section> <!-- .equal-cols -->
-                                                                            
+
                                                                         <?php endwhile; ?>
                                                                 </div> <!-- .title-wrap -->
                                                             </div> <!-- .title-row -->
-                                                        </div> <!-- .col-md-6 --> 
-                                                </div>  
-                                <?php  $i++;  
-                                    }    
-                                }                             
-                                ?>              
+                                                        </div> <!-- .col-md-6 -->
+                                                </div>
+                                <?php  $i++;
+                                    }
+                                }
+                                ?>
 
 					</div> <!-- .tab-content -->
 				</div> <!-- .col-12 -->
@@ -197,31 +197,31 @@
 	</div> <!-- .generic-tabs -->
 </section> <!-- .generic-tabs -->
 
-<?php  } else{?>	
+<?php  } else{?>
 
 <section class="download-list">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-8">
-				<ul class="list-unstyled m-0 p-0">	
-					<?php 
-					$args = array(  
+				<ul class="list-unstyled m-0 p-0">
+					<?php
+					$args = array(
 						'post_type' => 'technical',
 						'post_status' => 'publish',
-						'posts_per_page' => -1, 
-						'orderby' => 'title', 
-						'order' => 'ASC', 
+						'posts_per_page' => -1,
+						'orderby' => 'title',
+						'order' => 'ASC',
 					);
 					$loop = new WP_Query( $args ); $i=1;
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
-								<li>	
+								<li>
 									<span class="number">0<?php echo $i;?>.</span> <!-- .number -->
 									<span class="title"><?php echo the_title();?></span> <!-- .title -->
 									<a href="#document-1" id="download_form" data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
 								</li>
 					<?php $i++;
 					endwhile;
-					wp_reset_postdata();?>						
+					wp_reset_postdata();?>
 				</ul> <!-- .list-unstyled m-0 p-0 -->
 			</div> <!-- .col-12 -->
 		</div> <!-- .row -->
@@ -231,8 +231,8 @@
 <div id="document-1" class="download-popup position-relative mfp-hide"></div>   <!-- .Ajax call for display dropdown form -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
-jQuery(document).ready(function($) {	
-	$('.download-form').click(function(e) { 
+jQuery(document).ready(function($) {
+	$('.download-form').click(function(e) {
 		e.preventDefault();
 		let postID = $(this).attr("data-id");
 		console.log(postID);
@@ -243,16 +243,16 @@ jQuery(document).ready(function($) {
 				'action': 'sayhello',
 				'post_id' : postID
 			},
-			success: function (data) {  
+			success: function (data) {
 			//	console.log(data);
 				$("#document-1").html(data);
 			}
-		});	
+		});
 	});
 });
 </script>
 <script>
-		 function sendContact() {		
+		 function sendContact() {
 		jQuery.ajax({
 			url: "/wp-admin/admin-ajax.php",
 			data:{
@@ -262,13 +262,13 @@ jQuery(document).ready(function($) {
 				'post_id': $("#post_id").val(),
 				'action': 'sayhello2',
 			},
-			type: "POST",			
+			type: "POST",
 			success:function(data1){
 				console.log(data1);
 				$("#mail-status").html(data1);
-			},			
+			},
 		});
-	}	 
+	}
 </script>
 
 
