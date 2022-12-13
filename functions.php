@@ -273,6 +273,56 @@ function custom_post_type() {
 
   });
 
+  // Custom post type for Light Fence
+
+  add_action('init', function() {
+    register_post_type('lightfence', [
+      'label' => __('Light Fence Resource', 'txtdomain'),
+      'public' => true,
+      'has_archive' => true,
+      'menu_position' => 5,
+      'menu_icon' => 'dashicons-book',
+      'supports' => ['title', 'editor', 'thumbnail', 'author', 'revisions', 'comments'],
+      'show_in_rest' => true,
+      'rewrite' => ['slug' => 'light-fence'],
+      'taxonomies' => ['cat_lightfence'],
+      'labels' => [
+        'singular_name' => __('Light Fence', 'txtdomain'),
+        'add_new_item' => __('Add new Light Fence', 'txtdomain'),
+        'new_item' => __('New Light Fence', 'txtdomain'),
+        'view_item' => __('View Light Fence', 'txtdomain'),
+        'not_found' => __('No Light Fence found', 'txtdomain'),
+        'not_found_in_trash' => __('No Light Fence found in trash', 'txtdomain'),
+        'all_items' => __('All Light Fence', 'txtdomain'),
+        'insert_into_item' => __('Insert into book', 'txtdomain')
+      ],
+    ]);
+
+    register_taxonomy('cat_lightfence', ['lightfence'], [
+      'label' => __('Categories', 'txtdomain'),
+      'hierarchical' => true,
+      'rewrite' => ['slug' => 'cat_lightfence'],
+      'show_admin_column' => true,
+      'show_in_rest' => true,
+      'labels' => [
+        'singular_name' => __('Light Fence', 'txtdomain'),
+        'all_items' => __('All Light Fence', 'txtdomain'),
+        'edit_item' => __('Edit Light Fence', 'txtdomain'),
+        'view_item' => __('View Light Fence', 'txtdomain'),
+        'update_item' => __('Update Light Fence', 'txtdomain'),
+        'add_new_item' => __('Add New Light Fence', 'txtdomain'),
+        'new_item_name' => __('New Light Fence Name', 'txtdomain'),
+        'search_items' => __('Search Light Fence', 'txtdomain'),
+        'parent_item' => __('Parent Light Fence', 'txtdomain'),
+        'parent_item_colon' => __('Parent Genre:', 'txtdomain'),
+        'not_found' => __('No Light Fence found', 'txtdomain'),
+      ]
+    ]);
+    register_taxonomy_for_object_type('cat_lightfence', 'lightfence');
+
+
+  });
+
   /* Hook into the 'init' action so that the function
   * Containing our post type registration is not
   * unnecessarily executed.
