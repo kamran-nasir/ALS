@@ -1,7 +1,7 @@
 
 <?php
 //  Block options
-    $source_title    = get_field('source_title');
+    $source_title   		 = get_field('source_title');
     $heading                 = get_field('heading');
     $description             = get_field('description');
     $button                  = get_field('button');
