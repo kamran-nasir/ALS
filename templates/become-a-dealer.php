@@ -30,7 +30,6 @@
 		</div> <!-- .row -->
 		<div class="row">
 			<div class="col-md-8">
-
 			<?php echo do_shortcode('[gravityform id="1" title="true" description="true" ajax="true"]');?>
 			</div> <!-- .col-md-8 -->
 			<div class="col-md-4 col-right-fluid bg-midnight-200">

@@ -1,6 +1,6 @@
 </main> <!-- #site-content -->
 
-<footer class="site-footer clearfix bg-primary pt-5 pt-lg-10">
+<footer class="site-footer fixed-bottom clearfix bg-primary pt-5 pt-lg-10">
 	<div class="container pb-5 pb-lg-10">
 		<div class="row">
 			<div class="col-md-3 col-lg-3 col-xl-4 mb-4 mb-md-0">

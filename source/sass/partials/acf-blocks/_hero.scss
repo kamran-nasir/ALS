@@ -22,6 +22,11 @@
       padding-right: rem-calc(51px);
       margin-bottom: rem-calc(30px);
     }
+    a {
+      > div {
+        margin-right: rem-calc(5px);
+      }
+    }
   }
 }
 

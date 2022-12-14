@@ -32,7 +32,8 @@ function init(){
     effects: true,
     // normalizeScroll: true,
     ignoreMobileResize: true,
-    scroller: null
+    scroller: null,
+    preventDefault: true
    });
 
    const modalScroll = {
@@ -58,12 +59,12 @@ function init(){
         smoother.paused(false);
 
         $('body, html, #wrapper').removeClass('overflow-hidden');
-       
+
       },
     },
   });
 
-  
+
   $(".image-link").magnificPopup({
     type: "image",
     closeBtnInside: true,
@@ -623,7 +624,7 @@ $(document).ready(function() {
       });
 
       $(this).on('click', 'a', function(e) {
-
+         console.log("Hello world!");
           $active.removeClass('active');
           $content.hide();
 

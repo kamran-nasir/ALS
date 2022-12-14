@@ -174,10 +174,10 @@
 					<div id="tab2">
 					<section class="equal-cols pt-10">
 						<div class="container">
-						<?php 
+						<?php
 								$args = array(
 									'taxonomy' => 'cat_lightfence',
-										'parent' => '0', 
+										'parent' => '0',
 									'orderby' => 'name',
 									'order'   => 'ASC'
 								);
@@ -186,7 +186,7 @@
 									<div class="two-equal-cards-row d-flex flex-column flex-lg-row flex-lg-row <?php if($count%2==0) echo"reverse"?>">
 									<?php if($count%2==0){ ?>
 
-										
+
 											<div class="col-md-6">
 												<div class="title-row p-10">
 													<div class="title-wrap">
@@ -223,12 +223,12 @@
 													<a href="<?php echo get_category_link( $cat->term_id ) ?>" class="btn btn-secondary btn-rarr">Read More</a>
 												</div> <!-- .title-row -->
 											</div> <!-- .col-md-6 -->
-									<?php }?>		
+									<?php }?>
 
-											
-										</div> <!-- .row -->					
-								<?php $count++; } ?>					
-						
+
+										</div> <!-- .row -->
+								<?php $count++; } ?>
+
 						</div> <!-- .container -->
 					</section> <!-- .equal-cols -->
 

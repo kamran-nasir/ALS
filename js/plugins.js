@@ -570,7 +570,8 @@ function init(){
     effects: true,
     // normalizeScroll: true,
     ignoreMobileResize: true,
-    scroller: null
+    scroller: null,
+    preventDefault: true
    });
 
    const modalScroll = {
@@ -594,10 +595,13 @@ function init(){
       beforeClose: function () {
         modalScroll.disable();
         smoother.paused(false);
+
         $('body, html, #wrapper').removeClass('overflow-hidden');
+
       },
     },
   });
+
 
   $(".image-link").magnificPopup({
     type: "image",
@@ -1158,7 +1162,7 @@ $(document).ready(function() {
       });
 
       $(this).on('click', 'a', function(e) {
-
+         console.log("Hello world!");
           $active.removeClass('active');
           $content.hide();
 
@@ -1171,7 +1175,8 @@ $(document).ready(function() {
           e.preventDefault();
       });
   });
-});;
+});
+;
 // Three Cards Slider
 /* ========================================== */
 function threeCardsSlider() {

@@ -199,7 +199,7 @@
 
 <?php  } else{?>
 
-<section class="download-list">
+<section class="download-list pt-8 pb-8">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-8">
@@ -214,7 +214,7 @@
 					);
 					$loop = new WP_Query( $args ); $i=1;
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
-								<li>
+								<li class="stagger-animation">
 									<span class="number">0<?php echo $i;?>.</span> <!-- .number -->
 									<span class="title"><?php echo the_title();?></span> <!-- .title -->
 									<a href="#document-1" id="download_form" data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
