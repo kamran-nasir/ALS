@@ -32,7 +32,8 @@ function init(){
     effects: true,
     // normalizeScroll: true,
     ignoreMobileResize: true,
-    scroller: null
+    scroller: null,
+    preventDefault: true
    });
 
    const modalScroll = {
@@ -58,12 +59,12 @@ function init(){
         smoother.paused(false);
 
         $('body, html, #wrapper').removeClass('overflow-hidden');
-       
+
       },
     },
   });
 
-  
+
   $(".image-link").magnificPopup({
     type: "image",
     closeBtnInside: true,
@@ -623,7 +624,7 @@ $(document).ready(function() {
       });
 
       $(this).on('click', 'a', function(e) {
-
+         console.log("Hello world!");
           $active.removeClass('active');
           $content.hide();
 
@@ -637,3 +638,41 @@ $(document).ready(function() {
       });
   });
 });
+
+	$('.download-form').click(function(e) {
+		e.preventDefault();
+		let postID = $(this).attr("data-id");
+		console.log(postID);
+		jQuery.ajax({
+			type: 'POST',
+			url: '/wp-admin/admin-ajax.php',
+			data: {
+				'action': 'sayhello',
+				'post_id' : postID
+			},
+			success: function (data) {
+			//	console.log(data);
+				$("#form1").html(data);
+			}
+		});
+	});
+
+
+
+function sendContact() {
+		jQuery.ajax({
+			url: "/wp-admin/admin-ajax.php",
+			data:{
+				'userName': $("#userName").val(),
+				'userEmail': $("#userEmail").val(),
+				'lastName': $("#lastName").val(),
+				'post_id': $("#post_id").val(),
+				'action': 'sayhello2',
+			},
+			type: "POST",
+			success:function(data1){
+				console.log(data1);
+				$("#mail-status").html(data1);
+			},
+		});
+	}
