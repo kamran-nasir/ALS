@@ -1,4 +1,3 @@
-
 <?php
 //  Block options
   $background_image    = get_field('background_image');

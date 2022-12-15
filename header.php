@@ -13,6 +13,8 @@
   <?php endif; ?>
   <?php wp_head(); ?>
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4774264488206253"
+     crossorigin="anonymous"></script>
 </head>
 
 <body <?php body_class( 'site-wrapper' ); ?>>

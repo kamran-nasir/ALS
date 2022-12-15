@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 <?php the_content(); ?>
 
-<section class="download-cards">
+<section class="download-cards pt-10 pb-10">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">

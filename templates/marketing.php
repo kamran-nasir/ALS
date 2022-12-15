@@ -16,58 +16,41 @@
 						'order' => 'ASC',
 					);
 					$loop = new WP_Query( $args ); $i=1;
-					while ( $loop->have_posts() ) : $loop->the_post(); ?>
+					    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 								<li class="stagger-animation">
 									<span class="number">0<?php echo $i;?>.</span> <!-- .number -->
 									<span class="title"><?php echo the_title();?></span> <!-- .title -->
 									<a href="#document-1" id="download_form" data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
 								</li>
 					<?php $i++;
-					endwhile;
+					    endwhile;
 					wp_reset_postdata();?>
 				</ul> <!-- .list-unstyled m-0 p-0 -->
 			</div> <!-- .col-12 -->
 		</div> <!-- .row -->
 	</div> <!-- .container -->
 </section> <!-- .download-list -->
-<div id="document-1" class="download-popup position-relative mfp-hide"></div>   <!-- .Ajax call for display dropdown form -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script>
-jQuery(document).ready(function($) {
-	$('.download-form').click(function(e) {
-		e.preventDefault();
-		let postID = $(this).attr("data-id");
-		console.log(postID);
-		jQuery.ajax({
-			type: 'POST',
-			url: '/wp-admin/admin-ajax.php',
-			data: {
-				'action': 'sayhello',
-				'post_id' : postID
-			},
-			success: function (data) {
-			//	console.log(data);
-				$("#document-1").html(data);
-			}
-		});
-	});
-});
-</script>
+<div id="document-1" class="download-popup position-relative mfp-hide">
+    <div id="form1"></div>
+</div>  
+
 <script>
 		 function sendContact() {
 		jQuery.ajax({
 			url: "/wp-admin/admin-ajax.php",
 			data:{
-				'userName': $("#userName").val(),
-				'userEmail': $("#userEmail").val(),
-				'lastName': $("#lastName").val(),
-				'post_id': $("#post_id").val(),
+				'userName': jQuery("#userName").val(),
+				'userEmail': jQuery("#userEmail").val(),
+				'lastName': jQuery("#lastName").val(),
+				'post_id': jQuery("#post_id").val(),
 				'action': 'sayhello2',
 			},
 			type: "POST",
 			success:function(data1){
 				console.log(data1);
-				$("#mail-status").html(data1);
+				$('#downloadAnchor').click();
+        
+//				$("#mail-status").text("Message Sent");
 			},
 		});
 	}

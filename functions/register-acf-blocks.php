@@ -75,6 +75,72 @@ function skel_register_acf_blocks() {
     )
   ));
 
+
+
+//   // bg-midnight-heading
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'simple-title-lightfence',
+    'title'             => 'simple-title-lightfence',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/simple-title-lightfence1.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+  
+  
+  
+  // bg-midnight-heading
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'bg-midnight-heading',
+    'title'             => 'Midnight Heading',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/bg-midnight-heading.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+  
+  
+  
   //About Us 
   ////////////////////////////////////////////////
   acf_register_block_type(array(
@@ -454,7 +520,7 @@ function skel_register_acf_blocks() {
       'foreground' => '#fff',
       'src' => 'layout',
     ),
-    'render_template'  	=> 'acf-blocks/solution-section.php',
+    'render_template'  	=> 'acf-blocks/solution-section1.php',
     'example'           => [
       'attributes' => [
         'mode' => 'preview',
