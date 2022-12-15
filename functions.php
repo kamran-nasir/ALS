@@ -177,7 +177,7 @@ function custom_post_type() {
 
   add_action('init', function() {
     register_post_type('technical', [
-      'label' => __('Technical Resource', 'txtdomain'),
+      'label' => __('Technical Support', 'txtdomain'),
       'public' => true,
       'has_archive' => true,
       'menu_position' => 5,
@@ -193,7 +193,7 @@ function custom_post_type() {
         'view_item' => __('View Technical', 'txtdomain'),
         'not_found' => __('No Technical found', 'txtdomain'),
         'not_found_in_trash' => __('No Technical found in trash', 'txtdomain'),
-        'all_items' => __('All Technical', 'txtdomain'),
+        'all_items' => __('All', 'txtdomain'),
         'insert_into_item' => __('Insert into book', 'txtdomain')
       ],
     ]);
@@ -338,12 +338,12 @@ function custom_post_type() {
   add_action('wp_ajax_sayhello2', 'say_hello2_function');
   function say_hello2_function(){
 
-    $content = "Please Download PDF file<br>'".get_field($_POST['post_id'],'download_file_link').'"';
+    $content = "Please Download PDF file<br>";//".get_field($_POST['post_id'],'download_file_link').'"';
 
     $toEmail = "anwaralam6858@gmail.com";
     $mailHeaders = "From: " . $_POST["userName"] . "<". $_POST["userEmail"] .">\r\n";
     if(mail($toEmail, 'Download File', $content, $mailHeaders)) {
-        echo  'Mail Sent';
+        echo  'Mail Sent'.get_field($_POST['post_id'],'download_file_link');
     } else {
         echo  "<p class='Error'>Problem in Sending Mail.</p>";
     }
