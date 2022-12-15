@@ -338,7 +338,7 @@
 		</div> <!-- .row -->
 	</div> <!-- .container -->
 </section> <!-- .download-cards -->
-<section class="download-list">
+<section class="download-list pt-8 pb-8">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-8">
