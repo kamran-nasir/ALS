@@ -35,6 +35,7 @@
 </div>  
 
 <script>
+
 		 function sendContact() {
 		jQuery.ajax({
 			url: "/wp-admin/admin-ajax.php",
@@ -47,10 +48,9 @@
 			},
 			type: "POST",
 			success:function(data1){
-				console.log(data1);
-				$('#downloadAnchor').click();
-        
-//				$("#mail-status").text("Message Sent");
+				console.log(data1);                   
+				document.getElementById('download').click();
+				jQuery("#mail-status").text("Message Sent");
 			},
 		});
 	}
