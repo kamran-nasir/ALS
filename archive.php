@@ -236,50 +236,31 @@
     </section> <!-- .download-list -->
 
 <?php }?>
-<div id="document-1" class="download-popup position-relative mfp-hide"></div>   <!-- .Ajax call for display dropdown form -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script>
-jQuery(document).ready(function($) {
-   $('.download-form').click(function(e) {
-      e.preventDefault();
-      let postID = $(this).attr("data-id");
-      console.log(postID);
-      jQuery.ajax({
-         type: 'POST',
-         url: '/wp-admin/admin-ajax.php',
-         data: {
-            'action': 'sayhello',
-            'post_id' : postID
-         },
-         success: function (data) {
-         // console.log(data);
-            $("#document-1").html(data);
-         }
-      });
-   });
-});
-</script>
-<script>
-       function sendContact() {
-      jQuery.ajax({
-         url: "/wp-admin/admin-ajax.php",
-         data:{
-            'userName': $("#userName").val(),
-            'userEmail': $("#userEmail").val(),
-            'lastName': $("#lastName").val(),
-            'post_id': $("#post_id").val(),
-            'action': 'sayhello2',
-         },
-         type: "POST",
-         success:function(data1){
-            console.log(data1);
-            document.getElementById('download').click();
-            jQuery("#mail-status").text("Message Sent");
-         },
-      });
-   }
-</script>
 
+<div id="document-1" class="download-popup position-relative mfp-hide">
+    <div id="form1"></div>
+</div>  
 
+<script>
+	 function sendContact() {
+		jQuery.ajax({
+			url: "/wp-admin/admin-ajax.php",
+			data:{
+				'userName': jQuery("#userName").val(),
+				'userEmail': jQuery("#userEmail").val(),
+				'lastName': jQuery("#lastName").val(),
+				'post_id': jQuery("#post_id").val(),
+				'action': 'sayhello2',
+			},
+			type: "POST",
+			success:function(data1){
+				console.log(data1);                   
+				document.getElementById('download').click();
+				jQuery("#mail-status").text("Message Sent");
+                jQuery.magnificPopup.close();
+			},
+		});
+	}
+</script>
   
 <?php get_footer(); ?>

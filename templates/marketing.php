@@ -51,6 +51,8 @@
 				console.log(data1);                   
 				document.getElementById('download').click();
 				jQuery("#mail-status").text("Message Sent");
+				jQuery.magnificPopup.close();
+
 			},
 		});
 	}
