@@ -9,9 +9,11 @@
   $padding_bottom      = get_field( 'padding_bottom' );
   $custom_classes      = get_field( 'custom_classes' );
   $custom_css          = get_field( 'custom_css' );
+  $custom_id           = get_field( 'custom_id' );
+
 ?>
 
-<section class="centered-gallery pt-5 pt-lg-5 pb-5 pb-lg-5">
+<section class="centered-gallery pt-5 pt-lg-5 pb-5 pb-lg-5   <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
   <div class="container">
 		<div class="row justify-content-center text-center mb-5 mb-lg-7">
 			<div class="col-md-9 col-lg-7">

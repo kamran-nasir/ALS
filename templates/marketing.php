@@ -30,8 +30,8 @@
 											//check if current then is bigger then next 24 hours 
 											if($current < $next24 && ($ip_address ==$ip_addressData[0]->ip_address) && ($ip_addressData[0]->formID ==get_the_ID()))
 											{?>
-											<a href="#document-1" id="download_form" style="pointer-events: none" data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
-											<?php 
+												<a href="<?php echo get_field('download_file_link', get_the_ID());?>" download   class="btn btn-secondary ">Download Form</a>
+												<?php 
 										}else{?>
 											<a href="#document-1" id="download_form"  data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
 										<?php 

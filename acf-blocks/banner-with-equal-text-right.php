@@ -10,10 +10,11 @@
     $padding_bottom          = get_field( 'padding_bottom' );
     $custom_classes          = get_field( 'custom_classes' );
     $custom_css              = get_field( 'custom_css' );
- 
+    $custom_id		           = get_field( 'custom_id' );
+
 ?>
 
-<section class="equal-cols pt-10">
+<section class="equal-cols pt-10  <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
 	<div class="container">
 		<div class="row g-0 align-items-center  <?php echo $swap;?>">
 			<div class="col-md-6">

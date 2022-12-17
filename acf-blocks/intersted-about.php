@@ -10,9 +10,11 @@
     $padding_bottom          = get_field( 'padding_bottom' );
     $custom_classes          = get_field( 'custom_classes' );
     $custom_css              = get_field( 'custom_css' );
+	$custom_id           = get_field( 'custom_id' );
+
 ?>
 
-<section class="simple-text fade-animation bg-primary text-white pt-10 pb-10 position-relative mb-5 mb-md-10">
+<section class="simple-text fade-animation bg-primary text-white pt-10 pb-10 position-relative mb-5 mb-md-10   <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
 	<div class="container position-relative z-index-1 overflow-hidden">
 		<div class="row justify-content-center">
 			<div class="col-md-7 text-center">

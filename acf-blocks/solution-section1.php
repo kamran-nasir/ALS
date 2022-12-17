@@ -9,6 +9,8 @@
   $padding_bottom       = get_field( 'padding_bottom' );
   $custom_classes       = get_field( 'custom_classes' );
   $custom_css           = get_field( 'custom_css' );
+  $custom_id           = get_field( 'custom_id' );
+
 ?>
 
 <section class="solution-section fade-animation pt-5 pt-lg-10 pb-5 pb-lg-5 <?php echo $spacing_top; ?> <?php echo $spacing_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">

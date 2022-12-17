@@ -9,11 +9,12 @@
   $padding_bottom       = get_field( 'padding_bottom' );
   $custom_classes       = get_field( 'custom_classes' );
   $custom_css           = get_field( 'custom_css' );
+  $custom_id           = get_field( 'custom_id' );
 ?>
 <div class="overlay">
     <img src="<?php echo get_template_directory_uri(); ?>/images/logo-high.png" alt="">
 </div>
-<section class="homepage-hero bg-darkest text-white <?php echo $spacing_top; ?> <?php echo $spacing_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
+<section class="homepage-hero bg-darkest text-white <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
 
 	<div class="banner-box banner-with-overlay img-cover-block hero-bg">
 	<?php

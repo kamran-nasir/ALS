@@ -9,8 +9,11 @@
     $padding_bottom          = get_field( 'padding_bottom' );
     $custom_classes          = get_field( 'custom_classes' );
     $custom_css              = get_field( 'custom_css' );
+	$custom_id		           = get_field( 'custom_id' );
+
 ?>
-<section class="inner-hero bg-primary pt-8 pt-lg-12 pb-8 pb-lg-12 position-relative overflow-hidden fade-animation">
+<section class="homepage-hero bg-darkest text-white <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
+<section class="inner-hero bg-primary pt-8 pt-lg-12 pb-8 pb-lg-12 position-relative overflow-hidden fade-animation" >
   <div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-9 col-xl-6">

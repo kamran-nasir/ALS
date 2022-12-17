@@ -7,13 +7,15 @@
     $padding_bottom          = get_field( 'padding_bottom' );
     $custom_classes          = get_field( 'custom_classes' );
     $custom_css              = get_field( 'custom_css' );
+	$custom_id           = get_field( 'custom_id' );
+
 ?>
  <?php
         $image_data = wp_get_attachment_image_src( $image, 'w1920' );
         $image_alt = get_post_meta( $image, '_wp_attachment_image_alt', true );
         $image_alt = esc_attr( trim( strip_tags( $image_alt ) ) );
 ?>
-<section class="single-product pb-5 pb-lg-10">
+<section class="single-product pb-5 pb-lg-10   <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
 	<div class="container">
 		<div class="row g-0 justify-content-center align-items-center text-center">
 			<div class="col-lg-12 order-2 order-lg-1">
