@@ -229,14 +229,20 @@
 									 $ip_addressData = $wpdb->get_results("SELECT *  FROM $tablename WHERE (formID =  '". $formID ."')");
 											$next24 = strtotime('+1 day', $next24); //add 24 hours in updated date
                                            // echo ($ip_addressData[0]->formID);
-                                            $current = $ip_addressData[0]->date;
-										
-												//check if current then is bigger then next 24 hours 
-                                                  $ip_address = $ip_addressData[0]->ip_address.'<br>';
+                                           $ip_addressLive = getenv("REMOTE_ADDR");
+                                            $currentDB = $ip_addressData[0]->date;
+											//check if current then is bigger then next 24 hours 
+                                            $ip_address = $ip_addressData[0]->ip_address.'<br>';
+
+                                            $next24Hours = time() + 1*60*60*24;
+                                            $next24Hourss =  date("Y-m-d", $next24Hours);
+
+                                             //   echo $currentDB ."<=". $next24Hourss;
+
                                                   $formID = $ip_addressData[0]->formID;
-												if($current < $next24 &&  ($formID ==get_the_ID()))
+												if(($currentDB <= $next24Hourss)  && ($formID == get_the_ID()))
 												{?>
-												<a href="#document-1" id="download_form" <?php if($formID ==get_the_ID()) echo "12312";?>  style="pointer-events: none"  data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
+												<a href="<?php echo get_field('download_file_link', get_the_ID());?>" download   class="btn btn-secondary ">Download Form</a>
 												<?php 
 											}else{?>
 												<a href="#document-1" id="download_form" <?php if($formID ==get_the_ID()) echo "5555555";?> data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
