@@ -15,14 +15,29 @@
 						'orderby' => 'title',
 						'order' => 'ASC',
 					);
+					$ip_address =   $_SERVER['REMOTE_ADDR'];
 					$loop = new WP_Query( $args ); $i=1;
 					    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 								<li class="stagger-animation">
 									<span class="number">0<?php echo $i;?>.</span> <!-- .number -->
 									<span class="title"><?php echo the_title();?></span> <!-- .title -->
-									<a href="#document-1" id="download_form" data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
+									<?php 
+									 $tablename = $wpdb->prefix.'form_disable';	
+									 $ip_addressData = $wpdb->get_results("SELECT ip_address,formID  FROM $tablename WHERE (ip_address =  '". $ip_address ."')");
+										$next24 = strtotime('+1 day', $next24); //add 24 hours in updated date
+										$current = $ip_addressData[0]->date;
+									
+											//check if current then is bigger then next 24 hours 
+											if($current < $next24 && ($ip_address ==$ip_addressData[0]->ip_address) && ($ip_addressData[0]->formID ==get_the_ID()))
+											{?>
+											<a href="#document-1" id="download_form" style="pointer-events: none" data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
+											<?php 
+										}else{?>
+											<a href="#document-1" id="download_form"  data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
+										<?php 
+										}?>
 								</li>
-					<?php $i++;
+						<?php $i++;
 					    endwhile;
 					wp_reset_postdata();?>
 				</ul> <!-- .list-unstyled m-0 p-0 -->
@@ -48,10 +63,15 @@
 			},
 			type: "POST",
 			success:function(data1){
-				console.log(data1);                   
+				console.log(data1);    
+				//jQuery('#download_form').prop('disabled', true);               
 				document.getElementById('download').click();
+				document.getElementById('download_form').disabled=true;
 				jQuery("#mail-status").text("Message Sent");
 				jQuery.magnificPopup.close();
+				jQuery("#download_form").disabled = true;
+				console.log(jQuery("#download_form").disabled = true);
+				location.reload(true);
 
 			},
 		});

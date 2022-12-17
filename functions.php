@@ -343,7 +343,22 @@ function custom_post_type() {
     $toEmail = "anwaralam6858@gmail.com";
     $mailHeaders = "From: " . $_POST["userName"] . "<". $_POST["userEmail"] .">\r\n";
     if(mail($toEmail, 'Download File', $content, $mailHeaders)) {
-        echo get_field('download_file_link', $_POST['post_id']);
+        //echo $_POST['post_id'];
+        global $wpdb;
+     echo     $tablename = 'wp_form_disable';
+   echo       $urlPDF = get_field('download_file_link',$_POST['post_id']);
+   echo      $ip_address =   $_SERVER['REMOTE_ADDR'];
+   echo      $formID =   $_POST['post_id'];
+
+
+      $wpdb->insert('wp_form_disable', array(
+          'form_button_url' => $urlPDF,
+          'ip_address' => $ip_address,
+          'formID' => $formID,          
+          'date' => date("Y-m-d H:i:s")
+      ));
+      echo      $id = $wpdb->insert_id;
+
         mail($toEmail,$mailHeaders,$content);
     } else {
         echo  "<p class='Error'>Problem in Sending Mail.</p>";

@@ -219,12 +219,29 @@
                                 'order' => 'ASC' )
                             );
                             $i=1;
-
+                             $formID =   get_the_ID();
                             while (have_posts()) : the_post(); ?>
                                     <li>
                                         <span class="number">0<?php echo $i;?>.</span> <!-- .number -->
                                         <span class="title"><?php echo the_title();?></span> <!-- .title -->
-                                        <a href="#document-1" id="download_form" data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
+                                        <?php 
+									 $tablename = $wpdb->prefix.'form_disable';	
+									 $ip_addressData = $wpdb->get_results("SELECT *  FROM $tablename WHERE (formID =  '". $formID ."')");
+											$next24 = strtotime('+1 day', $next24); //add 24 hours in updated date
+                                           // echo ($ip_addressData[0]->formID);
+                                            $current = $ip_addressData[0]->date;
+										
+												//check if current then is bigger then next 24 hours 
+                                                  $ip_address = $ip_addressData[0]->ip_address.'<br>';
+                                                  $formID = $ip_addressData[0]->formID;
+												if($current < $next24 &&  ($formID ==get_the_ID()))
+												{?>
+												<a href="#document-1" id="download_form" <?php if($formID ==get_the_ID()) echo "12312";?>  style="pointer-events: none"  data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
+												<?php 
+											}else{?>
+												<a href="#document-1" id="download_form" <?php if($formID ==get_the_ID()) echo "5555555";?> data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
+											<?php 
+											}?>
                                     </li>
                         <?php $i++;
                         endwhile;
@@ -254,10 +271,13 @@
 			},
 			type: "POST",
 			success:function(data1){
-				console.log(data1);                   
+				console.log(data1);    
+				//jQuery('#download_form').prop('disabled', true);               
 				document.getElementById('download').click();
+				document.getElementById('download_form').disabled=true;
 				jQuery("#mail-status").text("Message Sent");
-                jQuery.magnificPopup.close();
+				jQuery.magnificPopup.close();
+                location.reload(true);
 			},
 		});
 	}
