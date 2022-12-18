@@ -12,7 +12,7 @@ $custom_id           = get_field( 'custom_id' );
 
 <section class="statics-numbers bg-primary text-white pt-lg-5 pb-5 position-relative   <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
 	<div class="container position-relative z-index-1">
-		<div class="row">
+		<div class="row justify-content-center">
 			<?php
 				if( $count_list ) {
 					foreach( $count_list as $row ) {?>
