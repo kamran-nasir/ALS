@@ -29,7 +29,7 @@
 						</div> <!-- .fade-animation -->
 					</div> <!-- .title-wrap -->
 					<div class="d-flex justify-content-center">
-						<div class="col-md-9 col-xl-6">
+						<div class="col-md-9 col-xl-8">
 							<p class="text-animation"><?php echo $description;?></p>
 						</div> <!-- .col-md-7 -->
 					</div> <!-- .d-flex justify-content-center -->

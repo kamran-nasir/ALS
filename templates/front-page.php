@@ -338,7 +338,7 @@
 		</div> <!-- .row -->
 	</div> <!-- .container -->
 </section> <!-- .download-cards -->
-<section class="download-list pt-8 pb-8">
+<section class="download-list pt-5 pt-md-10 pb-5 pb-md-10">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-8">
@@ -424,10 +424,10 @@
 </section> <!-- .equal-cols -->
 
 
-<section class="inner-hero bg-bg-midnight-200 pt-8 pt-lg-12 pb-8 pb-lg-12 position-relative overflow-hidden fade-animation">
+<section class="inner-hero bg-midnight-200 pt-8 pt-lg-12 pb-8 pb-lg-12 position-relative overflow-hidden fade-animation">
   <div class="container">
 		<div class="row justify-content-center">
-			<div class="col-md-9 col-xl-6">
+			<div class="col-md-9 col-xl-8">
 				<div class="hero-content position-relative z-index-1 text-center">
 				  <img src="<?php echo get_template_directory_uri(); ?>/images/light-fence.png" alt="" class="hero-logo">
 					<p class="text-animation">Aluminum Light Solutions is one of the most pioneering
@@ -474,7 +474,7 @@
 						</div> <!-- .bg-midnight-200 -->
 						<div class="cards-with-hover position-relative pt-5 pt-lg-10 pb-10 pt-5 pt-lg-10">
 							<div class="row justify-content-center text-center mb-3">
-								<div class="col-md-9 col-xl-6">
+								<div class="col-md-9 col-xl-8">
 									<div class="title-row">
 										<div class="title-wrap">
 											<h3 class="heading-animation m-0">Fence problems</h3>

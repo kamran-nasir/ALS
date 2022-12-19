@@ -646,11 +646,13 @@ ul.icon-with-text {
       padding: rem-calc(30px);
       text-transform: uppercase;
       text-align: center;
+      border-bottom: rem-calc(3px) solid transparent;
       &:not(.active):hover {
         background-color: inherit;
       }
       &.active {
         color: $milano-red;
+        border-color: $milano-red;
       }
     }
   }
@@ -665,34 +667,91 @@ ul.icon-with-text {
     transition: left 0.2s ease;
     -webkit-transition: left 0.2s ease;
   }
+}
 
-  #tab1-tab.active {
-    span.yellow-bar {
-      left: 0;
-      width: 50%;
-    }
-  }
-
-  #tab2-tab.active {
-    span.yellow-bar {
-      left: 50%;
-      width: 50%;
-    }
+.gform_title {
+  display: none !important;
+}
+.gform_button {
+  background: $milano-red;
+  border-color: $milano-red !important;
+  color: $white !important;
+  &:hover {
+    background: #aa1219 !important;
+    border-color: #aa1219 !important;
   }
 }
 
-.form-align {
-  input[type='text'],
-  input[type='tel'],
-  input[type='email'],
-  select,
-  textarea {
-    color: #384254;
-    font-size: 1.6rem;
-    padding: 0 2rem;
-    height: rem-calc(55px);
-    line-height: 4.4rem;
-    border: 0.1rem solid #b9bdc4;
-    border-radius: 0;
+.container-select {
+  background: #fff;
+  background-image: linear-gradient(45deg, transparent 50%, #666 50%),
+    linear-gradient(135deg, #666 50%, transparent 50%);
+  background-position: calc(100% - 2rem) 50%, calc(100% - 1.3rem) 50%;
+  background-size: 0.7rem 0.7rem, 0.7rem 0.7rem;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+form input[type='text'],
+form input[type='tel'],
+form input[type='email'],
+form select,
+form textarea {
+  font-size: rem-calc(16px);
+  padding: 0 rem-calc(24px);
+  height: rem-calc(50px);
+  line-height: 4.4rem;
+  border: rem-calc(1px) solid #b0b0b0;
+  border-radius: 0;
+  width: 100%;
+  &::placeholder {
+    color: #b0b0b0;
   }
+  &:focus {
+    color: $black;
+  }
+}
+form select {
+  background: transparent;
+  width: 100%;
+  padding-right: 4rem;
+  appearance: none;
+  max-width: 100%;
+}
+form input[type='text']:focus,
+form input[type='tel']:focus,
+form input[type='url']:focus,
+form input[type='number']:focus,
+form input[type='password']:focus,
+form input[type='email']:focus,
+form input[type='range']:focus,
+form input[type='file']:focus,
+form input[type='date']:focus,
+form input[type='search']:focus,
+form textarea:focus,
+form select:focus {
+  border-color: $midnight-500;
+  outline: none;
+}
+
+.gfield input {
+  transition: 0.1s all linear;
+}
+
+.gfield label {
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  font-size: 12px;
+  color: #aaa;
+  transition: 0.1s all linear;
+  cursor: text;
+}
+
+.gfield.active input {
+  // padding-left: 15px;
+}
+
+.gfield.active label {
+  top: -18px;
 }

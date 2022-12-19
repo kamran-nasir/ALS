@@ -354,7 +354,7 @@ function custom_post_type() {
       $wpdb->insert('wp_form_disable', array(
           'form_button_url' => $urlPDF,
           'ip_address' => $ip_address,
-          'formID' => $formID,          
+          'formID' => $formID,
           'date' => date("Y-m-d H:i:s")
       ));
       echo      $id = $wpdb->insert_id;
@@ -369,7 +369,7 @@ function custom_post_type() {
 add_action('wp_ajax_nopriv_sayhello', 'say_hello_function');
 add_action('wp_ajax_sayhello', 'say_hello_function');
 function say_hello_function(){
-  
+
 echo '	<div class="row gx-0 h-100">
           <div class="col-md-12">
             <div class="title-row">
@@ -377,38 +377,39 @@ echo '	<div class="row gx-0 h-100">
                 <span class="bottom-line line-centered"></span>
             </div>
             <p>Fill out the information below to get a free download of our document.</p>
-              <div class="form-align">
-                  <div id="frmContact">
-                      <div id="mail-status"></div> 
+              <div class="form-align pt-5">
+                  <form id="frmContact">
+                      <div id="mail-status"></div>
                       <a href="'.get_field('download_file_link', $_POST['post_id']).'" download id="download" hidden></a>
-                   
+
                       <input type="hidden" name="post_id" id="post_id" value="'.$_POST['post_id'].'" class="demoInputBox form-input">
-                      <div>
-                      <select name="career" id="input_1_14" class="large gfield_select" aria-required="true" aria-invalid="false">
-                      <option value="" selected="selected" class="gf_placeholder">i\'\'m a</option>
-                      <option value="trader">trader</option>
-                      <option value="installer">installer</option>
-                      <option value="fabricator">fabricator</option>
-                      <option value="property/home owner">property/home owner</option>
-                   </select>
+                      <div class="mb-3">
+                        <div class="container-select">
+                          <select name="career" id="input_1_14" class="large gfield_select" aria-required="true" aria-invalid="false">
+                            <option value="" selected="selected" class="gf_placeholder">i\'\'m a</option>
+                            <option value="trader">trader</option>
+                            <option value="installer">installer</option>
+                            <option value="fabricator">fabricator</option>
+                            <option value="property/home owner">property/home owner</option>
+                        </select>
+                        </div>
                       </div>
 
-                      <div>
-                          <label style="padding-top:20px;">Name</label><br/>
-                          <input type="text" name="userName" id="userName" class="demoInputBox" required>
+                      <div class="mb-3">
+                          <input type="text" name="userName" id="userName" class="demoInputBox" required placeholder="First name">
+                      </div>
+                      <div class="mb-3">
+                          <span id="last-info" class="info d-block"></span>
+                          <input type="text" name="lastName" id="lastName" class="demoInputBox" required placeholder="Last name">
+                      </div>
+                      <div class="mb-3">
+                          <span id="userEmail-info" class="info d-block"></span>
+                          <input type="text" name="userEmail" id="userEmail" class="demoInputBox" required placeholder="Email">
                       </div>
                       <div>
-                          <label>Last Name</label><span id="last-info" class="info"></span><br/>
-                          <input type="text" name="lastName" id="lastName" class="demoInputBox" required>
+                          <button name="submit" class="btnAction btn btn-secondary btn-rarr" onClick="sendContact();">Download</button>
                       </div>
-                      <div>
-                          <label>Email</label><span id="userEmail-info" class="info"></span><br/>
-                          <input type="text" name="userEmail" id="userEmail" class="demoInputBox" required>
-                      </div>
-                      <div>
-                          <button name="submit" class="btnAction" onClick="sendContact();" style="text-align: center;display: inline-block;margin-top: 15px;">Send</button>
-                      </div>
-                  </div>
+                  </form>
               </div>
             </div>
         </div> ';
