@@ -128,12 +128,13 @@
                                                                                                         </div>
                                                                                                     </div> <!-- .image-overlay -->
                                                                                                 </a> <!-- .img-big -->
-                                                                                                <a href="<?php echo get_template_directory_uri(); ?>/images/fence-2.jpg" class="img-small stagger-animation has-overlay">
                                                                                                 <?php
                                                                                                         $image_data = wp_get_attachment_image_src( $image, 'w1920' );
+                                                                                                   if($image_data){
                                                                                                         $image_alt = get_post_meta( $image, '_wp_attachment_image_alt', true );
                                                                                                         $image_alt = esc_attr( trim( strip_tags( $image_alt ) ) );
                                                                                                 ?>
+                                                                                                <a href="<?php echo get_template_directory_uri(); ?>/images/fence-2.jpg" class="img-small stagger-animation has-overlay">                                                                                               
                                                                                                 <img
                                                                                                     src="<?php echo wp_get_attachment_image_url( $image, 'w1920' ) ?>"
                                                                                                     srcset="<?php echo wp_get_attachment_image_srcset( $image ) ?>"
@@ -164,8 +165,9 @@
                                                                                                                 </svg>
                                                                                                             </div>
                                                                                                         </div>
-                                                                                                    </div> <!-- .image-overlay -->
+                                                                                                    </div> <!-- .image-overlay -->                                                                                               
                                                                                                 </a>
+                                                                                                <?php }?>    
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="col-md-8 col-lg-6 order-1 order-lg-2">

@@ -52,29 +52,53 @@
 <script>
 
 		 function sendContact() {
-		jQuery.ajax({
-			url: "/wp-admin/admin-ajax.php",
-			data:{
-				'userName': jQuery("#userName").val(),
-				'userEmail': jQuery("#userEmail").val(),
-				'lastName': jQuery("#lastName").val(),
-				'post_id': jQuery("#post_id").val(),
-				'action': 'sayhello2',
-			},
-			type: "POST",
-			success:function(data1){
-				console.log(data1);    
-				//jQuery('#download_form').prop('disabled', true);               
-				document.getElementById('download').click();
-				document.getElementById('download_form').disabled=true;
-				jQuery("#mail-status").text("Message Sent");
-				jQuery.magnificPopup.close();
-				jQuery("#download_form").disabled = true;
-				console.log(jQuery("#download_form").disabled = true);
-				location.reload(true);
 
-			},
-		});
+		// First Name Validation
+		var firstName= document.getElementById("userName");
+		var firstNameValidation=function(){
+			firstNameValue=firstName.value.trim(); 
+			validFirstName=/^[A-Za-z]+$/;
+			firstNameErr=document.getElementById('userName-err');
+			if(firstNameValue=="")
+				{
+					firstNameErr.innerHTML="First Name is required";
+			}else if(!validFirstName.test(firstNameValue)){
+					firstNameErr.innerHTML="First Name must be only string without white spaces";
+			}else{
+					firstNameErr.innerHTML="";
+					return true;
+					
+			}
+		}
+		firstName.oninput=function(){
+		
+		firstNameValidation();
+		}
+
+
+				jQuery.ajax({
+					url: "/wp-admin/admin-ajax.php",
+					data:{
+						'userName': jQuery("#userName").val(),
+						'userEmail': jQuery("#userEmail").val(),
+						'lastName': jQuery("#lastName").val(),
+						'post_id': jQuery("#post_id").val(),
+						'action': 'sayhello2',
+					},
+					type: "POST",
+					success:function(data1){
+						console.log(data1);    
+						//jQuery('#download_form').prop('disabled', true);               
+						document.getElementById('download').click();
+						document.getElementById('download_form').disabled=true;
+						jQuery("#mail-status").text("Message Sent");
+						jQuery.magnificPopup.close();
+						jQuery("#download_form").disabled = true;
+						console.log(jQuery("#download_form").disabled = true);
+						location.reload(true);
+
+					},
+				});
 	}
 </script>
 <?php get_footer(); ?>

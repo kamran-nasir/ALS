@@ -68,59 +68,59 @@ function jp_get_archive_post_type(){
 * Creating a function to create our CPT
 */
 
-function custom_post_type() {
+// function custom_post_type() {
 
-  // Set UI labels for Custom Post Type
-      $labels = array(
-          'name'                => _x( 'Solution', 'Post Type General Name', 'twentytwenty' ),
-          'singular_name'       => _x( 'Solution', 'Post Type Singular Name', 'twentytwenty' ),
-          'menu_name'           => __( 'Solution', 'twentytwenty' ),
-          'parent_item_colon'   => __( 'Parent Solution', 'twentytwenty' ),
-          'all_items'           => __( 'All Solution', 'twentytwenty' ),
-          'view_item'           => __( 'View Solution', 'twentytwenty' ),
-          'add_new_item'        => __( 'Add New Solution', 'twentytwenty' ),
-          'add_new'             => __( 'Add New', 'twentytwenty' ),
-          'edit_item'           => __( 'Edit Solution', 'twentytwenty' ),
-          'update_item'         => __( 'Update Solution', 'twentytwenty' ),
-          'search_items'        => __( 'Search Solution', 'twentytwenty' ),
-          'not_found'           => __( 'Not Found', 'twentytwenty' ),
-          'not_found_in_trash'  => __( 'Not found in Trash', 'twentytwenty' ),
-      );
+//   // Set UI labels for Custom Post Type
+//       $labels = array(
+//           'name'                => _x( 'Solution', 'Post Type General Name', 'twentytwenty' ),
+//           'singular_name'       => _x( 'Solution', 'Post Type Singular Name', 'twentytwenty' ),
+//           'menu_name'           => __( 'Solution', 'twentytwenty' ),
+//           'parent_item_colon'   => __( 'Parent Solution', 'twentytwenty' ),
+//           'all_items'           => __( 'All Solution', 'twentytwenty' ),
+//           'view_item'           => __( 'View Solution', 'twentytwenty' ),
+//           'add_new_item'        => __( 'Add New Solution', 'twentytwenty' ),
+//           'add_new'             => __( 'Add New', 'twentytwenty' ),
+//           'edit_item'           => __( 'Edit Solution', 'twentytwenty' ),
+//           'update_item'         => __( 'Update Solution', 'twentytwenty' ),
+//           'search_items'        => __( 'Search Solution', 'twentytwenty' ),
+//           'not_found'           => __( 'Not Found', 'twentytwenty' ),
+//           'not_found_in_trash'  => __( 'Not found in Trash', 'twentytwenty' ),
+//       );
 
-  // Set other options for Custom Post Type
+//   // Set other options for Custom Post Type
 
-      $args = array(
-          'label'               => __( 'Solution', 'twentytwenty' ),
-          'description'         => __( 'Solution news and reviews', 'twentytwenty' ),
-          'labels'              => $labels,
-          // Features this CPT supports in Post Editor
-          'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-          // You can associate this CPT with a taxonomy or custom taxonomy.
-          //'taxonomies'          => array( 'genres' ),
-          /* A hierarchical CPT is like Pages and can have
-          * Parent and child items. A non-hierarchical CPT
-          * is like Posts.
-          */
-          'hierarchical'        => true,
-          'public'              => true,
-          'show_ui'             => true,
-          'show_in_menu'        => true,
-          'show_in_nav_menus'   => true,
-          'show_in_admin_bar'   => true,
-          'menu_position'       => 5,
-          'can_export'          => true,
-          'has_archive'         => true,
-          'exclude_from_search' => false,
-          'publicly_queryable'  => true,
-          'capability_type'     => 'post',
-          'show_in_rest' => true,
+//       $args = array(
+//           'label'               => __( 'Solution', 'twentytwenty' ),
+//           'description'         => __( 'Solution news and reviews', 'twentytwenty' ),
+//           'labels'              => $labels,
+//           // Features this CPT supports in Post Editor
+//           'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+//           // You can associate this CPT with a taxonomy or custom taxonomy.
+//           //'taxonomies'          => array( 'genres' ),
+//           /* A hierarchical CPT is like Pages and can have
+//           * Parent and child items. A non-hierarchical CPT
+//           * is like Posts.
+//           */
+//           'hierarchical'        => true,
+//           'public'              => true,
+//           'show_ui'             => true,
+//           'show_in_menu'        => true,
+//           'show_in_nav_menus'   => true,
+//           'show_in_admin_bar'   => true,
+//           'menu_position'       => 5,
+//           'can_export'          => true,
+//           'has_archive'         => true,
+//           'exclude_from_search' => false,
+//           'publicly_queryable'  => true,
+//           'capability_type'     => 'post',
+//           'show_in_rest' => true,
 
-      );
+//       );
 
-      // Registering your Custom Post Type
-      register_post_type( 'solution', $args );
+//       // Registering your Custom Post Type
+//       register_post_type( 'solution', $args );
 
-  }
+//   }
 
 
 
@@ -243,7 +243,7 @@ function custom_post_type() {
         'view_item' => __('View Light Fence', 'txtdomain'),
         'not_found' => __('No Light Fence found', 'txtdomain'),
         'not_found_in_trash' => __('No Light Fence found in trash', 'txtdomain'),
-        'all_items' => __('All Light Fence', 'txtdomain'),
+        'all_items' => __('All', 'txtdomain'),
         'insert_into_item' => __('Insert into book', 'txtdomain')
       ],
     ]);
@@ -277,7 +277,7 @@ function custom_post_type() {
 
   add_action('init', function() {
     register_post_type('lightfence', [
-      'label' => __('Light Fence Resource', 'txtdomain'),
+      'label' => __('Light Fence Configurations', 'txtdomain'),
       'public' => true,
       'has_archive' => true,
       'menu_position' => 5,
@@ -378,7 +378,7 @@ echo '	<div class="row gx-0 h-100">
             </div>
             <p>Fill out the information below to get a free download of our document.</p>
               <div class="form-align pt-5">
-                  <form id="frmContact">
+                  <form id="frmContact"  name="frmContact">
                       <div id="mail-status"></div>
                       <a href="'.get_field('download_file_link', $_POST['post_id']).'" download id="download" hidden></a>
                       <input type="hidden" name="post_id" id="post_id" value="'.$_POST['post_id'].'" class="demoInputBox form-input">
@@ -396,14 +396,17 @@ echo '	<div class="row gx-0 h-100">
 
                       <div class="mb-3">
                           <input type="text" name="userName" id="userName" class="demoInputBox" required placeholder="First name">
+                          <div id="userName-err"></div>
                       </div>
                       <div class="mb-3">
                           <span id="last-info" class="info d-block"></span>
                           <input type="text" name="lastName" id="lastName" class="demoInputBox" required placeholder="Last name">
+                          <div id="last-name-err"></div>
                       </div>
                       <div class="mb-3">
                           <span id="userEmail-info" class="info d-block"></span>
                           <input type="text" name="userEmail" id="userEmail" class="demoInputBox" required placeholder="Email">
+                          <div id="email-name-err"></div>
                       </div>
                       <div>
                           <button name="submit" class="btnAction btn btn-secondary btn-rarr" onClick="sendContact();">Download</button>
