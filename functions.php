@@ -414,3 +414,57 @@ echo '	<div class="row gx-0 h-100">
         </div> ';
   exit();
 }
+
+
+// Create Report of the Download form submited
+
+add_action('admin_menu', 'test_plugin_setup_menu');
+ 
+function test_plugin_setup_menu(){
+    add_menu_page( 'Test Plugin Page', 'Test Plugin', 'manage_options', 'test-plugin', 'test_init' );
+}
+ 
+function test_init(){?>
+
+<?php 
+global $wpdb;
+$mylink1 = $wpdb->get_results( "SELECT * FROM wp_form_disable" );
+
+?>
+<?php //echo get_the_title( 867);?>
+<h2>Download Forms Report:</h2>
+  
+
+<table style="width: 70%;border: 1px solid #eee;" class="report-download" border="1">
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Email Address</th>
+    <th>Download Form </th>
+    <th>IP Address</th>
+    <th>Date</th>
+  </tr>
+  <?php foreach($mylink1 as $row){ //print_r( $row->formID); ?>
+  <tr>
+    <td><?php echo $row->ID;?></td>
+    <td><?php echo $row->fname;?></td>
+    <td><?php echo $row->lname;?></td>
+    <td><?php echo $row->email;?></td>
+    <td><?php echo get_the_title( $row->formID );?></td>
+    <td><?php echo $row->ip_address;?></td>
+    <td><?php echo $row->date;?></td>
+  </tr>
+<?php }?>
+</table>
+<style>
+  
+  
+  .report-download th {
+    text-align: left;
+}
+</style>
+
+
+<?php   }
+add_action('admin_menu', 'test_plugin_setup_menu');
