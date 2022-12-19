@@ -34,7 +34,7 @@
 	</div> <!-- .container -->
 </section> <!-- .download-cards -->
 
-<section class="download-list pt-8 pb-8">
+<section class="download-list pt-5 pt-md-10 pb-5 pb-md-10">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-8">

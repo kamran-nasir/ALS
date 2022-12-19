@@ -78,7 +78,8 @@
           justify-content: center;
           margin-bottom: rem-calc(12px);
           img {
-            object-fit: contain;
+            object-fit: cover;
+            height: 100%;
           }
         }
       }

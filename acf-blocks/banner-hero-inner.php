@@ -12,11 +12,10 @@
 	$custom_id		           = get_field( 'custom_id' );
 
 ?>
-<section class="homepage-hero bg-darkest text-white <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
-<section class="inner-hero bg-primary pt-8 pt-lg-12 pb-8 pb-lg-12 position-relative overflow-hidden fade-animation" >
+<section class="inner-hero bg-primary text-white position-relative overflow-hidden fade-animation pt-8 pt-lg-12 pb-8 pb-lg-12 <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
   <div class="container">
 		<div class="row justify-content-center">
-			<div class="col-md-9 col-xl-6">
+			<div class="col-md-9 col-xl-8">
 				<div class="hero-content position-relative z-index-1 text-center text-white">
 				  <h2 class="heading-animation text-white"><?php echo $heading;?></h2>
 					<p class="text-animation"><?php echo $description;?></p>

@@ -21,7 +21,7 @@
 <section class="offset-img-with-text pt-5 pt-lg-10     <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
 	<div class="container">
 	  <div class="row justify-content-center text-center mb-7">
-			<div class="col-md-9 col-xl-6">
+			<div class="col-md-9 col-xl-8">
 				<div class="title-row">
 					<div class="title-wrap">
 						<h3 class="heading-animation m-0"><?php echo $heading;?></h3>
@@ -69,9 +69,9 @@
                                 <?php echo $row['heading']; ?>
                                     <span class="text-dark-grey d-block small fw-light"><?php echo $row['description']; ?></span>
                                 </span> <!-- .text -->
-                            </li>                           
+                            </li>
                         <?php }
-                    }?>        
+                    }?>
 				</ul> <!-- .list-unstyled -->
 			</div> <!-- .col-md-6 -->
 			<div class="col-md-10 col-xl-6 fade-animation">
@@ -88,7 +88,7 @@
                 alt="<?php echo $image_alt; ?>"
                 width="<?php echo $image_data[1]; ?>"
                 height="<?php echo $image_data[2]; ?>"
-                class="img-cover has-parallax-effect" 
+                class="img-cover has-parallax-effect"
                 data-speed="auto"
             />
 			</div> <!-- .img-cover-block -->

@@ -3,7 +3,7 @@
 <section class="inner-hero bg-primary pt-8 pt-lg-12 pb-8 pb-lg-12 position-relative overflow-hidden fade-animation">
   <div class="container">
 		<div class="row justify-content-center">
-			<div class="col-md-9 col-xl-6">
+			<div class="col-md-9 col-xl-8">
 				<div class="hero-content position-relative z-index-1 text-center text-white">
 				  <h2 class="heading-animation text-white"><?php echo get_queried_object()->name; //var_dump(get_queried_object())?></h2>
 				</div> <!-- .hero-content -->
@@ -67,9 +67,7 @@
                                                 ?>
                                                     <div id="tab-<?php echo $i;?>" class="tab-pane <?php if($i==0) echo 'active';?>">
 
-                                                        <div class="col-md-8 col-lg-6 order-1 order-lg-2">
-                                                                <div class="title-row mb-6 mb-lg-0 ps-lg-5">
-                                                                    <div class="title-wrap">
+
                                                                         <?php
                                                                             query_posts(array(
                                                                                 'post_type' => 'lightfence',
@@ -181,9 +179,7 @@
                                                                                 </section> <!-- .equal-cols -->
 
                                                                             <?php endwhile; ?>
-                                                                    </div> <!-- .title-wrap -->
-                                                                </div> <!-- .title-row -->
-                                                            </div> <!-- .col-md-6 -->
+
                                                     </div>
                                     <?php  $i++;
                                         }
@@ -199,12 +195,12 @@
 
 <?php  } else{?>
 
-    <section class="download-list">
+    <section class="download-list pt-5 pt-md-10 pb-5 pb-md-10">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <ul class="list-unstyled m-0 p-0">
-                        <?php 
+                        <?php
                             query_posts(array(
                                 'post_type' => 'technical',
                                 'showposts' => -1,
@@ -224,14 +220,14 @@
                                     <li>
                                         <span class="number">0<?php echo $i;?>.</span> <!-- .number -->
                                         <span class="title"><?php echo the_title();?></span> <!-- .title -->
-                                        <?php 
-									 $tablename = $wpdb->prefix.'form_disable';	
+                                        <?php
+									 $tablename = $wpdb->prefix.'form_disable';
 									 $ip_addressData = $wpdb->get_results("SELECT *  FROM $tablename WHERE (formID =  '". $formID ."')");
 											$next24 = strtotime('+1 day', $next24); //add 24 hours in updated date
                                            // echo ($ip_addressData[0]->formID);
                                            $ip_addressLive = getenv("REMOTE_ADDR");
                                             $currentDB = $ip_addressData[0]->date;
-											//check if current then is bigger then next 24 hours 
+											//check if current then is bigger then next 24 hours
                                             $ip_address = $ip_addressData[0]->ip_address.'<br>';
 
                                             $next24Hours = time() + 1*60*60*24;
@@ -243,10 +239,10 @@
 												if(($currentDB <= $next24Hourss)  && ($formID == get_the_ID()))
 												{?>
 												<a href="<?php echo get_field('download_file_link', get_the_ID());?>" download   class="btn btn-secondary ">Download Form</a>
-												<?php 
+												<?php
 											}else{?>
 												<a href="#document-1" id="download_form" <?php if($formID ==get_the_ID()) echo "5555555";?> data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
-											<?php 
+											<?php
 											}?>
                                     </li>
                         <?php $i++;
@@ -262,7 +258,7 @@
 
 <div id="document-1" class="download-popup position-relative mfp-hide">
     <div id="form1"></div>
-</div>  
+</div>
 
 <script>
 	 function sendContact() {
@@ -277,8 +273,8 @@
 			},
 			type: "POST",
 			success:function(data1){
-				console.log(data1);    
-				//jQuery('#download_form').prop('disabled', true);               
+				console.log(data1);
+				//jQuery('#download_form').prop('disabled', true);
 				document.getElementById('download').click();
 				document.getElementById('download_form').disabled=true;
 				jQuery("#mail-status").text("Message Sent");
@@ -288,5 +284,5 @@
 		});
 	}
 </script>
-  
+
 <?php get_footer(); ?>

@@ -43,8 +43,7 @@
             alt="<?php echo $image_alt; ?>"
             width="<?php echo $image_data[1]; ?>"
             height="<?php echo $image_data[2]; ?>"
-            class="img-cover has-parallax-effect" 
+            class="img-cover has-parallax-effect"
             data-speed="auto">
-        />
 	</div> <!-- .position-relative pt-10 pb-10 overflow-hidden -->
 </section> <!-- .bg-with-block-text -->

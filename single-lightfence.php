@@ -1,4 +1,4 @@
-<?php get_header(); 
+<?php get_header();
 
 $categories = get_the_terms( get_the_ID(), 'cat_lightfence' );
 
@@ -9,9 +9,9 @@ $categories = get_the_terms( get_the_ID(), 'cat_lightfence' );
 <section class="inner-hero bg-primary pt-8 pt-lg-12 pb-8 pb-lg-12 position-relative overflow-hidden fade-animation">
   <div class="container">
 		<div class="row justify-content-center">
-			<div class="col-md-9 col-xl-6">
+			<div class="col-md-9 col-xl-8">
 				<div class="hero-content position-relative z-index-1 text-center text-white">
-				  <h2 class="heading-animation text-white"><?php 
+				  <h2 class="heading-animation text-white"><?php
                     foreach ( $categories as $key => $category ) {
                         if( $category->parent == 0 ){
                             echo $category->name;
@@ -22,7 +22,7 @@ $categories = get_the_terms( get_the_ID(), 'cat_lightfence' );
 		</div> <!-- .row -->
 	</div> <!-- .container -->
 	<img src="<?php echo get_template_directory_uri(); ?>/images/bg-lines-2.png" alt="" class="img-cover has-parallax-effect" data-speed="auto">
-</section> 
+</section>
 <?php endwhile; ?>
 
 <section class="generic-tabs-section">
@@ -31,24 +31,24 @@ $categories = get_the_terms( get_the_ID(), 'cat_lightfence' );
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<ul class="nav nav-tabs flex-lg-wrap justify-content-center flex-nowrap horizentol-scroll-mobile">							
+						<ul class="nav nav-tabs flex-lg-wrap justify-content-center flex-nowrap horizentol-scroll-mobile">
                         <?php
-                         foreach ( $categories as $key => $category ) { 
+                         foreach ( $categories as $key => $category ) {
                             $term_id = $category->parent;
                             $taxonomy_name = 'cat_lightfence';
                             $termchildren = get_term_children( $term_id, $taxonomy_name );
-                            $i=0; 
-                           
+                            $i=0;
+
                             foreach ( $termchildren as $child ) {
                                 $term = get_term_by( 'id', $child, $taxonomy_name );
                                 ?>
                                     <li class="<?php if($i==0) echo 'active';?>">
                                         <a class="btn-corner-radius" data-toggle="tab" href="#tab-<?php echo $i;?>"><?php  echo $term->name;?></a>
                                     </li>
-                                <?php                                
+                                <?php
                            $i++; }
-                        }                             
-                        ?>                           
+                        }
+                        ?>
 						</ul>
 					</div> <!-- .col-12 -->
 				</div> <!-- .row -->
@@ -57,20 +57,20 @@ $categories = get_the_terms( get_the_ID(), 'cat_lightfence' );
 		<div class="container hello">
 			<div class="row">
 				<div class="col-12">
-					<div class="tab-content">                        
+					<div class="tab-content">
                             <?php $i=0;
-                                foreach ( $categories as $key => $category ) { 
+                                foreach ( $categories as $key => $category ) {
                                     $term_id = $category->parent;
                                     $taxonomy_name = 'cat_lightfence';
                                     $termchildren = get_term_children( $term_id, $taxonomy_name );
                                     foreach ( $termchildren as $child ) {
-                                        $term = get_term_by( 'id', $child, $taxonomy_name );                                            
-                                            ?>                          
+                                        $term = get_term_by( 'id', $child, $taxonomy_name );
+                                            ?>
                                                 <div id="tab-<?php echo $i;?>" class="tab-pane <?php if($i==0) echo 'active';?>">
-                                                
-                                                  
-                                                                    <?php 
-                                                                        query_posts(array( 
+
+
+                                                                    <?php
+                                                                        query_posts(array(
                                                                             'post_type' => 'lightfence',
                                                                             'showposts' => -1,
                                                                             'tax_query' => array(
@@ -83,10 +83,10 @@ $categories = get_the_terms( get_the_ID(), 'cat_lightfence' );
                                                                             'orderby' => 'title',
                                                                             'order' => 'ASC' )
                                                                         );
-                                                                            
+
                                                                         while (have_posts()) : the_post();        $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
                                                                         $post_thumbnail_id = get_post_meta( $post->ID, '_thumbnail_id', true );
-                                                                        $image                  = get_field('secondary_feature_image_');?>                                                                          
+                                                                        $image                  = get_field('secondary_feature_image_');?>
                                                                           <section class="single-product fence-solution pb-5 pb-lg-10">
                                                                                 <div class="d-flex justify-content-center align-items-center">
                                                                                     <div class="col-lg-6 order-2 order-lg-1">
@@ -104,7 +104,7 @@ $categories = get_the_terms( get_the_ID(), 'cat_lightfence' );
                                                                                                     alt="<?php echo $image_alt; ?>"
                                                                                                     width="<?php echo $image_data[1]; ?>"
                                                                                                     height="<?php echo $image_data[2]; ?>"
-                                                                                                    class="img-big stagger-animation has-overlay" 
+                                                                                                    class="img-big stagger-animation has-overlay"
                                                                                                 />
                                                                                                 <div class="image-overlay">
                                                                                                     <div class="image-overlay-inside">
@@ -142,8 +142,8 @@ $categories = get_the_terms( get_the_ID(), 'cat_lightfence' );
                                                                                                 alt="<?php echo $image_alt; ?>"
                                                                                                 width="<?php echo $image_data[1]; ?>"
                                                                                                 height="<?php echo $image_data[2]; ?>"
-                                                                                                class="img-responsive" 
-                                                                                            />    
+                                                                                                class="img-responsive"
+                                                                                            />
                                                                                                 <div class="image-overlay">
                                                                                                     <div class="image-overlay-inside">
                                                                                                         <div class="icon">
@@ -178,14 +178,14 @@ $categories = get_the_terms( get_the_ID(), 'cat_lightfence' );
                                                                                     </div> <!-- .col-md-6 -->
                                                                                 </div> <!-- .d-flex -->
                                                                             </section> <!-- .equal-cols -->
-                                                                            
+
                                                                         <?php endwhile; ?>
-                                                           
-                                                </div>  
-                                <?php  $i++;  
-                                    }    
-                                }                             
-                                ?>              
+
+                                                </div>
+                                <?php  $i++;
+                                    }
+                                }
+                                ?>
 
 					</div> <!-- .tab-content -->
 				</div> <!-- .col-12 -->
