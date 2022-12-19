@@ -67,9 +67,7 @@
                                                 ?>
                                                     <div id="tab-<?php echo $i;?>" class="tab-pane <?php if($i==0) echo 'active';?>">
 
-                                                        <div class="col-md-8 col-lg-6 order-1 order-lg-2">
-                                                                <div class="title-row mb-6 mb-lg-0 ps-lg-5">
-                                                                    <div class="title-wrap">
+
                                                                         <?php
                                                                             query_posts(array(
                                                                                 'post_type' => 'lightfence',
@@ -181,9 +179,7 @@
                                                                                 </section> <!-- .equal-cols -->
 
                                                                             <?php endwhile; ?>
-                                                                    </div> <!-- .title-wrap -->
-                                                                </div> <!-- .title-row -->
-                                                            </div> <!-- .col-md-6 -->
+
                                                     </div>
                                     <?php  $i++;
                                         }

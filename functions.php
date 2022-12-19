@@ -381,7 +381,6 @@ echo '	<div class="row gx-0 h-100">
                   <form id="frmContact">
                       <div id="mail-status"></div>
                       <a href="'.get_field('download_file_link', $_POST['post_id']).'" download id="download" hidden></a>
-
                       <input type="hidden" name="post_id" id="post_id" value="'.$_POST['post_id'].'" class="demoInputBox form-input">
                       <div class="mb-3">
                         <div class="container-select">

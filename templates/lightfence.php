@@ -95,14 +95,14 @@
 											</div> <!-- .col-md-6 -->
 											<div class="col-md-6 g-0">
 												<div class="img-cover-block">
-												<img src="<?php echo z_taxonomy_image_url($cat->term_id);?>" alt="" class="img-cover has-parallax-effect">
+												<img src="<?php echo z_taxonomy_image_url($cat->term_id);?>" alt="" class="img-cover">
 												</div> <!-- .img-cover-block -->
 											</div> <!-- .col-md-6 -->
 
 									<?php }else{?>
 										<div class="col-md-6 g-0">
 												<div class="img-cover-block">
-												<img src="<?php echo z_taxonomy_image_url($cat->term_id);?>" alt="" class="img-cover has-parallax-effect">
+												<img src="<?php echo z_taxonomy_image_url($cat->term_id);?>" alt="" class="img-cover">
 												</div> <!-- .img-cover-block -->
 											</div> <!-- .col-md-6 -->
 											<div class="col-md-6">
