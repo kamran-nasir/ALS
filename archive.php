@@ -86,7 +86,7 @@
                                                                             while (have_posts()) : the_post();        $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
                                                                             $post_thumbnail_id = get_post_meta( $post->ID, '_thumbnail_id', true );
                                                                             $image                  = get_field('secondary_feature_image_');?>
-                                                                            <section class="single-product fence-solution pb-5 pb-lg-10">
+                                                                            <section class="single-product fence-solution">
                                                                                     <div class="d-flex justify-content-center align-items-center">
                                                                                         <div class="col-lg-6 order-2 order-lg-1">
                                                                                             <div class="lightgallery">
@@ -134,7 +134,7 @@
                                                                                                         $image_alt = get_post_meta( $image, '_wp_attachment_image_alt', true );
                                                                                                         $image_alt = esc_attr( trim( strip_tags( $image_alt ) ) );
                                                                                                 ?>
-                                                                                                <a href="<?php echo get_template_directory_uri(); ?>/images/fence-2.jpg" class="img-small stagger-animation has-overlay">                                                                                               
+                                                                                                <a href="<?php echo get_template_directory_uri(); ?>/images/fence-2.jpg" class="img-small stagger-animation has-overlay">
                                                                                                 <img
                                                                                                     src="<?php echo wp_get_attachment_image_url( $image, 'w1920' ) ?>"
                                                                                                     srcset="<?php echo wp_get_attachment_image_srcset( $image ) ?>"
@@ -165,9 +165,9 @@
                                                                                                                 </svg>
                                                                                                             </div>
                                                                                                         </div>
-                                                                                                    </div> <!-- .image-overlay -->                                                                                               
+                                                                                                    </div> <!-- .image-overlay -->
                                                                                                 </a>
-                                                                                                <?php }?>    
+                                                                                                <?php }?>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="col-md-8 col-lg-6 order-1 order-lg-2">

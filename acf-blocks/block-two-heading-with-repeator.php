@@ -47,32 +47,37 @@
 					</div> <!-- .title-wrap -->
 				</div> <!-- .title-row -->
 				<ul class="icon-with-text spaces-md list-unstyled mb-md-10 mb-lg-0">
-                <?php if( $scrolling_text ) {
-                    foreach( $scrolling_text as $row ) { ?>
-                            <li class="stagger-animation">
-                                <span class="icon flex-shrink-0">
-                                <?php
-                                    $image_data = wp_get_attachment_image_src( $row['image'], 'w1920' );
-                                    $image_alt = get_post_meta( $row['gallery'], '_wp_attachment_image_alt', true );
-                                    $image_alt = esc_attr( trim( strip_tags( $image_alt ) ) );
-                                ?>
-                                <img
-                                    src="<?php echo wp_get_attachment_image_url( $row['image'], 'w1920' ); ?>"
-                                    srcset="<?php echo wp_get_attachment_image_srcset( $row['image'] ); ?>"
-                                    sizes="100vw"
-                                    alt="<?php echo $image_alt; ?>"
-                                    width="<?php echo $image_data[1]; ?>"
-                                    height="<?php echo $image_data[2]; ?>"
-                                />
-                                </span> <!-- .icon -->
-                                <span class="text text-midnight-500 flex-grow-1 ms-1-5">
-                                <?php echo $row['heading']; ?>
-                                    <span class="text-dark-grey d-block small fw-light"><?php echo $row['description']; ?></span>
-                                </span> <!-- .text -->
-                            </li>
-                        <?php }
-                    }?>
+                    <?php if( $scrolling_text ) {
+                        foreach( $scrolling_text as $row ) { ?>
+                                <li class="stagger-animation">
+                                    <span class="icon flex-shrink-0">
+                                    <?php
+                                        $image_data = wp_get_attachment_image_src( $row['image'], 'w1920' );
+                                        $image_alt = get_post_meta( $row['gallery'], '_wp_attachment_image_alt', true );
+                                        $image_alt = esc_attr( trim( strip_tags( $image_alt ) ) );
+                                    ?>
+                                    <img
+                                        src="<?php echo wp_get_attachment_image_url( $row['image'], 'w1920' ); ?>"
+                                        srcset="<?php echo wp_get_attachment_image_srcset( $row['image'] ); ?>"
+                                        sizes="100vw"
+                                        alt="<?php echo $image_alt; ?>"
+                                        width="<?php echo $image_data[1]; ?>"
+                                        height="<?php echo $image_data[2]; ?>"
+                                    />
+                                    </span> <!-- .icon -->
+                                    <span class="text text-midnight-500 flex-grow-1 ms-1-5">
+                                    <?php echo $row['heading']; ?>
+                                        <span class="text-dark-grey d-block small fw-light"><?php echo $row['description']; ?></span>
+                                    </span> <!-- .text -->
+                                </li>
+                            <?php }
+                        }?>
 				</ul> <!-- .list-unstyled -->
+                <ul class="stamps-list nav list-unstyled stagger-animation">
+                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/new-stamp-1.png" alt=""></li>
+                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/new-stamp-2.png" alt=""></li>
+                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/new-stamp-3.png" alt=""></li>
+                </ul> <!-- .list-unstyled -->
 			</div> <!-- .col-md-6 -->
 			<div class="col-md-10 col-xl-6 fade-animation">
 			<div class="img-cover-block">

@@ -565,9 +565,9 @@ function init(){
   const smoother = ScrollSmoother.create({
     wrapper: "#wrapper",
     content: "#content",
-    smooth: 2,
-    smoothTouch: 0,
-    effects: true,
+    smooth: 1,               // how long (in seconds) it takes to "catch up" to the native scroll position
+    effects: true,           // looks for data-speed and data-lag attributes on elements
+    smoothTouch: 0.1,
     // normalizeScroll: true,
     ignoreMobileResize: true,
     scroller: null,
@@ -1175,6 +1175,9 @@ $(document).ready(function() {
           e.preventDefault();
       });
   });
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    ScrollTrigger.refresh();
+  });
 });
 
 	$('.download-form').click(function(e) {
@@ -1297,7 +1300,8 @@ function sendContact() {
 
       var tabItems = $('.tab-wrap ul li');
       var tabCurrentItem = tabItems.filter('.active');
-    });;
+    });
+;
 // Three Cards Slider
 /* ========================================== */
 function threeCardsSlider() {

@@ -19,7 +19,7 @@
 		<li>Green</li>
 	</ul>
 	<div class="container">
-		<div class="row justify-content-center text-center mb-4 mb-lg-7">
+		<div class="row justify-content-center text-center mb-3">
 			<div class="col-md-12">
 				<div class="title-row">
 					<div class="title-wrap">

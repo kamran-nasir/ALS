@@ -17,7 +17,7 @@
 <section class="inner-hero bg-midnight-200 pt-8 pt-lg-12 pb-8 pb-lg-12 position-relative overflow-hidden fade-animation">
   <div class="container">
 		<div class="row justify-content-center">
-			<div class="col-md-9 col-xl-8">
+			<div class="col-md-6">
 				<div class="hero-content position-relative z-index-1 text-center">
     				<?php
                         $image_data = wp_get_attachment_image_src( $image, 'w1920' );

@@ -83,6 +83,32 @@ ul.icon-with-text {
     }
   }
 }
+.stamps-list {
+  display: none;
+  margin-left: rem-calc(-25px) !important;
+  @include media-breakpoint-down(lg) {
+    margin-top: rem-calc(50px) !important;
+  }
+  @include media-breakpoint-up(lg) {
+    margin-top: rem-calc(40px) !important;
+  }
+  li {
+    height: rem-calc(80px);
+    width: rem-calc(120px);
+    max-width: rem-calc(120px);
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.page-about-us {
+  .stamps-list {
+    display: flex;
+  }
+}
 
 .social-links {
   li {
@@ -134,10 +160,10 @@ ul.icon-with-text {
 }
 
 .frame-img {
-  border: rem-calc(5px) solid $white;
+  // border: rem-calc(5px) solid $white;
   box-shadow: 0px 4px 70px rgba(4, 20, 45, 0.2);
   @include media-breakpoint-up(md) {
-    border: rem-calc(10px) solid $white;
+    // border: rem-calc(10px) solid $white;
   }
 }
 

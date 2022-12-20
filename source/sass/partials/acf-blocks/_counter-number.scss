@@ -7,6 +7,7 @@
       flex-direction: column;
       @include media-breakpoint-up(lg) {
         flex-direction: row;
+        width: rem-calc(460px);
       }
       .numbers {
         position: relative;
@@ -31,6 +32,8 @@
         @include media-breakpoint-up(lg) {
           position: absolute;
           left: rem-calc(130px);
+          top: 50%;
+          transform: translate(0, -30%);
           text-align: left;
         }
       }
@@ -38,7 +41,14 @@
     &:last-of-type {
       .numbers-wrap {
         .content {
-          left: rem-calc(180px);
+          @include media-breakpoint-up(lg) {
+            left: rem-calc(260px);
+          }
+        }
+        .counts {
+          @include media-breakpoint-up(lg) {
+            left: rem-calc(130px);
+          }
         }
       }
     }

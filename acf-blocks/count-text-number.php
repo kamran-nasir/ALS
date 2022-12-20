@@ -16,7 +16,7 @@ $custom_id           = get_field( 'custom_id' );
 			<?php
 				if( $count_list ) {
 					foreach( $count_list as $row ) {?>
-						<div class="col-lg-4 numbers-row stagger-animation">
+						<div class="col-xl-5 numbers-row d-flex justify-content-center stagger-animation">
 							<div class="numbers-wrap">
 								<div class="numbers">
 										<span class="line-number"><?php echo ( $row['number'] );?></span>

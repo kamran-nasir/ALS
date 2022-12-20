@@ -20,10 +20,10 @@
 <body <?php body_class( 'site-wrapper' ); ?>>
 
 <?php wp_body_open(); ?>
-<span class="cursor">
+<!-- <span class="cursor">
   <span class="cursor__follower"></span>
 	<span class="cursor__label">drag</span>
-</span>
+</span> -->
 <header class="site-header clearfix" role="banner">
   <div class="container">
     <div class="row">
