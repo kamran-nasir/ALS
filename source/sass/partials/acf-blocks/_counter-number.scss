@@ -7,11 +7,9 @@
       flex-direction: column;
       @include media-breakpoint-up(lg) {
         flex-direction: row;
-        width: rem-calc(460px);
       }
       .numbers {
         position: relative;
-        margin-bottom: rem-calc(-30px);
         .line-number {
           font-size: rem-calc(100px);
           -webkit-text-stroke: 1px rgba($white, 0.2);
@@ -28,29 +26,31 @@
       .content {
         text-transform: uppercase;
         max-width: rem-calc(280px);
-        text-align: center;
-        @include media-breakpoint-up(lg) {
-          position: absolute;
-          left: rem-calc(130px);
-          top: 50%;
-          transform: translate(0, -30%);
-          text-align: left;
-        }
+        text-align: left;
+        margin-left: rem-calc(15px);
+        // @include media-breakpoint-up(lg) {
+        //   position: absolute;
+        //   left: rem-calc(130px);
+        //   top: 50%;
+        //   transform: translate(0, -30%);
+        //   text-align: left;
+        // }
       }
     }
-    &:last-of-type {
-      .numbers-wrap {
-        .content {
-          @include media-breakpoint-up(lg) {
-            left: rem-calc(260px);
-          }
-        }
-        .counts {
-          @include media-breakpoint-up(lg) {
-            left: rem-calc(130px);
-          }
-        }
-      }
-    }
+    // &:last-of-type {
+    //   .numbers-wrap {
+    //     .content {
+    //       @include media-breakpoint-up(lg) {
+    //         left: rem-calc(260px);
+    //       }
+    //     }
+    //     .counts {
+    //       @include media-breakpoint-up(lg) {
+    //         left: rem-calc(130px);
+    //         width: rem-calc(130px);
+    //       }
+    //     }
+    //   }
+    // }
   }
 }
