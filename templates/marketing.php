@@ -28,11 +28,12 @@
 										$current = $ip_addressData[0]->date;
 									
 											//check if current then is bigger then next 24 hours 
-											if($current < $next24 && ($ip_address ==$ip_addressData[0]->ip_address) && ($ip_addressData[0]->formID ==get_the_ID()))
-											{?>
+											if($current < $next24 && ($ip_address ==$ip_addressData[0]->ip_address) && ($ip_addressData[0]->formID ==get_the_ID())){ ?>
+
 												<a href="<?php echo get_field('download_file_link', get_the_ID());?>" download   class="btn btn-secondary ">Download Form</a>
-												<?php 
-										}else{?>
+									<?php } 
+										else { ?>
+										
 											<a href="#document-1" id="download_form"  data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
 										<?php 
 										}?>
@@ -51,54 +52,33 @@
 
 <script>
 
-		 function sendContact() {
-
-		// First Name Validation
-		var firstName= document.getElementById("userName");
-		var firstNameValidation=function(){
-			firstNameValue=firstName.value.trim(); 
-			validFirstName=/^[A-Za-z]+$/;
-			firstNameErr=document.getElementById('userName-err');
-			if(firstNameValue=="")
-				{
-					firstNameErr.innerHTML="First Name is required";
-			}else if(!validFirstName.test(firstNameValue)){
-					firstNameErr.innerHTML="First Name must be only string without white spaces";
-			}else{
-					firstNameErr.innerHTML="";
-					return true;
-					
-			}
-		}
-		firstName.oninput=function(){
-		
-		firstNameValidation();
-		}
 
 
-				jQuery.ajax({
-					url: "/wp-admin/admin-ajax.php",
-					data:{
-						'userName': jQuery("#userName").val(),
-						'userEmail': jQuery("#userEmail").val(),
-						'lastName': jQuery("#lastName").val(),
-						'post_id': jQuery("#post_id").val(),
-						'action': 'sayhello2',
-					},
-					type: "POST",
-					success:function(data1){
-						console.log(data1);    
-						//jQuery('#download_form').prop('disabled', true);               
-						document.getElementById('download').click();
-						document.getElementById('download_form').disabled=true;
-						jQuery("#mail-status").text("Message Sent");
-						jQuery.magnificPopup.close();
-						jQuery("#download_form").disabled = true;
-						console.log(jQuery("#download_form").disabled = true);
-						location.reload(true);
+		//  function sendContact() {			
 
-					},
-				});
-	}
+		// 		jQuery.ajax({
+		// 			url: "/wp-admin/admin-ajax.php",
+		// 			data:{
+		// 				'userName': jQuery("#userName").val(),
+		// 				'userEmail': jQuery("#userEmail").val(),
+		// 				'lastName': jQuery("#lastName").val(),
+		// 				'post_id': jQuery("#post_id").val(),
+		// 				'action': 'sayhello2',
+		// 			},
+		// 			type: "POST",
+		// 			success:function(data1){
+		// 				console.log(data1);    
+		// 				//jQuery('#download_form').prop('disabled', true);               
+		// 				document.getElementById('download').click();
+		// 				document.getElementById('download_form').disabled=true;
+		// 				jQuery("#mail-status").text("Message Sent");
+		// 				jQuery.magnificPopup.close();
+		// 				jQuery("#download_form").disabled = true;
+		// 				console.log(jQuery("#download_form").disabled = true);
+		// 				location.reload(true);
+
+		// 			},
+		// 		});
+		// 	}
 </script>
 <?php get_footer(); ?>
