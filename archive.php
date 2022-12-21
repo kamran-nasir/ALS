@@ -5,7 +5,7 @@
 		<div class="row justify-content-center">
 			<div class="col-md-9 col-xl-8">
 				<div class="hero-content position-relative z-index-1 text-center text-white">
-				  <h2 class="heading-animation text-white"><?php echo get_queried_object()->name; //var_dump(get_queried_object())?></h2>
+				  <h2 class="heading-animation text-white"><?php echo get_queried_object()->name; ?></h2>
 				</div> <!-- .hero-content -->
 			</div> <!-- .col-md-6 -->
 		</div> <!-- .row -->
@@ -13,7 +13,7 @@
 	<img src="<?php echo get_template_directory_uri(); ?>/images/bg-lines-2.png" alt="" class="img-cover has-parallax-effect" data-speed="auto">
 </section> <!-- .inner-hero -->
 
-<?php  if(get_queried_object()->taxonomy=='cat_lightfence'){?>
+<?php  if(get_queried_object()->taxonomy=='cat_lightfence'){ //var_dump(get_queried_object());?>
 
 
     <section class="generic-tabs-section">
@@ -27,7 +27,7 @@
                             $args = array(
                                 'taxonomy' => 'cat_lightfence',
                                 'orderby' => 'name',
-                                'order'   => 'ASC'
+                                'order'   => 'ASC'                            
                             );
 
                                 $categories = get_categories($args);
@@ -58,10 +58,10 @@
                     <div class="col-12">
                         <div class="tab-content">
                                 <?php $i=0;
-                                    foreach ( $categories as $key => $category ) {
-                                        $term_id = $category->parent;
-                                        $taxonomy_name = 'cat_lightfence';
-                                        $termchildren = get_term_children( $term_id, $taxonomy_name );
+                                  //  foreach ( $categories as $key => $category ) {
+                                       // $term_id = $category->parent;
+                                        $taxonomy_name = 'cat_lightfence';                                       
+                                        $termchildren = get_term_children( get_queried_object()->term_id, $taxonomy_name );
                                         foreach ( $termchildren as $child ) {
                                             $term = get_term_by( 'id', $child, $taxonomy_name );
                                                 ?>
@@ -185,7 +185,7 @@
                                                     </div>
                                     <?php  $i++;
                                         }
-                                    }
+                                  //  }
                                     ?>
 
                         </div> <!-- .tab-content -->
@@ -218,35 +218,29 @@
                             );
                             $i=1;
                              $formID =   get_the_ID();
+                             $ip_address =   $_SERVER['REMOTE_ADDR'];
                             while (have_posts()) : the_post(); ?>
-                                    <li>
-                                        <span class="number">0<?php echo $i;?>.</span> <!-- .number -->
-                                        <span class="title"><?php echo the_title();?></span> <!-- .title -->
-                                        <?php
-									 $tablename = $wpdb->prefix.'form_disable';
-									 $ip_addressData = $wpdb->get_results("SELECT *  FROM $tablename WHERE (formID =  '". $formID ."')");
-											$next24 = strtotime('+1 day', $next24); //add 24 hours in updated date
-                                           // echo ($ip_addressData[0]->formID);
-                                           $ip_addressLive = getenv("REMOTE_ADDR");
-                                            $currentDB = $ip_addressData[0]->date;
-											//check if current then is bigger then next 24 hours
-                                            $ip_address = $ip_addressData[0]->ip_address.'<br>';
+                                   <li class="stagger-animation">
+									<span class="number">0<?php echo $i;?>.</span> <!-- .number -->
+									<span class="title"><?php echo the_title();?></span> <!-- .title -->
+									<?php 
+									 $tablename = $wpdb->prefix.'form_disable';	
+									 $ip_addressData = $wpdb->get_results("SELECT *  FROM  wp_form_disable WHERE (ip_address =  '". $ip_address ."')");
+                                   //  print_r($ip_addressData); 
+										$next24 = strtotime('+1 day', $next24); //add 24 hours in updated date
+										$current = $ip_addressData[0]->date;
+									
+											//check if current then is bigger then next 24 hours 
+											if($current < $next24 && ($ip_address ==$ip_addressData[0]->ip_address) && ($ip_addressData[0]->formID ==get_the_ID())){ ?>
 
-                                            $next24Hours = time() + 1*60*60*24;
-                                            $next24Hourss =  date("Y-m-d", $next24Hours);
-
-                                             //   echo $currentDB ."<=". $next24Hourss;
-
-                                                  $formID = $ip_addressData[0]->formID;
-												if(($currentDB <= $next24Hourss)  && ($formID == get_the_ID()))
-												{?>
 												<a href="<?php echo get_field('download_file_link', get_the_ID());?>" download   class="btn btn-secondary ">Download Form</a>
-												<?php
-											}else{?>
-												<a href="#document-1" id="download_form" <?php if($formID ==get_the_ID()) echo "5555555";?> data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
-											<?php
-											}?>
-                                    </li>
+									<?php } 
+										else { ?>
+										
+											<a href="#document-1" id="download_form"  data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
+										<?php 
+										}?>
+								</li>
                         <?php $i++;
                         endwhile;
                         wp_reset_postdata();?>

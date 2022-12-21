@@ -329,7 +329,7 @@ function jp_get_archive_post_type(){
    '.do_shortcode('[wpforms id="599"]').'
   */
 
-  add_action( 'init', 'custom_post_type', 0 );
+//  add_action( 'init', 'custom_post_type', 0 );
 
   add_theme_support( 'post-thumbnails' );
 
@@ -345,10 +345,10 @@ function jp_get_archive_post_type(){
     if(mail($toEmail, 'Download File', $content, $mailHeaders)) {
         //echo $_POST['post_id'];
         global $wpdb;
-     echo     $tablename = 'wp_form_disable';
-   echo       $urlPDF = get_field('download_file_link',$_POST['post_id']);
-   echo      $ip_address =   $_SERVER['REMOTE_ADDR'];
-   echo      $formID =   $_POST['post_id'];
+          $tablename = 'wp_form_disable';
+          $urlPDF = get_field('download_file_link',$_POST['post_id']);
+         $ip_address =   $_SERVER['REMOTE_ADDR'];
+         $formID =   $_POST['post_id'];
 
 
       $wpdb->insert('wp_form_disable', array(
@@ -378,7 +378,7 @@ echo '	<div class="row gx-0 h-100">
             </div>
             <p>Fill out the information below to get a free download of our document.</p>
               <div class="form-align pt-5">
-                  <form id="frmContact"  name="frmContact">
+                  <form id="frmContact"  name="frmContact" >
                       <div id="mail-status"></div>
                       <a href="'.get_field('download_file_link', $_POST['post_id']).'" download id="download" hidden></a>
                       <input type="hidden" name="post_id" id="post_id" value="'.$_POST['post_id'].'" class="demoInputBox form-input">
@@ -396,7 +396,7 @@ echo '	<div class="row gx-0 h-100">
 
                       <div class="mb-3">
                           <input type="text" name="userName" id="userName" class="demoInputBox" required placeholder="First name">
-                          <div id="userName-err"></div>
+                          <div id="nameError"></div>
                       </div>
                       <div class="mb-3">
                           <span id="last-info" class="info d-block"></span>
@@ -417,7 +417,61 @@ echo '	<div class="row gx-0 h-100">
         </div> ';
   exit();
 }
+?>
+  <script>
+    
+      function sendContact() {		        
+          const nameUser = document.querySelector('#userName');
+          const lastName = document.querySelector('#lastName');
+          const userEmail = document.querySelector('#userEmail');
 
+          if (nameUser.value == ''){
+            console.log('Input name empty!');
+            nameUser.setCustomValidity('first name is required!');
+            nameUser.classList.add("invalid-error");
+          }
+          else if (lastName.value == ''){
+            console.log('Input name empty!');
+            lastName.setCustomValidity('last name required!');
+            lastName.classList.add("invalid-error");
+          }
+          else if (userEmail.value == ''){
+            console.log('Input name empty!');
+            userEmail.setCustomValidity('email field required!');
+            userEmail.classList.add("invalid-error");
+          }           
+          else {
+
+              jQuery.ajax({
+                url: "/wp-admin/admin-ajax.php",
+                data:{
+                  'userName': jQuery("#userName").val(),
+                  'userEmail': jQuery("#userEmail").val(),
+                  'lastName': jQuery("#lastName").val(),
+                  'post_id': jQuery("#post_id").val(),
+                  'action': 'sayhello2',
+                },
+                type: "POST",
+                success:function(data1){
+                  document.getElementById('download').click();
+                  document.getElementById('download_form').disabled=true;
+                  jQuery("#mail-status").text("Message Sent");
+                  jQuery.magnificPopup.close();
+                  jQuery("#download_form").disabled = true;
+                  console.log(jQuery("#download_form").disabled = true);
+                  location.reload(true);
+
+                },
+              });
+            }      
+        }
+  </script>
+<style>
+.invalid-error {
+  border: 1px solid #cb2026 !important;
+}
+</style>
+<?php 
 
 // Create Report of the Download form submited
 
