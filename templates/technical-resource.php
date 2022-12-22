@@ -2,14 +2,14 @@
 <?php get_header(); ?>
 <?php the_content(); ?>
 
-<section class="download-cards pt-10 pb-10">
+<section class="download-cards pt-5 pb-5 pt-md-10 pb-md-10">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<?php 
+				<?php
 					$args = array(
 						'taxonomy' => 'cat_technical',
-							'parent' => '0', 
+							'parent' => '0',
 						'orderby' => 'name',
 						'order'   => 'ASC'
 					);
@@ -19,7 +19,7 @@
 						<li>
 							<a href="<?php echo get_category_link( $cat->term_id ) ?>">
 								<span class="icon">
-								<?php if (function_exists('z_taxonomy_image_url')):  ?>	
+								<?php if (function_exists('z_taxonomy_image_url')):  ?>
 									<img src="<?php echo z_taxonomy_image_url($cat->term_id);?>" alt="">
 								<?php endif;?>
 								</span> <!-- .icon -->
@@ -27,8 +27,8 @@
 								<?php echo $cat->name; ?>
 								</span> <!-- .text -->
 							</a>
-						</li>						
-					<?php } ?>					
+						</li>
+					<?php } ?>
 				</ul> <!-- .list-unstyled m-0 p-0nav -->
 			</div> <!-- .col-12 -->
 		</div> <!-- .row -->

@@ -92,7 +92,7 @@ fourCardsSlider();
 
 // Swiper Configuration
 var swiper = new Swiper ('.centered-swiper', {
-  slidesPerView: 1.8,
+  slidesPerView: 1.1,
   spaceBetween: 10,
   centeredSlides: true,
   grabCursor: true,

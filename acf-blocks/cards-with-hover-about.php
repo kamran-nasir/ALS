@@ -15,7 +15,7 @@
 <section class="cards-with-hover position-relative pt-5 pt-lg-10 pb-10 pt-5 pt-lg-10   <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
   <div class="container">
 		<div class="row justify-content-center text-center mb-3">
-			<div class="col-md-9 col-xl-8">
+			<div class="col-md-10 col-xxl-8">
 				<div class="title-row">
 					<div class="title-wrap">
 						<h3 class="heading-animation m-0"><?php echo $heading;?></h3>
@@ -26,7 +26,7 @@
 				</div> <!-- .title-row -->
 			</div> <!-- .col-12 -->
 		</div> <!-- .row -->
-		<div class="row gy-3 gx-lg-10 gy-lg-5">
+		<div class="row gy-3 gx-xxl-10 gy-xxl-5">
         <?php if( $scrolling_text ) {
             foreach( $scrolling_text as $row ) { ?>
                 <div class="col-md-6 col-lg-4">

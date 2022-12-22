@@ -326,7 +326,6 @@ echo '	  <div class="col-md-12">
 </div>
 <p>Fill out the information below to get a free download of our document.</p>
   <div class="form-align pt-5">
-<div id="message"></div>
 <form method="POST" id="myform">
           <a href="'.get_field('download_file_link', $_POST['post_id']).'" download id="download" hidden></a>
 
@@ -346,16 +345,16 @@ echo '	  <div class="col-md-12">
             </div>
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3 text-start">
   <span id="last-info" class="info d-block"></span>
             <input type="text" name="username" id="username" class="demoInputBox" placeholder="First name">
             <span class="error" id="username_err"> </span>
           </div>
-          <div class="mb-3">
+          <div class="mb-3 text-start">
               <input type="text" name="lastName" id="lastName" class="demoInputBox"  placeholder="Last name">
               <span class="error" id="lastName_err"> </span>
           </div>
-          <div class="mb-3">
+          <div class="mb-3 text-start">
               <input type="text" name="userEmail" id="userEmail" class="demoInputBox"  placeholder="Email">
   <span class="error" id="userEmail_err"> </span>
           </div>

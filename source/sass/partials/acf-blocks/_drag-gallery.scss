@@ -46,9 +46,12 @@
     // cursor: none;
     transition: all 0.5s ease-in-out;
     .card-image {
-      padding-bottom: 50%;
+      padding-bottom: 70%;
       overflow: hidden;
       position: relative;
+      @include media-breakpoint-up(md) {
+        padding-bottom: 50%;
+      }
       img {
         object-fit: cover;
         object-position: top;

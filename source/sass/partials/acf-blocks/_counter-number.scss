@@ -10,8 +10,10 @@
       }
       .numbers {
         position: relative;
+        flex: 0 0 auto;
         .line-number {
           font-size: rem-calc(100px);
+          line-height: rem-calc(100px);
           -webkit-text-stroke: 1px rgba($white, 0.2);
           -webkit-text-fill-color: $midnight;
         }
@@ -21,13 +23,20 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+          font-size: rem-calc(40px);
+          @include media-breakpoint-up(md) {
+            font-size: rem-calc(48px);
+          }
         }
       }
       .content {
         text-transform: uppercase;
         max-width: rem-calc(280px);
-        text-align: left;
         margin-left: rem-calc(15px);
+        text-align: center;
+        @include media-breakpoint-up(lg) {
+          text-align: left;
+        }
         // @include media-breakpoint-up(lg) {
         //   position: absolute;
         //   left: rem-calc(130px);
@@ -52,5 +61,11 @@
     //     }
     //   }
     // }
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem-calc(44px);
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 }

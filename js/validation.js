@@ -5,7 +5,7 @@ $(document).ready(function () {
     $('#lastName').on('input', function () {
         checklastName();
     });
-    
+
     $('#email').on('input', function () {
         checkemail();
     });
@@ -70,12 +70,12 @@ $(document).ready(function () {
                     }, 400);
                 }
             });
-            
+
         }
     });
 });
 
-function checklastName() { 
+function checklastName() {
     var pattern = /^[A-Za-z]+$/;
     var lastName = $('#lastName').val();
     var validlastName = pattern.test(lastName);
@@ -108,7 +108,7 @@ function checkuser() {
 
 
 function checkemail() {
-   
+
     var pattern1 = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     var email = $('#userEmail').val();
     var validemail = pattern1.test(email);
@@ -118,13 +118,9 @@ function checkemail() {
     } else if (!validemail) {
         $('#userEmail_err').html('invalid email');
         return false;
-     } 
+     }
     else {
         $('#userEmail_err').html('');
         return true;
     }
 }
-
-
-
-

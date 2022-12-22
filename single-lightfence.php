@@ -172,7 +172,7 @@ $categories = get_the_terms( get_the_ID(), 'cat_lightfence' );
                                                                                     <div class="col-md-8 col-lg-6 order-1 order-lg-2">
                                                                                         <div class="title-row mb-6 mb-lg-0 ps-lg-5">
                                                                                             <div class="title-wrap">
-                                                                                                <h3 class="heading-animation m-0"><?php the_title();?></h3>
+                                                                                                <h4 class="heading-animation m-0"><?php the_title();?></h4>
                                                                                             </div> <!-- .title-wrap -->
                                                                                         </div> <!-- .title-row -->
                                                                                     </div> <!-- .col-md-6 -->
