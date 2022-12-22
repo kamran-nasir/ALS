@@ -51,32 +51,4 @@
 <div id="document-1" class="download-popup position-relative mfp-hide">
     <div id="form1">  </div> 
 
- 
-   
-<script>
-				// jQuery.ajax({
-				// 	url: "/wp-admin/admin-ajax.php",
-				// 	data:{
-				// 		'userName': jQuery("#userName").val(),
-				// 		'userEmail': jQuery("#userEmail").val(),
-				// 		'lastName': jQuery("#lastName").val(),
-				// 		'post_id': jQuery("#post_id").val(),
-				// 		'action': 'sayhello2',
-				// 	},
-				// 	type: "POST",
-				// 	success:function(data1){
-				// 		console.log(data1);    
-				// 		//jQuery('#download_form').prop('disabled', true);               
-				// 		document.getElementById('download').click();
-				// 		document.getElementById('download_form').disabled=true;
-				// 		jQuery("#mail-status").text("Message Sent");
-				// 		jQuery.magnificPopup.close();
-				// 		jQuery("#download_form").disabled = true;
-				// 		console.log(jQuery("#download_form").disabled = true);
-				// 		location.reload(true);
-
-				// 	},
-		 		// });
-			
-</script>
 <?php get_footer(); ?>

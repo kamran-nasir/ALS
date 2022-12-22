@@ -129,12 +129,12 @@
                                                                                                     </div> <!-- .image-overlay -->
                                                                                                 </a> <!-- .img-big -->
                                                                                                 <?php
-                                                                                                        $image_data = wp_get_attachment_image_src( $image, 'w1920' );
+                                                                                                $image_data = wp_get_attachment_image_src( $image, 'w1920' );
                                                                                                    if($image_data){
                                                                                                         $image_alt = get_post_meta( $image, '_wp_attachment_image_alt', true );
                                                                                                         $image_alt = esc_attr( trim( strip_tags( $image_alt ) ) );
                                                                                                 ?>
-                                                                                                <a href="<?php echo get_template_directory_uri(); ?>/images/fence-2.jpg" class="img-small stagger-animation has-overlay">
+                                                                                                <a href="<?php echo wp_get_attachment_image_url( $image, 'w1920' ) ?>" class="img-small stagger-animation has-overlay">
                                                                                                 <img
                                                                                                     src="<?php echo wp_get_attachment_image_url( $image, 'w1920' ) ?>"
                                                                                                     srcset="<?php echo wp_get_attachment_image_srcset( $image ) ?>"
@@ -174,7 +174,7 @@
                                                                                             <div class="title-row mb-6 mb-lg-0 ps-lg-5">
                                                                                                 <div class="title-wrap">
                                                                                                     <h3 class="heading-animation m-0"><?php the_title();?></h3>
-                                                                                                    <p class="text-animation"><?php //the_content();?></p>
+                                                                                                    <div class="text-animation"><?php the_content();?></div>
                                                                                                 </div> <!-- .title-wrap -->
                                                                                             </div> <!-- .title-row -->
                                                                                         </div> <!-- .col-md-6 -->
