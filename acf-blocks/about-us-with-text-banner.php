@@ -24,7 +24,7 @@
 					  <span class="bottom-line"></span>
 					</div> <!-- .fade-animation -->
 				</div> <!-- .title-row -->
-				<p class="text-animation"><?php echo $description;?></p>
+				<div class="text-animation"><?php echo $description;?></div>
 				<div class="text-animation">
             <?php if ( is_array($button) && $button['url'] != '' ) { ?>
                 <a href="<?php echo $button['url']; ?>" target="<?php echo $button['target'] ?>" class="btn btn-inline p-0"><?php echo ($button['title'] != '') ? $button['title'] : 'About Us'; ?></a>
