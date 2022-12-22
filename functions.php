@@ -115,6 +115,9 @@ function jp_get_archive_post_type(){
 //       register_post_type( 'solution', $args );
 
 //   }
+
+
+
   add_action('init', function() {
     register_post_type('marketing', [
       'label' => __('Marketing', 'txtdomain'),
@@ -310,172 +313,116 @@ function jp_get_archive_post_type(){
   add_action('wp_ajax_nopriv_sayhello2', 'sayhello2_function');
   add_action('wp_ajax_sayhello2', 'say_hello2_function');
   function say_hello2_function(){
-    $content = "New request for qoute<br><br>Job Type: '".$_POST["career"]."<br>Name: '".$_POST["userName"]."<br>Last Name: '".$_POST["lastName"]."<br>Email: '".$_POST["userEmail"]." ";//".get_field($_POST['post_id'],'download_file_link').'"';
+    die(    'test'    );
+    // global $wpdb;
+    // $tablename = 'wp_form_disable';
+    // echo     $urlPDF = get_field('download_file_link',$_POST['post_id']);
+    // echo    $ip_address =   $_SERVER['REMOTE_ADDR'];
+    // echo   $formID =   $_POST['post_id'];
 
-    $toEmail = "anwaralam6858@gmail.com";
-    $mailHeaders = "From: " . $_POST["userName"] . "<". $_POST["userEmail"] .">\r\n";
-    if(mail($toEmail, 'Download File', $content, $mailHeaders)) {
-        //echo $_POST['post_id'];
-        global $wpdb;
-          $tablename = 'wp_form_disable';
-          $urlPDF = get_field('download_file_link',$_POST['post_id']);
-         $ip_address =   $_SERVER['REMOTE_ADDR'];
-         $formID =   $_POST['post_id'];
-      $wpdb->insert('wp_form_disable', array(
-          'form_button_url' => $urlPDF,
-          'ip_address' => $ip_address,
-          'formID' => $formID,
-          'date' => date("Y-m-d H:i:s")
-      ));
-      echo      $id = $wpdb->insert_id;
-        mail($toEmail,$mailHeaders,$content);
-    } else {
-        echo  "<p class='Error'>Problem in Sending Mail.</p>";
-    }
+
+    // $wpdb->insert('wp_form_disable', array(
+    // 'form_button_url' => '1',
+    // 'ip_address' => '2',
+    // 'formID' =>'4',
+    // 'date' => date("Y-m-d")
+    // ));
+    // echo      $id = $wpdb->insert_id;
+
+    // $content = "New request for qoute<br><br>Job Type: '".$_POST["career"]."<br>Name: '".$_POST["post_id"]."<br>Last Name: '".$_POST["lastName"]."<br>Email: '".$_POST["userEmail"]." ";//".get_field($_POST['post_id'],'download_file_link').'"';
+
+    // $toEmail = "anwaralam6858@gmail.com";
+    // $mailHeaders = "From: " . $_POST["userName"] . "<". $_POST["userEmail"] .">\r\n";
+    // if(mail($toEmail, 'Download File', $content, $mailHeaders)) {
+    //     //echo $_POST['post_id'];
+
+
+    //     mail($toEmail,$mailHeaders,$content);
+    // } else {
+    //     echo  "<p class='Error'>Problem in Sending Mail.</p>";
+    // }
+
   }
 add_action('wp_ajax_nopriv_sayhello', 'say_hello_function');
 add_action('wp_ajax_sayhello', 'say_hello_function');
 function say_hello_function(){
-echo '	<div class="row gx-0 h-100">
-          <div class="col-md-12">
-            <div class="title-row">
-              <h4>'.get_the_title($_POST['post_id']).'</h4>
-                <span class="bottom-line line-centered"></span>
-            </div>
-            <p>Fill out the information below to get a free download of our document.</p>
-              <div class="form-align pt-5">
-                  <form id="frmContact"  name="frmContact" >
-                      <div id="mail-status"></div>
-                      <a href="'.get_field('download_file_link', $_POST['post_id']).'" download id="download" hidden></a>
-                      <input type="hidden" name="post_id" id="post_id" value="'.$_POST['post_id'].'" class="demoInputBox form-input">
-                      <div class="mb-3">
-                        <div class="container-select">
-                          <select name="career" id="input_1_14" class="large gfield_select" aria-required="true" aria-invalid="false">
-                            <option value="" selected="selected" class="gf_placeholder">i\'\'m a</option>
-                            <option value="trader">trader</option>
-                            <option value="installer">installer</option>
-                            <option value="fabricator">fabricator</option>
-                            <option value="property/home owner">property/home owner</option>
-                        </select>
-                        </div>
-                      </div>
 
-                      <div class="mb-3">
-                          <input type="text" name="userName" id="userName" class="demoInputBox" required placeholder="First name">
-                          <div id="nameError"></div>
-                      </div>
-                      <div class="mb-3">
-                          <span id="last-info" class="info d-block"></span>
-                          <input type="text" name="lastName" id="lastName" class="demoInputBox" required placeholder="Last name">
-                          <div id="last-name-err"></div>
-                      </div>
-                      <div class="mb-3">
-                          <span id="userEmail-info" class="info d-block"></span>
-                          <input type="text" name="userEmail" id="userEmail" class="demoInputBox" required placeholder="Email">
-                          <div id="email-name-err"></div>
-                      </div>
-                      <div>
-                          <button name="submit" class="btnAction btn btn-secondary btn-rarr" onClick="sendContact();">Download</button>
-                      </div>
-                  </form>
-              </div>
+echo '	  <div class="col-md-12">
+<div class="title-row">
+<h4>'.get_the_title($_POST['post_id']).'</h4>
+    <span class="bottom-line line-centered"></span>
+</div>
+<p>Fill out the information below to get a free download of our document.</p>
+  <div class="form-align pt-5">
+<div id="message"></div>
+<form method="POST" id="myform">
+          <a href="'.get_field('download_file_link', $_POST['post_id']).'" download id="download" hidden></a>
+
+          <a href="javascript:window.location.href=window.location.href"  id="download_reload" hidden></a>
+          <input type="hidden" name="download_file" id="download_file" value="'.get_field('download_file_link', $_POST['post_id']).'" class="demoInputBox form-input">
+          <input type="hidden" name="post_id" id="post_id" value="'.$_POST['post_id'].'" class="demoInputBox form-input">
+          <div id="mail-status"></div>
+          <div class="mb-3">
+            <div class="container-select">
+              <select name="career" id="input_1_14" class="large gfield_select" aria-required="true" aria-invalid="false">
+                <option value="" selected="selected" class="gf_placeholder">i\'\'m a</option>
+                <option value="trader">trader</option>
+                <option value="installer">installer</option>
+                <option value="fabricator">fabricator</option>
+                <option value="property/home owner">property/home owner</option>
+            </select>
             </div>
-        </div> ';
+          </div>
+
+          <div class="mb-3">
+  <span id="last-info" class="info d-block"></span>
+            <input type="text" name="username" id="username" class="demoInputBox" placeholder="First name">
+            <span class="error" id="username_err"> </span>
+          </div>
+          <div class="mb-3">
+              <input type="text" name="lastName" id="lastName" class="demoInputBox"  placeholder="Last name">
+              <span class="error" id="lastName_err"> </span>
+          </div>
+          <div class="mb-3">
+              <input type="text" name="userEmail" id="userEmail" class="demoInputBox"  placeholder="Email">
+  <span class="error" id="userEmail_err"> </span>
+          </div>
+          <div>
+<button type="button" id="submitbtn"  class="btnAction btn btn-secondary btn-rarr">Download</button>
+          </div>
+      </form>
+  </div>
+</div>';
   exit();
 }
+
 ?>
-  <script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-      function sendContact() {
-          const nameUser = document.querySelector('#userName');
-          const lastName = document.querySelector('#lastName');
-          const userEmail = document.querySelector('#userEmail');
-
-          if (nameUser.value == ''){
-            console.log('Input name empty!');
-            nameUser.setCustomValidity('first name is required!');
-            nameUser.classList.add("invalid-error");
-          }
-          else if (lastName.value == ''){
-            console.log('Input name empty!');
-            lastName.setCustomValidity('last name required!');
-            lastName.classList.add("invalid-error");
-          }
-          else if (userEmail.value == ''){
-            console.log('Input name empty!');
-            userEmail.setCustomValidity('email field required!');
-            userEmail.classList.add("invalid-error");
-          }
-          else {
-
-              jQuery.ajax({
-                url: "/wp-admin/admin-ajax.php",
-                data:{
-                  'userName': jQuery("#userName").val(),
-                  'userEmail': jQuery("#userEmail").val(),
-                  'lastName': jQuery("#lastName").val(),
-                  'post_id': jQuery("#post_id").val(),
-                  'action': 'sayhello2',
-                },
-                type: "POST",
-                success:function(data1){
-                  document.getElementById('download').click();
-                  document.getElementById('download_form').disabled=true;
-                  jQuery("#mail-status").text("Message Sent");
-                  jQuery.magnificPopup.close();
-                  jQuery("#download_form").disabled = true;
-                  console.log(jQuery("#download_form").disabled = true);
-                  location.reload(true);
-
-                },
-              });
-            }
-        }
-  </script>
 <style>
-.invalid-error {
-  border: 1px solid #cb2026 !important;
-}
+    .error input {
+        border-color: red;
+        border-width: 2px;
+    }
+
+    .success input {
+        border-color: green;
+        border-width: 2px;
+    }
+
+    .error span {
+        color: red;
+    }
+
+    .success span {
+        color: green;
+    }
+
+    span.error {
+        color: red;
+    }
 </style>
-<?php
-// Create Report of the Download form submited
-add_action('admin_menu', 'test_plugin_setup_menu');
-function test_plugin_setup_menu(){
-    add_menu_page( 'Test Plugin Page', 'Test Plugin', 'manage_options', 'test-plugin', 'test_init' );
-}
-function test_init(){?>
-<?php
-global $wpdb;
-$mylink1 = $wpdb->get_results( "SELECT * FROM wp_form_disable" );
-?>
-<?php //echo get_the_title( 867);?>
-<h2>Download Forms Report:</h2>
-<table style="width: 70%;border: 1px solid #eee;" class="report-download" border="1">
-  <tr>
-    <th>ID</th>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Email Address</th>
-    <th>Download Form </th>
-    <th>IP Address</th>
-    <th>Date</th>
-  </tr>
-  <?php foreach($mylink1 as $row){ //print_r( $row->formID); ?>
-  <tr>
-    <td><?php echo $row->ID;?></td>
-    <td><?php echo $row->fname;?></td>
-    <td><?php echo $row->lname;?></td>
-    <td><?php echo $row->email;?></td>
-    <td><?php echo get_the_title( $row->formID );?></td>
-    <td><?php echo $row->ip_address;?></td>
-    <td><?php echo $row->date;?></td>
-  </tr>
-<?php }?>
-</table>
-<style>
-  .report-download th {
-    text-align: left;
-}
-</style>
-<?php }
-add_action('admin_menu', 'test_plugin_setup_menu');
+
+
+<script src="<?php echo get_template_directory_uri();?>/js/validation.js"></script>
