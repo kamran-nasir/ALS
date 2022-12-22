@@ -83,7 +83,7 @@
                                                                                 'order' => 'ASC' )
                                                                             );
 
-                                                                            while (have_posts()) : the_post();        $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+                                                                            while (have_posts()) : the_post();        $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'w1920');
                                                                             $post_thumbnail_id = get_post_meta( $post->ID, '_thumbnail_id', true );
                                                                             $image                  = get_field('secondary_feature_image_');?>
                                                                             <section class="single-product fence-solution">
@@ -174,6 +174,7 @@
                                                                                             <div class="title-row mb-6 mb-lg-0 ps-lg-5">
                                                                                                 <div class="title-wrap">
                                                                                                     <h3 class="heading-animation m-0"><?php the_title();?></h3>
+                                                                                                    <p class="text-animation"><?php //the_content();?></p>
                                                                                                 </div> <!-- .title-wrap -->
                                                                                             </div> <!-- .title-row -->
                                                                                         </div> <!-- .col-md-6 -->
@@ -228,10 +229,10 @@
 									 $ip_addressData = $wpdb->get_results("SELECT *  FROM  wp_form_disable WHERE (ip_address =  '". $ip_address ."')");
                                    //  print_r($ip_addressData); 
 										$next24 = strtotime('+1 day', $next24); //add 24 hours in updated date
-										$current = $ip_addressData[0]->date;
+										$current = $ip_addressData[$i]->date;
 									
 											//check if current then is bigger then next 24 hours 
-											if($current < $next24 && ($ip_address ==$ip_addressData[0]->ip_address) && ($ip_addressData[0]->formID ==get_the_ID())){ ?>
+											if($current < $next24 && ($ip_address ==$ip_addressData[$i]->ip_address) && ($ip_addressData[$i]->formID ==get_the_ID())){ ?>
 
 												<a href="<?php echo get_field('download_file_link', get_the_ID());?>" download   class="btn btn-secondary ">Download Form</a>
 									<?php } 

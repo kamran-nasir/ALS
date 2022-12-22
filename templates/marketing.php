@@ -13,7 +13,7 @@
 						'post_status' => 'publish',
 						'posts_per_page' => -1,
 						'orderby' => 'title',
-						'order' => 'ASC',
+						'order' => 'asc',
 					);
 					$ip_address =   $_SERVER['REMOTE_ADDR'];
 					$loop = new WP_Query( $args ); $i=1;
@@ -23,14 +23,16 @@
 									<span class="title"><?php echo the_title();?></span> <!-- .title -->
 									<?php 
 									 $tablename = $wpdb->prefix.'form_disable';	
-									 $ip_addressData = $wpdb->get_results("SELECT ip_address,formID  FROM $tablename WHERE (ip_address =  '". $ip_address ."')");
+									 $ip_addressData = $wpdb->get_results("SELECT *  FROM wp_form_disable ");
 										$next24 = strtotime('+1 day', $next24); //add 24 hours in updated date
-										$current = $ip_addressData[0]->date;
+										$current = $ip_addressData[$i]->date;
+
+									//	echo $ip_addressData[$i]->formID;
 									
 											//check if current then is bigger then next 24 hours 
-											if($current < $next24 && ($ip_address ==$ip_addressData[0]->ip_address) && ($ip_addressData[0]->formID ==get_the_ID())){ ?>
+											if($current < $next24 && ($ip_address ==$ip_addressData[$i]->ip_address) || ($ip_addressData[$i]->formID ==get_the_ID())){ ?>
 
-												<a href="<?php echo get_field('download_file_link', get_the_ID());?>" download   class="btn btn-secondary ">Download Form</a>
+												<a href="<?php echo get_field('download_file_link', get_the_ID());?>"  <?php if ($ip_addressData[$i]->formID ==get_the_ID()) echo "download";?>  class="btn btn-secondary ">Download Form</a>
 									<?php } 
 										else { ?>
 										
@@ -47,38 +49,34 @@
 	</div> <!-- .container -->
 </section> <!-- .download-list -->
 <div id="document-1" class="download-popup position-relative mfp-hide">
-    <div id="form1"></div>
-</div>  
+    <div id="form1">  </div> 
 
+ 
+   
 <script>
+				// jQuery.ajax({
+				// 	url: "/wp-admin/admin-ajax.php",
+				// 	data:{
+				// 		'userName': jQuery("#userName").val(),
+				// 		'userEmail': jQuery("#userEmail").val(),
+				// 		'lastName': jQuery("#lastName").val(),
+				// 		'post_id': jQuery("#post_id").val(),
+				// 		'action': 'sayhello2',
+				// 	},
+				// 	type: "POST",
+				// 	success:function(data1){
+				// 		console.log(data1);    
+				// 		//jQuery('#download_form').prop('disabled', true);               
+				// 		document.getElementById('download').click();
+				// 		document.getElementById('download_form').disabled=true;
+				// 		jQuery("#mail-status").text("Message Sent");
+				// 		jQuery.magnificPopup.close();
+				// 		jQuery("#download_form").disabled = true;
+				// 		console.log(jQuery("#download_form").disabled = true);
+				// 		location.reload(true);
 
-
-
-		//  function sendContact() {			
-
-		// 		jQuery.ajax({
-		// 			url: "/wp-admin/admin-ajax.php",
-		// 			data:{
-		// 				'userName': jQuery("#userName").val(),
-		// 				'userEmail': jQuery("#userEmail").val(),
-		// 				'lastName': jQuery("#lastName").val(),
-		// 				'post_id': jQuery("#post_id").val(),
-		// 				'action': 'sayhello2',
-		// 			},
-		// 			type: "POST",
-		// 			success:function(data1){
-		// 				console.log(data1);    
-		// 				//jQuery('#download_form').prop('disabled', true);               
-		// 				document.getElementById('download').click();
-		// 				document.getElementById('download_form').disabled=true;
-		// 				jQuery("#mail-status").text("Message Sent");
-		// 				jQuery.magnificPopup.close();
-		// 				jQuery("#download_form").disabled = true;
-		// 				console.log(jQuery("#download_form").disabled = true);
-		// 				location.reload(true);
-
-		// 			},
-		// 		});
-		// 	}
+				// 	},
+		 		// });
+			
 </script>
 <?php get_footer(); ?>
