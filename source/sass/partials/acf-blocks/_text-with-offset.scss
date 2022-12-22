@@ -20,18 +20,13 @@
     .img-small {
       width: 55vw;
       height: 20vh;
-      margin-top: rem-calc(-230px);
       margin-left: rem-calc(120px);
-      bottom: rem-calc(-80px);
+      bottom: rem-calc(80px);
       @include media-breakpoint-up(md) {
         width: rem-calc(450px);
         height: rem-calc(450px);
-        margin-top: rem-calc(-450px);
-        margin-left: rem-calc(250px);
-        bottom: rem-calc(-60px);
-      }
-      @include media-breakpoint-up(lg) {
-        margin-left: rem-calc(200px);
+        margin-left: rem-calc(150px);
+        margin-top: rem-calc(-260px);
       }
     }
   }

@@ -1,5 +1,4 @@
 <?php
-
 require_once( get_template_directory() . '/functions/miscellaneous.php' );
 require_once( get_template_directory() . '/functions/helpers.php' );
 require_once( get_template_directory() . '/functions/disable-auto-embed-script.php' );
@@ -16,9 +15,6 @@ require_once( get_template_directory() . '/functions/remove-comments.php' );
 require_once( get_template_directory() . '/functions/custom-post-types.php' );
 //require_once( get_template_directory() . '/functions/limit-dashboard-to-admin.php' );
 require_once( get_template_directory() . '/functions/admin-ajax.php' );
-
-
-
 // Register menus
 ////////////////////////////////////////////////
 register_nav_menus(
@@ -29,7 +25,6 @@ register_nav_menus(
     'footer-secondary-menu' => 'Footer Secondary Menu',
   )
 );
-
 // Add except to page post type
 add_post_type_support( 'page', 'excerpt' );
 add_post_type_support( 'news', 'excerpt' );
@@ -61,7 +56,6 @@ function jp_get_archive_post_type(){
   if( isset($wp_query->query['post_type']) ){
       $post_type = $wp_query->query['post_type'];
   }
-
   return $post_type;
 }
 /*
@@ -167,13 +161,8 @@ function jp_get_archive_post_type(){
       ]
     ]);
     register_taxonomy_for_object_type('cat_marketing', 'marketing');
-
-
   });
-
-
   //CUstom post type Technical resource
-
   add_action('init', function() {
     register_post_type('technical', [
       'label' => __('Technical Support', 'txtdomain'),
@@ -218,12 +207,8 @@ function jp_get_archive_post_type(){
       ]
     ]);
     register_taxonomy_for_object_type('cat_technical', 'technical');
-
-
   });
-
   // Custom post type for Light Fence
-
   add_action('init', function() {
     register_post_type('lightfence', [
       'label' => __('Light Fence Resource', 'txtdomain'),
@@ -246,7 +231,6 @@ function jp_get_archive_post_type(){
         'insert_into_item' => __('Insert into book', 'txtdomain')
       ],
     ]);
-
     register_taxonomy('cat_lightfence', ['lightfence'], [
       'label' => __('Categories', 'txtdomain'),
       'hierarchical' => true,
@@ -271,9 +255,7 @@ function jp_get_archive_post_type(){
 
 
   });
-
   // Custom post type for Light Fence
-
   add_action('init', function() {
     register_post_type('lightfence', [
       'label' => __('Light Fence Configurations', 'txtdomain'),
@@ -296,7 +278,6 @@ function jp_get_archive_post_type(){
         'insert_into_item' => __('Insert into book', 'txtdomain')
       ],
     ]);
-
     register_taxonomy('cat_lightfence', ['lightfence'], [
       'label' => __('Categories', 'txtdomain'),
       'hierarchical' => true,
@@ -318,8 +299,6 @@ function jp_get_archive_post_type(){
       ]
     ]);
     register_taxonomy_for_object_type('cat_lightfence', 'lightfence');
-
-
   });
 
   /* Hook into the 'init' action so that the function
@@ -331,14 +310,11 @@ function jp_get_archive_post_type(){
 //  add_action( 'init', 'custom_post_type', 0 );
 
   add_theme_support( 'post-thumbnails' );
-
-
   add_action('wp_ajax_nopriv_sayhello2', 'sayhello2_function');
   add_action('wp_ajax_sayhello2', 'say_hello2_function');
   function say_hello2_function(){
    
   }
-
 add_action('wp_ajax_nopriv_sayhello', 'say_hello_function');
 add_action('wp_ajax_sayhello', 'say_hello_function');
 function say_hello_function(){
@@ -353,7 +329,7 @@ echo '	  <div class="col-md-12">
 <div id="message"></div>
 <form method="POST" id="myform">
           <a href="'.get_field('download_file_link', $_POST['post_id']).'" download id="download" hidden></a>
-          
+
           <a href="javascript:window.location.href=window.location.href"  id="download_reload" hidden></a>
           <input type="hidden" name="download_file" id="download_file" value="'.get_field('download_file_link', $_POST['post_id']).'" class="demoInputBox form-input">
           <input type="hidden" name="post_id" id="post_id" value="'.$_POST['post_id'].'" class="demoInputBox form-input">
