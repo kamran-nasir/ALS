@@ -14,7 +14,7 @@
 
 ?>
 
-<section class="text-with-offset-images position-relative z-index-1 pt-5 pt-lg-10 pb-5 pb-lg-0 <section class="homepage-hero bg-darkest text-white <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
+<section class="text-with-offset-images position-relative pt-5 pt-lg-10 pb-lg-2 <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
     <div class="container">
 		<div class="row align-items-center">
 			<div class="col-lg-6 pe-lg-8">

@@ -13,9 +13,9 @@
 
 ?>
 
-<section class="centered-gallery pt-5 pt-lg-5 pb-5 pb-lg-10   <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
+<section class="centered-gallery pt-5 pt-lg-5 pb-5 pb-lg-5   <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
   <div class="container">
-		<div class="row justify-content-center text-center mb-5">
+		<div class="row justify-content-center text-center mb-3">
 			<div class="col-md-9 col-lg-7">
 				<div class="title-row">
 					<div class="title-wrap">
@@ -57,7 +57,7 @@
             }?>
 					</div>
 				</div>
-        <div class="swiper-button-wrapper d-flex">
+        <div class="swiper-button-wrapper d-none d-md-flex">
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div> <!-- .d-flex -->

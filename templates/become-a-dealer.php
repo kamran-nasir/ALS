@@ -15,7 +15,7 @@
 
 <section class="contact-us pt-10 pb-10">
   <div class="container">
-		<div class="row justify-content-center text-center mb-7">
+		<div class="row justify-content-center text-center mb-4">
 			<div class="col-md-7">
 				<div class="title-row">
 					<div class="title-wrap">

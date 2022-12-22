@@ -5,7 +5,6 @@
     }
   }
   .img-big {
-    margin-bottom: rem-calc(24px);
     text-align: center;
     img {
       height: rem-calc(800px);
@@ -84,6 +83,9 @@
     }
   }
   &.fence-solution {
+    @include media-breakpoint-down(md) {
+      padding-top: 100px;
+    }
     .img-big {
       img {
         height: 100%;
@@ -297,5 +299,12 @@
   }
   40% {
     opacity: 1;
+  }
+}
+#tab-2 {
+  .single-product {
+    .img-big {
+      margin-bottom: rem-calc(-40px);
+    }
   }
 }

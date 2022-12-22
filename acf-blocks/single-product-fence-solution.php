@@ -19,7 +19,7 @@
 
 
 	<section class="single-product fence-solution  <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
-								<div class="d-flex justify-content-center align-items-center">
+								<div class="d-flex flex-wrap justify-content-center align-items-center">
 									<div class="col-lg-6 order-2 order-lg-1">
 										<div class="lightgallery">
 											<a href="<?php echo get_template_directory_uri(); ?>/images/fence.jpg" class="img-big stagger-animation has-overlay">
@@ -35,7 +35,7 @@
                                                 alt="<?php echo $background_image_one; ?>"
                                                 width="<?php echo $background_image_one[1]; ?>"
                                                 height="<?php echo $background_image_one[2]; ?>"
-                                                class="img-fluid" 
+                                                class="img-fluid"
                                             />
 												<div class="image-overlay">
 													<div class="image-overlay-inside">
@@ -74,7 +74,7 @@
                                                 alt="<?php echo $background_image_two; ?>"
                                                 width="<?php echo $background_image_two[1]; ?>"
                                                 height="<?php echo $background_image_two[2]; ?>"
-                                                class="img-responsive" 
+                                                class="img-responsive"
                                             />
 												<div class="image-overlay">
 													<div class="image-overlay-inside">
@@ -102,7 +102,7 @@
 										</div>
 									</div>
 									<div class="col-md-8 col-lg-6 order-1 order-lg-2">
-										<div class="title-row mb-6 mb-lg-0 ps-lg-5">
+										<div class="title-row ps-lg-5">
 											<div class="title-wrap">
 												<h3 class="heading-animation m-0"><?php echo $heading;?></h3>
 											</div> <!-- .title-wrap -->

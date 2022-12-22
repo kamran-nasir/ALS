@@ -5,7 +5,7 @@ $(document).ready(function () {
     $('#lastName').on('input', function () {
         checklastName();
     });
-    
+
     $('#email').on('input', function () {
         checkemail();
     });
@@ -70,17 +70,17 @@ $(document).ready(function () {
                     }, 400);
                 }
             });
-            
+
         }
     });
 });
 
-function checklastName() { 
+function checklastName() {
     var pattern = /^[A-Za-z]+$/;
     var lastName = $('#lastName').val();
     var validlastName = pattern.test(lastName);
     if ($('#lastName').val().length < 1) {
-        $('#lastName_err').html('Last name is required');
+        $('#lastName_err').html('This field is required.');
         return false;
     } else if (!validlastName) {
         $('#lastName_err').html('Last name should be a-z ,A-Z only');
@@ -95,7 +95,7 @@ function checkuser() {
     var user = $('#username').val();
     var validuser = pattern.test(user);
     if ($('#username').val().length < 4) {
-        $('#username_err').html('first name is required');
+        $('#username_err').html('This field is required.');
         return false;
     } else if (!validuser) {
         $('#username_err').html('First name should be a-z ,A-Z only');
@@ -108,23 +108,20 @@ function checkuser() {
 
 
 function checkemail() {
-   
+
     var pattern1 = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     var email = $('#userEmail').val();
     var validemail = pattern1.test(email);
     if (email == "") {
         $('#userEmail_err').html('required field');
+        $('#userEmail_err').html('This field is required.');
         return false;
     } else if (!validemail) {
         $('#userEmail_err').html('invalid email');
         return false;
-     } 
+     }
     else {
         $('#userEmail_err').html('');
         return true;
     }
 }
-
-
-
-

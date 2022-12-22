@@ -15,7 +15,7 @@
 
 <section class="solution-section fade-animation pt-5 pt-lg-10 pb-5 pb-lg-5 <?php echo $spacing_top; ?> <?php echo $spacing_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
 	<div class="container">
-		<div class="row justify-content-center text-center mb-5">
+		<div class="row justify-content-center text-center mb-3">
 			<div class="col-md-9 col-xl-4">
 			  <div class="title-row">
 					<h3 class="heading-animation m-0"><?php echo $heading;?></h3>
@@ -56,7 +56,7 @@
                                         <h4 class="solution-text mb-2 fw-medium"><?php echo $row['card_title'];?></h4>
                                         <p><?php echo $row['card_description'];?></p>
                                         <div class="button">
-                                            <button type="button" class="btn btn-inline p-0" href="<?php echo $row['button']['url'];?>">Explore</button>                         
+                                            <button type="button" class="btn btn-inline p-0" href="<?php echo $row['button']['url'];?>">Explore</button>
                                         </div> <!-- .button -->
                                     </a> <!-- .solution-footer -->
                                 </div> <!-- .solution-slider-item -->

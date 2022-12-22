@@ -8,7 +8,6 @@
   a {
     text-decoration: none;
     display: block;
-    height: 100%;
   }
 }
 
@@ -161,7 +160,6 @@ $mobile-sub-menu-link-padding-x: rem-calc(
   @include media-breakpoint-down(lg) {
     height: 0;
     visibility: hidden;
-    padding-top: rem-calc(34px) !important;
   }
   li {
     @include media-breakpoint-down(lg) {
@@ -189,6 +187,9 @@ $mobile-sub-menu-link-padding-x: rem-calc(
     display: block;
     height: auto;
     visibility: visible;
+    @include media-breakpoint-down(lg) {
+      padding-top: rem-calc(34px) !important;
+    }
   }
 }
 

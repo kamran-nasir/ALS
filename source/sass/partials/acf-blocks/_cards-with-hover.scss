@@ -36,6 +36,13 @@
         min-height: rem-calc(420px);
       }
     }
+    .row + .row {
+      [class*='col-'] {
+        @include media-breakpoint-down(lg) {
+          margin-bottom: rem-calc(24px);
+        }
+      }
+    }
   }
 }
 .download-cards {
@@ -45,10 +52,16 @@
     align-items: center;
     li {
       padding: rem-calc(15px);
-      flex: 0 0 25%;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex: 0 0 100%;
+      @include media-breakpoint-up(md) {
+        flex: 0 0 50%;
+      }
+      @include media-breakpoint-up(xxl) {
+        flex: 0 0 25%;
+      }
       a {
         color: $midnight-500;
         background: $midnight-200;
@@ -79,7 +92,6 @@
           margin-bottom: rem-calc(12px);
           img {
             object-fit: cover;
-            height: 100%;
           }
         }
       }

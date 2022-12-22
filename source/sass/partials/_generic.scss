@@ -23,6 +23,21 @@ body {
 //     visibility: hidden;
 //   }
 // }
+a:hover,
+a:active,
+a:focus {
+  outline: 0;
+}
+.error {
+  text-transform: capitalize;
+}
+
+.container {
+  @include media-breakpoint-down(lg) {
+    padding: 0 rem-calc(15px);
+  }
+}
+
 .z-index-1 {
   z-index: 1;
 }
@@ -93,9 +108,14 @@ ul.icon-with-text {
     margin-top: rem-calc(40px) !important;
   }
   li {
-    height: rem-calc(80px);
-    width: rem-calc(120px);
-    max-width: rem-calc(120px);
+    height: rem-calc(70px);
+    width: rem-calc(100px);
+    max-width: rem-calc(10px);
+    @include media-breakpoint-up(md) {
+      height: rem-calc(80px);
+      width: rem-calc(120px);
+      max-width: rem-calc(120px);
+    }
     img {
       height: 100%;
       width: 100%;

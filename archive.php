@@ -27,7 +27,7 @@
                             $args = array(
                                 'taxonomy' => 'cat_lightfence',
                                 'orderby' => 'name',
-                                'order'   => 'ASC'                            
+                                'order'   => 'ASC'
                             );
 
                                 $categories = get_categories($args);
@@ -53,14 +53,14 @@
                     </div> <!-- .row -->
                 </div> <!-- .container -->
             </div> <!-- .bg-midnight-200 -->
-            <div class="container">
+            <div class="container pb-5">
                 <div class="row">
                     <div class="col-12">
                         <div class="tab-content">
                                 <?php $i=0;
                                   //  foreach ( $categories as $key => $category ) {
                                        // $term_id = $category->parent;
-                                        $taxonomy_name = 'cat_lightfence';                                       
+                                        $taxonomy_name = 'cat_lightfence';
                                         $termchildren = get_term_children( get_queried_object()->term_id, $taxonomy_name );
                                         foreach ( $termchildren as $child ) {
                                             $term = get_term_by( 'id', $child, $taxonomy_name );
@@ -87,7 +87,7 @@
                                                                             $post_thumbnail_id = get_post_meta( $post->ID, '_thumbnail_id', true );
                                                                             $image                  = get_field('secondary_feature_image_');?>
                                                                             <section class="single-product fence-solution">
-                                                                                    <div class="d-flex justify-content-center align-items-center">
+                                                                                    <div class="d-flex flex-wrap   justify-content-center align-items-center">
                                                                                         <div class="col-lg-6 order-2 order-lg-1">
                                                                                             <div class="lightgallery">
                                                                                                 <a href="<?php echo $featured_img_url;?>" class="img-big stagger-animation has-overlay">
@@ -171,9 +171,9 @@
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="col-md-8 col-lg-6 order-1 order-lg-2">
-                                                                                            <div class="title-row mb-6 mb-lg-0 ps-lg-5">
+                                                                                            <div class="title-row ps-lg-5">
                                                                                                 <div class="title-wrap">
-                                                                                                    <h3 class="heading-animation m-0"><?php the_title();?></h3>
+                                                                                                    <h4 class="heading-animation m-0"><?php the_title();?></h4>
                                                                                                     <p class="text-animation"><?php //the_content();?></p>
                                                                                                 </div> <!-- .title-wrap -->
                                                                                             </div> <!-- .title-row -->
@@ -224,22 +224,22 @@
                                    <li class="stagger-animation">
 									<span class="number">0<?php echo $i;?>.</span> <!-- .number -->
 									<span class="title"><?php echo the_title();?></span> <!-- .title -->
-									<?php 
-									 $tablename = $wpdb->prefix.'form_disable';	
+									<?php
+									 $tablename = $wpdb->prefix.'form_disable';
 									 $ip_addressData = $wpdb->get_results("SELECT *  FROM  wp_form_disable WHERE (ip_address =  '". $ip_address ."')");
-                                   //  print_r($ip_addressData); 
+                                   //  print_r($ip_addressData);
 										$next24 = strtotime('+1 day', $next24); //add 24 hours in updated date
 										$current = $ip_addressData[$i]->date;
-									
-											//check if current then is bigger then next 24 hours 
+
+											//check if current then is bigger then next 24 hours
 											if($current < $next24 && ($ip_address ==$ip_addressData[$i]->ip_address) && ($ip_addressData[$i]->formID ==get_the_ID())){ ?>
 
 												<a href="<?php echo get_field('download_file_link', get_the_ID());?>" download   class="btn btn-secondary ">Download Form</a>
-									<?php } 
+									<?php }
 										else { ?>
-										
+
 											<a href="#document-1" id="download_form"  data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
-										<?php 
+										<?php
 										}?>
 								</li>
                         <?php $i++;
