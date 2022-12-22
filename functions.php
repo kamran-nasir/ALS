@@ -313,35 +313,7 @@ function jp_get_archive_post_type(){
   add_action('wp_ajax_nopriv_sayhello2', 'sayhello2_function');
   add_action('wp_ajax_sayhello2', 'say_hello2_function');
   function say_hello2_function(){
-    die(    'test'    );
-    // global $wpdb;
-    // $tablename = 'wp_form_disable';
-    // echo     $urlPDF = get_field('download_file_link',$_POST['post_id']);
-    // echo    $ip_address =   $_SERVER['REMOTE_ADDR'];
-    // echo   $formID =   $_POST['post_id'];
-
-
-    // $wpdb->insert('wp_form_disable', array(
-    // 'form_button_url' => '1',
-    // 'ip_address' => '2',
-    // 'formID' =>'4',
-    // 'date' => date("Y-m-d")
-    // ));
-    // echo      $id = $wpdb->insert_id;
-
-    // $content = "New request for qoute<br><br>Job Type: '".$_POST["career"]."<br>Name: '".$_POST["post_id"]."<br>Last Name: '".$_POST["lastName"]."<br>Email: '".$_POST["userEmail"]." ";//".get_field($_POST['post_id'],'download_file_link').'"';
-
-    // $toEmail = "anwaralam6858@gmail.com";
-    // $mailHeaders = "From: " . $_POST["userName"] . "<". $_POST["userEmail"] .">\r\n";
-    // if(mail($toEmail, 'Download File', $content, $mailHeaders)) {
-    //     //echo $_POST['post_id'];
-
-
-    //     mail($toEmail,$mailHeaders,$content);
-    // } else {
-    //     echo  "<p class='Error'>Problem in Sending Mail.</p>";
-    // }
-
+   
   }
 add_action('wp_ajax_nopriv_sayhello', 'say_hello_function');
 add_action('wp_ajax_sayhello', 'say_hello_function');
@@ -394,34 +366,3 @@ echo '	  <div class="col-md-12">
 </div>';
   exit();
 }
-
-?>
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<style>
-    .error input {
-        border-color: red;
-        border-width: 2px;
-    }
-
-    .success input {
-        border-color: green;
-        border-width: 2px;
-    }
-
-    .error span {
-        color: red;
-    }
-
-    .success span {
-        color: green;
-    }
-
-    span.error {
-        color: red;
-    }
-</style>
-
-
-<script src="<?php echo get_template_directory_uri();?>/js/validation.js"></script>
