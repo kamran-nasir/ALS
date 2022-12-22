@@ -106,9 +106,9 @@ function skel_register_acf_blocks() {
     )
   ));
 
-  
-  
-  
+
+
+
   // bg-midnight-heading
   ////////////////////////////////////////////////
   acf_register_block_type(array(
@@ -138,10 +138,10 @@ function skel_register_acf_blocks() {
     )
   ));
 
-  
-  
-  
-  //About Us 
+
+
+
+  //About Us
   ////////////////////////////////////////////////
   acf_register_block_type(array(
     'name'              => 'about-us-with-text-banner',
@@ -170,9 +170,9 @@ function skel_register_acf_blocks() {
     )
   ));
 
-  
-  
-  
+
+
+
 
 //  intersted-about.php
   ////////////////////////////////////////////////
@@ -479,7 +479,7 @@ function skel_register_acf_blocks() {
     )
   ));
 
-  //About Us 
+  //About Us
   ////////////////////////////////////////////////
   acf_register_block_type(array(
     'name'              => 'count-text-number',
@@ -537,7 +537,7 @@ function skel_register_acf_blocks() {
 			'mode' => false
     )
   ));
-    
+
 
 
   // Catelog Download
@@ -727,9 +727,9 @@ function skel_register_acf_blocks() {
 			'mode' => false
     )
   ));
-    
 
-  
+
+
 
 
   // -------------------------------------------------------------------------------------------
@@ -1488,7 +1488,7 @@ function skel_register_acf_blocks() {
   ));
 
 
-  
+
 
 	// inner-hero-light-fence
   ////////////////////////////////////////////////

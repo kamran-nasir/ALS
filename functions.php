@@ -1,5 +1,4 @@
 <?php
-
 require_once( get_template_directory() . '/functions/miscellaneous.php' );
 require_once( get_template_directory() . '/functions/helpers.php' );
 require_once( get_template_directory() . '/functions/disable-auto-embed-script.php' );
@@ -16,9 +15,6 @@ require_once( get_template_directory() . '/functions/remove-comments.php' );
 require_once( get_template_directory() . '/functions/custom-post-types.php' );
 //require_once( get_template_directory() . '/functions/limit-dashboard-to-admin.php' );
 require_once( get_template_directory() . '/functions/admin-ajax.php' );
-
-
-
 // Register menus
 ////////////////////////////////////////////////
 register_nav_menus(
@@ -29,7 +25,6 @@ register_nav_menus(
     'footer-secondary-menu' => 'Footer Secondary Menu',
   )
 );
-
 // Add except to page post type
 add_post_type_support( 'page', 'excerpt' );
 add_post_type_support( 'news', 'excerpt' );
@@ -61,7 +56,6 @@ function jp_get_archive_post_type(){
   if( isset($wp_query->query['post_type']) ){
       $post_type = $wp_query->query['post_type'];
   }
-
   return $post_type;
 }
 /*
@@ -121,10 +115,6 @@ function jp_get_archive_post_type(){
 //       register_post_type( 'solution', $args );
 
 //   }
-
-
-
-
   add_action('init', function() {
     register_post_type('marketing', [
       'label' => __('Marketing', 'txtdomain'),
@@ -168,13 +158,8 @@ function jp_get_archive_post_type(){
       ]
     ]);
     register_taxonomy_for_object_type('cat_marketing', 'marketing');
-
-
   });
-
-
   //CUstom post type Technical resource
-
   add_action('init', function() {
     register_post_type('technical', [
       'label' => __('Technical Support', 'txtdomain'),
@@ -219,12 +204,8 @@ function jp_get_archive_post_type(){
       ]
     ]);
     register_taxonomy_for_object_type('cat_technical', 'technical');
-
-
   });
-
   // Custom post type for Light Fence
-
   add_action('init', function() {
     register_post_type('lightfence', [
       'label' => __('Light Fence Resource', 'txtdomain'),
@@ -247,7 +228,6 @@ function jp_get_archive_post_type(){
         'insert_into_item' => __('Insert into book', 'txtdomain')
       ],
     ]);
-
     register_taxonomy('cat_lightfence', ['lightfence'], [
       'label' => __('Categories', 'txtdomain'),
       'hierarchical' => true,
@@ -272,9 +252,7 @@ function jp_get_archive_post_type(){
 
 
   });
-
   // Custom post type for Light Fence
-
   add_action('init', function() {
     register_post_type('lightfence', [
       'label' => __('Light Fence Configurations', 'txtdomain'),
@@ -297,7 +275,6 @@ function jp_get_archive_post_type(){
         'insert_into_item' => __('Insert into book', 'txtdomain')
       ],
     ]);
-
     register_taxonomy('cat_lightfence', ['lightfence'], [
       'label' => __('Categories', 'txtdomain'),
       'hierarchical' => true,
@@ -319,8 +296,6 @@ function jp_get_archive_post_type(){
       ]
     ]);
     register_taxonomy_for_object_type('cat_lightfence', 'lightfence');
-
-
   });
 
   /* Hook into the 'init' action so that the function
@@ -332,12 +307,9 @@ function jp_get_archive_post_type(){
 //  add_action( 'init', 'custom_post_type', 0 );
 
   add_theme_support( 'post-thumbnails' );
-
-
   add_action('wp_ajax_nopriv_sayhello2', 'sayhello2_function');
   add_action('wp_ajax_sayhello2', 'say_hello2_function');
   function say_hello2_function(){
-
     $content = "New request for qoute<br><br>Job Type: '".$_POST["career"]."<br>Name: '".$_POST["userName"]."<br>Last Name: '".$_POST["lastName"]."<br>Email: '".$_POST["userEmail"]." ";//".get_field($_POST['post_id'],'download_file_link').'"';
 
     $toEmail = "anwaralam6858@gmail.com";
@@ -349,8 +321,6 @@ function jp_get_archive_post_type(){
           $urlPDF = get_field('download_file_link',$_POST['post_id']);
          $ip_address =   $_SERVER['REMOTE_ADDR'];
          $formID =   $_POST['post_id'];
-
-
       $wpdb->insert('wp_form_disable', array(
           'form_button_url' => $urlPDF,
           'ip_address' => $ip_address,
@@ -358,18 +328,14 @@ function jp_get_archive_post_type(){
           'date' => date("Y-m-d H:i:s")
       ));
       echo      $id = $wpdb->insert_id;
-
         mail($toEmail,$mailHeaders,$content);
     } else {
         echo  "<p class='Error'>Problem in Sending Mail.</p>";
     }
-
   }
-
 add_action('wp_ajax_nopriv_sayhello', 'say_hello_function');
 add_action('wp_ajax_sayhello', 'say_hello_function');
 function say_hello_function(){
-
 echo '	<div class="row gx-0 h-100">
           <div class="col-md-12">
             <div class="title-row">
@@ -419,8 +385,8 @@ echo '	<div class="row gx-0 h-100">
 }
 ?>
   <script>
-    
-      function sendContact() {		        
+
+      function sendContact() {
           const nameUser = document.querySelector('#userName');
           const lastName = document.querySelector('#lastName');
           const userEmail = document.querySelector('#userEmail');
@@ -439,7 +405,7 @@ echo '	<div class="row gx-0 h-100">
             console.log('Input name empty!');
             userEmail.setCustomValidity('email field required!');
             userEmail.classList.add("invalid-error");
-          }           
+          }
           else {
 
               jQuery.ajax({
@@ -463,7 +429,7 @@ echo '	<div class="row gx-0 h-100">
 
                 },
               });
-            }      
+            }
         }
   </script>
 <style>
@@ -471,27 +437,19 @@ echo '	<div class="row gx-0 h-100">
   border: 1px solid #cb2026 !important;
 }
 </style>
-<?php 
-
+<?php
 // Create Report of the Download form submited
-
 add_action('admin_menu', 'test_plugin_setup_menu');
- 
 function test_plugin_setup_menu(){
     add_menu_page( 'Test Plugin Page', 'Test Plugin', 'manage_options', 'test-plugin', 'test_init' );
 }
- 
 function test_init(){?>
-
-<?php 
+<?php
 global $wpdb;
 $mylink1 = $wpdb->get_results( "SELECT * FROM wp_form_disable" );
-
 ?>
 <?php //echo get_the_title( 867);?>
 <h2>Download Forms Report:</h2>
-  
-
 <table style="width: 70%;border: 1px solid #eee;" class="report-download" border="1">
   <tr>
     <th>ID</th>
@@ -515,13 +473,9 @@ $mylink1 = $wpdb->get_results( "SELECT * FROM wp_form_disable" );
 <?php }?>
 </table>
 <style>
-  
-  
   .report-download th {
     text-align: left;
 }
 </style>
-
-
-<?php   }
+<?php }
 add_action('admin_menu', 'test_plugin_setup_menu');

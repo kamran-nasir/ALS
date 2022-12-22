@@ -15,7 +15,6 @@
     <img src="<?php echo get_template_directory_uri(); ?>/images/logo-high.png" alt="">
 </div>
 <section class="homepage-hero bg-darkest text-white <?php echo $padding_top; ?> <?php echo $padding_bottom; ?> <?php echo $custom_classes; ?>" style="<?php echo $custom_css; ?>" id="<?php echo $custom_id; ?>">
-
 	<div class="banner-box banner-with-overlay img-cover-block hero-bg">
 	<?php
 			$image_data = wp_get_attachment_image_src( $background_image, 'w1920' );
@@ -35,7 +34,7 @@
 	</div> <!-- .hero-bg -->
 	<div class="container h-100">
 		<div class="row h-100 align-items-center">
-			<div class="col-lg-7">
+			<div class="col-lg-10 col-xl-7">
 				<div class="homepage-hero__content z-index-1 position-relative">
 					<div class="title-row">
 						<h1 class="h2 hero-heading-animation text-white"><?php echo $heading;?></h1>
