@@ -20,7 +20,8 @@ $custom_id           = get_field( 'custom_id' );
 							<div class="numbers-wrap">
 								<div class="numbers">
 										<span class="line-number"><?php echo ( $row['number'] );?><?php echo ( $row['alphabetic'] );?></span>
-										<h3 class="h2 counts text-white" data-number="<?php echo ( $row['number'] );?>"><?php echo ( $row['number'] ); echo ( $row['alphabetic'] );?></h3>
+										<h3 class="h2 counts text-white" data-number="<?php echo ( $row['number'] );?>"><?php echo ( $row['number'] );?></h3>
+										<span><?php  echo ( $row['alphabetic'] );?></span>
 									</div> <!-- .numbers -->
 									<div class="content">
 										<p><?php echo ( $row['heading'] );?></p>
