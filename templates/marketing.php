@@ -23,11 +23,15 @@
 									<span class="title"><?php echo the_title();?></span> <!-- .title -->
 									<?php 
 									 $tablename = $wpdb->prefix.'form_disable';	
-									 $ip_addressData = $wpdb->get_results("SELECT *  FROM wp_form_disable ");
+									 $ip_addressData = $wpdb->get_results("SELECT *   FROM wp_form_disable ");
+
+									    echo "<pre>";
+										print_r($ip_addressData[1]);
+
 										$next24 = strtotime('+1 day', $next24); //add 24 hours in updated date
 										$current = $ip_addressData[$i]->date;
-										//echo $ip_addressData[$i]->ip_address.'<br>';	
-									//	echo $i.'<br>';								
+										echo $ip_addressData[$i]->ip_address.'<br>';	
+										echo $i.'<br>';								
 											//check if current then is bigger then next 24 hours 
 											if( ($ip_addressData[0]->ip_address == $ip_address)){ ?>
 
