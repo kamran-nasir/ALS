@@ -15,7 +15,7 @@
 						'orderby' => 'title',
 						'order' => 'asc',
 					);
-					$ip_address =   $_SERVER['REMOTE_ADDR'];
+					 $ip_address =   $_SERVER['REMOTE_ADDR'];
 					$loop = new WP_Query( $args ); $i=1;
 					    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 								<li class="stagger-animation">
@@ -26,13 +26,12 @@
 									 $ip_addressData = $wpdb->get_results("SELECT *  FROM wp_form_disable ");
 										$next24 = strtotime('+1 day', $next24); //add 24 hours in updated date
 										$current = $ip_addressData[$i]->date;
-
-									//	echo $ip_addressData[$i]->formID;
-									
+									//	echo $ip_addressData[$i]->ip_address;	
+									//	echo $i;								
 											//check if current then is bigger then next 24 hours 
-											if($current < $next24 && ($ip_address ==$ip_addressData[$i]->ip_address) || ($ip_addressData[$i]->formID ==get_the_ID())){ ?>
+											if( ($ip_addressData[0]->ip_address == $ip_address)){ ?>
 
-												<a href="<?php echo get_field('download_file_link', get_the_ID());?>"  <?php if ($ip_addressData[$i]->formID ==get_the_ID()) echo "download";?>  class="btn btn-secondary ">Download Form</a>
+												<a target="_blank" href="<?php echo get_field('download_file_link', get_the_ID());?>"  <?php if ($ip_addressData[$i]->formID ==get_the_ID()) echo "download";?>  class="btn btn-secondary ">Download</a>
 									<?php } 
 										else { ?>
 										
