@@ -173,7 +173,7 @@
                                                                                         <div class="col-md-8 col-lg-6 order-1 order-lg-2">
                                                                                             <div class="title-row ps-lg-5">
                                                                                                 <div class="title-wrap">
-                                                                                                    <h3 class="heading-animation m-0"><?php the_title();?></h3>
+                                                                                                    <h4 class="heading-animation m-0"><?php the_title();?></h4>
                                                                                                     <div class="text-animation"><?php the_content();?></div>
                                                                                                 </div> <!-- .title-wrap -->
                                                                                             </div> <!-- .title-row -->
