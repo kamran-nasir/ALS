@@ -15,7 +15,7 @@
 						'orderby' => 'title',
 						'order' => 'asc',
 					);
-					 $ip_address =   $_SERVER['REMOTE_ADDR'];
+					  $ip_address =   $_SERVER['REMOTE_ADDR'].'<br>';
 					$loop = new WP_Query( $args ); $i=1;
 					    while ( $loop->have_posts() ) : $loop->the_post(); ?>
 								<li class="stagger-animation">
@@ -26,8 +26,8 @@
 									 $ip_addressData = $wpdb->get_results("SELECT *  FROM wp_form_disable ");
 										$next24 = strtotime('+1 day', $next24); //add 24 hours in updated date
 										$current = $ip_addressData[$i]->date;
-									//	echo $ip_addressData[$i]->ip_address;	
-									//	echo $i;								
+										//echo $ip_addressData[$i]->ip_address.'<br>';	
+									//	echo $i.'<br>';								
 											//check if current then is bigger then next 24 hours 
 											if( ($ip_addressData[0]->ip_address == $ip_address)){ ?>
 
