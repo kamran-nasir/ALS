@@ -17,7 +17,7 @@
           -webkit-text-stroke: 1px rgba($white, 0.2);
           -webkit-text-fill-color: $midnight;
         }
-        .counts {
+        .counts-wrap {
           z-index: 1;
           position: absolute;
           top: 50%;
@@ -26,6 +26,12 @@
           font-size: rem-calc(40px);
           @include media-breakpoint-up(md) {
             font-size: rem-calc(48px);
+          }
+          .counts {
+            font-size: rem-calc(40px);
+            @include media-breakpoint-up(md) {
+              font-size: rem-calc(48px);
+            }
           }
         }
       }
