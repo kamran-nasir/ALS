@@ -21,7 +21,7 @@
 			<div class="col-lg-12 order-2 order-lg-1">
 				<div class="lightgallery">
 					<a href="<?php echo wp_get_attachment_image_url( $image, 'w1920' ) ?>" class="img-big stagger-animation has-overlay">
-                       
+
                         <img
                             src="<?php echo wp_get_attachment_image_url( $image, 'w1920' ) ?>"
                             srcset="<?php echo wp_get_attachment_image_srcset( $image ) ?>"
@@ -29,7 +29,7 @@
                             alt="<?php echo $image_alt; ?>"
                             width="<?php echo $image_data[1]; ?>"
                             height="<?php echo $image_data[2]; ?>"
-                            class="img-fluid" 
+                            class="img-fluid"
                         />
 						<div class="image-overlay">
 							<div class="image-overlay-inside">

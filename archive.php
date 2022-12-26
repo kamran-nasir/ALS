@@ -103,7 +103,7 @@
                                                                                                         alt="<?php echo $image_alt; ?>"
                                                                                                         width="<?php echo $image_data[1]; ?>"
                                                                                                         height="<?php echo $image_data[2]; ?>"
-                                                                                                        class="img-big stagger-animation has-overlay"
+                                                                                                        class="img-big has-overlay"
                                                                                                     />
                                                                                                     <div class="image-overlay">
                                                                                                         <div class="image-overlay-inside">
@@ -174,7 +174,7 @@
                                                                                             <div class="title-row ps-lg-5">
                                                                                                 <div class="title-wrap">
                                                                                                     <h4 class="heading-animation m-0"><?php the_title();?></h4>
-                                                                                                    <div class="text-animation"><?php the_content();?></div>  
+                                                                                                    <div class="text-animation"><?php the_content();?></div>
                                                                                                 </div> <!-- .title-wrap -->
                                                                                             </div> <!-- .title-row -->
                                                                                         </div> <!-- .col-md-6 -->
