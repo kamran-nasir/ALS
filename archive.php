@@ -5,7 +5,7 @@
 		<div class="row justify-content-center">
 			<div class="col-md-9 col-xl-8">
 				<div class="hero-content position-relative z-index-1 text-center text-white">
-				  <h2 class="heading-animation text-white"><?php echo get_queried_object()->name; ?></h2>
+				  <h2 class="heading-animation text-white"><?php echo get_queried_object()->name; //var_dump(get_queried_object()->term_id)?></h2>
 				</div> <!-- .hero-content -->
 			</div> <!-- .col-md-6 -->
 		</div> <!-- .row -->
@@ -13,7 +13,7 @@
 	<img src="<?php echo get_template_directory_uri(); ?>/images/bg-lines-2.png" alt="" class="img-cover has-parallax-effect" data-speed="auto">
 </section> <!-- .inner-hero -->
 
-<?php  if(get_queried_object()->taxonomy=='cat_lightfence'){ //var_dump(get_queried_object());?>
+<?php  if(get_queried_object()->taxonomy=='cat_lightfence'){ ;?>
 
 
     <section class="generic-tabs-section">
@@ -79,7 +79,7 @@
                                                                                         'field' => 'term_id',
                                                                                     )
                                                                                 ),
-                                                                                'orderby' => 'title',
+                                                                              // 'orderby' => 'DATE',
                                                                                 'order' => 'ASC' )
                                                                             );
 
@@ -220,31 +220,21 @@
                             $i=1;
                              $formID =   get_the_ID();
                              $ip_address =   $_SERVER['REMOTE_ADDR'];
-                            while (have_posts()) : the_post(); ?>
-                                   <li class="stagger-animation">
-									<span class="number">0<?php echo $i;?>.</span> <!-- .number -->
-									<span class="title"><?php echo the_title();?></span> <!-- .title -->
-									<?php
-									 $tablename = $wpdb->prefix.'form_disable';
-									 $ip_addressData = $wpdb->get_results("SELECT *  FROM  wp_form_disable WHERE (ip_address =  '". $ip_address ."')");
-                                   //  print_r($ip_addressData);
-										$next24 = strtotime('+1 day', $next24); //add 24 hours in updated date
-										$current = $ip_addressData[$i]->date;
-
-											//check if current then is bigger then next 24 hours
-											if($current < $next24 && ($ip_address ==$ip_addressData[$i]->ip_address) && ($ip_addressData[$i]->formID ==get_the_ID())){ ?>
-
-												<a href="<?php echo get_field('download_file_link', get_the_ID());?>" download   class="btn btn-secondary ">Download Form</a>
-									<?php }
-										else { ?>
-
-											<a href="#document-1" id="download_form"  data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
-										<?php
-										}?>
-								</li>
-                        <?php $i++;
-                        endwhile;
-                        wp_reset_postdata();?>
+                             $tablename = $wpdb->prefix.'form_disable';	
+                             $ip_addressData = $wpdb->get_results("SELECT count(*) as total FROM `wp_form_disable` WHERE `ip_address` ='".$ip_address."'");
+                             if($ip_addressData[0]->total>=1) { $active=1; } else{  $active=0;}
+                             while ( have_posts() ) : the_post();?>
+                                         <li class="stagger-animation">
+                                             <span class="number">0<?php echo $i;?>.</span> <!-- .number -->
+                                             <span class="title"><?php echo get_the_title();?></span> <!-- .title -->
+                                             <?php if($active==1){ ?>
+                                                 <a target="_blank" href="<?php echo get_field('download_file_link', get_the_ID());?>"   download  class="btn btn-secondary ">Download</a>
+                                             <?php }else{?>	
+                                                 <a href="#document-1" id="download_form"  data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
+                                             <?php }?>
+                                         </li>
+                                 <?php $i++;
+                             endwhile;?>
                     </ul> <!-- .list-unstyled m-0 p-0 -->
                 </div> <!-- .col-12 -->
             </div> <!-- .row -->

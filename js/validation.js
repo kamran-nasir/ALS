@@ -1,23 +1,23 @@
-$(document).ready(function () {
-    $('#username').on('input', function () {
+jQuery(document).ready(function () {
+    jQuery('#username').on('input', function () {
         checkuser();
     });
-    $('#lastName').on('input', function () {
+    jQuery('#lastName').on('input', function () {
         checklastName();
     });
 
-    $('#email').on('input', function () {
+    jQuery('#email').on('input', function () {
         checkemail();
     });
 
-    $('#submitbtn').click(function () {
+    jQuery('#submitbtn').click(function () {
 
 
         if (!checkuser() && !checklastName() &&!checkemail()) {
             console.log("er1");
-            $("#message").html(`<div class="alert alert-warning">Please fill all required field</div>`);
+            jQuery("#message").html(`<div class="alert alert-warning">Please fill all required field</div>`);
         } else if (!checkuser() || !checklastName() || !checkemail() ) {
-            $("#message").html(`<div class="alert alert-warning">Please fill all required field</div>`);
+            jQuery("#message").html(`<div class="alert alert-warning">Please fill all required field</div>`);
             console.log("er");
         }
         else {
@@ -26,7 +26,7 @@ $(document).ready(function () {
             console.log($("#userEmail").val());
             console.log($("#lastName").val());
             console.log($("#post_id").val());
-            $("#message").html("");
+            jQuery("#message").html("");
             var form = $('#myform')[0];
             var data = new FormData(form);
             jQuery.ajax({
@@ -38,9 +38,9 @@ $(document).ready(function () {
                 cache: false,
                 async: false,
                 beforeSend: function () {
-                    $('#submitbtn').html('<i class="fa-solid fa-spinner fa-spin"></i>');
-                    $('#submitbtn').attr("disabled", true);
-                    $('#submitbtn').css({ "border-radius": "50%" });
+                    jQuery('#submitbtn').html('<i class="fa-solid fa-spinner fa-spin"></i>');
+                    jQuery('#submitbtn').attr("disabled", true);
+                    jQuery('#submitbtn').css({ "border-radius": "50%" });
                 },
                 // url: "/wp-admin/admin-ajax.php",
                 // data:{
@@ -52,14 +52,14 @@ $(document).ready(function () {
                 // },
                 // type: "POST",
                 success: function (data) {
-                    $('#message').html(data);
+                    jQuery('#message').html(data);
                 },
                 complete: function () {
                     setTimeout(function () {
-                        $('#myform').trigger("reset");
-                        $('#submitbtn').html('Submit');
-                        $('#submitbtn').attr("disabled", false);
-                        $('#submitbtn').css({ "border-radius": "4px" });
+                        jQuery('#myform').trigger("reset");
+                        jQuery('#submitbtn').html('Submit');
+                        jQuery('#submitbtn').attr("disabled", false);
+                        jQuery('#submitbtn').css({ "border-radius": "4px" });
                         document.getElementById('download').click();
                         document.getElementById('download_reload').click();
                         document.getElementById('download_form').disabled=true;
@@ -67,7 +67,7 @@ $(document).ready(function () {
                         jQuery("#download_form").disabled = true;
                         console.log(jQuery("#download_form").disabled = true);
                         location.reload(true);
-                    }, 400);
+                    }, 1400);
                 }
             });
 
@@ -77,31 +77,31 @@ $(document).ready(function () {
 
 function checklastName() {
     var pattern = /^[A-Za-z]+$/;
-    var lastName = $('#lastName').val();
+    var lastName = jQuery('#lastName').val();
     var validlastName = pattern.test(lastName);
-    if ($('#lastName').val().length < 1) {
-        $('#lastName_err').html('This field is required');
+    if (jQuery('#lastName').val().length < 1) {
+        jQuery('#lastName_err').html('This field is required');
         return false;
     } else if (!validlastName) {
-        $('#lastName_err').html('Last name should be a-z ,A-Z only');
+        jQuery('#lastName_err').html('Last name should be a-z ,A-Z only');
         return false;
     } else {
-        $('#lastName_err').html('');
+        jQuery('#lastName_err').html('');
         return true;
     }
 }
 function checkuser() {
     var pattern = /^[A-Za-z]+$/;
-    var user = $('#username').val();
+    var user = jQuery('#username').val();
     var validuser = pattern.test(user);
-    if ($('#username').val().length < 4) {
-        $('#username_err').html('This field is required');
+    if (jQuery('#username').val().length < 4) {
+        jQuery('#username_err').html('This field is required');
         return false;
     } else if (!validuser) {
-        $('#username_err').html('First name should be a-z ,A-Z only');
+        jQuery('#username_err').html('First name should be a-z ,A-Z only');
         return false;
     } else {
-        $('#username_err').html('');
+        jQuery('#username_err').html('');
         return true;
     }
 }
@@ -110,17 +110,17 @@ function checkuser() {
 function checkemail() {
 
     var pattern1 = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-    var email = $('#userEmail').val();
+    var email = jQuery('#userEmail').val();
     var validemail = pattern1.test(email);
     if (email == "") {
-        $('#userEmail_err').html('This field is required');
+        jQuery('#userEmail_err').html('This field is required');
         return false;
     } else if (!validemail) {
-        $('#userEmail_err').html('invalid email');
+        jQuery('#userEmail_err').html('invalid email');
         return false;
      }
     else {
-        $('#userEmail_err').html('');
+        jQuery('#userEmail_err').html('');
         return true;
     }
 }

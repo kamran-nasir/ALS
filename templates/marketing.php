@@ -8,6 +8,7 @@
 			<div class="col-md-8">
 				<ul class="list-unstyled m-0 p-0">
 					<?php
+					global $wpdb; 
 					$args = array(
 						'post_type' => 'marketing',
 						'post_status' => 'publish',
@@ -15,37 +16,23 @@
 						'orderby' => 'title',
 						'order' => 'asc',
 					);
-					  $ip_address =   $_SERVER['REMOTE_ADDR'].'<br>';
-					$loop = new WP_Query( $args ); $i=1;
-					    while ( $loop->have_posts() ) : $loop->the_post(); ?>
+					$ip_address =   $_SERVER['REMOTE_ADDR'];
+					$tablename = $wpdb->prefix.'form_disable';	
+					$ip_addressData = $wpdb->get_results("SELECT count(*) as total FROM `wp_form_disable` WHERE `ip_address` ='".$ip_address."'");
+					$loop = new WP_Query( $args ); $i=0;
+					if($ip_addressData[0]->total>=1) { $active=1; } else{  $active=0;}
+					while ( $loop->have_posts() ) : $loop->the_post();?>
 								<li class="stagger-animation">
 									<span class="number">0<?php echo $i;?>.</span> <!-- .number -->
-									<span class="title"><?php echo the_title();?></span> <!-- .title -->
-									<?php 
-									 $tablename = $wpdb->prefix.'form_disable';	
-									 $ip_addressData = $wpdb->get_results("SELECT *   FROM wp_form_disable ");
-
-									    echo "<pre>";
-										print_r($ip_addressData[1]);
-
-										$next24 = strtotime('+1 day', $next24); //add 24 hours in updated date
-										$current = $ip_addressData[$i]->date;
-										echo $ip_addressData[$i]->ip_address.'<br>';	
-										echo $i.'<br>';								
-											//check if current then is bigger then next 24 hours 
-											if( ($ip_addressData[0]->ip_address == $ip_address)){ ?>
-
-												<a target="_blank" href="<?php echo get_field('download_file_link', get_the_ID());?>"  <?php if ($ip_addressData[$i]->formID ==get_the_ID()) echo "download";?>  class="btn btn-secondary ">Download</a>
-									<?php } 
-										else { ?>
-										
-											<a href="#document-1" id="download_form"  data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
-										<?php 
-										}?>
+									<span class="title"><?php echo get_the_title();?></span> <!-- .title -->
+									<?php if($active==1){ ?>
+										<a target="_blank" href="<?php echo get_field('download_file_link', get_the_ID());?>"   download  class="btn btn-secondary ">Download</a>
+									<?php }else{?>	
+										<a href="#document-1" id="download_form"  data-id="<?php echo get_the_ID();?>" class="btn btn-secondary download-form">Download</a>
+									<?php }?>
 								</li>
 						<?php $i++;
-					    endwhile;
-					wp_reset_postdata();?>
+					endwhile;?>
 				</ul> <!-- .list-unstyled m-0 p-0 -->
 			</div> <!-- .col-12 -->
 		</div> <!-- .row -->
@@ -53,5 +40,8 @@
 </section> <!-- .download-list -->
 <div id="document-1" class="download-popup position-relative mfp-hide">
     <div id="form1">  </div> 
+
+		
+
 
 <?php get_footer(); ?>

@@ -15,6 +15,7 @@ require_once( get_template_directory() . '/functions/remove-comments.php' );
 require_once( get_template_directory() . '/functions/custom-post-types.php' );
 //require_once( get_template_directory() . '/functions/limit-dashboard-to-admin.php' );
 require_once( get_template_directory() . '/functions/admin-ajax.php' );
+
 // Register menus
 ////////////////////////////////////////////////
 register_nav_menus(
@@ -310,91 +311,64 @@ function jp_get_archive_post_type(){
 //  add_action( 'init', 'custom_post_type', 0 );
 
   add_theme_support( 'post-thumbnails' );
-  add_action('wp_ajax_nopriv_sayhello2', 'sayhello2_function');
-  add_action('wp_ajax_sayhello2', 'say_hello2_function');
-  function say_hello2_function(){
+
+
+  // add_action('wp_ajax_nopriv_sayhello2', 'sayhello2_function');
+  // add_action('wp_ajax_sayhello2', 'say_hello2_function');
+  // function say_hello2_function(){
    
-  }
+  // }
 add_action('wp_ajax_nopriv_sayhello', 'say_hello_function');
 add_action('wp_ajax_sayhello', 'say_hello_function');
 function say_hello_function(){
-
-echo '	  <div class="col-md-12">
-<div class="title-row">
-<h4>'.get_the_title($_POST['post_id']).'</h4>
-    <span class="bottom-line line-centered"></span>
-</div>
-<p>Fill out the information below to get a free download of our document.</p>
-  <div class="form-align pt-5">
-<form method="POST" id="myform">
-          <a href="'.get_field('download_file_link', $_POST['post_id']).'" download id="download" hidden></a>
-
-          <a href="javascript:window.location.href=window.location.href"  id="download_reload" hidden></a>
-          <input type="hidden" name="download_file" id="download_file" value="'.get_field('download_file_link', $_POST['post_id']).'" class="demoInputBox form-input">
-          <input type="hidden" name="post_id" id="post_id" value="'.$_POST['post_id'].'" class="demoInputBox form-input">
-          <div id="mail-status"></div>
-          <div class="mb-3">
-            <div class="container-select">
-              <select name="career" id="input_1_14" class="large gfield_select" aria-required="true" aria-invalid="false">
-                <option value="" selected="selected" class="gf_placeholder">i\'\'m a</option>
-                <option value="trader">trader</option>
-                <option value="installer">installer</option>
-                <option value="fabricator">fabricator</option>
-                <option value="property/home owner">property/home owner</option>
-            </select>
+  //-----------------Check Admin Panel
+ 
+          echo '
+          <div class="col-md-12">
+            <div class="title-row">
+                <h4>'.get_the_title($_POST['post_id']).'</h4>
+                <span class="bottom-line line-centered"></span>
             </div>
-          </div>
-
-          <div class="mb-3 text-start">
-  <span id="last-info" class="info d-block"></span>
-            <input type="text" name="username" id="username" class="demoInputBox" placeholder="First name">
-            <span class="error" id="username_err"> </span>
-          </div>
-          <div class="mb-3 text-start">
-              <input type="text" name="lastName" id="lastName" class="demoInputBox"  placeholder="Last name">
-              <span class="error" id="lastName_err"> </span>
-          </div>
-          <div class="mb-3 text-start">
-              <input type="text" name="userEmail" id="userEmail" class="demoInputBox"  placeholder="Email">
-  <span class="error" id="userEmail_err"> </span>
-          </div>
-          <div>
-<button type="button" id="submitbtn"  class="btnAction btn btn-secondary btn-rarr">Download</button>
-          </div>
-      </form>
-  </div>
-</div>';
-  exit();
-}
-?>
-
-  <!-- jQuery library -->
-
-<style>
-    .error input {
-        border-color: red;
-        border-width: 2px;
-    }
-
-    .success input {
-        border-color: green;
-        border-width: 2px;
-    }
-
-    .error span {
-        color: red;
-    }
-
-    .success span {
-        color: green;
-    }
-
-    span.error {
-        color: red;
-    }
-</style> 
-
+            <p>Fill out the information below to get a free download of our document.</p>
+            <div class="form-align pt-5">
+              <form method="POST" id="myform">
+                      <a href="'.get_field('download_file_link', $_POST['post_id']).'" download id="download" hidden></a>          
+                      <a href="javascript:window.location.href=window.location.href"  id="download_reload" hidden></a>
+                      <input type="hidden" name="download_file" id="download_file" value="'.get_field('download_file_link', $_POST['post_id']).'" class="demoInputBox form-input">
+                      <input type="hidden" name="post_id" id="post_id" value="'.$_POST['post_id'].'" class="demoInputBox form-input">
+                      <div id="mail-status"></div>
+                      <div class="mb-3">
+                        <div class="container-select">
+                          <select name="career" id="input_1_14" class="large gfield_select" aria-required="true" aria-invalid="false">
+                            <option value="" selected="selected" class="gf_placeholder">i\'\'m a</option>
+                            <option value="trader">trader</option>
+                            <option value="installer">installer</option>
+                            <option value="fabricator">fabricator</option>
+                            <option value="property/home owner">property/home owner</option>
+                        </select>
+                        </div>
+                      </div>              
+                      <div class="mb-3 text-start">
+                        <span id="last-info" class="info d-block"></span>
+                        <input type="text" name="username" id="username" class="demoInputBox" placeholder="First name">
+                        <span class="error" id="username_err"> </span>
+                      </div>
+                      <div class="mb-3 text-start">
+                          <input type="text" name="lastName" id="lastName" class="demoInputBox"  placeholder="Last name">
+                          <span class="error" id="lastName_err"> </span>
+                      </div>
+                      <div class="mb-3 text-start">
+                          <input type="text" name="userEmail" id="userEmail" class="demoInputBox"  placeholder="Email">
+                          <span class="error" id="userEmail_err"> </span>
+                      </div>
+                      <div>
+                        <button type="button" id="submitbtn"  class="btnAction btn btn-secondary btn-rarr">Download</button>
+                      </div>
+                  </form>
+              </div>
+        </div>';
+      }?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <script src="<?php echo get_template_directory_uri();?>/js/validation.js"></script> 
-  
+
+

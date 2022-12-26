@@ -11,10 +11,12 @@
   <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <?php endif; ?>
+
   <?php wp_head(); ?>
-  <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+  <!-- <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4774264488206253"
-     crossorigin="anonymous"></script>
+     crossorigin="anonymous"></script> -->
+
 </head>
 
 <body <?php body_class( 'site-wrapper' ); ?>>
