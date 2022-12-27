@@ -77,50 +77,44 @@
 								);
 								$cats = get_categories($args); $count=1;?>
 									<?php foreach($cats as $cat) { ?>
-									<div class="two-equal-cards-row d-flex flex-column flex-lg-row flex-lg-row <?php if($count%2==0) echo"reverse"?>">
+									<div class="two-equal-cards-row d-flex flex-wrap pb-13 <?php if($count%2==0) echo"reverse"?>">
 									<?php if($count%2==0){ ?>
-
-
-											<div class="col-md-6">
-												<div class="title-row p-10">
+											<div class="col-md-12 justify-content-center text-center">
+												<div class="title-row">
 													<div class="title-wrap">
 														<h3 class="heading-animation m-0"><?php echo $cat->name; ?></h3>
 														<div class="fade-animation">
-															<span class="bottom-line"></span>
+															<span class="bottom-line line-centered"></span>
 														</div> <!-- .fade-animation -->
 													</div> <!-- .title-wrap -->
 													<p class="text-animation desc-md"><?php echo $cat->description; ?></p>
-													<a href="<?php echo get_category_link( $cat->term_id ) ?>" class="btn btn-secondary btn-rarr">Read More</a>
+
 												</div> <!-- .title-row -->
 											</div> <!-- .col-md-6 -->
-											<div class="col-md-6 g-0">
-												<div class="img-cover-block">
-												<img src="<?php echo z_taxonomy_image_url($cat->term_id);?>" alt="" class="img-cover">
-												</div> <!-- .img-cover-block -->
+											<div class="col-md-12 g-0 text-center">
+												<img src="<?php echo z_taxonomy_image_url($cat->term_id);?>" alt="" class="img-fluid">
+												<a href="<?php echo get_category_link( $cat->term_id ) ?>" class="btn btn-secondary btn-rarr">see all configurations</a>
 											</div> <!-- .col-md-6 -->
 
 									<?php }else{?>
-										<div class="col-md-6 g-0">
-												<div class="img-cover-block">
-												<img src="<?php echo z_taxonomy_image_url($cat->term_id);?>" alt="" class="img-cover">
-												</div> <!-- .img-cover-block -->
-											</div> <!-- .col-md-6 -->
-											<div class="col-md-6">
-												<div class="title-row p-10">
+										<div class="col-md-12 justify-content-center text-center">
+												<div class="title-row mb-3">
 													<div class="title-wrap">
 														<h3 class="heading-animation m-0"><?php echo $cat->name; ?></h3>
 														<div class="fade-animation">
-															<span class="bottom-line"></span>
+															<span class="bottom-line line-centered"></span>
 														</div> <!-- .fade-animation -->
 													</div> <!-- .title-wrap -->
 													<p class="text-animation desc-md"><?php echo $cat->description; ?></p>
-													<a href="<?php echo get_category_link( $cat->term_id ) ?>" class="btn btn-secondary btn-rarr">Read More</a>
 												</div> <!-- .title-row -->
+											</div> <!-- .col-md-6 -->
+											<div class="col-md-12 g-0 text-center">
+												  <img src="<?php echo z_taxonomy_image_url($cat->term_id);?>" alt="" class="img-fluid mb-5">
+													<a href="<?php echo get_category_link( $cat->term_id ) ?>" class="btn btn-secondary btn-rarr">see all configurations</a>
 											</div> <!-- .col-md-6 -->
 									<?php }?>
 
-
-										</div> <!-- .row -->
+								</div> <!-- .row -->
 								<?php $count++; } ?>
 
 						</div> <!-- .container -->
