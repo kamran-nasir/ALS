@@ -301,30 +301,15 @@ function jp_get_archive_post_type(){
     ]);
     register_taxonomy_for_object_type('cat_lightfence', 'lightfence');
   });
-
-  /* Hook into the 'init' action so that the function
-  * Containing our post type registration is not
-  * unnecessarily executed.
-   '.do_shortcode('[wpforms id="599"]').'
-  */
-
-//  add_action( 'init', 'custom_post_type', 0 );
-
-  add_theme_support( 'post-thumbnails' );
+add_theme_support( 'post-thumbnails' );
 
 
-  // add_action('wp_ajax_nopriv_sayhello2', 'sayhello2_function');
-  // add_action('wp_ajax_sayhello2', 'say_hello2_function');
-  // function say_hello2_function(){
-   
-  // }
+
+
 add_action('wp_ajax_nopriv_sayhello', 'say_hello_function');
 add_action('wp_ajax_sayhello', 'say_hello_function');
-function say_hello_function(){
-  //-----------------Check Admin Panel
- 
-          echo '
-          <div class="col-md-12">
+function say_hello_function(){ 
+     echo '<div class="col-md-12">
             <div class="title-row">
                 <h4>'.get_the_title($_POST['post_id']).'</h4>
                 <span class="bottom-line line-centered"></span>
@@ -367,8 +352,5 @@ function say_hello_function(){
                   </form>
               </div>
         </div>';
-      }?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="<?php echo get_template_directory_uri();?>/js/validation.js"></script> 
-
-
+        exit();
+      }

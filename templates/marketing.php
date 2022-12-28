@@ -13,7 +13,7 @@
 						'post_type' => 'marketing',
 						'post_status' => 'publish',
 						'posts_per_page' => -1,
-						'orderby' => 'title',
+						'orderby' => 'title',    
 						'order' => 'asc',
 					);
 					$ip_address =   $_SERVER['REMOTE_ADDR'];
@@ -39,9 +39,5 @@
 	</div> <!-- .container -->
 </section> <!-- .download-list -->
 <div id="document-1" class="download-popup position-relative mfp-hide">
-    <div id="form1">  </div> 
-
-		
-
-
-<?php get_footer(); ?>
+<div id="form1">  </div> 
+<?php get_footer(); ?> 
