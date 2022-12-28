@@ -219,6 +219,9 @@ ul.icon-with-text {
   li {
     -webkit-text-stroke: 1px rgba($midnight, 0.2);
     -webkit-text-fill-color: $white;
+    &:last-child {
+      -webkit-text-stroke: 1px rgba(#55bd56, 0.6);
+    }
   }
 }
 
