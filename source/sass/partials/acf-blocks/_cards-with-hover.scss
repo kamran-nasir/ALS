@@ -143,3 +143,14 @@
     margin: 0 auto;
   }
 }
+.home {
+  .cards-with-hover {
+    .title-wrap {
+      .split-line {
+        > div:last-child {
+          color: #55bd56 !important;
+        }
+      }
+    }
+  }
+}

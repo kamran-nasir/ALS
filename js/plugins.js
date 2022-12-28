@@ -266,7 +266,7 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 /*!
  * ScrollToPlugin 3.10.4
  * https://greensock.com
- *
+ * 
  * @license Copyright 2022, GreenSock. All rights reserved.
  * Subject to the terms at https://greensock.com/standard-license or for Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -278,7 +278,7 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 /*!
  * ScrollTrigger 3.10.4
  * https://greensock.com
- *
+ * 
  * @license Copyright 2022, GreenSock. All rights reserved.
  * Subject to the terms at https://greensock.com/standard-license or for Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -290,7 +290,7 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
 /*!
  * SplitText 3.10.4
  * https://greensock.com
- *
+ * 
  * @license Copyright 2022, GreenSock. All rights reserved.
  * This plugin is a membership benefit of Club GreenSock and is only authorized for use in sites/apps/products developed by individuals/companies with an active Club GreenSock membership. See https://greensock.com/club
  * @author: Jack Doyle, jack@greensock.com
@@ -1316,7 +1316,7 @@ function threeCardsSlider() {
 		$(this).parent().find(".swiper-button-next").addClass(nextClass);
 
 		new Swiper("." + swiperClass, {
-			slidesPerView: 1.2,
+			slidesPerView: 1.1,
 			spaceBetween: 15,
 			grabCursor: true,
 			navigation: {
