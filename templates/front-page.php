@@ -26,6 +26,48 @@
 		</div> <!-- .row -->
 	</div> <!-- .container -->
 </section> <!-- .text-with-offset-images -->
+
+<section class="annoucements">
+	<div class="container">
+  <div class="row justify-content-center text-center mb-3">
+		<div class="col-md-7">
+			<div class="title-row">
+				<div class="title-wrap">
+					<h2 class="heading-animation m-0">Upcoming Activities</h2>
+					<div class="fade-animation">
+						<span class="bottom-line line-centered"></span>
+					</div> <!-- .fade-animation -->
+				</div> <!-- .title-wrap -->
+			</div> <!-- .title-row -->
+		</div> <!-- .col-12 -->
+	</div> <!-- .row -->
+	<div class="row justify-content-center align-items-center">
+		<div class="col-md-5">
+			<div class="img-cover-block">
+			  <img data-speed="auto" class="img-cover" src="<?php echo get_template_directory_uri(); ?>/images/about-2.jpg" alt="">
+			</div> <!-- .img-cover-block -->
+		</div> <!-- .col-md-6 -->
+		<div class="col-md-5">
+			<div class="content-wrap">
+			   <div class="title-row">
+					<div class="title-wrap">
+						<h3 class="heading-animation m-0">Fences Exhibition</h3>
+						<div class="fade-animation">
+							<span class="bottom-line"></span>
+						</div> <!-- .fade-animation -->
+					</div> <!-- .title-wrap -->
+					<p class="text-animation desc-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada amet nibh sed diam. Tristique consequat it amet, consectetur adipiscing elit. </p>
+				</div> <!-- .title-row -->
+				<div class="text-animation mt-2">
+            <a href="#0" class="btn btn-inline p-0">Learn more</a>
+       	</div>
+			</div> <!-- .content-wrap -->
+		</div> <!-- .col-md-6 -->
+	</div> <!-- .row -->
+	</div> <!-- .container -->
+</section> <!-- .annoucements -->
+
+
 <section class="statics-numbers bg-primary text-white pt-5 pb-5 position-relative">
 	<div class="container position-relative z-index-1 overflow-hidden">
 		<div class="row">
