@@ -653,7 +653,7 @@ $(document).ready(function() {
 				'action': 'sayhello',
 				'post_id' : postID
 			},
-			success: function (data) { 
+			success: function (data) {
 				console.log(data);
 				$("#form1").html(data);
 			}
