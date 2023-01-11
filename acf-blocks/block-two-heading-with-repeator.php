@@ -13,7 +13,9 @@
     $padding_bottom          = get_field( 'padding_bottom' );
     $custom_classes          = get_field( 'custom_classes' );
     $custom_css              = get_field( 'custom_css' );
-    $custom_id           = get_field( 'custom_id' );
+    $custom_id              = get_field( 'custom_id' );
+
+    $stamp_cards                  = get_field('stamp_cards',get_the_ID());
 
 ?>
 
@@ -73,10 +75,24 @@
                             <?php }
                         }?>
 				</ul> <!-- .list-unstyled -->
-                <ul class="stamps-list nav list-unstyled stagger-animation">
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/new-stamp-1.png" alt=""></li>
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/new-stamp-2.png" alt=""></li>
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/new-stamp-3.png" alt=""></li>
+                <ul class="stamps-list nav list-unstyled stagger-animation 123">
+                    <?php foreach($stamp_cards as $cards) {?>
+                            <li>
+                            <?php
+                                    $image_data = wp_get_attachment_image_src( $cards['image'], 'w1920' );
+                                    $image_alt = get_post_meta( $cards['gallery'], '_wp_attachment_image_alt', true );
+                                    $image_alt = esc_attr( trim( strip_tags( $image_alt ) ) );
+                                ?>
+                                <img
+                                    src="<?php echo wp_get_attachment_image_url( $cards['image'], 'w1920' ); ?>"
+                                    srcset="<?php echo wp_get_attachment_image_srcset( $cards['image'] ); ?>"
+                                    sizes="100vw"
+                                    alt="<?php echo $image_alt; ?>"
+                                    width="<?php echo $image_data[1]; ?>"
+                                    height="<?php echo $image_data[2]; ?>"
+                                />
+                            </li>
+                    <?php }?>
                 </ul> <!-- .list-unstyled -->
 			</div> <!-- .col-md-6 -->
 			<div class="col-md-10 col-xl-6 fade-animation">
