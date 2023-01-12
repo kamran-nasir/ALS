@@ -76,6 +76,70 @@ function skel_register_acf_blocks() {
   ));
 
 
+  
+  //   // bg-midnight-heading
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'Annoucements Block',
+    'title'             => 'annoucements-block',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/annoucements-block.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+
+
+
+  //   // bg-midnight-heading
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'cards-stamp-about',
+    'title'             => 'cards-stamp-about',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/cards-stamp-about.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/hero.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+
+
 
 //   // bg-midnight-heading
   ////////////////////////////////////////////////
@@ -507,6 +571,39 @@ function skel_register_acf_blocks() {
 			'mode' => false
     )
   ));
+
+
+  
+
+	// annoucements-section
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'annoucements-section',
+    'title'             => 'annoucements-section',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/annoucements-section.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/banner-with-scrolling-text.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
 
 
 	// solution-section

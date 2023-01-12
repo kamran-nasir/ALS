@@ -118,6 +118,51 @@ function jp_get_archive_post_type(){
 //   }
 
 
+add_action('init', function() {
+  register_post_type('annoucements', [
+    'label' => __('Annoucements', 'txtdomain'),
+    'public' => true,
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-book',
+    'supports' => ['title', 'editor', 'thumbnail', 'author', 'revisions', 'comments'],
+    'show_in_rest' => true,
+    'rewrite' => ['slug' => 'annoucements'],
+    'taxonomies' => ['annoucements'],
+    'labels' => [
+      'singular_name' => __('Annoucements', 'txtdomain'),
+      'add_new_item' => __('Add new Annoucements', 'txtdomain'),
+      'new_item' => __('New Annoucements', 'txtdomain'),
+      'view_item' => __('View Annoucements', 'txtdomain'),
+      'not_found' => __('No Annoucements found', 'txtdomain'),
+      'not_found_in_trash' => __('No Annoucements found in trash', 'txtdomain'),
+      'all_items' => __('All Annoucements', 'txtdomain'),
+      'insert_into_item' => __('Insert into book', 'txtdomain')
+    ],
+  ]);
+
+  // register_taxonomy('cat_marketing', ['marketing'], [
+  //   'label' => __('Categories', 'txtdomain'),
+  //   'hierarchical' => true,
+  //   'rewrite' => ['slug' => 'cat_marketing'],
+  //   'show_admin_column' => true,
+  //   'show_in_rest' => true,
+  //   'labels' => [
+  //     'singular_name' => __('marketing', 'txtdomain'),
+  //     'all_items' => __('All marketing', 'txtdomain'),
+  //     'edit_item' => __('Edit marketing', 'txtdomain'),
+  //     'view_item' => __('View marketing', 'txtdomain'),
+  //     'update_item' => __('Update marketing', 'txtdomain'),
+  //     'add_new_item' => __('Add New marketing', 'txtdomain'),
+  //     'new_item_name' => __('New marketing Name', 'txtdomain'),
+  //     'search_items' => __('Search marketing', 'txtdomain'),
+  //     'parent_item' => __('Parent marketing', 'txtdomain'),
+  //     'parent_item_colon' => __('Parent Genre:', 'txtdomain'),
+  //     'not_found' => __('No marketing found', 'txtdomain'),
+  //   ]
+  // ]);
+  // register_taxonomy_for_object_type('cat_marketing', 'marketing');
+});
+
 
   add_action('init', function() {
     register_post_type('marketing', [
@@ -351,6 +396,10 @@ function say_hello_function(){
                       </div>
                   </form>
               </div>
-        </div>';
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+              <script src="'.get_template_directory_uri().'/js/validation.js"></script> 
+              </div>';
         exit();
       }
+
+     
