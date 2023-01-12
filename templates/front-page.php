@@ -27,7 +27,7 @@
 	</div> <!-- .container -->
 </section> <!-- .text-with-offset-images -->
 
-<section class="annoucements">
+<section class="annoucements pb-5">
 	<div class="container">
   <div class="row justify-content-center text-center mb-3">
 		<div class="col-md-7">
@@ -56,7 +56,20 @@
 							<span class="bottom-line"></span>
 						</div> <!-- .fade-animation -->
 					</div> <!-- .title-wrap -->
-					<p class="text-animation desc-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada amet nibh sed diam. Tristique consequat it amet, consectetur adipiscing elit. </p>
+					<p class="text-animation desc-md mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada amet nibh sed diam. Tristique consequat it amet, consectetur adipiscing elit. </p>
+					<div class="date-wrapper d-flex align-items-center text-animation">
+						<span class="icon">
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M12.6667 2.66669H3.33333C2.59695 2.66669 2 3.26364 2 4.00002V13.3334C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3334V4.00002C14 3.26364 13.403 2.66669 12.6667 2.66669Z" stroke="#C8151D" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M10.667 1.33334V4.00001" stroke="#C8151D" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M5.33301 1.33334V4.00001" stroke="#C8151D" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M2.22266 7.11111H13.7782" stroke="#C8151D" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</span> <!-- .icon -->
+						<span class="text small ms-1">
+						  Nov 28, 2022
+						</span> <!-- .text -->
+					</div>
 				</div> <!-- .title-row -->
 				<div class="text-animation mt-2">
             <a href="#0" class="btn btn-inline p-0">Learn more</a>

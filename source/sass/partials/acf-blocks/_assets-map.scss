@@ -1,367 +1,366 @@
 .our-assets-section {
-	position: relative;
-	&__map-wrapper {
-		position: relative;
-		.map-bg {
-			width: rem-calc(1150px);
-		}
-	}
-	.assets-image-map {
-		&__pins {
-			border: 0 none;
-			li.nav-item {
-				position: absolute;
-				z-index: 1;
-				transition: all ease 0.5s;
-				&.aboveZindex2 {
-					z-index: 2;
-				}
-				&.aboveZindex3 {
-					z-index: 3;
-				}
-				&.active {
-					.nav-link {
-						.pin__active {
-							opacity: 1;
-						}
-					}
-				}
-				&.uae-qatarLoc-css {
-					left: 62.5%;
-					top: 50%;
-					@include media-breakpoint-down(xl) {
-						top: 51%;
-					}
-					@include media-breakpoint-down(sm) {
-						top: 48%;
-					}
-				}
-				&.russiaLoc-css {
-					left: 75%;
-					top: 22%;
-					@include media-breakpoint-down(xl) {
-						top: 23%;
-					}
-					@include media-breakpoint-down(sm) {
-						top: 20%;
-					}
-				}
-				&.israelLoc-css {
-					left: 57%;
-					top: 45%;
-					@include media-breakpoint-down(xl) {
-						top: 46%;
-					}
-					@include media-breakpoint-down(sm) {
-						top: 43%;
-					}
-				}
-				&.eygptLoc-css {
-					left: 55%;
-					top: 50%;
-					@include media-breakpoint-down(xl) {
-						top: 51%;
-					}
-					@include media-breakpoint-down(sm) {
-						top: 48%;
-					}
-				}
-				&.usaLoc-css {
-					left: 29%;
+  position: relative;
+  &__map-wrapper {
+    position: relative;
+    .map-bg {
+      width: rem-calc(1150px);
+    }
+  }
+  .assets-image-map {
+    &__pins {
+      border: 0 none;
+      li.nav-item {
+        position: absolute;
+        z-index: 1;
+        transition: all ease 0.5s;
+        &.aboveZindex2 {
+          z-index: 2;
+        }
+        &.aboveZindex3 {
+          z-index: 3;
+        }
+        &.active {
+          .nav-link {
+            .pin__active {
+              opacity: 1;
+            }
+          }
+        }
+        &.uae-qatarLoc-css {
+          left: 62.5%;
+          top: 50%;
+          @include media-breakpoint-down(xl) {
+            top: 51%;
+          }
+          @include media-breakpoint-down(sm) {
+            top: 48%;
+          }
+        }
+        &.russiaLoc-css {
+          left: 75%;
+          top: 22%;
+          @include media-breakpoint-down(xl) {
+            top: 23%;
+          }
+          @include media-breakpoint-down(sm) {
+            top: 20%;
+          }
+        }
+        &.israelLoc-css {
+          left: 57%;
+          top: 45%;
+          @include media-breakpoint-down(xl) {
+            top: 46%;
+          }
+          @include media-breakpoint-down(sm) {
+            top: 43%;
+          }
+        }
+        &.eygptLoc-css {
+          left: 55%;
+          top: 50%;
+          @include media-breakpoint-down(xl) {
+            top: 51%;
+          }
+          @include media-breakpoint-down(sm) {
+            top: 48%;
+          }
+        }
+        &.usaLoc-css {
+          left: 29%;
           top: 38%;
-					@include media-breakpoint-down(xl) {
-						top: 41%;
-					}
-					@include media-breakpoint-down(sm) {
-						top: 38%;
-					}
-				}
-				&.thailandLoc-css {
-					left: 75%;
-					top: 55%;
-					@include media-breakpoint-down(xl) {
-						top: 56%;
-					}
-					@include media-breakpoint-down(sm) {
-						top: 53%;
-					}
-				}
-				&.indonesiaLoc-css {
-					left: 78%;
-					top: 62%;
-					@include media-breakpoint-down(xl) {
-						top: 63%;
-					}
-					@include media-breakpoint-down(sm) {
-						top: 60%;
-					}
-				}
-				&.malaysiaLoc-css {
-					left: 76%;
-					top: 64%;
-					@include media-breakpoint-down(xl) {
-						top: 65%;
-					}
-					@include media-breakpoint-down(sm) {
-						top: 62%;
-					}
-				}
-				&.pakistanLoc-css {
-					left: 65%;
-					top: 50%;
-					@include media-breakpoint-down(xl) {
-						top: 51%;
-					}
-					@include media-breakpoint-down(sm) {
-						top: 48%;
-					}
-				}
-				&.omanLoc-css {
-					left: 62%;
-					top: 55%;
-					@include media-breakpoint-down(xl) {
-						top: 55%;
-					}
-					@include media-breakpoint-down(sm) {
-						top: 52%;
-					}
-				}
-				&.uaeLoc-css {
-					left: 63%;
-					top: 51%;
-					@include media-breakpoint-down(xl) {
-						top: 55%;
-					}
-					@include media-breakpoint-down(sm) {
-						top: 52%;
-					}
-				}
-				&.qatarLoc-css {
-					left: 61%;
-					top: 50%;
-					@include media-breakpoint-down(xl) {
-						top: 51%;
-					}
-					@include media-breakpoint-down(sm) {
-						top: 48%;
-					}
-				}
-				.nav-link {
-					position: relative;
-					border: 0 none;
-					height: rem-calc(26px);
-					width: rem-calc(21px);
-					background-image: url("data:image/svg+xml,%3Csvg width='28' height='36' viewBox='0 0 28 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.5639 13.041C26.5639 16.3959 24.6719 20.7349 22.0676 24.8984C19.5891 28.8609 16.5187 32.5811 14 35.0109C11.4813 32.5811 8.41093 28.8609 5.93236 24.8984C3.32808 20.7349 1.43609 16.3959 1.43609 13.041C1.43609 6.32242 7.04734 0.85142 14 0.85142C20.9527 0.85142 26.5639 6.32242 26.5639 13.041ZM14 20.067C17.7668 20.067 20.8453 17.0973 20.8453 13.4035C20.8453 9.70973 17.7668 6.74002 14 6.74002C10.2332 6.74002 7.15467 9.70973 7.15467 13.4035C7.15467 17.0973 10.2332 20.067 14 20.067Z' fill='%236930F2' stroke='white'/%3E%3C/svg%3E%0A");
-					background-size: contain;
-					padding: 0;
-					background-color: transparent !important;
+          @include media-breakpoint-down(xl) {
+            top: 41%;
+          }
+          @include media-breakpoint-down(sm) {
+            top: 38%;
+          }
+        }
+        &.thailandLoc-css {
+          left: 75%;
+          top: 55%;
+          @include media-breakpoint-down(xl) {
+            top: 56%;
+          }
+          @include media-breakpoint-down(sm) {
+            top: 53%;
+          }
+        }
+        &.indonesiaLoc-css {
+          left: 78%;
+          top: 62%;
+          @include media-breakpoint-down(xl) {
+            top: 63%;
+          }
+          @include media-breakpoint-down(sm) {
+            top: 60%;
+          }
+        }
+        &.malaysiaLoc-css {
+          left: 76%;
+          top: 64%;
+          @include media-breakpoint-down(xl) {
+            top: 65%;
+          }
+          @include media-breakpoint-down(sm) {
+            top: 62%;
+          }
+        }
+        &.pakistanLoc-css {
+          left: 65%;
+          top: 50%;
+          @include media-breakpoint-down(xl) {
+            top: 51%;
+          }
+          @include media-breakpoint-down(sm) {
+            top: 48%;
+          }
+        }
+        &.omanLoc-css {
+          left: 62%;
+          top: 55%;
+          @include media-breakpoint-down(xl) {
+            top: 55%;
+          }
+          @include media-breakpoint-down(sm) {
+            top: 52%;
+          }
+        }
+        &.uaeLoc-css {
+          left: 63%;
+          top: 51%;
+          @include media-breakpoint-down(xl) {
+            top: 55%;
+          }
+          @include media-breakpoint-down(sm) {
+            top: 52%;
+          }
+        }
+        &.qatarLoc-css {
+          left: 61%;
+          top: 50%;
+          @include media-breakpoint-down(xl) {
+            top: 51%;
+          }
+          @include media-breakpoint-down(sm) {
+            top: 48%;
+          }
+        }
+        .nav-link {
+          position: relative;
+          border: 0 none;
+          height: rem-calc(26px);
+          width: rem-calc(21px);
+          background-image: url("data:image/svg+xml,%3Csvg width='28' height='36' viewBox='0 0 28 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.5639 13.041C26.5639 16.3959 24.6719 20.7349 22.0676 24.8984C19.5891 28.8609 16.5187 32.5811 14 35.0109C11.4813 32.5811 8.41093 28.8609 5.93236 24.8984C3.32808 20.7349 1.43609 16.3959 1.43609 13.041C1.43609 6.32242 7.04734 0.85142 14 0.85142C20.9527 0.85142 26.5639 6.32242 26.5639 13.041ZM14 20.067C17.7668 20.067 20.8453 17.0973 20.8453 13.4035C20.8453 9.70973 17.7668 6.74002 14 6.74002C10.2332 6.74002 7.15467 9.70973 7.15467 13.4035C7.15467 17.0973 10.2332 20.067 14 20.067Z' fill='%236930F2' stroke='white'/%3E%3C/svg%3E%0A");
+          background-size: contain;
+          padding: 0;
+          background-color: transparent !important;
 
-					@include media-breakpoint-down(md) {
-						height: rem-calc(17px);
-						width:rem-calc(13px);
-					}
-					.pin__active {
-						opacity: 0;
-						transition: all ease 0.5s;
-						padding-top: rem-calc(3px);;
-						color: #fff;
-						text-align: center;
-						position: absolute;
-						bottom: 100%;
-						right: rem-calc(8px);
-						background-image: url("data:image/svg+xml,%3Csvg width='114' height='130' viewBox='0 0 114 130' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 0.5H95C103.008 0.5 109.5 6.99187 109.5 15V29.5H0.5V0.5Z' fill='%236930F2'/%3E%3Cpath d='M0.5 0.5H95C103.008 0.5 109.5 6.99187 109.5 15V29.5H0.5V0.5Z' stroke='%236930F2'/%3E%3Crect width='1' height='92' transform='matrix(-1 0 0 1 110 30)' fill='%236930F2'/%3E%3Cellipse cx='109.5' cy='125.5' rx='4.5' ry='4.5' transform='rotate(180 109.5 125.5)' fill='%2300FFBD'/%3E%3C/svg%3E%0A");
-						width: rem-calc(114px);
-						height: rem-calc(130px);
-						background-size: contain;
-						@include media-breakpoint-down(xl) {
+          @include media-breakpoint-down(md) {
+            height: rem-calc(17px);
+            width: rem-calc(13px);
+          }
+          .pin__active {
+            opacity: 0;
+            transition: all ease 0.5s;
+            padding-top: rem-calc(3px);
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            bottom: 100%;
+            right: rem-calc(8px);
+            background-image: url("data:image/svg+xml,%3Csvg width='114' height='130' viewBox='0 0 114 130' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 0.5H95C103.008 0.5 109.5 6.99187 109.5 15V29.5H0.5V0.5Z' fill='%236930F2'/%3E%3Cpath d='M0.5 0.5H95C103.008 0.5 109.5 6.99187 109.5 15V29.5H0.5V0.5Z' stroke='%236930F2'/%3E%3Crect width='1' height='92' transform='matrix(-1 0 0 1 110 30)' fill='%236930F2'/%3E%3Cellipse cx='109.5' cy='125.5' rx='4.5' ry='4.5' transform='rotate(180 109.5 125.5)' fill='%2300FFBD'/%3E%3C/svg%3E%0A");
+            width: rem-calc(114px);
+            height: rem-calc(130px);
+            background-size: contain;
+            @include media-breakpoint-down(xl) {
+            }
+          }
+        }
+      }
+    }
+  }
+  &__tabs {
+    position: absolute;
+    z-index: 5;
+    // width: 30%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    @include media-breakpoint-down(xl) {
+      position: relative;
+      top: rem-calc(-50px);
+    }
 
-						}
-					}
-				}
-			}
-		}
-	}
-	&__tabs {
-		position: absolute;
-		z-index: 5;
-		// width: 30%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		@include media-breakpoint-down(xl) {
-			position: relative;
-			top: rem-calc(-50px);
-		}
+    .tab-content {
+      border: rem-calc(1px) solid $milano-red;
+      background-color: rgba(#fff, 0.4);
+      backdrop-filter: blur(20px); // This be the blur
+      padding-top: rem-calc(30px);
+      padding-right: 15%;
+      padding-bottom: rem-calc(30px);
+      padding-left: 15%;
+      border-radius: 0 rem-calc(60px) 0 0;
+      min-height: 90%;
+      @include media-breakpoint-down(xl) {
+        border-radius: 0 rem-calc(40px) 0 0;
+        padding: 5%;
+      }
+    }
+    &__tags {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      > div {
+        &.tags {
+          padding-top: rem-calc(5px);
+          padding-right: rem-calc(10px);
+          padding-bottom: rem-calc(5px);
+          padding-left: rem-calc(10px);
+          border-top-right-radius: rem-calc(10px);
+          border-bottom-left-radius: rem-calc(10px);
+          margin-right: rem-calc(10px);
 
-		.tab-content {
-			border: rem-calc(1px) solid $milano-red;
-			background-color: rgba(#fff, 0.4);
-			backdrop-filter: blur(20px); // This be the blur
-			padding-top: rem-calc(30px);
-			padding-right: 15%;
-			padding-bottom: rem-calc(30px);
-			padding-left: 15%;
-			border-radius: 0 rem-calc(60px) 0 0;
-			min-height: 90%;
-			@include media-breakpoint-down(xl) {
-				border-radius: 0 rem-calc(40px) 0 0;
-				padding: 5%;
-			}
-		}
-		&__tags {
-			width: 100%;
-			display: flex;
-			justify-content: flex-start;
-			flex-wrap: wrap;
-			> div {
-				&.tags {
-					padding-top: rem-calc(5px);
-					padding-right: rem-calc(10px);
-					padding-bottom: rem-calc(5px);
-					padding-left: rem-calc(10px);
-					border-top-right-radius: rem-calc(10px);
-					border-bottom-left-radius: rem-calc(10px);
-					margin-right: rem-calc(10px);
+          &__cyan {
+            background-color: $sustainable-green;
+          }
+          &__yellow {
+            background-color: $me-yellow;
+          }
+          &__purple {
+            background-color: $milano-red;
+            color: #fff;
+          }
+          &__sunset-coral {
+            background-color: $sunset-coral;
+            color: #fff;
+          }
+          &__energy-blue {
+            background-color: $milano-red;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  &__chart {
+    display: inline-block;
+    position: absolute;
+    bottom: rem-calc(-100px);
+    left: rem-calc(15px);
+    @include media-breakpoint-up(xl) {
+      top: auto;
+      left: auto;
+      bottom: 0;
+      right: 0;
+    }
+    .donut__label {
+      left: 50%;
+      line-height: 1.5;
+      position: absolute;
+      text-align: center;
+      top: 54%;
+      transform: translate(-53%, -50%);
+      width: 80%;
+      font-size: rem-calc(14px);
+    }
+    .piechart-illustration {
+      height: rem-calc(110px);
+      width: rem-calc(110px);
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  &__ddl {
+    .dropbtn {
+      background-color: transparent;
+      color: $milano-red;
+      padding-top: rem-calc(16px);
+      padding-right: rem-calc(20px);
+      padding-bottom: rem-calc(16px);
+      padding-left: rem-calc(20px);
+      width: 100%;
+      font-size: rem-calc(16px);
+      border: 1px solid $milano-red;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: rem-calc(30px);
+      &.ddl-opened {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: 0 none;
+      }
+    }
 
-					&__cyan {
-						background-color: $sustainable-green;
-					}
-					&__yellow {
-						background-color: $me-yellow;
-					}
-					&__purple {
-						background-color: $milano-red;
-						color: #fff;
-					}
-					&__sunset-coral {
-						background-color: $sunset-coral;
-						color: #fff;
-					}
-					&__energy-blue {
-						background-color: $milano-red
-						color: #fff;
-					}
-				}
-			}
-		}
-	}
-	&__chart {
-		display: inline-block;
-		position: absolute;
-		bottom: rem-calc(-100px);
-		left: rem-calc(15px);
-		@include media-breakpoint-up(xl) {
-			top: auto;
-			left: auto;
-			bottom: 0;
-			right: 0;
-		}
-		.donut__label {
-			left: 50%;
-			line-height: 1.5;
-			position: absolute;
-			text-align: center;
-			top: 54%;
-			transform: translate(-53%, -50%);
-			width: 80%;
-			font-size: rem-calc(14px);
-		}
-		.piechart-illustration {
-			height: rem-calc(110px);
-			width: rem-calc(110px);
-			svg {
-				height: 100%;
-				width: 100%;
-			}
-		}
-	}
-	&__ddl {
-		.dropbtn {
-			background-color: transparent;
-			color: $milano-red;
-			padding-top: rem-calc(16px);
-			padding-right: rem-calc(20px);
-			padding-bottom: rem-calc(16px);
-			padding-left: rem-calc(20px);
-			width: 100%;
-			font-size: rem-calc(16px);
-			border: 1px solid $milano-red;
-			cursor: pointer;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			border-radius: rem-calc(30px);
-			&.ddl-opened {
-				border-bottom-left-radius: 0;
-				border-bottom-right-radius: 0;
-				border-bottom: 0 none;
-			}
-		}
+    .dropbtn:hover,
+    .dropbtn:focus {
+      background-color: transparent;
+    }
 
-		.dropbtn:hover,
-		.dropbtn:focus {
-			background-color: transparent;
-		}
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
 
-		.dropdown {
-			position: relative;
-			display: inline-block;
-			width: 100%;
-		}
+    .dropdown-content {
+      margin: 0;
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      border: rem-calc(1px) solid $milano-red;
+      border-top: 0 none;
+      min-width: rem-calc(160px);
+      width: 100%;
+      overflow: auto;
+      box-shadow: 0px rem-calc(8px) rem-calc(16px) 0px rgba(0, 0, 0, 0.2);
+      z-index: 5;
+      li {
+        margin: 0;
+      }
+    }
+    .dropdown-content a {
+      color: $milano-red;
+      padding-top: rem-calc(12px);
+      padding-right: rem-calc(16px);
+      padding-bottom: rem-calc(12px);
+      padding-left: rem-calc(16px);
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown a:hover {
+      background-color: $milano-red;
+      color: #fff;
+    }
 
-		.dropdown-content {
-			margin: 0;
-			display: none;
-			position: absolute;
-			background-color: #fff;
-			border: rem-calc(1px) solid $milano-red;
-			border-top: 0 none;
-			min-width: rem-calc(160px);
-			width: 100%;
-			overflow: auto;
-			box-shadow: 0px rem-calc(8px) rem-calc(16px) 0px rgba(0, 0, 0, 0.2);
-			z-index: 5;
-			li {
-				margin: 0;
-			}
-		}
-		.dropdown-content a {
-			color: $milano-red;
-			padding-top: rem-calc(12px);
-			padding-right: rem-calc(16px);
-			padding-bottom: rem-calc(12px);
-			padding-left: rem-calc(16px);
-			text-decoration: none;
-			display: block;
-		}
-		.dropdown a:hover {
-			background-color: $milano-red;
-			color: #fff;
-		}
-
-		.show {
-			display: block;
-		}
-		.ddl-arrow {
-			background-image: url("data:image/svg+xml,%3Csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.5 1L9 8L1.5 1' stroke='%236930F2' stroke-width='2'/%3E%3C/svg%3E%0A");
-			background-size: 100%;
-			background-repeat: no-repeat;
-			width: rem-calc(19px);
-			height: rem-calc(10px);
-			display: inline-block;
-			transition: all ease 0.5s;
-			&.ddl-up {
-				transform: rotate(-180deg);
-			}
-		}
-	}
-	.our-assets-section__tabs__data  {
-		margin-top: 0 !important;
-	}
+    .show {
+      display: block;
+    }
+    .ddl-arrow {
+      background-image: url("data:image/svg+xml,%3Csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.5 1L9 8L1.5 1' stroke='%236930F2' stroke-width='2'/%3E%3C/svg%3E%0A");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: rem-calc(19px);
+      height: rem-calc(10px);
+      display: inline-block;
+      transition: all ease 0.5s;
+      &.ddl-up {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  .our-assets-section__tabs__data {
+    margin-top: 0 !important;
+  }
 }
 .single-portfolio {
-	.mfp-close-btn-in .mfp-close {
-		top: rem-calc(-20px);
-		padding-right: rem-calc(5px) !important;
-	}
+  .mfp-close-btn-in .mfp-close {
+    top: rem-calc(-20px);
+    padding-right: rem-calc(5px) !important;
+  }
 }
