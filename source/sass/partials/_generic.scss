@@ -100,17 +100,21 @@ ul.icon-with-text {
 }
 .stamps-list {
   display: none;
-  margin-left: rem-calc(-25px) !important;
   @include media-breakpoint-down(lg) {
     margin-top: rem-calc(50px) !important;
+    margin-left: rem-calc(-25px) !important;
   }
   @include media-breakpoint-up(lg) {
     margin-top: rem-calc(40px) !important;
   }
+  @include media-breakpoint-down(md) {
+    margin-top: 0 !important;
+    justify-content: center;
+  }
   li {
     height: rem-calc(70px);
     width: rem-calc(100px);
-    max-width: rem-calc(10px);
+    max-width: rem-calc(100px);
     @include media-breakpoint-up(md) {
       height: rem-calc(80px);
       width: rem-calc(120px);
