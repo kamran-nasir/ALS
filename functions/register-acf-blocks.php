@@ -204,7 +204,7 @@ function skel_register_acf_blocks() {
 
 
 
-
+ 
   //About Us
   ////////////////////////////////////////////////
   acf_register_block_type(array(
@@ -1410,7 +1410,36 @@ function skel_register_acf_blocks() {
     )
   ));
 
-	// Contact map
+	// contact-us-section
+  ////////////////////////////////////////////////
+  acf_register_block_type(array(
+    'name'              => 'contact-us-section',
+    'title'             => 'Contact Us Section',
+    'category'          => 'mubadala',
+    'icon' => array(
+      'background' => '#ff2500',
+      'foreground' => '#fff',
+      'src' => 'layout',
+    ),
+    'render_template'  	=> 'acf-blocks/contact-us-section.php',
+    'example'           => [
+      'attributes' => [
+        'mode' => 'preview',
+        'data' => array(
+          'preview_image' => get_template_directory_uri() . '/acf-blocks/preview/contact-map.jpg',
+        ),
+      ]
+    ],
+    'mode'              => 'edit',
+    'post_types'        => array( 'page' ),
+    'supports'          => array(
+      'align' => false,
+      'customClassName' => false,
+			'mode' => false
+    )
+  ));
+
+  // Contact map
   ////////////////////////////////////////////////
   acf_register_block_type(array(
     'name'              => 'contact-map',
